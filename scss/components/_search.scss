@@ -1,0 +1,34 @@
+//検索窓スタイル
+
+input[type=text] {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  height: 34px;
+  width: 70%;
+  padding: 0 10px;
+  padding-right: 40px;
+  border-radius: 17px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.submenu .search {
+  position: relative;
+
+  &::after {
+    @include font_A('\f002');
+    color: #D4D4D4;
+    position: absolute;
+    right: 13%;
+    top: 2px;
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 972px) {
+  .submenu .search::after {
+    right: 27%;
+  }
+}

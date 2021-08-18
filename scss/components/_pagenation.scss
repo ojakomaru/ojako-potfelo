@@ -1,0 +1,63 @@
+.page_naite .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  padding-right: 20%;
+
+  li {
+    list-style: none;
+    font-size: 1.3rem;
+    margin-left: 30px;
+    padding: 0.1rem 1rem;
+    border-radius: 50%;
+    transition: $anime;
+    background-color: $sub_color;
+    pointer-events: none;
+    &:hover {
+      background-color: $main_color;
+    }
+    @include md {
+      font-size: 1rem;
+      padding: 0.1rem 0.7rem;
+      margin-left: 20px;
+      white-space: pre;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: $main_color;
+    display: block;
+    pointer-events: auto;
+    width: 100%;
+    &:hover {
+      color: #fff;
+    }
+  }
+  .page_num {
+    font-size: 12px;
+    border-radius: 10px;
+    background: none;
+    padding-top: 15px;
+    padding-right: 0;
+  }
+  .current {
+    color:$text_color;
+    background-color:transparent;
+  }
+  .next {
+    border-radius: unset;
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+  }
+  .prev {
+    border-radius: unset;
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+  }
+  .first,
+  .last {
+    background: none;
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,165 @@
+header {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 1;
+  width: 100%;
+  transform: translateY(-100%);
+  transition: $anime;
+  opacity: 0;
+  height: 10%;
+  backdrop-filter: blur(4px) brightness(1.1);
+  &.active {
+    transform: none;
+    opacity: 1;
+  }
+  nav#main_nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding-top: 15px;
+    overflow: hidden;
+
+    li {
+      width: 13%;
+      font-size: 1.8em;
+      font-weight: 700;
+      font-family: '幻ノにじみ明朝';
+
+      a {
+        display: block;
+        margin: 0 auto;
+        text-decoration: none;
+        color: $text_color;
+        transition: 0.5s;
+        white-space: pre;
+        &:hover {
+          border-bottom: 3px solid $sub_color;
+          border-top: 3px solid $sub_color;
+          width: 80%;
+          .active_headwrap {
+            visibility: visible;
+            height: 100%;
+            transform: none;
+          }
+        }
+      }
+    }
+  }
+  .active_headwrap {
+    width: 50%;
+    background: $base_color;
+    margin: 0 auto;
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
+    transform: translateY(-35%);
+    transition: $anime;
+  }
+  span {
+    color: $main_color;
+    font-size: 1em;
+    writing-mode: vertical-rl;
+    padding-top: 0.9rem;
+    text-orientation: upright;
+    transition: $anime;
+  }
+
+  .bottom_nav {
+    display: none;
+  }
+}
+
+//ボトムナビ768pxから
+@include md {
+  header {
+    backdrop-filter: initial;
+    .pc_only {
+      display: none;
+    }
+
+    .bottom_nav {
+      display: flex;
+      position: fixed;
+      left: 0%;
+      bottom: 0%;
+      justify-content: space-around;
+      width: 100%;
+      padding-top: 30px;
+      background-color: $base_color;
+      padding-bottom: 10px;
+      @include sm {
+        padding-top: 40px;
+      }
+    }
+  }
+
+  .bottom_nav {
+    li a {
+      position: relative;
+      font-size: 10px;
+      font-weight: 200;
+      white-space: pre;
+      @include sm {
+        letter-spacing: 0.6px;
+        line-height: 1;
+      }
+    }
+
+    li {
+      @include sm {
+        width: 25%;
+      }
+      & a:before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        font-size: 16px;
+        left: 42%;
+        top: -150%;
+      }
+      &:nth-child(1) a::before {
+        content: '\f015';
+        @include sm {
+          top: -230%;
+        }
+      }
+
+      &:nth-child(2) a::before {
+        content: '\f781';
+        @include sm {
+          top: -230%;
+        }
+      }
+
+      &:nth-child(3) a::before {
+        content: '\f2bb';
+        @include sm {
+          top: -230%;
+        }
+      }
+
+      &:nth-child(4) a::before {
+        content: '\f06b';
+        @include sm {
+          top: -230%;
+        }
+      }
+
+      &:nth-child(5) a::before {
+        content: '\f0e0';
+        @include sm {
+          top: -230%;
+        }
+      }
+    }
+  }
+}

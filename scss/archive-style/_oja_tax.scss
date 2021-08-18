@@ -1,0 +1,122 @@
+@charset "UTF-8";
+//ブログカテゴリー、タグ、検索ページ共通CSS
+
+.search .main {
+  @include lg {
+    margin: 0;
+  }
+}
+.tax-oja_cat,.tax-oja_tags,.search {
+
+  //キービジュアル
+  .key_visual {
+    @include bg_img('../img/wagasa.jpg');
+    min-height: 100vh;
+    position: relative;
+    @include lg {
+      min-height: 80vh;
+    }
+    @include md {
+      min-height: 60vh;
+    }
+    @include sm {
+      min-height: 40vh;
+    }
+    .welcome-text {
+      @include xl {
+        bottom: -15%;
+      }
+      @include lg {
+        bottom: -50%;
+      }
+      h1#animation-text {
+        background: -webkit-linear-gradient(left,#fff,#fff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        font-size: 4.2rem;
+        @include xl {
+          font-size: 3.4rem;
+        }
+        @include lg {
+          font-size: 3rem;
+          padding: 0;
+        }
+        @include md {
+          font-size: 2.6rem;
+        }
+        @include sm {
+          font-size: 2rem;
+        }
+        @include s {
+          font-size: 1.7rem;
+          font-weight: 600;
+        }
+        & > span {
+          animation-duration: 1.5s;
+        }
+      }
+    }
+  }
+  #taxonomy-text {
+    position: absolute;
+    bottom: 10%;
+    right: 6%;
+    display: inline-block;
+    text-align: center;
+    background: $sub_color;
+    > span {
+    color: $primary_color;
+    padding-left: 3px;
+    padding-right: 3px;
+    display: inline-block;
+    font-size: 3rem;
+    animation-name:popIn;
+    animation-timing-function: cubic-bezier(0, 1.23, 1, 0.99);
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+      @include xl {
+        font-size: 2.3rem;
+      }
+      @media screen and (max-width: 1120px) {
+        font-size: 2.1rem;
+      }
+      @include lg {
+        font-size: 1.9rem;
+      }
+      @include md {
+        font-size: 1.7rem;
+        font-weight: 500;
+      }
+      @media screen and (max-width: 698px) {
+        font-size: 1.5rem;
+      }
+      @include sm {
+        font-size: 1.3rem;
+      }
+      @include s {
+        font-size: 1.1rem;
+      }
+    }
+  }
+  
+  @keyframes popIn {
+    0% {
+      transform: translateY(50px);
+    }
+    50% {
+      transform: translateY(-50px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  //ブログカテゴリー、タグ、検索ページ共通記事用
+  .oja_cat {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    @import '../components/post_cade';
+  }
+
+}//.tax-oja_cat

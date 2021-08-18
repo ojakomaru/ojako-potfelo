@@ -1,0 +1,25 @@
+/*================================
+フッターメニュー
+===================================*/
+
+.reverce {
+  height: 50px;
+  width: 50px;
+  background-color: #000000;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 50px;
+  margin: 0 0 0 92%;
+}
+
+footer {
+  background-color: $accent_color;
+  color: $text_color;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+  @include md {
+    padding-bottom: 75px;
+  }
+}
+

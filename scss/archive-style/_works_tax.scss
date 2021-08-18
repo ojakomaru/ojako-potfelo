@@ -1,0 +1,426 @@
+@charset 'UTF-8';
+
+.tax-production {
+  //videokeyビジュアルスタイル
+
+    video#bgvid {
+      max-height: 480px;
+    }
+    @include xl {
+      .key_movi {
+        position: static;
+      }
+    }
+    //keyビジュアルスタイル
+    @include xl {
+      .key_visual {
+        @include bg_img('../img/nanamewagasa.jpg');
+        position: relative;
+      }
+    }
+    .welcome-text {
+      @include xl {
+        bottom: -15%;
+      }
+      @include lg {
+        bottom: -50%;
+      }
+      h1#animation-text {
+        background: -webkit-linear-gradient(left,#fff,#fff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        font-size: 4.2rem;
+        @include xl {
+          font-size: 3.4rem;
+        }
+        @include lg {
+          font-size: 3rem;
+          padding: 0;
+        }
+        @include md {
+          font-size: 2.6rem;
+        }
+        @include sm {
+          font-size: 2rem;
+        }
+        @include s {
+          font-size: 1.7rem;
+          font-weight: 600;
+        }
+        & > span {
+          animation-duration: 1.5s;
+        }
+      }
+    }
+    
+    #taxonomy-text {
+      position: absolute;
+      bottom: 10%;
+      right: 6%;
+      display: inline-block;
+      text-align: center;
+      background: $sub_color;
+      > span {
+      color: $primary_color;
+      padding-left: 3px;
+      padding-right: 3px;
+      display: inline-block;
+      font-size: 3rem;
+      animation-name:c-slidein;
+      opacity: 0;
+      animation-timing-function: ease-in;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+        @include xl {
+          font-size: 2.3rem;
+        }
+        @media screen and (max-width: 1120px) {
+          font-size: 2.1rem;
+        }
+        @include lg {
+          font-size: 1.9rem;
+        }
+        @include md {
+          font-size: 1.7rem;
+          font-weight: 500;
+        }
+        @media screen and (max-width: 698px) {
+          font-size: 1.5rem;
+        }
+        @include sm {
+          font-size: 1.3rem;
+        }
+        @include s {
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    @keyframes c-slidein {
+      0% {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /*================================
+    制作実績アーカイブスタイル
+    ===================================*/
+  #content {
+    .item_detail {
+      border: 1px solid #ccc;
+      background: #fff;
+      margin-bottom: 250px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0px 3px 4px #ccc, 0px 0px 1px 1px #fff inset;
+      @include xl {
+        margin-bottom: 200px;
+      }
+      @include md {
+        margin-bottom: 100px;
+      }
+      &:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 190px;
+        height: 600px;
+        content: "";
+        transform: translateX(-147%) translateY(-32%) rotate(52deg);
+        background: $accent_color;
+        @include s {
+          transform: translateX(-164%) translateY(-32%) rotate(52deg);
+        }
+      }
+      a {
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        transition: $anime;
+      }
+    }
+
+    .pc_frame {
+      background: url('../img/PC.webp') no-repeat;
+      background-position: 32% 10px;
+      background-size: 79%;
+      flex: 0 0 45%;
+      overflow: hidden;
+      @include showAnimation(1s,1s);
+      @include lg {
+        background-position: 32% 55%;
+        background-size: 50%;
+      }
+      @include md {
+        display: none;
+      }
+      .frame {
+        height: 0;
+        overflow: hidden;
+        padding: calc(800 / 1280 * 100%) 0 0;
+        width: 100%;
+        position: relative;
+        iframe {
+          transform-origin: 0 0;
+          position: absolute;
+          left: 10.1%;
+          top: 7%;
+          -webkit-transform: scale(0.28);
+          transform: scale(0.289);
+          width: 250%;
+          height: 246%;
+          @include lg {
+            left: 17.7%;
+            top: 20%;
+            width: 161%;
+            height: 155%;
+          }
+        }
+      }
+    }
+
+    .column_reverse {
+      flex-direction:row-reverse;
+      .main_item_text {
+        @include md {
+          margin: 0 auto;
+        }
+      }
+    }
+    @include md {
+      flex-direction: row;
+    }
+    .two_column {
+      display: flex;
+      justify-content: center;
+      padding-top: 70px;
+      @include lg {
+        flex-direction: column;
+        padding-top: 60px;
+        padding-bottom: 0px;
+      }
+      @include md {
+        padding-top: 50px;
+      }
+      @include sm {
+        padding-top: 20px;
+      }
+      &:not(:first-child) {
+        padding-bottom: 30px;
+      }
+    }
+    .sp_frame {
+      background: url('../img/smartphone.png') no-repeat;
+      background-size: 42.5%;
+      background-position: 46.5% 2%;
+      flex: 0 0 45%;
+      max-height: 420px;
+      overflow: hidden;
+      @include showAnimation;
+      @include lg {
+        display: none;
+      }
+      @include md {
+        display: block;
+        max-height: 530px;
+      }
+      @include sm {
+        max-height: 430px;
+      }
+      @media screen and (max-width:500px) {
+        max-height: 370px;
+      }
+      @include s {
+        max-height: 340px;
+      }
+      @media screen and (max-width:395px) {
+        max-height: 295px;
+      }
+      .frame {
+        height: 0;
+        overflow: hidden;
+        padding: calc(667 / 385 * 100%) 0 0 ;
+        position: relative;
+        width: 100%;
+        iframe {
+          transform-origin: 0 0;
+          position: absolute;
+          left: 29.3%;
+          top: 5%;
+          -webkit-transform: scale(0.42);
+          transform: scale(0.45);
+          height: 79%;
+          width: 82%;
+          @include md {
+            top: 4.9%;
+            left: 29.36%;
+          }
+        }
+      }
+    }
+    .main_item_text {
+      max-width: 50%;
+      flex: 0 0 50%;
+      @include showAnimation(.6s,1s);
+      @include lg {
+        max-width: 90%;
+      }
+    }
+    h1 {
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      margin-bottom: 30px;
+      color: $main_color;
+      transform: skew(-13deg,0deg);
+      border-bottom: 3px solid $main_color;
+      padding-left: 42px;
+      @include lg {
+        font-size: 22px;
+      }
+      @include md {
+        font-size: 18px;
+      }
+      @include s {
+        padding-left: 17px;
+        font-size: 16px;
+      }
+      &:first-letter {
+        font-size: 40px;
+        color: $main_color;
+        @include lg {
+          font-size: 34px;
+        }
+        @include md {
+          font-size: 27px;
+        }
+        @include s {
+          font-size: 24px;
+        }
+      }
+    }
+    h2 {
+      font-size: 26px;
+      color: $primary_color;
+      background-color: $sub_color;
+      padding-left: 30px;
+      padding-right: 30px;
+      letter-spacing: 1.8px;
+      display: inline-block;
+      margin-bottom: 10%;
+      margin-left: 40%;
+      transform: skew(-13deg,0deg);
+      @include xl {
+        font-size: 21px;
+      }
+      @include lg {
+        position: absolute;
+        top: 2%;
+        right: 7%;
+      }
+      @include md {
+        font-size: 16px;
+      }
+      @include sm {
+        font-size: 12px;
+        top: 18%;
+        right: 0%;
+        margin-left: 7%;
+      }
+    }
+    h3 {
+      font-size: 21px;
+      margin: 20px 0px;
+      margin-bottom: 40px;
+      color: $text_color;
+      background: linear-gradient(transparent 70%, #fef5e0 70%);
+      padding-left: 20px;
+      font-weight: 800;
+      border: none;
+      line-height: 1.2;
+      @include lg {
+        padding-left: 60px;
+        font-size: 26px;
+      }
+      @include md {
+        margin-top: 10%;
+        padding-left: 100px;
+        font-size: 24px;
+      }
+      @include sm {
+        margin-top: 13px;
+        font-size: 18px;
+      }
+      @include s {
+        padding-left: 60px;
+      }
+    }
+    p {
+      color: $text_color;
+      font-size: 16px;
+      @include sm {
+        font-size: 14px;
+      }
+    }
+    .item_about {
+      font-family: $g_serif;
+      display: block;
+      width: 55%;
+      background-color: $accent_color;
+      border-radius: 50%;
+      margin-bottom: 50px;
+      @include showAnimation(0,.3s);
+      @include xl {
+        display: inline-block;
+      }
+      @include lg {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 40px;
+      }
+      @include sm {
+        width: 70%;
+        margin-right: 25%;
+      }
+      dt,dd {
+        display: inline-block;
+        width: 35%;
+        padding: 20px 0 20px 50px;
+        @include xl {
+          width: 100%;
+        }
+      }
+      dt {
+        font-size: 1.3rem;
+        color: #195240;
+        @include lg {
+          padding-left: 30%;
+          padding-bottom: 0;
+        }
+        @include sm {
+          font-size: 1rem;
+          padding-top: 0;
+        }
+      }
+      dd {
+        font-size: 1rem;
+        padding-left: 0;
+        color: $text_color;
+        @include xl {
+          padding-left: 45%;
+          padding-top: 0;
+        }
+        @include sm {
+          font-size: 0.7rem;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }//#content
+
+}

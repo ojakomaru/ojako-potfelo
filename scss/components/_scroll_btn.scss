@@ -1,0 +1,54 @@
+@charset "UTF-8";
+//トップへ戻るボタン
+
+#scroll_top.show,#product_link.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(50px);
+}
+
+#scroll_top,#product_link {
+  z-index: 1;
+  position: fixed;
+  right: 4%;
+  bottom: 18%;
+  display: inline-block;
+  background-color: $accent_color;
+  color: $text_color2;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.2rem;
+  padding-top: 0.3rem;
+  box-shadow: 0px 0px 1px #BCBCB8;
+  border: 0.3px solid #BCBCB8;
+  font-family: '幻ノにじみ明朝';
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  transition: $anime;
+  opacity: 0;
+  visibility: hidden;
+  text-decoration: none;
+  
+  &:hover {
+    background-color: $main_color;
+    color: $base_color;
+  }
+}
+#scroll_top {
+  &:before {
+    @include font_A('\f102');
+    margin-bottom: 3px;
+    font-size: 20px;
+  }
+  @include md {
+    display: none;
+  }
+}
+#product_link {
+  padding: 0.45rem;
+  padding-top: 0.5rem;
+  &:before {
+    @include font_A('\f091');
+    margin-bottom: 5px;
+  }
+}

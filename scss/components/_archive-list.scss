@@ -1,0 +1,82 @@
+@charset 'utf-8';
+
+//ドロップダウンメニュー
+
+.category_list {
+  position: relative;
+  margin-bottom: 40px;
+  &::after {
+    @include font_A("\f078");
+    font-size: 19px;
+    position: absolute;
+    right: 6%;
+    top: 4%;
+    color: $text_color;
+  }
+    select[name="dropdown"] {
+    background-color: #dde2e4;
+    width: 100%;
+    margin: 0px;
+    padding: 10px;
+    border-radius: 2px;
+    font-size: 16px;
+    color: $text_color;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+/*================================
+タグクラウドのスタイル
+===================================*/
+ul.tag_list {
+  list-style: none;
+  width: 22em;
+  display: flex;
+  flex-wrap: wrap;
+  border: none;
+  padding-left: 0px;
+  li {
+    max-width: 100%;
+    padding: 3px 6px;
+    margin-bottom: 4px;
+    margin-right: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-decoration: none;
+    letter-spacing: 1;
+    a {
+      text-decoration: none;
+      font-size: 11px;
+      color: $text_color;
+      font-weight: 300;
+      display: block;
+      transition:all 0.4s;
+      background-color: #dde2e4;
+      border: none;
+      margin-bottom: 0;
+      padding: 3px;
+      padding-bottom: 1px;
+      line-height: 22px;
+      height: 100%;
+      border-radius: 3px;
+      white-space: pre;
+      &:hover {
+        color: #fff;
+        background-color: $main_color;
+        opacity: 0.8;
+      }
+      &::before {
+        @include font_A('\f02b');
+        font-size: 5px;
+        padding-right: 4px;
+      }
+    }
+  }
+}
+

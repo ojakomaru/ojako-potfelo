@@ -1,0 +1,501 @@
+@charset "UTF-8";
+/*================================
+videokeyビジュアルスタイル
+===================================*/
+.single-blogs {
+
+  @include two_column;
+  .inner .main {
+    @include lg {
+      margin-bottom: 20%;
+    }
+  }
+
+  #pc_nav {
+    visibility: hidden;
+    height: 0;
+  }
+  .submenu.fix#pc_nav {
+    visibility: visible;
+    overflow: scroll;
+    height: 80vh;
+  }
+
+  video#bgvid {
+    max-height: 260px;
+  }
+  .key_visual {
+    @include xl {
+      @include bg_img('../img/sakasa_kouyou.jpg');
+      position: relative;
+      min-height: 250px;
+      @include lg {
+        min-height: 200px;
+      }
+      @include md {
+        min-height: 170px;
+      }
+      .key_movi {
+        position: static;
+      }
+      video#bgvid{
+        display: none;
+      }
+    }
+  }
+
+  .welcome-text {
+    @include xl {
+      bottom: -15%;
+    }
+    @include lg {
+      bottom: -50%;
+    }
+    h1#animation-text {
+      background: -webkit-linear-gradient(left,#fff,#fff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      font-size: 4.2rem;
+      @include xl {
+        font-size: 3.4rem;
+      }
+      @include lg {
+        font-size: 3rem;
+        padding: 0;
+      }
+      @include md {
+        font-size: 2.6rem;
+      }
+      @include sm {
+        font-size: 2rem;
+      }
+      @include s {
+        font-size: 1.7rem;
+        font-weight: 600;
+      }
+      & > span {
+        animation-duration: 1.5s;
+      }
+    }
+  }
+  
+  #taxonomy-text {
+    position: absolute;
+    bottom: 10%;
+    right: 6%;
+    display: inline-block;
+    text-align: center;
+    background: $sub_color;
+    > span {
+    color: $primary_color;
+    padding-left: 3px;
+    padding-right: 3px;
+    display: inline-block;
+    font-size: 3rem;
+    animation-name:popIn;
+    animation-timing-function: cubic-bezier(0, 1.23, 1, 0.99);
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+      @include xl {
+        font-size: 2.3rem;
+      }
+      @media screen and (max-width: 1120px) {
+        font-size: 2.1rem;
+      }
+      @include lg {
+        font-size: 1.9rem;
+      }
+      @include md {
+        font-size: 1.7rem;
+        font-weight: 500;
+      }
+      @media screen and (max-width: 698px) {
+        font-size: 1.5rem;
+      }
+      @include sm {
+        font-size: 1.3rem;
+      }
+      @include s {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  @keyframes popIn {
+    0% {
+      transform: translateY(50px);
+    }
+    50% {
+      transform: translateY(-50px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .smb-balloon__body {
+    width: auto;
+  }
+  .text-frame,.editor-post-title .editor-post-title__input {
+    font-size: 2rem;
+    color: $main_color;
+    text-align: left;
+    letter-spacing: 2.2px;
+    margin-bottom: 50px;
+    padding-left: 20px;
+    background-color: $accent_color;
+    &::after,&::before {
+      display: none;
+    }
+    @include lg {
+      padding-left: 40px;
+      padding-right: 40px;
+      font-size: 1.8rem;
+      @include md {
+        font-size: 1.6rem;
+      }
+      @include sm {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .blog_article {
+    background-color: $base_color;
+    color: $text_color;
+    padding: 6%;
+    margin-bottom: 15%;
+
+    time {
+      display: block;
+      text-align: right;
+      font-size: 15px;
+      padding-right: 20px;
+      padding-top: 20px;
+    }
+    
+    time:before {
+      content: '投稿更新日：'
+    }
+    
+    h3 {
+      font-size: 20px;
+      color: $main_color;
+      padding-left: 25px;
+      letter-spacing: 3.5px;
+      line-height: 1.8;
+      margin-bottom: 50px;
+      position:relative;
+      &::before {
+        content: ' ';
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        background-color: $main_color;
+        transform: rotate(45deg);
+        margin-right: 0.5em;
+      }
+      @include md {
+        font-size: 18px;
+      }
+    }
+    
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      margin-bottom: 65px;
+      color: $main_color;
+      transform: skew(-20deg,0deg);
+      border-bottom: 3px solid $main_color;
+      padding-left: 25px;
+      line-height: 1.8;
+      @include md {
+        font-size: 18px;
+      }
+      &:first-letter {
+        font-size: 34px;
+        color: $main_color;
+        @include md {
+          font-size: 25px;
+        }
+      }
+    }
+    
+    h4 {
+      font-size: 20px;
+      margin: 20px 0px;
+      margin-bottom: 35px;
+      color: $text_color;
+      background: linear-gradient(transparent 70%, #fef5e0 70%);
+      padding-left: 20px;
+      font-weight: 800;
+      border: none;
+      line-height: 1.2;
+      letter-spacing: 2px;
+      @include md {
+        font-size: 16px;
+      }
+    }
+
+    h5 {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      padding-left: 20px;
+      color: $sub_color;
+      @include md {
+        font-size: 15px;
+      }
+    }
+
+    h6 {
+      font-size: 15px;
+      font-weight: 400;
+      padding-left: 20px;
+    }
+
+    span {
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.5%;
+    }
+    .tadv-color {
+      font-size: 18px;
+      font-family: $lato;
+    }
+
+    strong {
+      color: #080808;
+      font-size: 18px;
+      font-weight: bold;
+      word-break: break-word;
+      padding: 0px 5px;
+      font-family:  $lato;
+      @include sm {
+        font-size: 16px;
+      }
+    }
+    em {
+      font-style: italic;
+      font-weight: bold
+    }
+    blockquote {
+      margin-left: 25px;
+      margin-right: auto;
+      text-align: left;
+      border-bottom: 2px solid $text_color;
+      padding-bottom: 10px;
+      p:last-of-type {
+        margin-bottom: 5px;
+      }
+    }
+    figure {
+      padding: 2em 0;
+      margin-left: 0;
+      margin-right: 0;
+      text-align: center;
+      color: $text_color;
+    }
+    img {
+      max-width: 100%;
+      height: auto
+    }
+    table {
+      width: 90%;
+      border-collapse: collapse;
+    }
+    thead {
+      border-bottom: 3px solid;
+    }
+    table td, table th {
+      padding: 15px;
+      font-size: 1rem;
+      vertical-align: top
+    }
+    table td {
+      border: 1px solid;
+    }
+    table th {
+      font-weight: bold
+    }
+    ol, ul {
+      font-size: 16px;
+      position: relative;
+      margin: 0 auto 30px;
+      padding-left: 30px;
+      @include md {
+        font-size: 15px;
+      }
+    }
+    ul {
+      list-style: disc;
+      border: 1px solid #3333;
+    }
+    ol {
+      list-style: decimal;
+      padding-left: 4em;
+      padding-top:3em;
+      margin-right: 40%;
+      width: 50%;
+      background-color: #fef5e0;
+      border: 2px solid $sub_color;
+    }
+    li {
+      padding: 0.4em;
+    }
+    p {
+      font-size: 16px;
+      line-height: 2.2;
+      padding-left: 35px;
+      padding-right: 35px;
+      font-weight: 300;
+      margin-bottom: 10px;
+      margin-top: 20px;
+      font-family: $notosans ;
+      @include md {
+        font-size: 14px;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      @include sm {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+    }
+    .has-luminous-vivid-amber-background-color {
+      padding: 3px 10px;
+    }
+    blockquote p {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    pre {
+      margin-top: 28px;
+      margin-bottom: 28px;
+      padding: .8em 1em;
+      background: #DAE3E8;
+      border-radius: 4px;
+      font-family: Menlo,Consolas,monaco,monospace;
+      color: #1e1e1e;
+    }
+    code, kbd {
+      padding: 3px 10px 5px 10px;
+      color: #000;
+      font-size: 20px;
+      line-height: 1.5;
+      font-family: 'Ricty Diminished','monospace';
+      @include md {
+        font-size: 14px;
+      }
+    }
+    mark {
+      color: black;
+    }
+  }//blog_article
+
+  .related_key_word {
+    margin-bottom: 60px;
+    margin-top: 140px;
+    border: solid 1px #DDDDDD;
+    background-color: rgba(248, 249, 247, 0.3);
+    @include lg {
+      margin-top: 60px;
+      margin-bottom: 70px;
+    }
+    @include md {
+      margin-top: 20px;
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 2.6em;
+      margin: 10px auto 40px;
+      line-height: 1.6;
+      letter-spacing: 2px;
+      color: $text_color;
+      text-align: center;
+      @include lg {
+        font-size: 2rem;
+      }
+      @include md {
+        font-size: 1.2rem;
+      }
+      &:before{
+        content:' ';
+        display:inline-block;
+        width:22px;
+        height:22px;
+        background-color:$main_color;
+        transform: rotate(45deg);
+        margin-right: 0.5em;
+        @include md {
+          width:16px;
+          height:16px;
+        }
+      }
+    }
+
+    ul.related_list {
+      display: flex;
+      justify-content: center;
+      flex-flow: row-reverse wrap;
+      li {
+        list-style: none;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        background-color: $primary_color;
+        position: relative;
+        padding: 5px 3px ;
+        border-radius: 3px;
+        margin-bottom: 35px;
+        margin-left: 25px;
+        &:before, &:after {
+          content: "";
+          position: absolute;
+          width: 5px;
+          height: 45px;
+          background-color: $sub_color;
+          transform: rotate(90deg);
+        }
+        &:before {
+          top: -22px;
+          left: 13.5px;
+          @include md {
+            left: 11.5px;
+          }
+        }
+        &:after {
+          bottom: -23px;
+          right: 15.5px;
+          @include md {
+            right: 13px;
+          }
+        }
+        a {
+          font-size: 14px;
+          background-color: $base_color;
+          text-align: center;
+          color: $text_color2;
+          display: block;
+          width: 100%;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          text-decoration: none;
+          transition: $anime;
+          @include md {
+            font-size: 12px;
+          }
+          &:hover {
+            background-color: $main_color;
+            color: $base_color;
+          }
+          &:before {
+            content: '#';
+          }
+        }
+      }
+    }
+  }
+
+} // .single-blogs

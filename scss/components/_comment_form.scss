@@ -1,0 +1,118 @@
+//コメントフォームスタイル
+
+.comments {
+  padding: 5%;
+  margin-bottom: 10%;
+  border: 1px solid $primary_color;
+  .comment_head,#reply-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    border-bottom: 1px solid $primary_color;
+    padding-left: 10px;
+    @include sm {
+      margin-bottom: 15px;
+    }
+    &:before{
+      content:' ';
+      display:inline-block;
+      width:16px;
+      height:16px;
+      background-color:$main_color;
+      transform: rotate(45deg);
+      margin-right: 0.5em;
+      @include md {
+        width:13px;
+        height:13px;
+        margin-bottom: 2px;
+      }
+    }
+    @include md(728px) {
+      font-size: 1.2rem;
+    }
+    @include sm {
+      font-size: 1rem;
+      padding-left: 10px;
+    }
+    + p {
+      text-align: right;
+      font-size: 12px;
+      margin-bottom: 20px;
+      @include md {
+        padding-right: 0;
+      }
+      &:before{
+        content:' ';
+        display:inline-block;
+        width:12px;
+        height:12px;
+        background-color:$sub_color;
+        transform: rotate(45deg);
+        margin-right: 0.5em;
+        @include md {
+          width:10px;
+          height:10px;
+          margin-bottom: 2px;
+        }
+      }
+    }
+  }
+  .comments-list {
+    padding-left: 3%;
+    p {
+      margin-bottom: 70px;
+    }
+  }
+}
+.comment-respond {
+  border: solid 1px #DDDDDD;
+  background-color: transparentize($base_color,0.7);
+  #reply-title {
+    border: none;
+    padding-top: 5%;
+    padding-left: 50px;
+    @include md {
+      padding-left: 25px;
+    }
+  }
+  #comment {
+    display: block;
+    border: solid 0.5px #AAAAAA;
+    width: 60%;
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 5px 1px $sub_color;
+    }
+    @include sm {
+      width: 80%;
+    }
+  }
+  #author,
+  #email,
+  #url {
+    display: block;
+    height: 20px;
+    width: 20%;
+    padding: 0 10px;
+    padding-right: 0px;
+    border-radius: 5px;
+    @include sm {
+      width: 40%;
+    }
+  }
+  #submit {
+    display: inline-block;
+    padding: 1em 2em;
+    color: #FFF;
+    background: $main_color;
+    border: solid 1px #036ea0;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    &:active {
+      border: solid 1px #03A9F4;
+      box-shadow: none;
+      text-shadow: none;
+    }
+  }
+}
