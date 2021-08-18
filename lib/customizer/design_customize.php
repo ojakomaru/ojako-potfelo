@@ -29,7 +29,7 @@ function design_customizer($wp_customize) {
           $postType_name = esc_html( get_post_type_object( $postType )->labels->name);
           $postType_slug = get_post_type_object($postType)->name;
           
-          if ( $postType_slug === 'post' ||
+          if ( $postType_slug  === 'post' ||
                 $postType_slug === 'category' ||
                 $postType_slug === 'post_tag') {
             continue;
