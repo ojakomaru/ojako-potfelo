@@ -49,15 +49,6 @@
     $i++;
   }
 
-  // wp.customize('home', function (value) {
-  //   value.bind(function (newval) {
-  //     $('inner').removeClass('column1');
-  //     $('inner').removeClass('column2');
-  //     $('inner').removeClass('column1_noside');
-  //     $('inner').addClass(newval);
-  //   });
-  // });
-
   // IDをまとめて即時変更する
   const IdCustomizer = (PageElement) => {
     PageElement.forEach((id) => {
