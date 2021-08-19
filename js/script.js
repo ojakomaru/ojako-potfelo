@@ -1,8 +1,8 @@
 //headerとページトップボタンを画面に出現＆fixedにする
-const header = document.getElementById("header");
-const pageTopBtn = document.getElementById("scroll_top");
+const header      = document.getElementById("header");
+const pageTopBtn  = document.getElementById("scroll_top");
 const serviceLink = document.getElementById("product_link");
-const key_visual = document.getElementById("key_visual");
+const key_visual  = document.getElementById("key_visual");
 document.addEventListener("scroll", () => {
   if (key_visual.getBoundingClientRect().bottom < 0) {
     header.classList.add("active");
@@ -87,11 +87,11 @@ addShowContents(".sp_frame",0.5);
 addShowContents(".pc_frame",0.3);
 addShowContents(".main_item_text",0.2);
 addShowContents(".item_about");
-addShowContents("#proposing_1", 1.2);
-addShowContents("#proposing_2", 1.2);
+addShowContents("#proposing_1", 1.6);
+addShowContents("#proposing_2", 1.6);
 
 //アコーディオンタブスイッチ
-const accoTabs = document.querySelectorAll(".acco_tav");
+const accoTabs   = document.querySelectorAll(".acco_tav");
 const insideText = document.querySelectorAll(".acco_tav .inside_text");
 for (let i = 0; i < accoTabs.length; i++) {
   accoTabs[i].addEventListener("click",function() {
@@ -125,7 +125,7 @@ let styleString = 'content:" ";';
 addStyle('.bar::after', styleString);
 
 //タブ切り替えスイッチ
-const tabElements = document.querySelectorAll(".wp_tabs li a");
+const tabElements      = document.querySelectorAll(".wp_tabs li a");
 const contentsElements = document.querySelectorAll(".wp_contents .merit");
 for (let i = 0; i < tabElements.length; i++) {
   tabElements[i].addEventListener("click",function(e) {
@@ -140,10 +140,10 @@ for (let i = 0; i < tabElements.length; i++) {
 }
 
 //モーダルウィンドウ
-const modalOpen = document.getElementById("modal_open");
+const modalOpen  = document.getElementById("modal_open");
 const modalClose = document.getElementById("modal_close");
-const modal = document.getElementById("modal");
-const mask =   document.getElementById("mask");
+const modal      = document.getElementById("modal");
+const mask       = document.getElementById("mask");
 if(modalOpen){
   modalOpen.addEventListener("click", (e) => {
     e.preventDefault();
@@ -167,7 +167,7 @@ if (mask) {
 
 //制作実績絞り込み
 const productions = document.querySelectorAll(".production_kind li");
-const proTerms = document.querySelectorAll(".main_item_text h2");
+const proTerms    = document.querySelectorAll(".main_item_text h2");
 const parentPost = (element) => {
   return element.parentNode.parentNode.parentNode.parentNode;
 }
