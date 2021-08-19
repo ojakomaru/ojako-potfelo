@@ -4,7 +4,6 @@
   <div class="key_movi">
     <video autoplay loop muted  id="bgvid">
       <source src="<?php echo get_stylesheet_directory_uri(); ?>/videos/doukutu.webm" type="video/webm">
-      <source src="<?php echo get_stylesheet_directory_uri(); ?>/videos/doukutu.webm" type="video/mp4">
     </video>
 
     <div id="welcome-text">ようこそ!</div>

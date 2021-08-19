@@ -27,9 +27,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 ?>
 <header id="header">
   <?php
-  if( display_header_text() ) {
-    oja_custom_title();
-  }
+  if( display_header_text() ) { oja_custom_title(); }
   ?>
 
   <?php if ( has_nav_menu( 'header-menu' ) ) : ?>
