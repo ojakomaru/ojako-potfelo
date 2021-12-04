@@ -3,7 +3,7 @@
 <head>
 <!-- metaTags -->
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <!-- Analytics Settings -->
 <meta name = "yandex-verification" content = "9047b3dda1ff179f" />
 <meta name="google-site-verification" content="kZMO3VWc9vz6WRxT-fnd1YH1NC9XocnKWt7ibFhIqkA" />
