@@ -15,7 +15,7 @@
     </div>
   </div><!-- key_movi -->
 </div><!-- key_visual -->
-<div class="inner"><!-- フッターまでつづく -->
+<div class="container"><!-- フッターまでつづく -->
   <main class="main">
     <section class="blog_article">
       <time><?php the_time('Y年m月d日'); ?></time>

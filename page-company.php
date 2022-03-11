@@ -13,15 +13,20 @@ Template Name: 製作者紹介ページ
       <source src="<?php echo get_stylesheet_directory_uri(); ?>/videos/production-ID_4146415.webm" type="video/mp4">
     </video>
 
-    <div id="taxonomy-text">製作者の紹介</div>
-    <div class="welcome-text">
+    <div class="page-title">
       <h1 id="animation-text"><?php echo $page->post_title;?></h1>
-    </div><!-- welcome-text -->
+    </div>
+    <div id="taxonomy-text">製作者の紹介</div>
 
   </div><!-- key_movi -->
 </section><!--key_visual-->
 
-<div class="inner <?php echo layout_classname($page->post_name); ?>"><!-- フッターまでつづく -->
+<div class="container <?php echo layout_classname($page->post_name); ?>"><!-- フッターまでつづく -->
+  <?php if ( is_active_sidebar( 'main-content-top-widget-area' ) ) : ?>
+    <section class="content-top-widget">
+      <?php dynamic_sidebar( 'main-content-top-widget-area' ); ?>
+    </section>
+  <?php endif; ?>
   <main class="main">
     <div class="active_head" id="profile">
       <h3 class="text-frame">製作者の自己紹介</h3>
@@ -37,25 +42,23 @@ Template Name: 製作者紹介ページ
     ?>
     <section class="introduction">
       <div class="profile">
-        <div class="prof">
-          <h2 id="creator_name_customizer" class="sequential">
-            <?php echo esc_html($creator_name); ?>
-          </h2>
-          <dl>
-            <dt class="sequential">生年月日</dt>
-            <dd class="sequential">10月12日</dd>
-            <dt class="sequential">血液型</dt>
-            <dd class="sequential">A型</dd>
-            <dt class="sequential">出身地</dt>
-            <dd id="oja_birth_place_customizer" class="sequential">
-              <?php echo esc_html($oja_birth_place); ?>
-            </dd>
-            <dt class="sequential">メールアドレス</dt>
-            <dd id="creator_email_customizer" class="sequential">
-              <?php echo esc_html($creator_email); ?>
-            </dd>
-          </dl>
-        </div>
+        <h2 id="creator_name_customizer" class="sequential">
+          <?php echo esc_html($creator_name); ?>
+        </h2>
+        <dl>
+          <dt class="sequential">生年月日</dt>
+          <dd class="sequential">10月12日</dd>
+          <dt class="sequential">血液型</dt>
+          <dd class="sequential">A型</dd>
+          <dt class="sequential">出身地</dt>
+          <dd id="oja_birth_place_customizer" class="sequential">
+            <?php echo esc_html($oja_birth_place); ?>
+          </dd>
+          <dt class="sequential">メールアドレス</dt>
+          <dd id="creator_email_customizer" class="sequential">
+            <?php echo esc_html($creator_email); ?>
+          </dd>
+        </dl>
       </div><!--profile-->
       <p id="about_summary_customizer" >
         <strong id="ojako_business_customizer" >
@@ -145,7 +148,7 @@ Template Name: 製作者紹介ページ
     </div><!-- acco_tav -->
 
     <div class="active_head" id="wp_recommend">
-      <h2 class="text-frame c_head">WordPress<br>のカスタマイズ承ります</h2>
+      <h2 class="text-frame c_head">WordPress<br>カスタマイズ承ります</h2>
     </div>
     <h3 class="active_greeting">
       <strong>そもそもWordPress（ワードプレス）とは？</strong>
@@ -160,41 +163,42 @@ Template Name: 製作者紹介ページ
     <h3 class="active_greeting">
       <strong>WordPressで出来ること、メリット</strong>
     </h3>
-    <ul class="wp_tabs">
-      <li><a href="" class="active">メリット1</a></li>
-      <li><a href="">メリット2</a></li>
-      <li><a href="">メリット3</a></li>
-      <li><a href="">メリット4</a></li>
-    </ul>
-    <ul class="wp_contents">
-    <li class="merit active">
-        <h5>更新が簡単</h5>
-        <p>HTMLやCSS（プログラミング）の知識が無くてもホームページの内容の更新や記事の投稿の管理ができるように、管理画面のブラウザから利用できます。<br>前述のマークアップ言語やプログラミング言語の知識がなくても、EXCELやWordやPowerPointなど使用したことがあるユーザーであればたやすく使用できてしまいます。</p>
-    </li>
+    <section class="wp_exp">
+      <ul class="wp_tabs">
+        <li><a href="" class="active">メリット1</a></li>
+        <li><a href="">メリット2</a></li>
+        <li><a href="">メリット3</a></li>
+        <li><a href="">メリット4</a></li>
+      </ul>
+      <ul class="wp_contents">
+        <li class="merit active">
+          <h5>更新が簡単</h5>
+          <p>HTMLやCSS（プログラミング）の知識が無くてもホームページの内容の更新や記事の投稿の管理ができるように、管理画面のブラウザから利用できます。<br>前述のマークアップ言語やプログラミング言語の知識がなくても、EXCELやWordやPowerPointなど使用したことがあるユーザーであればたやすく使用できてしまいます。</p>
+        </li>
 
-    <li class="merit">
-        <h5>画像、投稿の管理削除も容易</h5>
-        <p>記事内やメインページの画像を挿入する場合も管理画面で全て完結することができます。<br>
-        サーバーに直接ログインして画像をアップロードする必要はなく、管理画面上で画像をドラッグアンドドロップするだけでアップロードすることができます。<br>アップロードした画像も一覧で管理することができます。
-        また、画像を記事に挿入する時も画像を選んで選択するだけで、記事上に画像の挿入が可能です。</p>
-    </li>
+        <li class="merit">
+          <h5>画像、投稿の管理削除も容易</h5>
+          <p>記事内やメインページの画像を挿入する場合も管理画面で全て完結することができます。<br>
+          サーバーに直接ログインして画像をアップロードする必要はなく、管理画面上で画像をドラッグアンドドロップするだけでアップロードすることができます。<br>アップロードした画像も一覧で管理することができます。
+          また、画像を記事に挿入する時も画像を選んで選択するだけで、記事上に画像の挿入が可能です。</p>
+        </li>
 
-    <li class="merit">
-        <h5>複数人での編集が可能</h5>
-        <p>
-        ユーザー管理機能が充実しており・投稿者・寄稿者・編集者・管理者そして・閲覧者の5つのユーザー権限が用意されており、それぞれの役割に応じて権限の広さを設定できます。<br>
-        これは大きな企業様での管理のしやすさで抜きん出ていると言えます。
-        </p>
-    </li>
+        <li class="merit">
+          <h5>複数人での編集が可能</h5>
+          <p>
+          ユーザー管理機能が充実しており・投稿者・寄稿者・編集者・管理者そして・閲覧者の5つのユーザー権限が用意されており、それぞれの役割に応じて権限の広さを設定できます。<br>
+          これは大きな企業様での管理のしやすさで抜きん出ていると言えます。
+          </p>
+        </li>
 
-    <li class="merit">
-        <h5>アクセス数の確認</h5>
-        <p>WordPressでは管理画面上で「閲覧数」の数値が表示されており、アクセス解析ツールを使わずにその記事のアクセス数の確認が簡単にできます。<br>
-        これらはマーケティングにおいての貴重なデータとなります。</p>
-    </li>
-    </ul><!-- wp-merit -->
-
- </main><!--main-->
+        <li class="merit">
+          <h5>アクセス数の確認</h5>
+          <p>WordPressでは管理画面上で「閲覧数」の数値が表示されており、アクセス解析ツールを使わずにその記事のアクセス数の確認が簡単にできます。<br>
+            これらはマーケティングにおいての貴重なデータとなります。</p>
+        </li>
+      </ul><!-- wp-merit -->
+    </section>
+</main><!--main-->
 <?php
   if (layout_classname($page->post_name) !== 'column1_noside'):
   ?>

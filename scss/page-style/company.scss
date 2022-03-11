@@ -1,6 +1,8 @@
 @charset "UTF-8";
+@import "../config/config";
+@import "../config/mixin";
 .page-id-49 {
-
+  //videoスタイル
   video#bgvid {
     max-height: 480px;
   }
@@ -13,22 +15,30 @@
   //keyビジュアルスタイル
   @include xl {
     .key_visual {
-      @include bg_img("../img/yoruwagasa.jpg");
-      position: relative;
+      background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)),
+      url(../img/yoruwagasa.jpg);
+      background-size: cover;
+      background-position: 0 75%;
+      &:before {
+        padding-top: 35%;
+      }
     }
   }
-  .welcome-text {
+  .page-title {
     @include xl {
       bottom: -15%;
     }
     @include lg {
       bottom: -50%;
     }
+    @include sm {
+      bottom: -70%;
+    }
     h1#animation-text {
       background: -webkit-linear-gradient(left,#fff,#fff);
       background-clip: text;
       -webkit-background-clip: text;
-      font-size: 4.2rem;
+      font-size: 4rem;
       @include xl {
         font-size: 3.4rem;
       }
@@ -43,7 +53,7 @@
         font-size: 2rem;
       }
       @include s {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         font-weight: 600;
       }
       & > span {
@@ -59,6 +69,10 @@
     display: inline-block;
     text-align: center;
     background: $sub_color;
+    @include md {
+      bottom: 0;
+      right: 0;
+    }
     > span {
     color: $primary_color;
     padding-left: 3px;
@@ -82,6 +96,7 @@
       @include md {
         font-size: 1.7rem;
         font-weight: 500;
+        line-height: 1.7;
       }
       @media screen and (max-width: 698px) {
         font-size: 1.5rem;
@@ -90,11 +105,13 @@
         font-size: 1.3rem;
       }
       @include s {
-        font-size: 1.1rem;
+        font-size: .8rem;
+        padding-left: 1px;
+        padding-right: 1px;
       }
     }
   }
-  
+
   @keyframes c-slidein {
     0% {
       transform: translateY(30px);
@@ -448,17 +465,28 @@
      opacity: 1;
     }
   }
-  .prof h2 {
+  h2 {
     color: #000;
     font-size: 4.2em;
     font-weight: 700;
     position: absolute;
     top: 0%;
     left: 25%;
+    @include md {
+      font-size: 3.2em;
+      font-weight: 600;
+    }
+    @include sm {
+      font-size: 2.6em;
+      font-weight: 600;
+      left: 22%;
+    }
+    @include s {
+      font-size: 2.3em;
+    }
   }
-}
-  
-  .prof dl {
+
+  dl {
     dt, dd {
       font-size: 2em;
       font-weight: 600;
@@ -470,12 +498,20 @@
       position: absolute;
       left: 7%;
       top: 17%;
+      @include sm {
+        left: 3%;
+        font-size: 1.7em;
+      }
     }
     
     dd:first-of-type {
       position: absolute;
       left: 14%;
       top: 26%;
+      @include sm {
+        left: 9%;
+        font-size: 1.7em;
+      }
     }
     
     dt:nth-of-type(2) {
@@ -483,6 +519,10 @@
       left: 11%;
       top: 53%;
       font-size: 3em;
+      @include sm {
+        font-size: 2em;
+        left: 4%;
+      }
     }
     
     dd:nth-of-type(2) {
@@ -490,6 +530,10 @@
       left: 13%;
       top: 65%;
       font-size: 3em;
+      @include sm {
+        font-size: 2em;
+        left: 4%;
+      }
     }
     
     dt:nth-of-type(3) {
@@ -497,6 +541,13 @@
       right: 45%;
       bottom: 40%;
       font-size: 3.5em;
+      @include md {
+        font-size: 3em;
+        font-weight: 500;
+      }
+      @include sm {
+        font-size: 2.8em;
+      }
     }
     
     dd:nth-of-type(3) {
@@ -504,6 +555,16 @@
       right: 17%;
       bottom: 40%;
       font-size: 3.3em;
+      @include lg {
+        bottom: 28%;
+        font-size: 3em;
+      }
+      @include sm {
+        font-size: 2.8em;
+      }
+      @include s {
+        font-size: 2.4em;
+      }
     }
     
     dt:nth-of-type(4) {
@@ -511,6 +572,15 @@
       right: 30%;
       bottom: 8%;
       font-size: 2em;
+      @include sm {
+        right: 30%;
+        bottom: 7%;
+        font-size: 1.4em;
+      }
+      @include s {
+        right: 5%;
+        font-size: 1.1em;
+      }
     }
     
     dd:nth-of-type(4) {
@@ -518,98 +588,25 @@
       right: -3%;
       bottom: -2%;
       font-size: 2.5em;
-    }
-  }
-  
-  @media screen and (max-width: 992px) {
-    .prof dl dd:nth-of-type(3) {
-      bottom: 28%;
-      font-size: 3em;
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    .prof dl dd:nth-of-type(4) {
-      right: 8%;
-      font-size: 2.1em;
-    }
-    
-    .introduction .profile .prof h2 {
-      font-size: 3.2em;
-      font-weight: 600;
-    }
-    
-    .prof dl dt:nth-of-type(3) {
-      font-size: 3em;
-      font-weight: 500;
-    }
-  }
-  
-  @media screen and (max-width: 543px) {
-    .prof dl {
-      dd:nth-of-type(2), dt:nth-of-type(2) {
-        font-size: 2em;
-        left: 4%;
+      @include md {
+        right: 8%;
+        font-size: 2.1em;
       }
-    }
-    
-    .introduction .profile .prof h2 {
-      font-size: 2.6em;
-      font-weight: 600;
-      left: 22%;
+      @include sm {
+        right: 5%;
+        font-size: 1.9em;
+      }
       @include s {
-        font-size: 2.3em;
-      }
-    }
-    
-    .prof dl {
-      dt:first-of-type {
-        left: 3%;
-        font-size: 1.7em;
-      }
-      
-      dd:first-of-type {
-        left: 9%;
-        font-size: 1.7em;
-      }
-      
-      dt:nth-of-type(3) {
-        font-size: 2.8em;
-      }
-      
-      dd {
-        &:nth-of-type(3) {
-          font-size: 2.8em;
-          @include s {
-            font-size: 2.4em;
-          }
-        }
-        
-        &:nth-of-type(4) {
-          right: 5%;
-          font-size: 1.9em;
-          @include s {
-            font-size: 1.4em;
-            bottom: 0;
-          }
-        }
-      }
-      
-      dt:nth-of-type(4) {
-        right: 30%;
-        bottom: 7%;
         font-size: 1.4em;
-        @include s {
-          right: 5%;
-          font-size: 1.1em;
-        }
+        bottom: 0;
       }
     }
-  }
+  } //dl
+} //.introduction .profile
 
-  /*================================
-  WordPress解説スタイル
-  ===================================*/
+
+//WordPress解説スタイル
+
   .wp_tabs {
     display: flex;
     width: 100%;

@@ -1,4 +1,3 @@
-
 <!-- 記事内検索フォーム -->
 <form action="<?php echo home_url('/'); ?>" method="GET">
   <div class="search">

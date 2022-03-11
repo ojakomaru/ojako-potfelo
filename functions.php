@@ -6,7 +6,7 @@ require_once locate_template('lib/custom_posts.php');// カスタム投稿生成
 require_once locate_template('lib/breadcrumbs.php'); // パンくずリストの関数
 require_once locate_template('lib/paginations.php'); // ページネーションの関数
 require_once locate_template('lib/widgets.php');     // サイドバー、ウィジェットの関数
-require_once locate_template('lib/customizer/customizer.php');     // カスタマイズ機能の関数
+require_once locate_template('lib/customizer/customizer.php');  // カスタマイズ機能の関数
 
 //コメント欄のHTMLを設定
 function custom_comment_list($comment, $args, $depth) {
@@ -63,6 +63,4 @@ function ojako_excerpt_mblength ($length) {
   return $length;
 }
 add_filter('excerpt_mblength','ojako_excerpt_mblength',999);
-
-
 

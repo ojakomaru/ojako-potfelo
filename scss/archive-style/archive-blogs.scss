@@ -1,6 +1,8 @@
 @charset "UTF-8";
-
+@import "../config/config";
+@import "../config/mixin";
 .post-type-archive-blogs {
+  // 目録を表示しない
   #pc_nav {
     visibility: hidden;
     height: 0;
@@ -22,32 +24,29 @@
   //keyビジュアルスタイル
   @include xl {
     .key_visual {
-      @include bg_img('../img/sakasa_kouyou.jpg');
+      background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)),
+      url(../img/sakasa_kouyou.jpg);
+      background-size: cover;
       position: relative;
+      &:before {
+        padding-top: 35%;
+      }
     }
   }
-  .welcome-text {
+  .page-title {
     @include xl {
       bottom: -15%;
     }
     @include lg {
       bottom: -50%;
     }
+    @include sm {
+      bottom: -70%;
+    }
     h1#animation-text {
       background: -webkit-linear-gradient(left,#fff,#fff);
       background-clip: text;
       -webkit-background-clip: text;
-      font-size: 4.2rem;
-      @include xl {
-        font-size: 3.4rem;
-      }
-      @include lg {
-        font-size: 3rem;
-        padding: 0;
-      }
-      @include md {
-        font-size: 2.6rem;
-      }
       @include sm {
         font-size: 2rem;
       }
@@ -68,6 +67,10 @@
     display: inline-block;
     text-align: center;
     background: $sub_color;
+    @include md {
+      bottom: 0;
+      right: 0;
+    }
     > span {
     color: $primary_color;
     padding-left: 3px;
@@ -90,6 +93,7 @@
       @include md {
         font-size: 1.7rem;
         font-weight: 500;
+        line-height: 1.7;
       }
       @media screen and (max-width: 698px) {
         font-size: 1.5rem;
@@ -99,6 +103,8 @@
       }
       @include s {
         font-size: 1.1rem;
+        padding-left: 1px;
+        padding-right: 1px;
       }
     }
   }

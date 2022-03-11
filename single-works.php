@@ -13,7 +13,7 @@
   </div><!-- key_movi -->
 </section><!--key_visual-->
 
-<div class="inner"><!-- フッターまでつづく -->
+<div class="container"><!-- フッターまでつづく -->
   <main class="main">
     <div class="active_head">
         <h3 class="text-frame"><?php the_title(); ?></h3>

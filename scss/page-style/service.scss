@@ -1,5 +1,6 @@
 @charset "UTF-8";
-
+@import "../config/config";
+@import "../config/mixin";
 .page-id-42 {
   .key_visual {
     @include bg_img('../img/iitenki.jpg');
@@ -14,7 +15,7 @@
     @include sm {
       min-height: 40vh;
     }
-    .welcome-text {
+    .page-title {
       @include xl {
         bottom: -15%;
       }

@@ -3,9 +3,8 @@
 videokeyビジュアルスタイル
 ===================================*/
 .single-blogs {
-
   @include two_column;
-  .inner .main {
+  .container .main {
     @include lg {
       margin-bottom: 20%;
     }
@@ -26,7 +25,7 @@ videokeyビジュアルスタイル
   }
   .key_visual {
     @include xl {
-      @include bg_img('../img/sakasa_kouyou.jpg');
+      @include bg_img("../img/sakasa_kouyou.jpg");
       position: relative;
       min-height: 250px;
       @include lg {
@@ -38,7 +37,7 @@ videokeyビジュアルスタイル
       .key_movi {
         position: static;
       }
-      video#bgvid{
+      video#bgvid {
         display: none;
       }
     }
@@ -52,7 +51,7 @@ videokeyビジュアルスタイル
       bottom: -50%;
     }
     h1#animation-text {
-      background: -webkit-linear-gradient(left,#fff,#fff);
+      background: -webkit-linear-gradient(left, #fff, #fff);
       background-clip: text;
       -webkit-background-clip: text;
       font-size: 4.2rem;
@@ -78,7 +77,7 @@ videokeyビジュアルスタイル
       }
     }
   }
-  
+
   #taxonomy-text {
     position: absolute;
     bottom: 10%;
@@ -87,15 +86,15 @@ videokeyビジュアルスタイル
     text-align: center;
     background: $sub_color;
     > span {
-    color: $primary_color;
-    padding-left: 3px;
-    padding-right: 3px;
-    display: inline-block;
-    font-size: 3rem;
-    animation-name:popIn;
-    animation-timing-function: cubic-bezier(0, 1.23, 1, 0.99);
-    animation-duration: 1.5s;
-    animation-fill-mode: forwards;
+      color: $primary_color;
+      padding-left: 3px;
+      padding-right: 3px;
+      display: inline-block;
+      font-size: 3rem;
+      animation-name: popIn;
+      animation-timing-function: cubic-bezier(0, 1.23, 1, 0.99);
+      animation-duration: 1.5s;
+      animation-fill-mode: forwards;
       @include xl {
         font-size: 2.3rem;
       }
@@ -136,7 +135,8 @@ videokeyビジュアルスタイル
   .smb-balloon__body {
     width: auto;
   }
-  .text-frame,.editor-post-title .editor-post-title__input {
+  .text-frame,
+  .editor-post-title .editor-post-title__input {
     font-size: 2rem;
     color: $main_color;
     text-align: left;
@@ -144,7 +144,8 @@ videokeyビジュアルスタイル
     margin-bottom: 50px;
     padding-left: 20px;
     background-color: $accent_color;
-    &::after,&::before {
+    &::after,
+    &::before {
       display: none;
     }
     @include lg {
@@ -173,11 +174,11 @@ videokeyビジュアルスタイル
       padding-right: 20px;
       padding-top: 20px;
     }
-    
+
     time:before {
-      content: '投稿更新日：'
+      content: "投稿更新日：";
     }
-    
+
     h3 {
       font-size: 20px;
       color: $main_color;
@@ -185,9 +186,9 @@ videokeyビジュアルスタイル
       letter-spacing: 3.5px;
       line-height: 1.8;
       margin-bottom: 50px;
-      position:relative;
+      position: relative;
       &::before {
-        content: ' ';
+        content: " ";
         display: inline-block;
         width: 18px;
         height: 18px;
@@ -199,14 +200,14 @@ videokeyビジュアルスタイル
         font-size: 18px;
       }
     }
-    
+
     h2 {
       font-size: 22px;
       font-weight: 700;
       letter-spacing: 1.8px;
       margin-bottom: 65px;
       color: $main_color;
-      transform: skew(-20deg,0deg);
+      transform: skew(-20deg, 0deg);
       border-bottom: 3px solid $main_color;
       padding-left: 25px;
       line-height: 1.8;
@@ -221,7 +222,7 @@ videokeyビジュアルスタイル
         }
       }
     }
-    
+
     h4 {
       font-size: 20px;
       margin: 20px 0px;
@@ -258,7 +259,6 @@ videokeyビジュアルスタイル
     span {
       font-size: 1rem;
       font-weight: 600;
-      padding: 0.5%;
     }
     .tadv-color {
       font-size: 18px;
@@ -271,14 +271,14 @@ videokeyビジュアルスタイル
       font-weight: bold;
       word-break: break-word;
       padding: 0px 5px;
-      font-family:  $lato;
+      font-family: $lato;
       @include sm {
         font-size: 16px;
       }
     }
     em {
       font-style: italic;
-      font-weight: bold
+      font-weight: bold;
     }
     blockquote {
       margin-left: 25px;
@@ -297,9 +297,13 @@ videokeyビジュアルスタイル
       text-align: center;
       color: $text_color;
     }
+    .wp-block-embed iframe {
+      max-width: 100%;
+      position: static !important;
+    }
     img {
       max-width: 100%;
-      height: auto
+      height: auto;
     }
     table {
       width: 90%;
@@ -308,18 +312,19 @@ videokeyビジュアルスタイル
     thead {
       border-bottom: 3px solid;
     }
-    table td, table th {
+    table td,
+    table th {
       padding: 15px;
       font-size: 1rem;
-      vertical-align: top
+      vertical-align: top;
     }
     table td {
       border: 1px solid;
     }
     table th {
-      font-weight: bold
+      font-weight: bold;
     }
-    ol, ul {
+    ul {
       font-size: 16px;
       position: relative;
       margin: 0 auto 30px;
@@ -332,15 +337,15 @@ videokeyビジュアルスタイル
       list-style: disc;
       border: 1px solid #3333;
     }
-    ol {
-      list-style: decimal;
-      padding-left: 4em;
-      padding-top:3em;
-      margin-right: 40%;
-      width: 50%;
-      background-color: #fef5e0;
-      border: 2px solid $sub_color;
-    }
+    // ol {
+    //   list-style: decimal;
+    //   padding-left: 4em;
+    //   padding-top:3em;
+    //   margin-right: 40%;
+    //   width: 50%;
+    //   background-color: #fef5e0;
+    //   border: 2px solid $sub_color;
+    // }
     li {
       padding: 0.4em;
     }
@@ -352,7 +357,7 @@ videokeyビジュアルスタイル
       font-weight: 300;
       margin-bottom: 10px;
       margin-top: 20px;
-      font-family: $notosans ;
+      font-family: $notosans;
       @include md {
         font-size: 14px;
         padding-left: 30px;
@@ -370,21 +375,22 @@ videokeyビジュアルスタイル
       padding-left: 0;
       padding-right: 0;
     }
-    pre {
+    pre.wp-block-code {
       margin-top: 28px;
       margin-bottom: 28px;
-      padding: .8em 1em;
-      background: #DAE3E8;
+      padding: 0.8em 1em;
+      background: #dae3e8;
       border-radius: 4px;
-      font-family: Menlo,Consolas,monaco,monospace;
+      font-family: Menlo, Consolas, monaco, monospace;
       color: #1e1e1e;
     }
-    code, kbd {
+    code,
+    kbd {
       padding: 3px 10px 5px 10px;
       color: #000;
       font-size: 20px;
       line-height: 1.5;
-      font-family: 'Ricty Diminished','monospace';
+      font-family: "Ricty Diminished", "monospace";
       @include md {
         font-size: 14px;
       }
@@ -392,12 +398,24 @@ videokeyビジュアルスタイル
     mark {
       color: black;
     }
-  }//blog_article
+  } //blog_article
+
+  .gist .gist-data {
+    max-width: 722px;
+    max-height: 350px !important;
+  }
+  .gist .blob-code span {
+    font-size: 12px !important;
+    padding: 0 !important;
+  }
+  .gist .blob-code-inner {
+    white-space: pre-wrap;
+  }
 
   .related_key_word {
     margin-bottom: 60px;
     margin-top: 140px;
-    border: solid 1px #DDDDDD;
+    border: solid 1px #dddddd;
     background-color: rgba(248, 249, 247, 0.3);
     @include lg {
       margin-top: 60px;
@@ -421,17 +439,17 @@ videokeyビジュアルスタイル
       @include md {
         font-size: 1.2rem;
       }
-      &:before{
-        content:' ';
-        display:inline-block;
-        width:22px;
-        height:22px;
-        background-color:$main_color;
+      &:before {
+        content: " ";
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        background-color: $main_color;
         transform: rotate(45deg);
         margin-right: 0.5em;
         @include md {
-          width:16px;
-          height:16px;
+          width: 16px;
+          height: 16px;
         }
       }
     }
@@ -446,11 +464,12 @@ videokeyビジュアルスタイル
         text-orientation: upright;
         background-color: $primary_color;
         position: relative;
-        padding: 5px 3px ;
+        padding: 5px 3px;
         border-radius: 3px;
         margin-bottom: 35px;
         margin-left: 25px;
-        &:before, &:after {
+        &:before,
+        &:after {
           content: "";
           position: absolute;
           width: 5px;
@@ -491,11 +510,10 @@ videokeyビジュアルスタイル
             color: $base_color;
           }
           &:before {
-            content: '#';
+            content: "#";
           }
         }
       }
     }
   }
-
 } // .single-blogs

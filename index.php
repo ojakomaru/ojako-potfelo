@@ -25,7 +25,7 @@ $taxonomy_var    = get_taxonomy($slug);
   </div><!-- key_movi -->
 </section><!--key_visual-->
 
-<div class="inner <?php echo layout_classname($slug); ?>"><!-- フッターまでつづく -->
+<div class="container <?php echo layout_classname($slug); ?>"><!-- フッターまでつづく -->
   <main class="main">
     <div class="active_head">
       <h3 class="text-frame">「<?php echo $production->name; ?>」の一覧</h3>

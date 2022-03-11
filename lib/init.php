@@ -1,6 +1,6 @@
 <?php
 //管理用ツールバーを非表示にする
-add_filter('show_admin_bar','__return_false');
+// add_filter('show_admin_bar','__return_false');
 
 //テーマのサポート用
 function ojakomaru_theme_support() {

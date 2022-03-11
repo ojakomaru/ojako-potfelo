@@ -98,7 +98,7 @@ get_header();
   </div><!--key_movi-->
 </section><!-- key_visual -->
 
-<div class="inner <?php echo layout_classname($post->post_name); ?>"><!-- フッターまでつづく -->
+<div class="container <?php echo layout_classname($post->post_name); ?>"><!-- フッターまでつづく -->
 <main class="main">
   <?php
   if ($mode == 'input') { ?>

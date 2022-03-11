@@ -19,7 +19,7 @@ Template Name: 制作実績一覧ページ
   </div><!-- key_movi -->
 </section><!--key_visual-->
 
-<div class="inner <?php echo layout_classname('works'); ?>"><!-- フッターまでつづく -->
+<div class="container <?php echo layout_classname('works'); ?>"><!-- フッターまでつづく -->
   <main class="main">
     <div class="active_head">
         <h3 class="text-frame">制作実績の一覧</h3>

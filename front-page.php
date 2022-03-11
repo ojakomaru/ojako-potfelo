@@ -6,14 +6,14 @@
       <source src="<?php echo get_stylesheet_directory_uri(); ?>/videos/doukutu.webm" type="video/webm">
     </video>
 
+    <div class="page-title">
+      <h1 id="animation-text">おジャコのPortfolioへ</h1>
+    </div>
     <div id="welcome-text">ようこそ!</div>
-    <div class="welcome-text">
-      <h1 id="animation-text">おジャコのPortfolio<br>サイトへ</h1>
-    </div><!-- welcome-text -->
   </div><!-- key_movi -->
 </section><!-- key_visual -->
 
-<div class="inner <?php echo layout_classname('home'); ?>"><!-- フッターまでつづく -->
+<div class="container <?php echo layout_classname('home'); ?>"><!-- フッターまでつづく -->
   <main class="main">
     <div class="banner_slidecontents">
       <?php //バナー画像コンテンツ
@@ -26,7 +26,9 @@
     </div>
 
   <?php if ( is_active_sidebar( 'main-content-top-widget-area' ) ) : ?>
-    <?php dynamic_sidebar( 'main-content-top-widget-area' ); ?>
+    <section class="content-top-widget">
+      <?php dynamic_sidebar( 'main-content-top-widget-area' ); ?>
+    </section>
   <?php endif; ?>
 
     <div class="active_head">

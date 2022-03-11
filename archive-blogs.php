@@ -12,21 +12,26 @@ Template Name: ブログ一覧ページ
       <source src="<?php echo get_stylesheet_directory_uri(); ?>/videos/Japan-23525.webm" type="video/mp4">
     </video>
 
-    <div id="taxonomy-text">ブログ</div>
-    <div class="welcome-text">
-      <h1 id="animation-text">おジャコの目指せ出世魚！</h1>
+    <div id="taxonomy-text">日々の積み上げ</div>
+    <div class="page-title">
+      <h1 id="animation-text"><?php echo bloginfo('name');?></h1>
     </div><!-- welcome-text -->
-    
+
   </div><!-- key_movi -->
 </section><!--key_visual-->
 
-<div class="inner <?php echo layout_classname('blogs'); ?>"><!-- フッターまでつづく -->
+<div class="container <?php echo layout_classname('blogs'); ?>"><!-- フッターまでつづく -->
+  <?php if ( is_active_sidebar( 'main-content-top-widget-area' ) ) : ?>
+    <section class="content-top-widget">
+      <?php dynamic_sidebar( 'main-content-top-widget-area' ); ?>
+    </section>
+  <?php endif; ?>
   <main class="main">
     <div class="active_head">
       <h3 class="text-frame">記事一覧ページ</h3>
     </div>
-    
-<!-- 記事の条件検索 -->
+
+<!-- 記事の条件絞り込み検索 -->
 <?php
 $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
   $args = array(

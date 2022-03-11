@@ -1,13 +1,15 @@
 @charset "UTF-8";
 //トップへ戻るボタン
 
-#scroll_top.show,#product_link.show {
+#scroll_top.show,
+#product_link.show {
   opacity: 1;
   visibility: visible;
   transform: translateY(50px);
 }
 
-#scroll_top,#product_link {
+#scroll_top,
+#product_link {
   z-index: 1;
   position: fixed;
   right: 4%;

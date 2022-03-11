@@ -1,10 +1,9 @@
-
 <?php get_header(); ?>
 <?php
-  $slug         = get_queried_object()->taxonomy;
-  $oja_slug     = get_query_var($slug);
-  $oja_tag      = get_term_by('slug',$oja_slug,$slug);
-  $taxonomy_var = get_taxonomy($slug);
+$slug         = get_queried_object()->taxonomy;
+$taxonomy_var = get_taxonomy($slug);
+$oja_slug     = get_query_var($slug);
+$oja_tax      = get_term_by('slug',$oja_slug,$slug);
 ?>
 <div class="key_visual" id="key_visual">
   <div id="taxonomy-text"><?php echo $taxonomy_var->label; ?></div>
@@ -13,10 +12,10 @@
   </div>
 </div><!-- key_visual -->
 
-<div class="inner <?php echo layout_classname($slug); ?>"><!-- フッターまでつづく -->
-  <div class="main">
+<div class="container <?php echo layout_classname($slug); ?>"><!-- フッターまでつづく -->
+  <main class="main">
     <div class="active_head">
-      <h3 class="text-frame">「<?php echo $oja_tag->name; ?>」の記事</span></h3>
+      <h3 class="text-frame">「<?php echo $oja_tax->name; ?>」の記事</h3>
     </div>
 
     <!--  ループ開始  -->
@@ -31,12 +30,11 @@
         $args = array(
           'prev_next' => false,
         );
-          pagination( $args );
+      pagination( $args );
       endif;
       ?>
     </div>
-
-  </div><!--main-->
+  </main><!--main-->
 
   <?php
   if (layout_classname($slug) !== 'column1_noside'):
@@ -49,6 +47,6 @@
     get_template_part('template-parts/sidebar/sidebar-blogs_tags');
     ?>
   </aside>
-  <?php endif; ?>
+  <?php endif;?>
 
 <?php get_footer() ;?>

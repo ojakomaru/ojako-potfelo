@@ -107,13 +107,14 @@ function oja_register_blog() { //add_actionの２つのパラメーターを定�
 		"query_var"    => true,//特別なスラッグを与えない
 		"menu_position" => 6,
 		"supports"     => [ "title", "editor", "thumbnail",
-    'excerpt' ,//（抜粋）
-    'trackbacks' ,//（トラックバック送信）
-    'custom-fields',//（カスタムフィールド）
-    'comments',//（コメントの他、編集画面にコメント数のバルーンを表示する）
-    'revisions' ,//（リビジョンを保存する）
-    'page-attributes',//（メニューの順序。「親〜」オプションを表示するために hierarchical が true であること）
-    'post-formats'],
+      'excerpt' ,//（抜粋）
+      'trackbacks' ,//（トラックバック送信）
+      'custom-fields',//（カスタムフィールド）
+      'comments',//（コメントの他、編集画面にコメント数のバルーンを表示する）
+      'revisions' ,//（リビジョンを保存する）
+      'page-attributes',//（メニューの順序。「親〜」オプションを表示するために hierarchical が true であること）
+      'post-formats'
+    ],
 	];
 	register_post_type( "blogs", $args );
 

@@ -7,7 +7,7 @@ document.addEventListener("scroll", () => {
   if (key_visual.getBoundingClientRect().bottom < 0) {
     header.classList.add("active");
     pageTopBtn.classList.add("show");
-    serviceLink.classList.add("show");
+    serviceLink ? serviceLink.classList.add("show") : null ;
   } else {
     pageTopBtn.classList.remove("show");
     serviceLink.classList.remove("show");
@@ -27,11 +27,13 @@ pageTopScroll.addEventListener('click',() => {
 const sidebar = document.getElementById("pc_nav");
 const taglist = document.getElementById("taglist");
 window.addEventListener("scroll", function() {
-  const taglistDistance = taglist.getBoundingClientRect().bottom + taglist.clientHeight * .1;
-  if ( taglistDistance < 0 ) {
-    sidebar.classList.add("fix");
-  } else {
-    sidebar.classList.remove("fix");
+  if(taglist) {
+    const taglistDistance = taglist.getBoundingClientRect().bottom + taglist.clientHeight * .1;
+    if ( taglistDistance < 0 ) {
+      sidebar.classList.add("fix");
+    } else {
+      sidebar.classList.remove("fix");
+    }
   }
 })
 

@@ -7,7 +7,7 @@
   </div><!-- welcome-text -->
 
 </div><!-- key_visual -->
-<div class="inner"><!-- フッターまでつづく -->
+<div class="container"><!-- フッターまでつづく -->
 <main class="main">
   <div class="active_head">
     <?php if (isset($_GET['s']) && empty($_GET['s'])) ://検索フォームgetの値が入力されているか確認?>

@@ -17,6 +17,19 @@
     max-width: 48%;
     box-shadow: 0px 3px 4px #ccc, 0px 0px 1px 1px #fff inset;
     @include showAnimation ;
+    &:before {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 190px;
+      height: 600px;
+      content: "";
+      transform: translateX(130%) translateY(38%) rotate(49deg);
+      background-color: $sub_color;
+      @include sm {
+        transform: translateX(130%) translateY(45%) rotate(49deg);
+      }
+    }
     &:not(:nth-child(2n+1)) {
       margin-left: 20px;
       @include md {
@@ -60,7 +73,10 @@
     p {
       padding-left: 0;
       padding-right: 20px;
-      font-size: 0.8rem;
+      font-size: 1em;
+      @include md {
+        line-height: 1.8;
+      }
       &:last-of-type {
         margin-bottom: 0;
       }
@@ -78,9 +94,14 @@
       @include md {
         font-size: 1.5em;
         font-weight: 700;
+        line-height: 1.6;
         &:before {
           left: -21px;
         }
+      }
+      @include sm {
+        border-top: 2px solid $sub_color;
+        border-bottom: none;
       }
       @include s(428px) {
         font-size: 1.2em;
@@ -93,17 +114,6 @@
       font-size: 14px;
       font-weight: 300;
       padding: 1%;
-      position: relative;
-      &:before {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 190px;
-        height: 600px;
-        content: "";
-        transform: translateX(137%) translateY(40%) rotate(52deg);
-        background-color: $sub_color;
-      }
       @include md {
         font-size: 12px;
         font-weight: 400;
