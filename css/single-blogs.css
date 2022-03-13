@@ -1,45 +1,3 @@
-.single-blogs .container.column1 {
-  flex-direction: column;
-}
-
-@media screen and (max-width: 992px) {
-  .single-blogs .container.column2 {
-    flex-direction: column;
-  }
-}
-
-.single-blogs .container.column2 .main {
-  width: calc(100% - 280px - 2.5rem);
-  flex: unset;
-}
-
-@media screen and (max-width: 992px) {
-  .single-blogs .container.column2 .main {
-    margin: 0 auto;
-    width: 100%;
-  }
-}
-
-.single-blogs .container.column2 .aside {
-  flex: unset;
-  width: 280px;
-  margin-left: 2.4rem;
-}
-
-@media screen and (max-width: 992px) {
-  .single-blogs .container.column2 .aside {
-    margin-left: auto;
-    margin-right: auto;
-    width: 65%;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .single-blogs .container.column2 .aside {
-    width: 85%;
-  }
-}
-
 @media screen and (max-width: 992px) {
   .single-blogs .container .main {
     margin-bottom: 20%;
@@ -58,7 +16,7 @@
 }
 
 .single-blogs video#bgvid {
-  max-height: 260px;
+  max-height: 300px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -90,41 +48,47 @@
   }
 }
 
+@media screen and (max-width: 576px) {
+  .single-blogs .page-title {
+    bottom: -75%;
+  }
+}
+
 .single-blogs .page-title h1#animation-text {
   background: -webkit-linear-gradient(left, #fff, #fff);
   background-clip: text;
   -webkit-background-clip: text;
-  font-size: 4.2rem;
+  font-size: 3rem;
 }
 
 @media screen and (max-width: 1200px) {
   .single-blogs .page-title h1#animation-text {
-    font-size: 3.4rem;
+    font-size: 2.4rem;
   }
 }
 
 @media screen and (max-width: 992px) {
   .single-blogs .page-title h1#animation-text {
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 0;
   }
 }
 
 @media screen and (max-width: 768px) {
   .single-blogs .page-title h1#animation-text {
-    font-size: 2.6rem;
+    font-size: 1.6rem;
   }
 }
 
 @media screen and (max-width: 576px) {
   .single-blogs .page-title h1#animation-text {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 }
 
 @media screen and (max-width: 469px) {
   .single-blogs .page-title h1#animation-text {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
   }
 }
@@ -135,26 +99,18 @@
 
 .single-blogs #taxonomy-text {
   position: absolute;
-  bottom: 10%;
-  right: 6%;
-  display: inline-block;
-  text-align: center;
+  bottom: 0;
+  right: 0;
   background: #F8D76A;
-}
-
-@media screen and (max-width: 768px) {
-  .single-blogs #taxonomy-text {
-    bottom: 0;
-    right: 0;
-  }
 }
 
 .single-blogs #taxonomy-text > span {
   color: #9C9C9C;
-  padding-left: 3px;
-  padding-right: 3px;
+  padding-left: 2px;
+  padding-right: 2px;
   display: inline-block;
-  font-size: 3rem;
+  font-size: 2rem;
+  line-height: 1.6;
   animation-name: popIn;
   animation-timing-function: cubic-bezier(0, 1.23, 1, 0.99);
   animation-duration: 1.5s;
@@ -163,45 +119,33 @@
 
 @media screen and (max-width: 1200px) {
   .single-blogs #taxonomy-text > span {
-    font-size: 2.3rem;
-  }
-}
-
-@media screen and (max-width: 1120px) {
-  .single-blogs #taxonomy-text > span {
-    font-size: 2.1rem;
+    font-size: 1.8rem;
   }
 }
 
 @media screen and (max-width: 992px) {
   .single-blogs #taxonomy-text > span {
-    font-size: 1.9rem;
+    font-size: 1.6rem;
   }
 }
 
 @media screen and (max-width: 768px) {
   .single-blogs #taxonomy-text > span {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     font-weight: 500;
     line-height: 1.7;
   }
 }
 
-@media screen and (max-width: 698px) {
-  .single-blogs #taxonomy-text > span {
-    font-size: 1.4rem;
-  }
-}
-
 @media screen and (max-width: 576px) {
   .single-blogs #taxonomy-text > span {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 469px) {
   .single-blogs #taxonomy-text > span {
-    font-size: 1rem;
+    font-size: .8rem;
     padding-left: 1px;
     padding-right: 1px;
   }
@@ -389,8 +333,7 @@
 }
 
 .single-blogs .blog_article span {
-  font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .single-blogs .blog_article .tadv-color {

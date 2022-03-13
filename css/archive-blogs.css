@@ -107,27 +107,21 @@
 
 @media screen and (max-width: 1120px) {
   .post-type-archive-blogs #taxonomy-text > span {
-    font-size: 2.1rem;
+    font-size: 2rem;
   }
 }
 
 @media screen and (max-width: 992px) {
   .post-type-archive-blogs #taxonomy-text > span {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
   }
 }
 
 @media screen and (max-width: 768px) {
   .post-type-archive-blogs #taxonomy-text > span {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.7;
-  }
-}
-
-@media screen and (max-width: 698px) {
-  .post-type-archive-blogs #taxonomy-text > span {
-    font-size: 1.4rem;
   }
 }
 

@@ -128,7 +128,7 @@
 
 @media screen and (max-width: 469px) {
   .page-id-52 .key_visual #taxonomy-text > span {
-    font-size: 1rem;
+    font-size: 1  rem;
     padding-left: 1px;
     padding-right: 1px;
   }

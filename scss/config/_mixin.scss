@@ -76,35 +76,3 @@
   }
 }
 
-//2カラムレイアウト
-@mixin two_column {
-  .container.column1 {
-    flex-direction: column;
-  }
-  .container.column2 {
-    @include lg {
-      flex-direction: column;
-    }
-    .main {
-      width: calc(100% - 280px - 2.5rem);
-      flex: unset;
-      @include lg {
-        margin: 0 auto;
-        width: 100%;
-      }
-    }
-    .aside {
-      flex: unset;
-      width: 280px;
-      margin-left: 2.4rem;
-      @include lg {
-        margin-left: auto;
-        margin-right: auto;
-        width: 65%;
-      }
-      @include sm {
-        width: 85%;
-      }
-    }
-  }
-}

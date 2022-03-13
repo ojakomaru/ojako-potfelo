@@ -28,39 +28,8 @@ body {
     z-index: -1;
   }
 }
-.container {
-  max-width: 1140px;
-  margin: 50px auto 0px;
-  display: flex;
-  @include xl(1180px) {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
-  @include lg(972px) {
-    flex-direction: column;
-  }
-  @include md(662px) {
-    margin-top: 1.8rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .main {
-    flex: 1 1 68%;
-    @include lg(972px) {
-      margin: 0;
-    }
-  }
-  .aside {
-    flex: 1 1 20%;
-    margin-left: 2.5rem;
-    @include lg {
-      margin-left: 1.2rem;
-      margin-right: 1.2rem;
-    }
-  }
-}
 
-@include two_column;
+@import "components/layout";
 
 @import "components/header";
 
@@ -614,8 +583,6 @@ body {
 @import "components/breadcrumb";
 
 @import "components/footer";
-
-@import "single-style/single-blogs";
 
 @import "single-style/single-works";
 

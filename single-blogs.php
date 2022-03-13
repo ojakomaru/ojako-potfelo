@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php $page = get_post(); ?>
 <div class="key_visual" id="key_visual">
   <div class="key_movi">
     <video autoplay loop muted  id="bgvid">
@@ -6,9 +7,9 @@
       <source src="<?php echo get_stylesheet_directory_uri(); ?>/videos/Japan-23525.webm" type="video/mp4">
     </video>
 
-    <div id="taxonomy-text">ブログ</div>
+    <div id="taxonomy-text"><?php echo strtoupper($page->post_type); ?></div>
     <div class="page-title">
-      <h1 id="animation-text"><?php echo bloginfo('name');?></h1>
+      <h1 id="animation-text"><?php echo $page->post_title;?></h1>
     </div>
   </div><!-- key_movi -->
 </div><!-- key_visual -->
@@ -43,7 +44,7 @@
     comments_template('/template-parts/comments.php');
     ?>
   </main>
-<?php //endwhile; endif; ?>
+
   <aside class="aside">
     <?php
     get_sidebar();
