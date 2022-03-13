@@ -77,10 +77,9 @@ if ( isset($_POST['back']) && $_POST['back'] ) {
   }
 } else {
   unset($_SESSION);
-}
+} ?>
 
-get_header();
-?>
+<?php get_header(); ?>
 
 <section class="key_visual" id="key_visual">
   <div class="key_movi">
@@ -91,7 +90,7 @@ get_header();
 
     <?php if (have_posts()): while (have_posts()) : the_post(); ?>
     <div id="taxonomy-text"><?php the_title(); ?></div>
-    <div class="welcome-text">
+    <div class="page-title">
       <h1 id="animation-text"><?php echo strtoupper($post->post_name); ?></h1>
     </div><!-- welcome-text -->
 
@@ -99,6 +98,11 @@ get_header();
 </section><!-- key_visual -->
 
 <div class="container <?php echo layout_classname($post->post_name); ?>"><!-- フッターまでつづく -->
+<?php if ( is_active_sidebar( 'main-content-top-widget-area' ) ) : ?>
+  <section class="content-top-widget">
+    <?php dynamic_sidebar( 'main-content-top-widget-area' ); ?>
+  </section>
+<?php endif; ?>
 <main class="main">
   <?php
   if ($mode == 'input') { ?>
@@ -134,7 +138,7 @@ get_header();
       <div class="form_group">
         <label for="inputEmail">メールアドレス</label>
         <p class="require_item">必須</p><br>
-        <input type="email" name="email" id="inputEmail" class="form_email" value="<?php echo $_SESSION['email']; ?>" autocomplete="email" required><br>
+        <input type="email" name="email" id="inputEmail" class="form_email" value="<?php echo array($_SESSION['email']); ?>" autocomplete="email" required><br>
       </div><!-- form_group -->
       
       <div class="form_group">

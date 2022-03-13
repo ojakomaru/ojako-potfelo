@@ -27,14 +27,25 @@ function add_enqueue_files(){
 
   //メインCSSのエンキュー
   wp_css('main_css','/css/style.css');
+
   //製作者ページスタイル
   if (is_page('company')) {
     wp_css('company_style','/css/company.css');
-  } elseif(is_page('service')) {
+  }
+  //サービスページスタイル
+  elseif(is_page('service')) {
     wp_css('service-style', '/css/service.css');
   }
+  //contactページスタイル
+  elseif(is_page('contact')) {
+    wp_css('contact-style', '/css/contact.css');
+  }
+  //カスタム投稿アーカイブスタイル
   elseif( is_post_type_archive('blogs')) {
     wp_css('blogs_archive', '/css/archive-blogs.css');
+  }
+  elseif (is_singular('blogs')) {
+    wp_css('blogs-style', '/css/single-blogs.css');
   }
 }
 add_action('wp_enqueue_scripts', 'add_enqueue_files',1);

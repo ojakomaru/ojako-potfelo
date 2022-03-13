@@ -1,47 +1,44 @@
 @charset "UTF-8";
+@import "../config/config";
+@import "../config/mixin";
 .page-id-52 {
-
-  .main {
-    @include lg {
-      margin: unset;
-    }
-  }
   //キービジュアル
   .key_visual {
     @include xl {
-      @include bg_img('../img/teien3.jpg');
+      background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)),
+      url(../img/teien3.jpg);
+      background-size: cover;
+      background-position: 0 100%;
       position: relative;
+      &:before {
+        padding-top: 35%;
+      }
       .key_movi {
         position: static;
       }
     }
     .key_movi {
       height: 30vh;
+      @include xl {
+        height: 0;
+      }
     }
     
     //keyビジュアルスタイル
-    .welcome-text {
+    .page-title {
       @include xl {
         bottom: -15%;
       }
       @include lg {
         bottom: -50%;
       }
+      @include sm {
+      bottom: -70%;
+    }
       h1#animation-text {
         background: -webkit-linear-gradient(left,#fff,#fff);
         background-clip: text;
         -webkit-background-clip: text;
-        font-size: 4.2rem;
-        @include xl {
-          font-size: 3.4rem;
-        }
-        @include lg {
-          font-size: 3rem;
-          padding: 0;
-        }
-        @include md {
-          font-size: 2.6rem;
-        }
         @include sm {
           font-size: 2rem;
         }
@@ -62,12 +59,16 @@
       display: inline-block;
       text-align: center;
       background: $sub_color;
+      @include md {
+        bottom: 0;
+        right: 0;
+      }
       > span {
       color: $primary_color;
       padding-left: 3px;
       padding-right: 3px;
       display: inline-block;
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       animation-name:c-slidein;
       opacity: 0;
       animation-timing-function: ease-in;
@@ -76,15 +77,13 @@
         @include xl {
           font-size: 2.1rem;
         }
-        @media screen and (max-width: 1120px) {
-          font-size: 2rem;
-        }
         @include lg {
           font-size: 1.9rem;
         }
         @include md {
           font-size: 1.7rem;
           font-weight: 500;
+          line-height: 1.7;
         }
         @media screen and (max-width: 698px) {
           font-size: 1.5rem;
@@ -93,7 +92,9 @@
           font-size: 1.3rem;
         }
         @include s {
-          font-size: 1.1rem;
+          font-size: 1  rem;
+          padding-left: 1px;
+          padding-right: 1px;
         }
       }
     }

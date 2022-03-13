@@ -5,25 +5,25 @@
       <source src="<?php echo get_stylesheet_directory_uri(); ?>/videos/Japan-23525.webm" type="video/webm">
       <source src="<?php echo get_stylesheet_directory_uri(); ?>/videos/Japan-23525.webm" type="video/mp4">
     </video>
-    <?php
-    if (have_posts()): while(have_posts()): the_post();
-    ?>
 
     <div id="taxonomy-text">ブログ</div>
-    <div class="welcome-text">
-      <h1 id="animation-text">おジャコの目指せ出世魚！</h1>
+    <div class="page-title">
+      <h1 id="animation-text"><?php echo bloginfo('name');?></h1>
     </div>
   </div><!-- key_movi -->
 </div><!-- key_visual -->
 <div class="container"><!-- フッターまでつづく -->
-  <main class="main">
-    <section class="blog_article">
-      <time><?php the_time('Y年m月d日'); ?></time>
-      <h1 class="text-frame"><?php the_title(); ?></h1>
-      <div class="blog_content">
-        <?php the_content(); ?>
-      </div>
+  <?php if ( is_active_sidebar( 'main-content-top-widget-area' ) ) : ?>
+    <section class="content-top-widget">
+      <?php dynamic_sidebar( 'main-content-top-widget-area' ); ?>
     </section>
+  <?php endif; ?>
+  <main class="main">
+    <?php
+    if (have_posts()): while(have_posts()): the_post();
+    get_template_part('/template-parts/loop', 'single_blogs');
+    endwhile; endif;
+    ?>
     <section class="related_key_word">
       <h1>関連ワードのお品書き</h1>
       <?php
@@ -43,7 +43,7 @@
     comments_template('/template-parts/comments.php');
     ?>
   </main>
-<?php endwhile; endif; ?>
+<?php //endwhile; endif; ?>
   <aside class="aside">
     <?php
     get_sidebar();

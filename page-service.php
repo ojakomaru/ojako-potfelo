@@ -9,12 +9,16 @@ Template Name: サービスページ
 
   <div id="taxonomy-text">サービスの特徴</div>
   <div class="page-title">
-    <h1 id="animation-text">WordPressサイト制作オプション一切なし１万円から！</h1>
+    <h1 id="animation-text">WordPressサイト制作オプション一切なし1万円から!</h1>
   </div><!-- welcome-text -->
-	<div class="mask"></div>
 </section><!-- key_visual -->
 
 <div class="container <?php echo layout_classname($page->post_name); ?>">
+  <?php if ( is_active_sidebar( 'main-content-top-widget-area' ) ) : ?>
+    <section class="content-top-widget">
+      <?php dynamic_sidebar( 'main-content-top-widget-area' ); ?>
+    </section>
+  <?php endif; ?>
   <main class="main">
     <section class="intro" id="intro">
       <h2 id="proposing_1" class="belief_text">ホームページを作りたいとお考えの方へのお願いです、、</h2>
@@ -31,7 +35,7 @@ Template Name: サービスページ
     <section class="suggest">
       <h2 id="proposing_2" class="belief_text">私が提案するのは共に創り上げていく成長するサイト</h2>
       <p>
-        私が制作するのはＣＭＳであるWordPressでの実装です。<br>
+        私が制作するのは CMS であるWordPressでの実装です。<br>
         このシステムはブログを筆頭に更新性のあるサイトを専門知識なしに自由に一切の縛りなく利用できるためお客様のやりたいことを限りなく実現できます。<br>
         その象徴とも言える数々の機能は、<br>
         一般的な制作会社では通常オプションとして扱われることが多いですが<br>

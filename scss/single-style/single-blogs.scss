@@ -1,7 +1,6 @@
 @charset "UTF-8";
-/*================================
-videokeyビジュアルスタイル
-===================================*/
+@import "../config/config";
+@import "../config/mixin";
 .single-blogs {
   @include two_column;
   .container .main {
@@ -10,6 +9,7 @@ videokeyビジュアルスタイル
     }
   }
 
+  // 目録を表示しない
   #pc_nav {
     visibility: hidden;
     height: 0;
@@ -20,19 +20,19 @@ videokeyビジュアルスタイル
     height: 80vh;
   }
 
+  //videoスタイル
   video#bgvid {
     max-height: 260px;
   }
+  //keyビジュアルスタイル
   .key_visual {
     @include xl {
-      @include bg_img("../img/sakasa_kouyou.jpg");
+      background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)),
+      url(../img/sakasa_kouyou.jpg);
+      background-size: cover;
       position: relative;
-      min-height: 250px;
-      @include lg {
-        min-height: 200px;
-      }
-      @include md {
-        min-height: 170px;
+      &:before {
+        padding-top: 35%;
       }
       .key_movi {
         position: static;
@@ -43,7 +43,7 @@ videokeyビジュアルスタイル
     }
   }
 
-  .welcome-text {
+  .page-title {
     @include xl {
       bottom: -15%;
     }
@@ -69,7 +69,7 @@ videokeyビジュアルスタイル
         font-size: 2rem;
       }
       @include s {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         font-weight: 600;
       }
       & > span {
@@ -85,6 +85,10 @@ videokeyビジュアルスタイル
     display: inline-block;
     text-align: center;
     background: $sub_color;
+    @include md {
+      bottom: 0;
+      right: 0;
+    }
     > span {
       color: $primary_color;
       padding-left: 3px;
@@ -107,15 +111,18 @@ videokeyビジュアルスタイル
       @include md {
         font-size: 1.7rem;
         font-weight: 500;
+        line-height: 1.7;
       }
       @media screen and (max-width: 698px) {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
       @include sm {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
       }
       @include s {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        padding-left: 1px;
+        padding-right: 1px;
       }
     }
   }
@@ -137,7 +144,8 @@ videokeyビジュアルスタイル
   }
   .text-frame,
   .editor-post-title .editor-post-title__input {
-    font-size: 2rem;
+    font-size: 1.7rem;
+    line-height: 1.5;
     color: $main_color;
     text-align: left;
     letter-spacing: 2.2px;
@@ -152,12 +160,16 @@ videokeyビジュアルスタイル
       padding-left: 40px;
       padding-right: 40px;
       font-size: 1.8rem;
-      @include md {
-        font-size: 1.6rem;
-      }
-      @include sm {
-        font-size: 1.4rem;
-      }
+    }
+    @include md {
+      font-size: 1.5rem;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    @include sm {
+      font-size: 1.3rem;
+      padding-left: 20px;
+      padding-right: 20px;
     }
   }
 
@@ -167,16 +179,19 @@ videokeyビジュアルスタイル
     padding: 6%;
     margin-bottom: 15%;
 
-    time {
-      display: block;
-      text-align: right;
-      font-size: 15px;
-      padding-right: 20px;
-      padding-top: 20px;
-    }
-
-    time:before {
-      content: "投稿更新日：";
+    .post_date {
+      time {
+        display: inline-block;
+        text-align: right;
+        font-size: 1rem;
+        padding: 20px 20px 10px 0;
+        @include md {
+          font-size: 0.8rem;
+        }
+        @include sm {
+          padding: 0 10px 3px 0;
+        }
+      }
     }
 
     h3 {

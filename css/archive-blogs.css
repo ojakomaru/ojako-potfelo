@@ -62,7 +62,7 @@
 
 @media screen and (max-width: 469px) {
   .post-type-archive-blogs .page-title h1#animation-text {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: 600;
   }
 }
@@ -127,19 +127,19 @@
 
 @media screen and (max-width: 698px) {
   .post-type-archive-blogs #taxonomy-text > span {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 
 @media screen and (max-width: 576px) {
   .post-type-archive-blogs #taxonomy-text > span {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 
 @media screen and (max-width: 469px) {
   .post-type-archive-blogs #taxonomy-text > span {
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding-left: 1px;
     padding-right: 1px;
   }

@@ -51,7 +51,7 @@
         font-size: 2rem;
       }
       @include s {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         font-weight: 600;
       }
       & > span {
@@ -96,13 +96,13 @@
         line-height: 1.7;
       }
       @media screen and (max-width: 698px) {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
       @include sm {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
       }
       @include s {
-        font-size: 1.1rem;
+        font-size: 1rem;
         padding-left: 1px;
         padding-right: 1px;
       }

@@ -1,40 +1,25 @@
 .page-id-42 .key_visual {
-  background-image: url("../img/iitenki.jpg");
-  background-position: center;
+  background: radial-gradient(rgba(234, 234, 243, 0.84), rgba(223, 233, 232, 0.75)), url(../img/iitenki.jpg);
   background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100vh;
   position: relative;
 }
 
-@media screen and (max-width: 992px) {
-  .page-id-42 .key_visual {
-    min-height: 80vh;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .page-id-42 .key_visual {
-    min-height: 60vh;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .page-id-42 .key_visual {
-    min-height: 40vh;
-  }
+.page-id-42 .key_visual:before {
+  content: '';
+  display: block;
+  padding-top: 50%;
 }
 
 @media screen and (max-width: 1200px) {
   .page-id-42 .key_visual .page-title {
-    bottom: -15%;
+    padding: 0;
   }
 }
 
 .page-id-42 .key_visual .page-title h1#animation-text {
   background-clip: text;
   -webkit-background-clip: text;
-  font-size: 4.2rem;
+  font-size: 4rem;
 }
 
 @media screen and (max-width: 1200px) {
@@ -64,26 +49,13 @@
 
 @media screen and (max-width: 469px) {
   .page-id-42 .key_visual .page-title h1#animation-text {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     font-weight: 600;
   }
 }
 
 .page-id-42 .key_visual .page-title h1#animation-text > span {
   animation-duration: 1.5s;
-}
-
-.page-id-42 .key_visual .mask {
-  background-color: rgba(250, 250, 250, 0.7);
-  z-index: -1;
-  height: 100vh;
-  width: 100%;
-}
-
-@media screen and (max-width: 576px) {
-  .page-id-42 .key_visual .mask {
-    height: 70vh;
-  }
 }
 
 .page-id-42 #taxonomy-text {
@@ -93,6 +65,13 @@
   display: inline-block;
   text-align: center;
   background: #F8D76A;
+}
+
+@media screen and (max-width: 768px) {
+  .page-id-42 #taxonomy-text {
+    bottom: 0;
+    right: 0;
+  }
 }
 
 .page-id-42 #taxonomy-text > span {
@@ -129,24 +108,27 @@
   .page-id-42 #taxonomy-text > span {
     font-size: 1.7rem;
     font-weight: 500;
+    line-height: 1.7;
   }
 }
 
 @media screen and (max-width: 698px) {
   .page-id-42 #taxonomy-text > span {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 
 @media screen and (max-width: 576px) {
   .page-id-42 #taxonomy-text > span {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 
 @media screen and (max-width: 469px) {
   .page-id-42 #taxonomy-text > span {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    padding-left: 1px;
+    padding-right: 1px;
   }
 }
 
@@ -181,8 +163,32 @@
   background-position: center 75%;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 80vh;
   position: relative;
+  margin-top: 5%;
+}
+
+@media screen and (max-width: 768px) {
+  .page-id-42 .intro {
+    margin-top: 10%;
+  }
+}
+
+.page-id-42 .intro:before {
+  padding-top: 50%;
+  content: '';
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .page-id-42 .intro:before {
+    padding-top: 60%;
+  }
+}
+
+@media screen and (max-width: 469px) {
+  .page-id-42 .intro:before {
+    padding-top: 40%;
+  }
 }
 
 .page-id-42 .intro .intro_text {
@@ -195,33 +201,68 @@
   .page-id-42 .intro .intro_text {
     bottom: 0;
   }
-  .page-id-42 .intro .intro_text p {
-    line-height: 1.9;
-    margin-bottom: 20%;
+}
+
+@media screen and (max-width: 469px) {
+  .page-id-42 .intro .intro_text {
+    position: static;
+    margin-bottom: 10%;
+    padding-bottom: 15px;
   }
 }
 
-@media screen and (max-width: 992px) and (max-width: 576px) {
+.page-id-42 .intro .intro_text p {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 992px) {
+  .page-id-42 .intro .intro_text p {
+    line-height: 1.6;
+    margin-bottom: 3%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page-id-42 .intro .intro_text p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
   .page-id-42 .intro .intro_text p {
     padding-right: 10%;
     padding-left: 10%;
   }
 }
 
-@media screen and (max-width: 469px) {
-  .page-id-42 .intro .intro_text {
-    position: static;
+.page-id-42 .belief_text {
+  opacity: 0;
+  text-align: center;
+  padding-top: 5%;
+  width: 100%;
+  font-size: 1.8rem;
+  color: #393542;
+  line-height: 1.5;
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 992px) {
+  .page-id-42 .belief_text {
+    font-size: 1.6rem;
   }
 }
 
-.page-id-42 .belief_text {
-  text-align: center;
-  padding-top: 80px;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #393542;
-  margin-bottom: 100px;
-  opacity: 0;
+@media screen and (max-width: 768px) {
+  .page-id-42 .belief_text {
+    top: 5%;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .page-id-42 .belief_text.show {
@@ -234,23 +275,6 @@
   animation-fill-mode: backwards;
 }
 
-@media screen and (max-width: 992px) {
-  .page-id-42 .belief_text {
-    font-size: 1.6rem;
-    margin-bottom: 80px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .page-id-42 .belief_text {
-    font-size: 1.4rem;
-    line-height: 1.4;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-bottom: 50px;
-  }
-}
-
 .page-id-42 .suggest {
   margin-bottom: 10%;
 }
@@ -258,6 +282,8 @@
 .page-id-42 .suggest > h2 {
   margin-bottom: 10px;
   color: #393542;
+  transform: none;
+  position: static;
 }
 
 .page-id-42 .suggest > h2::before {
