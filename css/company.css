@@ -11,9 +11,9 @@
 
 @media screen and (max-width: 1200px) {
   .page-id-49 .key_visual {
-    background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)), url(../img/yoruwagasa.jpg);
-    background-size: cover;
+    background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)), url("../img/yoruwagasa.jpg");
     background-position: 0 75%;
+    position: relative;
   }
   .page-id-49 .key_visual:before {
     padding-top: 35%;

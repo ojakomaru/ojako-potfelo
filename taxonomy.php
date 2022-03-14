@@ -7,8 +7,8 @@ $oja_tax      = get_term_by('slug',$oja_slug,$slug);
 ?>
 <div class="key_visual" id="key_visual">
   <div id="taxonomy-text"><?php echo $taxonomy_var->label; ?></div>
-  <div class="welcome-text">
-    <h1 id="animation-text">おジャコの目指せ出世魚！</h1>
+  <div class="page-title">
+    <h1 id="animation-text"><?php echo bloginfo('name');?></h1>
   </div>
 </div><!-- key_visual -->
 

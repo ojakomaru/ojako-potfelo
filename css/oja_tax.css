@@ -1,0 +1,331 @@
+@media screen and (max-width: 992px) {
+  .search .main {
+    margin: 0;
+  }
+}
+
+.tax-oja_cat .key_visual, .tax-oja_tags .key_visual, .search .key_visual {
+  background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)), url(../img/wagasa.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.tax-oja_cat .key_visual:before, .tax-oja_tags .key_visual:before, .search .key_visual:before {
+  padding-top: 35%;
+  content: '';
+  display: block;
+}
+
+@media screen and (max-width: 1200px) {
+  .tax-oja_cat .key_visual .page-title, .tax-oja_tags .key_visual .page-title, .search .key_visual .page-title {
+    bottom: -15%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .tax-oja_cat .key_visual .page-title, .tax-oja_tags .key_visual .page-title, .search .key_visual .page-title {
+    bottom: -50%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .tax-oja_cat .key_visual .page-title, .tax-oja_tags .key_visual .page-title, .search .key_visual .page-title {
+    bottom: -70%;
+  }
+}
+
+.tax-oja_cat .key_visual .page-title h1#animation-text, .tax-oja_tags .key_visual .page-title h1#animation-text, .search .key_visual .page-title h1#animation-text {
+  background: -webkit-linear-gradient(left, #fff, #fff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 4rem;
+}
+
+@media screen and (max-width: 992px) {
+  .tax-oja_cat .key_visual .page-title h1#animation-text, .tax-oja_tags .key_visual .page-title h1#animation-text, .search .key_visual .page-title h1#animation-text {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tax-oja_cat .key_visual .page-title h1#animation-text, .tax-oja_tags .key_visual .page-title h1#animation-text, .search .key_visual .page-title h1#animation-text {
+    font-size: 2.6rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .tax-oja_cat .key_visual .page-title h1#animation-text, .tax-oja_tags .key_visual .page-title h1#animation-text, .search .key_visual .page-title h1#animation-text {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 469px) {
+  .tax-oja_cat .key_visual .page-title h1#animation-text, .tax-oja_tags .key_visual .page-title h1#animation-text, .search .key_visual .page-title h1#animation-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+.tax-oja_cat .key_visual .page-title h1#animation-text > span, .tax-oja_tags .key_visual .page-title h1#animation-text > span, .search .key_visual .page-title h1#animation-text > span {
+  animation-duration: 1.5s;
+}
+
+.tax-oja_cat #taxonomy-text, .tax-oja_tags #taxonomy-text, .search #taxonomy-text {
+  position: absolute;
+  bottom: 10%;
+  right: 6%;
+  background: #F8D76A;
+}
+
+@media screen and (max-width: 768px) {
+  .tax-oja_cat #taxonomy-text, .tax-oja_tags #taxonomy-text, .search #taxonomy-text {
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.tax-oja_cat #taxonomy-text > span, .tax-oja_tags #taxonomy-text > span, .search #taxonomy-text > span {
+  color: #9C9C9C;
+  padding-left: 3px;
+  padding-right: 3px;
+  display: inline-block;
+  font-size: 3rem;
+  animation-name: popIn;
+  animation-timing-function: cubic-bezier(0, 1.23, 1, 0.99);
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@media screen and (max-width: 1200px) {
+  .tax-oja_cat #taxonomy-text > span, .tax-oja_tags #taxonomy-text > span, .search #taxonomy-text > span {
+    font-size: 2.3rem;
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .tax-oja_cat #taxonomy-text > span, .tax-oja_tags #taxonomy-text > span, .search #taxonomy-text > span {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .tax-oja_cat #taxonomy-text > span, .tax-oja_tags #taxonomy-text > span, .search #taxonomy-text > span {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tax-oja_cat #taxonomy-text > span, .tax-oja_tags #taxonomy-text > span, .search #taxonomy-text > span {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .tax-oja_cat #taxonomy-text > span, .tax-oja_tags #taxonomy-text > span, .search #taxonomy-text > span {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 469px) {
+  .tax-oja_cat #taxonomy-text > span, .tax-oja_tags #taxonomy-text > span, .search #taxonomy-text > span {
+    font-size: 1rem;
+    padding-left: 1px;
+    padding-right: 1px;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: translateY(50px);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.tax-oja_cat .oja_cat, .tax-oja_tags .oja_cat, .search .oja_cat {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.tax-oja_cat .oja_cat .post_cade, .tax-oja_tags .oja_cat .post_cade, .search .oja_cat .post_cade {
+  font-family: "Noto Serif JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  flex: 0 0 45%;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin-bottom: 70px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 3px 4px #ccc, 0px 0px 1px 1px #fff inset;
+  opacity: 0;
+  transition: all ease-out;
+  transition-duration: 1.5s;
+  transition-delay: 0s;
+  transform: translateY(-50px);
+}
+
+.tax-oja_cat .oja_cat .post_cade.show, .tax-oja_tags .oja_cat .post_cade.show, .search .oja_cat .post_cade.show {
+  opacity: 1;
+  transform: translate(0%);
+}
+
+.tax-oja_cat .oja_cat .post_cade:after, .tax-oja_tags .oja_cat .post_cade:after, .search .oja_cat .post_cade:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 190px;
+  height: 600px;
+  content: "";
+  transform: translateX(-147%) translateY(-32%) rotate(52deg);
+  background: #e7f3b6;
+}
+
+@media screen and (max-width: 768px) {
+  .tax-oja_cat .oja_cat .post_cade:after, .tax-oja_tags .oja_cat .post_cade:after, .search .oja_cat .post_cade:after {
+    transform: translateX(-158%) translateY(-32%) rotate(52deg);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .tax-oja_cat .oja_cat .post_cade:after, .tax-oja_tags .oja_cat .post_cade:after, .search .oja_cat .post_cade:after {
+    transform: translateX(-156%) translateY(-38%) rotate(57deg);
+  }
+}
+
+.tax-oja_cat .oja_cat .post_cade a, .tax-oja_tags .oja_cat .post_cade a, .search .oja_cat .post_cade a {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  transition: all 0.4s ease-in-out;
+}
+
+.tax-oja_cat .oja_cat .post_cade a:hover .thumbnail img, .tax-oja_tags .oja_cat .post_cade a:hover .thumbnail img, .search .oja_cat .post_cade a:hover .thumbnail img {
+  transform: scale(1.1);
+}
+
+.tax-oja_cat .oja_cat .pickup-image,
+.tax-oja_cat .oja_cat .new-entry-item .eyecatch,
+.tax-oja_cat .oja_cat .post-list-thumb, .tax-oja_tags .oja_cat .pickup-image,
+.tax-oja_tags .oja_cat .new-entry-item .eyecatch,
+.tax-oja_tags .oja_cat .post-list-thumb, .search .oja_cat .pickup-image,
+.search .oja_cat .new-entry-item .eyecatch,
+.search .oja_cat .post-list-thumb {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.tax-oja_cat .oja_cat .pickup-image:before,
+.tax-oja_cat .oja_cat .new-entry-item .eyecatch:before,
+.tax-oja_cat .oja_cat .post-list-thumb:before, .tax-oja_tags .oja_cat .pickup-image:before,
+.tax-oja_tags .oja_cat .new-entry-item .eyecatch:before,
+.tax-oja_tags .oja_cat .post-list-thumb:before, .search .oja_cat .pickup-image:before,
+.search .oja_cat .new-entry-item .eyecatch:before,
+.search .oja_cat .post-list-thumb:before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+  /* 16:9 */
+}
+
+.tax-oja_cat .oja_cat .pickup-image img,
+.tax-oja_cat .oja_cat .new-entry-item .eyecatch img,
+.tax-oja_cat .oja_cat .post-list-thumb img, .tax-oja_tags .oja_cat .pickup-image img,
+.tax-oja_tags .oja_cat .new-entry-item .eyecatch img,
+.tax-oja_tags .oja_cat .post-list-thumb img, .search .oja_cat .pickup-image img,
+.search .oja_cat .new-entry-item .eyecatch img,
+.search .oja_cat .post-list-thumb img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+}
+
+.tax-oja_cat .oja_cat .thumbnail, .tax-oja_tags .oja_cat .thumbnail, .search .oja_cat .thumbnail {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.tax-oja_cat .oja_cat .thumbnail:before, .tax-oja_tags .oja_cat .thumbnail:before, .search .oja_cat .thumbnail:before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+  /* 16:9 */
+}
+
+.tax-oja_cat .oja_cat .thumbnail img, .tax-oja_tags .oja_cat .thumbnail img, .search .oja_cat .thumbnail img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  object-fit: cover;
+  width: 100%;
+  transition: all 0.4s ease-in-out;
+}
+
+.tax-oja_cat .oja_cat .post_cade .post_date, .tax-oja_tags .oja_cat .post_cade .post_date, .search .oja_cat .post_cade .post_date {
+  padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .tax-oja_cat .oja_cat .post_cade .post_date, .tax-oja_tags .oja_cat .post_cade .post_date, .search .oja_cat .post_cade .post_date {
+    padding: 0;
+    padding-top: 0.8rem;
+    padding-left: 0.6rem;
+    padding-right: 0.3rem;
+    padding-bottom: 0.8rem;
+  }
+}
+
+.tax-oja_cat .oja_cat .post_cade .post_date h1, .tax-oja_tags .oja_cat .post_cade .post_date h1, .search .oja_cat .post_cade .post_date h1 {
+  font-size: 19px;
+  font-weight: 200;
+  line-height: 1.5;
+  color: #042104;
+}
+
+@media screen and (max-width: 1092px) {
+  .tax-oja_cat .oja_cat .post_cade .post_date h1, .tax-oja_tags .oja_cat .post_cade .post_date h1, .search .oja_cat .post_cade .post_date h1 {
+    font-size: 17px;
+    font-weight: 300;
+  }
+}
+
+@media screen and (max-width: 741px) {
+  .tax-oja_cat .oja_cat .post_cade .post_date h1, .tax-oja_tags .oja_cat .post_cade .post_date h1, .search .oja_cat .post_cade .post_date h1 {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .tax-oja_cat .oja_cat .post_cade .post_date h1, .tax-oja_tags .oja_cat .post_cade .post_date h1, .search .oja_cat .post_cade .post_date h1 {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+.tax-oja_cat .oja_cat .post_cade .post_date time, .tax-oja_tags .oja_cat .post_cade .post_date time, .search .oja_cat .post_cade .post_date time {
+  position: absolute;
+  left: 3%;
+  top: 1%;
+  z-index: 1;
+  font-size: 12px;
+  color: #0B048F;
+  font-family: "Noto Sans Japanese", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  .tax-oja_cat .oja_cat .post_cade .post_date time, .tax-oja_tags .oja_cat .post_cade .post_date time, .search .oja_cat .post_cade .post_date time {
+    font-size: 10px;
+    font-weight: 300;
+  }
+}
+/*# sourceMappingURL=oja_tax.css.map */

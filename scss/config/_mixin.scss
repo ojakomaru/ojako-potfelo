@@ -21,6 +21,17 @@
   background-repeat: no-repeat;
 }
 
+//グラデーションキービジュアル
+@mixin keyVisual($url: "", $position: center, $padding: 35%) {
+  background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)),
+  url($url);
+  background-position: $position;
+  position: relative;
+  &:before {
+    padding-top: $padding;
+  }
+}
+
 //出現アニメ
 @mixin showAnimation($delay: 0s, $duration: 1.5s, $translateY: -50px) {
   opacity: 0;

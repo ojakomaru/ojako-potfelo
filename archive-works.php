@@ -11,8 +11,8 @@ Template Name: 制作実績一覧ページ
       <source src="<?php echo get_stylesheet_directory_uri(); ?>/videos/Japan-23525.webm" type="video/mp4">
     </video>
 
-    <div id="taxonomy-text">成果物編</div>
-    <div class="welcome-text">
+    <div id="taxonomy-text">成果物</div>
+    <div class="page-title">
       <h1 id="animation-text">納品事例</h1>
     </div><!-- welcome-text -->
 

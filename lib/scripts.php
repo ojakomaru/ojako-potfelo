@@ -40,12 +40,21 @@ function add_enqueue_files(){
   elseif(is_page('contact')) {
     wp_css('contact-style', '/css/contact.css');
   }
-  //カスタム投稿アーカイブスタイル
+  //カスタム投稿ブログアーカイブスタイル
   elseif( is_post_type_archive('blogs')) {
     wp_css('blogs_archive', '/css/archive-blogs.css');
   }
+  //カスタム投稿実績アーカイブスタイル
+  elseif( is_post_type_archive('works')) {
+    wp_css('works_archive', '/css/archive-works.css');
+  }
+  //カスタム投稿記事スタイル
   elseif (is_singular('blogs')) {
     wp_css('blogs-style', '/css/single-blogs.css');
+  }
+  //カスタムタクソノミースタイル
+  elseif(is_tax(array('oja_cat', 'oja_tags'))) {
+    wp_css('taxonomy-style', '/css/oja_tax.css');
   }
 }
 add_action('wp_enqueue_scripts', 'add_enqueue_files',1);

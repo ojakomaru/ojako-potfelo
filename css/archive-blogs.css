@@ -21,8 +21,8 @@
 
 @media screen and (max-width: 1200px) {
   .post-type-archive-blogs .key_visual {
-    background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)), url(../img/sakasa_kouyou.jpg);
-    background-size: cover;
+    background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)), url("../img/sakasa_kouyou.jpg");
+    background-position: center;
     position: relative;
   }
   .post-type-archive-blogs .key_visual:before {
@@ -75,8 +75,6 @@
   position: absolute;
   bottom: 10%;
   right: 6%;
-  display: inline-block;
-  text-align: center;
   background: #F8D76A;
 }
 
@@ -212,24 +210,53 @@
   transform: scale(1.1);
 }
 
-.post-type-archive-blogs #content .thumbnail img {
+.post-type-archive-blogs #content .pickup-image,
+.post-type-archive-blogs #content .new-entry-item .eyecatch,
+.post-type-archive-blogs #content .post-list-thumb {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.post-type-archive-blogs #content .pickup-image:before,
+.post-type-archive-blogs #content .new-entry-item .eyecatch:before,
+.post-type-archive-blogs #content .post-list-thumb:before {
+  content: "";
   display: block;
+  padding-top: 56.25%;
+  /* 16:9 */
+}
+
+.post-type-archive-blogs #content .pickup-image img,
+.post-type-archive-blogs #content .new-entry-item .eyecatch img,
+.post-type-archive-blogs #content .post-list-thumb img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+}
+
+.post-type-archive-blogs #content .thumbnail {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.post-type-archive-blogs #content .thumbnail:before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+  /* 16:9 */
+}
+
+.post-type-archive-blogs #content .thumbnail img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
   object-fit: cover;
   width: 100%;
-  max-height: 210px;
   transition: all 0.4s ease-in-out;
-}
-
-@media screen and (max-width: 768px) {
-  .post-type-archive-blogs #content .thumbnail img {
-    max-height: 150px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .post-type-archive-blogs #content .thumbnail img {
-    max-height: 130px;
-  }
 }
 
 .post-type-archive-blogs #content .post_cade .post_date {

@@ -1,6 +1,4 @@
-
-  //ブログ記事アーカイブスタイル
-
+//ブログ記事アーカイブスタイル
 .post_cade {
   font-family: $g_serif;
   flex: 0 0 45%;
@@ -39,17 +37,49 @@
   }
 }
 
-.thumbnail img {
-  display: block;
-  object-fit: cover;
+//サムネイルスタイル
+.pickup-image,
+.new-entry-item .eyecatch,
+.post-list-thumb {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.pickup-image:before,
+.new-entry-item .eyecatch:before,
+.post-list-thumb:before {
+    content:"";
+    display: block;
+    padding-top: 56.25%; /* 16:9 */
+}
+.pickup-image img,
+.new-entry-item .eyecatch img,
+.post-list-thumb img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+   -webkit-transform: translate(-50%, -50%) !important;
+   transform: translate(-50%, -50%) !important;
+}
+.thumbnail{
+  //サムネイルのサイズを揃える
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  max-height: 210px;
-  transition: $anime;
-  @include md {
-    max-height: 150px;
+  &:before {
+    content:"";
+    display: block;
+    padding-top: 56.25%; /* 16:9 */
   }
-  @include sm {
-    max-height: 130px;
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -50%) !important;
+    object-fit: cover;
+    width: 100%;
+    transition: $anime;
   }
 }
 

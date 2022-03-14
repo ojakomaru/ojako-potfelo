@@ -5,6 +5,7 @@ Author: おジャコ
 @import "config/config";
 @import "config/mixin";
 @import "config/reset";
+@import "config/extend";
 
 //レイアウト
 body {
@@ -587,9 +588,5 @@ body {
 @import "single-style/single-works";
 
 @import "components/archive-list";
-
-@import "archive-style/oja_tax";
-
-@import "archive-style/archive-works";
 
 @import "archive-style/works_tax";

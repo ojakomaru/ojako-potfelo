@@ -1,7 +1,7 @@
 <div class="post_cade">
   <a href="<?php the_permalink();?>">
     <div class="thumbnail">
-      <?php if (has_post_thumbnail()): the_post_thumbnail();
+      <?php if (has_post_thumbnail()): the_post_thumbnail('medium');
       else : ?>
       <img src="<?php echo get_stylesheet_directory_uri();?>/img/no-image.png" alt="画像はありません。">
       <?php endif; ?>

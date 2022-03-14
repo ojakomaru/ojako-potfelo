@@ -24,13 +24,14 @@
   //keyビジュアルスタイル
   @include xl {
     .key_visual {
-      background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)),
-      url(../img/sakasa_kouyou.jpg);
-      background-size: cover;
-      position: relative;
-      &:before {
-        padding-top: 35%;
-      }
+      @include keyVisual('../img/sakasa_kouyou.jpg');
+      // background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)),
+      // url(../img/sakasa_kouyou.jpg);
+      // background-size: cover;
+      // position: relative;
+      // &:before {
+      //   padding-top: 35%;
+      // }
     }
   }
   .page-title {
@@ -64,8 +65,6 @@
     position: absolute;
     bottom: 10%;
     right: 6%;
-    display: inline-block;
-    text-align: center;
     background: $sub_color;
     @include md {
       bottom: 0;

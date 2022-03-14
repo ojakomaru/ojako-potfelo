@@ -1,54 +1,53 @@
 @charset "UTF-8";
+@import "../config/config";
+@import "../config/mixin";
+
 //ブログカテゴリー、タグ、検索ページ共通CSS
 
 .search .main {
   @include lg {
-    margin: 0;
+    margin: 0 ;
   }
 }
 .tax-oja_cat,.tax-oja_tags,.search {
 
   //キービジュアル
   .key_visual {
-    @include bg_img('../img/wagasa.jpg');
-    min-height: 100vh;
+    background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)),
+    url(../img/wagasa.jpg);
+    background-size: cover;
     position: relative;
-    @include lg {
-      min-height: 80vh;
+    &:before {
+      padding-top: 35%;
+      content: '';
+      display: block;
     }
-    @include md {
-      min-height: 60vh;
-    }
-    @include sm {
-      min-height: 40vh;
-    }
-    .welcome-text {
+    .page-title {
       @include xl {
         bottom: -15%;
       }
       @include lg {
         bottom: -50%;
       }
+      @include sm {
+        bottom: -70%;
+      }
       h1#animation-text {
         background: -webkit-linear-gradient(left,#fff,#fff);
         background-clip: text;
         -webkit-background-clip: text;
-        font-size: 4.2rem;
-        @include xl {
-          font-size: 3.4rem;
-        }
+        font-size: 4rem;
         @include lg {
           font-size: 3rem;
-          padding: 0;
         }
         @include md {
           font-size: 2.6rem;
         }
         @include sm {
-          font-size: 2rem;
+        font-size: 2rem;
         }
         @include s {
-          font-size: 1.7rem;
+          font-size: 1.5rem;
           font-weight: 600;
         }
         & > span {
@@ -61,9 +60,11 @@
     position: absolute;
     bottom: 10%;
     right: 6%;
-    display: inline-block;
-    text-align: center;
     background: $sub_color;
+    @include md {
+      bottom: 0;
+      right: 0;
+    }
     > span {
     color: $primary_color;
     padding-left: 3px;
@@ -78,23 +79,23 @@
         font-size: 2.3rem;
       }
       @media screen and (max-width: 1120px) {
-        font-size: 2.1rem;
+        font-size: 2rem;
       }
       @include lg {
-        font-size: 1.9rem;
+        font-size: 1.8rem;
       }
       @include md {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
+        line-height: 1.7;
         font-weight: 500;
       }
-      @media screen and (max-width: 698px) {
-        font-size: 1.5rem;
-      }
       @include sm {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
       }
       @include s {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        padding-left: 1px;
+        padding-right: 1px;
       }
     }
   }
