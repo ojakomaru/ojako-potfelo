@@ -3,21 +3,24 @@
 @import "../config/mixin";
 .page-id-42 {
   .key_visual {
-    background: radial-gradient(rgba(234, 234, 243, 0.84), rgba(223, 233, 232, 0.75)), url(../img/iitenki.jpg);
-    background-size: cover;
-    position: relative;
+    @include keyVisual('../img/iitenki.jpg', $position, 50%);
     &:before {
       content: '';
       display: block;
-      padding-top: 50%;
     }
     .page-title {
       @include xl {
         padding: 0;
       }
       h1#animation-text {
-        background-clip: text;
-        -webkit-background-clip: text;
+        @include signalTitel(right top,
+          orange,
+          yellow,
+          green,
+          cyan,
+          blue,
+          violet
+        );
         font-size: 4rem;
         @include xl {
           font-size: 3.4rem;

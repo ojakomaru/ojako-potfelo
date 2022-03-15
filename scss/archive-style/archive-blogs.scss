@@ -25,13 +25,6 @@
   @include xl {
     .key_visual {
       @include keyVisual('../img/sakasa_kouyou.jpg');
-      // background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)),
-      // url(../img/sakasa_kouyou.jpg);
-      // background-size: cover;
-      // position: relative;
-      // &:before {
-      //   padding-top: 35%;
-      // }
     }
   }
   .page-title {
@@ -45,9 +38,7 @@
       bottom: -70%;
     }
     h1#animation-text {
-      background: -webkit-linear-gradient(left,#fff,#fff);
-      background-clip: text;
-      -webkit-background-clip: text;
+      @include signalTitel(left, (#fff,#fff));
       @include sm {
         font-size: 2rem;
       }

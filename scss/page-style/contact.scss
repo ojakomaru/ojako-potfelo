@@ -5,14 +5,7 @@
   //キービジュアル
   .key_visual {
     @include xl {
-      background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)),
-      url(../img/teien3.jpg);
-      background-size: cover;
-      background-position: 0 100%;
-      position: relative;
-      &:before {
-        padding-top: 35%;
-      }
+      @include keyVisual('../img/teien3.jpg', 0 100%);
       .key_movi {
         position: static;
       }
@@ -36,9 +29,7 @@
       bottom: -70%;
     }
       h1#animation-text {
-        background: -webkit-linear-gradient(left,#fff,#fff);
-        background-clip: text;
-        -webkit-background-clip: text;
+        @include signalTitel(left, (#fff,#fff));
         @include sm {
           font-size: 2rem;
         }

@@ -474,8 +474,10 @@ header .bottom_nav {
 
 @media screen and (max-width: 1200px) {
   .key_visual {
-    background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)), url(../img/wagasa.jpg);
+    background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)), url("../img/wagasa.jpg");
+    background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
     width: 100%;
     height: auto;
@@ -484,8 +486,10 @@ header .bottom_nav {
     animation-timing-function: ease;
   }
   .key_visual:before {
-    display: block;
     padding-top: 45%;
+  }
+  .key_visual:before {
+    display: block;
     content: '';
   }
   .key_visual .key_movi {
@@ -619,7 +623,7 @@ header .bottom_nav {
   background-clip: text;
   -webkit-background-clip: text;
   color: rgba(0, 0, 0, 0.1);
-  font-size: 5.8em;
+  font-size: 4rem;
 }
 
 @media screen and (max-width: 1200px) {
@@ -648,23 +652,23 @@ header .bottom_nav {
 }
 
 @media screen and (max-width: 698px) {
-  .welcome-text h1 {
+  .page-title h1 {
     padding: 20px 30px;
     font-size: 2.2rem;
   }
-  .welcome-text h1 br {
+  .page-title h1 br {
     display: none;
   }
 }
 
 @media screen and (max-width: 597px) {
-  .welcome-text h1 {
+  .page-title h1 {
     font-size: 1.7rem;
   }
 }
 
 @media screen and (max-width: 470px) {
-  .welcome-text h1 {
+  .page-title h1 {
     font-size: 1.4rem;
     font-weight: 500;
   }

@@ -21,9 +21,16 @@
 
 @media screen and (max-width: 1200px) {
   .single-blogs .key_visual {
-    background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)), url(../img/sakasa_kouyou.jpg);
+    background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)), url("../img/sakasa_kouyou.jpg");
+    background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
+    width: 100%;
+    height: auto;
+    animation-name: appear;
+    animation-duration: 4.5s;
+    animation-timing-function: ease;
   }
   .single-blogs .key_visual:before {
     padding-top: 35%;
@@ -58,6 +65,7 @@
   background: -webkit-linear-gradient(left, #fff, #fff);
   background-clip: text;
   -webkit-background-clip: text;
+  color: rgba(0, 0, 0, 0.1);
   font-size: 3rem;
 }
 

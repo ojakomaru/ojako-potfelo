@@ -1,7 +1,16 @@
 .page-id-42 .key_visual {
+  background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)), url("../img/iitenki.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
   background: radial-gradient(rgba(234, 234, 243, 0.84), rgba(223, 233, 232, 0.75)), url(../img/iitenki.jpg);
   background-size: cover;
   position: relative;
+}
+
+.page-id-42 .key_visual:before {
+  padding-top: 35%;
 }
 
 .page-id-42 .key_visual:before {

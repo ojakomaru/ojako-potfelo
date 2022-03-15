@@ -15,13 +15,7 @@
   //keyビジュアルスタイル
   @include xl {
     .key_visual {
-      background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)),
-      url(../img/nanamewagasa.jpg);
-      background-size: cover;
-      position: relative;
-      &:before {
-        padding-top: 35%;
-      }
+      @include keyVisual('../img/nanamewagasa.jpg');
     }
   }
   .page-title {
@@ -35,9 +29,7 @@
       bottom: -70%;
     }
     h1#animation-text {
-      background: -webkit-linear-gradient(left,#fff,#fff);
-      background-clip: text;
-      -webkit-background-clip: text;
+      @include signalTitel(left, (#fff,#fff));
       font-size: 4.2rem;
       @include xl {
         font-size: 3.4rem;

@@ -5,13 +5,23 @@
 }
 
 .tax-oja_cat .key_visual, .tax-oja_tags .key_visual, .search .key_visual {
-  background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)), url(../img/wagasa.jpg);
+  background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)), url("../img/wagasa.jpg");
+  background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
+  width: 100%;
+  height: auto;
+  animation-name: appear;
+  animation-duration: 4.5s;
+  animation-timing-function: ease;
 }
 
 .tax-oja_cat .key_visual:before, .tax-oja_tags .key_visual:before, .search .key_visual:before {
   padding-top: 35%;
+}
+
+.tax-oja_cat .key_visual:before, .tax-oja_tags .key_visual:before, .search .key_visual:before {
   content: '';
   display: block;
 }
@@ -38,6 +48,7 @@
   background: -webkit-linear-gradient(left, #fff, #fff);
   background-clip: text;
   -webkit-background-clip: text;
+  color: rgba(0, 0, 0, 0.1);
   font-size: 4rem;
 }
 

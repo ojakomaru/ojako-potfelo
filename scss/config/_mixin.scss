@@ -26,7 +26,14 @@
   background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)),
   url($url);
   background-position: $position;
+  background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
+  width: 100%;
+  height: auto;
+  animation-name: appear;
+  animation-duration: 4.5s;
+  animation-timing-function: ease;
   &:before {
     padding-top: $padding;
   }
@@ -45,17 +52,9 @@
   }
 }
 
-//レインボーテキスト
-@mixin rainbowText($angle: left) {
-  background: -webkit-linear-gradient(
-    $angle,
-    orange,
-    yellow,
-    green,
-    cyan,
-    blue,
-    violet
-  );
+//シグナルタイトルテキスト
+@mixin signalTitel($angle: left, $color...) {
+  background: -webkit-linear-gradient($angle, $color);
   background-clip: text;
   -webkit-background-clip: text;
   color: rgba(0, 0, 0, 0.1);

@@ -29,9 +29,7 @@
       bottom: -70%;
     }
     h1#animation-text {
-      background: -webkit-linear-gradient(left,#fff,#fff);
-      background-clip: text;
-      -webkit-background-clip: text;
+      @include signalTitel(left, (#fff,#fff));
       font-size: 4rem;
       @include xl {
         font-size: 3.4rem;

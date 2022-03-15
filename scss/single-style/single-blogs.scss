@@ -26,13 +26,7 @@
   //keyビジュアルスタイル
   .key_visual {
     @include xl {
-      background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)),
-      url(../img/sakasa_kouyou.jpg);
-      background-size: cover;
-      position: relative;
-      &:before {
-        padding-top: 35%;
-      }
+      @include keyVisual('../img/sakasa_kouyou.jpg');
       .key_movi {
         position: static;
       }
@@ -53,9 +47,7 @@
       bottom: -75%;
     }
     h1#animation-text {
-      background: -webkit-linear-gradient(left, #fff, #fff);
-      background-clip: text;
-      -webkit-background-clip: text;
+     @include signalText(left, (#fff,#fff));
       font-size: 3rem;
       @include xl {
         font-size: 2.4rem;

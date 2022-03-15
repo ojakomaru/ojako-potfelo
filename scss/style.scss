@@ -5,7 +5,6 @@ Author: おジャコ
 @import "config/config";
 @import "config/mixin";
 @import "config/reset";
-@import "config/extend";
 
 //レイアウト
 body {
@@ -39,18 +38,9 @@ body {
 //keyビジュアルスタイル
 @include xl {
   .key_visual {
-    background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)),
-    url(../img/wagasa.jpg);
-    background-size: cover;
-    position: relative;
-    width: 100%;
-    height: auto;
-    animation-name: appear;
-    animation-duration: 4.5s;
-    animation-timing-function: ease;
+    @include keyVisual('../img/wagasa.jpg', center, 45%);
     &:before {
       display: block;
-      padding-top: 45%;
       content: '';
     }
     .key_movi {
@@ -112,7 +102,14 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  @include rainbowText(right top);
+  @include signalTitel(right top,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet
+  );
   @include sm {
     top: 45%;
   }
@@ -153,8 +150,15 @@ body {
   }
   h1 {
     color: $main_color;
-    @include rainbowText(left);
-    font-size: 5.8em;
+    @include signalTitel(left,
+      orange,
+      yellow,
+      green,
+      cyan,
+      blue,
+      violet
+    );
+    font-size: 4rem;
     @include xl {
       font-size: 3.5rem;
     }
@@ -166,7 +170,6 @@ body {
       font-weight: 600;
     }
   }
-
   span {
     animation-name: signalText;
     animation-timing-function: ease-out;
@@ -174,7 +177,7 @@ body {
   }
 }
 @include md(698px) {
-  .welcome-text h1 {
+  .page-title h1 {
     br {
       display: none;
     }
@@ -183,12 +186,12 @@ body {
   }
 }
 @include sm(597px) {
-  .welcome-text h1 {
+  .page-title h1 {
     font-size: 1.7rem;
   }
 }
 @include s(470px) {
-  .welcome-text h1 {
+  .page-title h1 {
     font-size: 1.4rem;
     font-weight: 500;
   }

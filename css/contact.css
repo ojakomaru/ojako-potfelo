@@ -1,10 +1,16 @@
 @charset "UTF-8";
 @media screen and (max-width: 1200px) {
   .page-id-52 .key_visual {
-    background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)), url(../img/teien3.jpg);
-    background-size: cover;
+    background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)), url("../img/teien3.jpg");
     background-position: 0 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
+    width: 100%;
+    height: auto;
+    animation-name: appear;
+    animation-duration: 4.5s;
+    animation-timing-function: ease;
   }
   .page-id-52 .key_visual:before {
     padding-top: 35%;
@@ -46,6 +52,7 @@
   background: -webkit-linear-gradient(left, #fff, #fff);
   background-clip: text;
   -webkit-background-clip: text;
+  color: rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 576px) {
