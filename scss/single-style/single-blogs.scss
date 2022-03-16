@@ -47,7 +47,7 @@
       bottom: -75%;
     }
     h1#animation-text {
-     @include signalText(left, (#fff,#fff));
+     @include signalTitel(left, (#fff,#fff));
       font-size: 3rem;
       @include xl {
         font-size: 2.4rem;

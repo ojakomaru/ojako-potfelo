@@ -5,21 +5,6 @@ Author: おジャコ
 @import "config/config";
 @import "config/mixin";
 @import "config/reset";
-@import "components/comment_form";
-
-@import "components/pagenation";
-
-@import "components/production";
-
-@import "components/breadcrumb";
-
-@import "components/footer";
-
-@import "single-style/single-works";
-
-@import "components/archive-list";
-
-@import "archive-style/works_tax";
 
 //レイアウト
 body {
@@ -593,4 +578,18 @@ body {
     }
   }
 }
+@import "components/comment_form";
 
+@import "components/pagenation";
+
+@import "components/production";
+
+@import "components/breadcrumb";
+
+@import "components/footer";
+
+@import "single-style/single-works";
+
+@import "components/archive-list";
+
+@import "archive-style/works_tax";

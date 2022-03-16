@@ -1,59 +1,37 @@
 @charset "UTF-8";
+
 @import "../config/config";
 @import "../config/mixin";
-.page-id-49 {
-  //videoスタイル
-  video#bgvid {
-    max-height: 480px;
-  }
-  @include xl {
-    .key_movi {
-      position: static;
-    }
-  }
+@import "../config/reset";
+@import "../config/base";
 
+@import "../components/layout";
+
+@import "../components/header";
+
+@import "../components/scroll_btn";
+
+@import "../components/submenu";
+
+@import "../components/search";
+
+@import "../components/archive-list";
+
+@import "../components/breadcrumb";
+
+@import "../components/footer";
+.page-id-49 {
   //keyビジュアルスタイル
   @include xl {
     .key_visual {
       @include keyVisual('../img/yoruwagasa.jpg', 0 75%);
     }
   }
-  .page-title {
-    @include xl {
-      bottom: -15%;
-    }
-    @include lg {
-      bottom: -50%;
-    }
-    @include sm {
-      bottom: -70%;
-    }
-    h1#animation-text {
-      @include signalTitel(left, (#fff,#fff));
-      font-size: 4rem;
-      @include xl {
-        font-size: 3.4rem;
-      }
-      @include lg {
-        font-size: 3rem;
-        padding: 0;
-      }
-      @include md {
-        font-size: 2.6rem;
-      }
-      @include sm {
-        font-size: 2rem;
-      }
-      @include s {
-        font-size: 1.5rem;
-        font-weight: 600;
-      }
-      & > span {
-        animation-duration: 1.5s;
-      }
-    }
+
+  h1#animation-text {
+    @include signalTitel(left, (#fff,#fff));
   }
-  
+
   #taxonomy-text {
     position: absolute;
     bottom: 10%;
@@ -161,7 +139,7 @@
       line-height: 1.8;
       margin-top: 15%;
 
-      h2.kakko_text {
+      .kakko_text {
         padding: 1rem;
         background-color: #fff;
         border-radius: 15px;
@@ -256,13 +234,13 @@
   }
   //メインコンテンツ部
   .main {
-    h3 strong:first-of-type {
+    h2 strong:first-of-type {
       margin-top: 90px;
       margin-bottom: 50px;
       text-align: left;
       padding-left: 10%;
     }
-    h3 strong:last-of-type  {
+    h2 strong:last-of-type  {
       margin-bottom: 50px;
     }
 
@@ -270,7 +248,6 @@
       font-size: 1.4rem;
       padding-left: 75px;
       padding-right: 45px;
-      position: relative;
       @media screen and (max-width: 768px) {
         margin: 0;
       }
@@ -363,8 +340,7 @@
       position: relative;
       transition: $anime;
       height: 60px;
-      padding-top: 30px;
-      padding-bottom: 10px;
+      padding: 30px 45px 10px 75px;
       line-height: 1.5;
       margin-bottom: 0;
       @include sm {
@@ -397,10 +373,16 @@
     overflow: hidden;
     opacity: 0;
     transition: $anime;
-  }
-  .inside_text.open {
-    height: auto;
-    opacity: 1;
+    &.open {
+      height: auto;
+      opacity: 1;
+    }
+    p {
+      @include md {
+        padding-left: 12%;
+        padding-right: 5%;
+      }
+    }
   }
 
   .acco_tav.scss {
@@ -428,6 +410,12 @@
   @include bg_img('../img/teien1.jpg');
   background-origin: content-box;
   margin-bottom: 45px;
+  @include md {
+    margin-bottom: 30px;
+  }
+  @include sm {
+    margin-bottom: 20px;
+  }
   &::before {
     content: '';
     width: 100%;
@@ -457,7 +445,7 @@
      opacity: 1;
     }
   }
-  h2 {
+  h1 {
     color: #000;
     font-size: 4.2em;
     font-weight: 700;
@@ -599,12 +587,16 @@
 
 //WordPress解説スタイル
 
+  .active_greeting {
+    & + p + p {
+      margin-bottom: 15%;
+    }
+  }
   .wp_tabs {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
-    padding: 20px 0 0;
 
     li {
       width: 100%;

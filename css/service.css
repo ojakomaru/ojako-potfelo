@@ -4,19 +4,20 @@
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  background: radial-gradient(rgba(234, 234, 243, 0.84), rgba(223, 233, 232, 0.75)), url(../img/iitenki.jpg);
-  background-size: cover;
-  position: relative;
+  width: 100%;
+  height: auto;
+  animation-name: appear;
+  animation-duration: 4.5s;
+  animation-timing-function: ease;
 }
 
 .page-id-42 .key_visual:before {
-  padding-top: 35%;
+  padding-top: 50%;
 }
 
 .page-id-42 .key_visual:before {
   content: '';
   display: block;
-  padding-top: 50%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -26,8 +27,10 @@
 }
 
 .page-id-42 .key_visual .page-title h1#animation-text {
+  background: -webkit-linear-gradient(right top, orange, yellow, green, cyan, blue, violet);
   background-clip: text;
   -webkit-background-clip: text;
+  color: rgba(0, 0, 0, 0.1);
   font-size: 4rem;
 }
 

@@ -29,7 +29,7 @@ Template Name: 製作者紹介ページ
   <?php endif; ?>
   <main class="main">
     <div class="active_head" id="profile">
-      <h3 class="text-frame">製作者の自己紹介</h3>
+      <h2 class="text-frame">製作者の自己紹介</h2>
     </div>
 
     <?php
@@ -42,9 +42,9 @@ Template Name: 製作者紹介ページ
     ?>
     <section class="introduction">
       <div class="profile">
-        <h2 id="creator_name_customizer" class="sequential">
+        <h1 id="creator_name_customizer" class="sequential">
           <?php echo esc_html($creator_name); ?>
-        </h2>
+        </h1>
         <dl>
           <dt class="sequential">生年月日</dt>
           <dd class="sequential">10月12日</dd>
@@ -72,12 +72,12 @@ Template Name: 製作者紹介ページ
 
     <section class="skill_graph" id="skill_graph">
       <div class="kakko_wrap">
-        <h2 id="skill_map_title_customizer" class="kakko_text">
+        <h1 id="skill_map_title_customizer" class="kakko_text">
           <?php
           $skill_map_title = get_theme_mod('skill_map_title');
           if(!empty($skill_map_title))
           { echo esc_html($skill_map_title); } ?>
-        </h2>
+        </h1>
       </div>
       <div class="bar html_bar">HTML</div>
       <div class="bar css_bar">CSS</div>
@@ -95,7 +95,7 @@ Template Name: 製作者紹介ページ
     $frame_work_record  = get_theme_mod("frame_work_record");
     ?>
     <div class="active_head" id="history">
-      <h3 class="text-frame c_head">WEB制作における<br>学習遍歴</h3>
+      <h2 class="text-frame c_head">WEB制作における<br>学習遍歴</h2>
     </div>
     <div class="acco_tav html">
       <h4><span>HTML</span></h4>
@@ -151,7 +151,7 @@ Template Name: 製作者紹介ページ
       <h2 class="text-frame c_head">WordPress<br>カスタマイズ承ります</h2>
     </div>
     <h3 class="active_greeting">
-      <strong>そもそもWordPress（ワードプレス）とは？</strong>
+      そもそもWordPress（ワードプレス）とは？
     </h3>
     <p>
       WordPress（ワードプレス）とは、オープンソース（誰でも利用可能）のCMS（コンテンツ管理システム）で、<br>主にブログ投稿管理、及びサイト運営に優れた無料のソフトウェアです。
@@ -161,7 +161,7 @@ Template Name: 製作者紹介ページ
     </p>
 
     <h3 class="active_greeting">
-      <strong>WordPressで出来ること、メリット</strong>
+      WordPressで出来ること、メリット
     </h3>
     <section class="wp_exp">
       <ul class="wp_tabs">

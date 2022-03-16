@@ -3,7 +3,7 @@
 @import "../config/mixin";
 .page-id-42 {
   .key_visual {
-    @include keyVisual('../img/iitenki.jpg', $position, 50%);
+    @include keyVisual('../img/iitenki.jpg', center, 50%);
     &:before {
       content: '';
       display: block;

@@ -26,10 +26,11 @@ function add_enqueue_files(){
   wp_script('main_script','/js/script.js');
 
   //メインCSSのエンキュー
-  wp_css('main_css','/css/style.css');
-
+  if(is_home()) {
+    wp_css('home_css','/css/style.css');
+  }
   //製作者ページスタイル
-  if (is_page('company')) {
+  elseif (is_page('company')) {
     wp_css('company_style','/css/company.css');
   }
   //サービスページスタイル
