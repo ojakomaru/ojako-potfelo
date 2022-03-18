@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
 <div class="key_visual" id="key_visual">
-<div id="taxonomy-text">サイト内検索ページ</div>
-  <div class="welcome-text">
-    <h1 id="animation-text">おジャコの目指せ出世魚！</h1>
+<div id="taxonomy-text">サイト内検索結果</div>
+  <div class="page-title">
+    <h1 id="animation-text"><?php bloginfo('name'); ?></h1>
   </div><!-- welcome-text -->
 
 </div><!-- key_visual -->
@@ -13,7 +13,7 @@
     <?php if (isset($_GET['s']) && empty($_GET['s'])) ://検索フォームgetの値が入力されているか確認?>
       <h3 class="text-frame"><?php echo esc_html('検索キーワードを入力してください');//キーワード未入力時のテキスト?></h3>
       <?php else: ?>
-      <h3 class="text-frame">「<?php echo $_GET['s'].'」の<br>検索結果:'.$wp_query->found_posts.'件';?></h3>
+      <h2 class="text-frame">「<?php echo $_GET['s'].'」の<br>検索結果:'.$wp_query->found_posts.'件';?></h2>
       <?php endif; ?>
   </div>
     <!--  ループ開始  -->

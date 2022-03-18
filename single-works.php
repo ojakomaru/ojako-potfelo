@@ -1,13 +1,13 @@
 <?php get_header(); ?>
 <section class="key_visual" id="key_visual">
-    <div class="key_movi">
+  <div class="key_movi">
     <video autoplay loop muted  id="bgvid">
-        <source src="<?php echo get_stylesheet_directory_uri(); ?>/videos/vllo-2.webm" type="video/webm">
-        <source src="<?php echo get_stylesheet_directory_uri(); ?>/videos/vllo-2.webm" type="video/mp4">
+      <source src="<?php echo get_stylesheet_directory_uri(); ?>/videos/vllo-2.webm" type="video/webm">
+      <source src="<?php echo get_stylesheet_directory_uri(); ?>/videos/vllo-2.webm" type="video/mp4">
     </video>
     <?php if (have_posts()): while(have_posts()): the_post();?>
     <div id="taxonomy-text">実務編</div>
-    <div class="welcome-text">
+    <div class="page-title">
       <h1 id="animation-text">完成事例</h1>
     </div><!-- welcome-text -->
   </div><!-- key_movi -->
@@ -16,7 +16,7 @@
 <div class="container"><!-- フッターまでつづく -->
   <main class="main">
     <div class="active_head">
-        <h3 class="text-frame"><?php the_title(); ?></h3>
+      <h2 class="text-frame"><?php the_title(); ?></h2>
     </div>
 
     <!--  ループ開始  -->

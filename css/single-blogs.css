@@ -1616,11 +1616,19 @@ footer {
   font-size: 14px;
   text-align: center;
   width: 100%;
+  padding-top: 1%;
 }
 
 @media screen and (max-width: 768px) {
   footer {
     padding-bottom: 75px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  footer {
+    font-size: 10px;
   }
 }
 

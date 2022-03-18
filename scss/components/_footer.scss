@@ -18,8 +18,13 @@ footer {
   font-size: 14px;
   text-align: center;
   width: 100%;
+  padding-top: 1%;
   @include md {
     padding-bottom: 75px;
+    font-size: 12px;
+  }
+  @include sm {
+    font-size: 10px;
   }
 }
 
