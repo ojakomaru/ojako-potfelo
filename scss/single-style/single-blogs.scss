@@ -149,6 +149,9 @@
       padding-left: 20px;
       padding-right: 20px;
     }
+    @include s {
+      font-size: 1rem;
+    }
   }
 
   .blog_article {
@@ -191,6 +194,11 @@
       }
       @include md {
         font-size: 18px;
+        margin-bottom: 30px;
+      }
+      @include sm {
+        font-size: 16px;
+        margin-bottom: 15px;
       }
     }
 
@@ -255,6 +263,12 @@
     .tadv-color {
       font-size: 18px;
       font-family: $lato;
+      @include md {
+        font-size: 16px;
+      }
+      @include sm {
+        font-size: 14px;
+      }
     }
 
     strong {
@@ -329,15 +343,6 @@
       list-style: disc;
       border: 1px solid #3333;
     }
-    // ol {
-    //   list-style: decimal;
-    //   padding-left: 4em;
-    //   padding-top:3em;
-    //   margin-right: 40%;
-    //   width: 50%;
-    //   background-color: #fef5e0;
-    //   border: 2px solid $sub_color;
-    // }
     li {
       padding: 0.4em;
     }
@@ -358,6 +363,8 @@
       @include sm {
         padding-left: 18px;
         padding-right: 18px;
+        line-height: 2;
+        margin: 3% 0;
       }
     }
     .has-luminous-vivid-amber-background-color {
@@ -389,6 +396,11 @@
     }
     mark {
       color: black;
+    }
+    .wp-block-spacer {
+      @include md {
+        height: 30px!important;
+      }
     }
   } //blog_article
 

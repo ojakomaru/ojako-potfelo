@@ -1816,6 +1816,13 @@ footer {
   }
 }
 
+@media screen and (max-width: 469px) {
+  .single-blogs .text-frame,
+  .single-blogs .editor-post-title .editor-post-title__input {
+    font-size: 1rem;
+  }
+}
+
 .single-blogs .blog_article {
   background-color: #F8F9F7;
   color: #393542;
@@ -1865,6 +1872,14 @@ footer {
 @media screen and (max-width: 768px) {
   .single-blogs .blog_article h3 {
     font-size: 18px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .single-blogs .blog_article h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
   }
 }
 
@@ -1943,6 +1958,18 @@ footer {
 .single-blogs .blog_article .tadv-color {
   font-size: 18px;
   font-family: "Lato", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  .single-blogs .blog_article .tadv-color {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .single-blogs .blog_article .tadv-color {
+    font-size: 14px;
+  }
 }
 
 .single-blogs .blog_article strong {
@@ -2064,6 +2091,8 @@ footer {
   .single-blogs .blog_article p {
     padding-left: 18px;
     padding-right: 18px;
+    line-height: 2;
+    margin: 3% 0;
   }
 }
 
@@ -2104,6 +2133,12 @@ footer {
 
 .single-blogs .blog_article mark {
   color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .single-blogs .blog_article .wp-block-spacer {
+    height: 30px !important;
+  }
 }
 
 .single-blogs .gist .gist-data {
