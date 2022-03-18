@@ -15,7 +15,7 @@ $oja_tax      = get_term_by('slug',$oja_slug,$slug);
 <div class="container <?php echo layout_classname($slug); ?>"><!-- フッターまでつづく -->
   <main class="main">
     <div class="active_head">
-      <h3 class="text-frame">「<?php echo $oja_tax->name; ?>」の記事</h3>
+      <h2 class="text-frame">「<?php echo $oja_tax->name; ?>」の記事</h2>
     </div>
 
     <!--  ループ開始  -->

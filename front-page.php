@@ -35,7 +35,7 @@
       <h2 class="text-frame">はじめのご挨拶</h2>
     </div>
 
-    <h3 class="active_greeting" id="greeting">
+    <h3 class="active_greeting" id="greeting_text">
       <strong id="greeting_text_customizer" class="greeting_text">
         <?php
         $greeting_text = get_theme_mod('greeting_text');

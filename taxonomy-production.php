@@ -18,7 +18,7 @@ $taxonomy_var    = get_taxonomy($slug);
       <source src="<?php echo get_stylesheet_directory_uri(); ?>/videos/Japan-23525.webm" type="video/mp4">
     </video>
     <div id="taxonomy-text"><?php echo $taxonomy_var->label; ?></div>
-    <div class="welcome-text">
+    <div class="page-title">
       <h1 id="animation-text">WEB TYPE</h1>
     </div><!-- welcome-text -->
 
@@ -28,7 +28,7 @@ $taxonomy_var    = get_taxonomy($slug);
 <div class="container <?php echo layout_classname($slug); ?>"><!-- フッターまでつづく -->
   <main class="main">
     <div class="active_head">
-      <h3 class="text-frame">「<?php echo $production->name; ?>」の一覧</h3>
+      <h2 class="text-frame">「<?php echo $production->name; ?>」の一覧</h2>
     </div>
 
     <!--  ループ開始  -->

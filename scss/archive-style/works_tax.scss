@@ -1,115 +1,50 @@
 @charset 'UTF-8';
+@import "../config/config";
+@import "../config/mixin";
+@import "../config/reset";
+@import "../config/base";
 
+@import "../components/layout";
+
+@import "../components/header";
+
+@import "../components/scroll_btn";
+
+@import "../components/pagenation";
+
+@import "../components/submenu";
+
+@import "../components/search";
+
+@import "../components/archive-list";
+
+@import "../components/breadcrumb";
+
+@import "../components/footer";
 .tax-production {
+
   //videokeyビジュアルスタイル
 
-    video#bgvid {
-      max-height: 480px;
+  video#bgvid {
+    max-height: 480px;
+  }
+  @include xl {
+    .key_movi {
+      position: static;
     }
-    @include xl {
-      .key_movi {
-        position: static;
-      }
+  }
+  //keyビジュアルスタイル
+  @include xl {
+    .key_visual {
+      @include bg_img('../img/nanamewagasa.jpg');
     }
-    //keyビジュアルスタイル
-    @include xl {
-      .key_visual {
-        @include bg_img('../img/nanamewagasa.jpg');
-        position: relative;
-      }
-    }
-    .welcome-text {
-      @include xl {
-        bottom: -15%;
-      }
-      @include lg {
-        bottom: -50%;
-      }
-      h1#animation-text {
-        background: -webkit-linear-gradient(left,#fff,#fff);
-        background-clip: text;
-        -webkit-background-clip: text;
-        font-size: 4.2rem;
-        @include xl {
-          font-size: 3.4rem;
-        }
-        @include lg {
-          font-size: 3rem;
-          padding: 0;
-        }
-        @include md {
-          font-size: 2.6rem;
-        }
-        @include sm {
-          font-size: 2rem;
-        }
-        @include s {
-          font-size: 1.7rem;
-          font-weight: 600;
-        }
-        & > span {
-          animation-duration: 1.5s;
-        }
-      }
-    }
-    
-    #taxonomy-text {
-      position: absolute;
-      bottom: 10%;
-      right: 6%;
-      display: inline-block;
-      text-align: center;
-      background: $sub_color;
-      > span {
-      color: $primary_color;
-      padding-left: 3px;
-      padding-right: 3px;
-      display: inline-block;
-      font-size: 3rem;
-      animation-name:c-slidein;
-      opacity: 0;
-      animation-timing-function: ease-in;
-      animation-duration: 1s;
-      animation-fill-mode: forwards;
-        @include xl {
-          font-size: 2.3rem;
-        }
-        @media screen and (max-width: 1120px) {
-          font-size: 2.1rem;
-        }
-        @include lg {
-          font-size: 1.9rem;
-        }
-        @include md {
-          font-size: 1.7rem;
-          font-weight: 500;
-        }
-        @media screen and (max-width: 698px) {
-          font-size: 1.5rem;
-        }
-        @include sm {
-          font-size: 1.3rem;
-        }
-        @include s {
-          font-size: 1.1rem;
-        }
-      }
-    }
+  }
+  
+  #taxonomy-text {
+    @include taxonomy-text;
+  }
 
-    @keyframes c-slidein {
-      0% {
-        transform: translateY(30px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    /*================================
-    制作実績アーカイブスタイル
-    ===================================*/
+  //制作実績アーカイブスタイル
   #content {
     .item_detail {
       border: 1px solid #ccc;

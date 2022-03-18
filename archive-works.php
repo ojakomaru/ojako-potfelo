@@ -22,7 +22,7 @@ Template Name: 制作実績一覧ページ
 <div class="container <?php echo layout_classname('works'); ?>"><!-- フッターまでつづく -->
   <main class="main">
     <div class="active_head">
-        <h3 class="text-frame">制作実績の一覧</h3>
+        <h2 class="text-frame">制作実績の一覧</h2>
     </div>
     <div class="product_search">
       <h2 class="product_text">おジャコが創りました</h2>

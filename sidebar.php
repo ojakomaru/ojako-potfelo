@@ -24,10 +24,7 @@
       <dt>サービス紹介</dt>
     </a>
     <a href="<?php echo get_post_type_archive_link('works'); ?>">
-      <dd>ー  実績の一覧へ</dd>
-    </a>
-    <a href="<?php echo home_url('service');?>/#intro">
-      <dd>ー  自由なカスタムを</dd>
+      <dd>ー  制作実績</dd>
     </a>
     <a href="<?php echo home_url('service');?>/#after_follow">
       <dd>ー  公開した後も安心</dd>
@@ -35,9 +32,6 @@
     
     <a href="<?php echo home_url('/blogs/'); ?>">
       <dt>ブログ</dt>
-    </a>
-    <a href="<?php echo home_url('/blogs/'); ?>#content">
-      <dd>ー  普段の学習記録</dd>
     </a>
     <a href="<?php echo home_url('/blogs/'); ?>#new_blog">
       <dd>ー  新着記事</dd>
@@ -55,18 +49,9 @@
     <a href="<?php echo home_url(''); ?>#philosophy">
       <dd>ー  制作理念</dd>
     </a>
-    <a href="<?php echo home_url(''); ?>#production">
-      <dd>ー  制作実績</dd>
-    </a>
-    
+
     <a href="<?php echo home_url('/contact/');?>">
       <dt>お問い合わせ</dt>
-    </a>
-    <a href="<?php echo home_url('/contact/');?>">
-      <dd>ー  参考フォームの紹介</dd>
-    </a>
-    <a href="<?php echo home_url('/contact/');?>">
-      <dd>ー  ご連絡お待ちしております</dd>
     </a>
 
   </dl>

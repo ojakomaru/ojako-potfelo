@@ -1,6 +1,27 @@
 @charset "UTF-8";
 @import "../config/config";
 @import "../config/mixin";
+@import "../config/reset";
+@import "../config/base";
+
+@import "../components/layout";
+
+@import "../components/header";
+
+@import "../components/scroll_btn";
+
+@import "../components/pagenation";
+
+@import "../components/submenu";
+
+@import "../components/search";
+
+@import "../components/archive-list";
+
+@import "../components/breadcrumb";
+
+@import "../components/footer";
+
 .post-type-archive-blogs {
   // 目録を表示しない
   #pc_nav {
@@ -12,99 +33,21 @@
     height: auto;
   }
 
-  //videoスタイル
-  video#bgvid {
-    max-height: 480px;
-  }
-  @include xl {
-    .key_movi {
-      position: static;
-    }
-  }
   //keyビジュアルスタイル
   @include xl {
     .key_visual {
       @include keyVisual('../img/sakasa_kouyou.jpg');
     }
   }
-  .page-title {
-    @include xl {
-      bottom: -15%;
-    }
-    @include lg {
-      bottom: -50%;
-    }
-    @include sm {
-      bottom: -70%;
-    }
-    h1#animation-text {
-      @include signalTitel(left, (#fff,#fff));
-      @include sm {
-        font-size: 2rem;
-      }
-      @include s {
-        font-size: 1.5rem;
-        font-weight: 600;
-      }
-      & > span {
-        animation-duration: 1.5s;
-      }
-    }
-  }
 
   #taxonomy-text {
-    position: absolute;
-    bottom: 10%;
-    right: 6%;
-    background: $sub_color;
-    @include md {
-      bottom: 0;
-      right: 0;
-    }
+    @include taxonomy-text(
+      popIn,
+      cubic-bezier(0, 1.23, 1, 0.99),
+      1.5s,
+    );
     > span {
-    color: $primary_color;
-    padding-left: 3px;
-    padding-right: 3px;
-    display: inline-block;
-    font-size: 3rem;
-    animation-name:popIn;
-    animation-timing-function: cubic-bezier(0, 1.23, 1, 0.99);
-    animation-duration: 1.5s;
-    animation-fill-mode: forwards;
-      @include xl {
-        font-size: 2.3rem;
-      }
-      @media screen and (max-width: 1120px) {
-        font-size: 2rem;
-      }
-      @include lg {
-        font-size: 1.8rem;
-      }
-      @include md {
-        font-size: 1.5rem;
-        font-weight: 500;
-        line-height: 1.7;
-      }
-      @include sm {
-        font-size: 1.2rem;
-      }
-      @include s {
-        font-size: 1rem;
-        padding-left: 1px;
-        padding-right: 1px;
-      }
-    }
-  }
-
-  @keyframes popIn {
-    0% {
-      transform: translateY(50px);
-    }
-    50% {
-      transform: translateY(-50px);
-    }
-    100% {
-      transform: translateY(0);
+      opacity: 1;
     }
   }
 

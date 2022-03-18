@@ -25,7 +25,7 @@ function add_enqueue_files(){
   //メインJavaScriptのエンキュー
   wp_script('main_script','/js/script.js');
 
-  //メインCSSのエンキュー
+  //ホームCSSのエンキュー
   if(is_home()) {
     wp_css('home_css','/css/style.css');
   }
@@ -56,6 +56,9 @@ function add_enqueue_files(){
   //カスタムタクソノミースタイル
   elseif(is_tax(array('oja_cat', 'oja_tags'))) {
     wp_css('taxonomy-style', '/css/oja_tax.css');
+  }
+  elseif(is_tax('production')) {
+    wp_css('works_archive', '/css/works_tax.css');
   }
 }
 add_action('wp_enqueue_scripts', 'add_enqueue_files',1);

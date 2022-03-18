@@ -136,6 +136,29 @@ body::before {
   }
 }
 
+@keyframes c-slidein {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: translateY(50px);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .key_visual {
     background: radial-gradient(rgba(0, 93, 255, 0.3), rgba(223, 233, 232, 0.75)), url("../img/wagasa.jpg");
@@ -196,9 +219,15 @@ body::before {
   }
 }
 
+@media screen and (max-width: 576px) {
+  .page-title {
+    top: 60%;
+  }
+}
+
 .page-title h1 {
   color: #0B048F;
-  background: -webkit-linear-gradient(left, orange, yellow, green, cyan, blue, violet);
+  background: -webkit-linear-gradient(left, #fff, #fff);
   background-clip: text;
   -webkit-background-clip: text;
   color: rgba(0, 0, 0, 0.1);
@@ -360,10 +389,6 @@ body::before {
   line-height: 1.6;
   letter-spacing: 2px;
   color: #393542;
-  opacity: 0;
-  text-align: center;
-  transition: all 1.5s ease-out;
-  transform: translateY(-50px);
 }
 
 @media screen and (max-width: 992px) {
@@ -1383,19 +1408,11 @@ footer {
   }
 }
 
-.page-id-49 h1#animation-text {
-  background: -webkit-linear-gradient(left, #fff, #fff);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: rgba(0, 0, 0, 0.1);
-}
-
 .page-id-49 #taxonomy-text {
   position: absolute;
   bottom: 10%;
   right: 6%;
   display: inline-block;
-  text-align: center;
   background: #F8D76A;
 }
 
@@ -1408,12 +1425,11 @@ footer {
 
 .page-id-49 #taxonomy-text > span {
   color: #9C9C9C;
-  padding-left: 3px;
-  padding-right: 3px;
   display: inline-block;
-  font-size: 3rem;
-  animation-name: c-slidein;
+  padding: 0 3px;
+  font-size: 2.6rem;
   opacity: 0;
+  animation-name: c-slidein;
   animation-timing-function: ease-in;
   animation-duration: 1s;
   animation-fill-mode: forwards;
@@ -1421,25 +1437,19 @@ footer {
 
 @media screen and (max-width: 1200px) {
   .page-id-49 #taxonomy-text > span {
-    font-size: 2.3rem;
-  }
-}
-
-@media screen and (max-width: 1120px) {
-  .page-id-49 #taxonomy-text > span {
-    font-size: 2.1rem;
+    font-size: 2rem;
   }
 }
 
 @media screen and (max-width: 992px) {
   .page-id-49 #taxonomy-text > span {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
   }
 }
 
 @media screen and (max-width: 768px) {
   .page-id-49 #taxonomy-text > span {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: 500;
     line-height: 1.7;
   }
@@ -1447,13 +1457,13 @@ footer {
 
 @media screen and (max-width: 698px) {
   .page-id-49 #taxonomy-text > span {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
 
 @media screen and (max-width: 576px) {
   .page-id-49 #taxonomy-text > span {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -1462,17 +1472,6 @@ footer {
     font-size: .8rem;
     padding-left: 1px;
     padding-right: 1px;
-  }
-}
-
-@keyframes c-slidein {
-  0% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
   }
 }
 
@@ -1663,6 +1662,19 @@ footer {
 
 .page-id-49 .main h2 strong:last-of-type {
   margin-bottom: 50px;
+}
+
+.page-id-49 .main h3.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-id-49 .main h3 {
+  padding: 0 5%;
+  opacity: 0;
+  text-align: center;
+  transition: all 1.5s ease-out;
+  transform: translateY(-50px);
 }
 
 .page-id-49 .main h4 {

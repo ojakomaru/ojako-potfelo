@@ -1,6 +1,29 @@
 @charset "UTF-8";
 @import "../config/config";
 @import "../config/mixin";
+@import "../config/reset";
+@import "../config/base";
+
+@import "../components/layout";
+
+@import "../components/header";
+
+@import "../components/scroll_btn";
+
+@import "../components/comment_form";
+
+@import "../components/pagenation";
+
+@import "../components/submenu";
+
+@import "../components/search";
+
+@import "../components/archive-list";
+
+@import "../components/breadcrumb";
+
+@import "../components/footer";
+
 .single-blogs {
   .container .main {
     @include lg {
@@ -16,39 +39,25 @@
   .submenu.fix#pc_nav {
     visibility: visible;
     overflow: scroll;
-    height: 80vh;
+    height: auto;
   }
 
   //videoスタイル
   video#bgvid {
-    max-height: 300px;
+    max-height: 350px;
   }
   //keyビジュアルスタイル
   .key_visual {
     @include xl {
       @include keyVisual('../img/sakasa_kouyou.jpg');
-      .key_movi {
-        position: static;
-      }
-      video#bgvid {
-        display: none;
-      }
     }
   }
 
   .page-title {
-    @include xl {
-      bottom: -15%;
-    }
-    @include lg {
-      bottom: -50%;
-    }
-    @include sm {
-      bottom: -75%;
-    }
     h1#animation-text {
      @include signalTitel(left, (#fff,#fff));
       font-size: 3rem;
+      padding: 0 10% 0 7%;
       @include xl {
         font-size: 2.4rem;
       }
@@ -66,9 +75,6 @@
         font-size: 1.2rem;
         font-weight: 600;
       }
-      & > span {
-        animation-duration: 1.5s;
-      }
     }
   }
 
@@ -76,6 +82,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    display: inline-block;
     background: $sub_color;
     > span {
       color: $primary_color;
@@ -107,18 +114,6 @@
         padding-left: 1px;
         padding-right: 1px;
       }
-    }
-  }
-
-  @keyframes popIn {
-    0% {
-      transform: translateY(50px);
-    }
-    50% {
-      transform: translateY(-50px);
-    }
-    100% {
-      transform: translateY(0);
     }
   }
 

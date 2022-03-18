@@ -1,9 +1,28 @@
 @charset "UTF-8";
 @import "../config/config";
 @import "../config/mixin";
+@import "../config/reset";
+@import "../config/base";
+
+@import "../components/layout";
+
+@import "../components/header";
+
+@import "../components/scroll_btn";
+
+@import "../components/pagenation";
+
+@import "../components/submenu";
+
+@import "../components/search";
+
+@import "../components/archive-list";
+
+@import "../components/breadcrumb";
+
+@import "../components/footer";
 //videokeyビジュアルスタイル
 .post-type-archive-works {
-
   video#bgvid {
     max-height: 480px;
   }
@@ -18,98 +37,9 @@
       @include keyVisual('../img/nanamewagasa.jpg');
     }
   }
-  .page-title {
-    @include xl {
-      bottom: -15%;
-    }
-    @include lg {
-      bottom: -50%;
-    }
-    @include sm {
-      bottom: -70%;
-    }
-    h1#animation-text {
-      @include signalTitel(left, (#fff,#fff));
-      font-size: 4.2rem;
-      @include xl {
-        font-size: 3.4rem;
-      }
-      @include lg {
-        font-size: 3rem;
-        padding: 0;
-      }
-      @include md {
-        font-size: 2.6rem;
-      }
-      @include sm {
-        font-size: 2rem;
-      }
-      @include s {
-        font-size: 1.7rem;
-        font-weight: 600;
-      }
-      & > span {
-        animation-duration: 1.5s;
-      }
-    }
-  }
-  
-  #taxonomy-text {
-    position: absolute;
-    bottom: 10%;
-    right: 6%;
-    display: inline-block;
-    text-align: center;
-    background: $sub_color;
-    @include md {
-      bottom: 0;
-      right: 0;
-    }
-    > span {
-    color: $primary_color;
-    padding-left: 3px;
-    padding-right: 3px;
-    display: inline-block;
-    font-size: 3rem;
-    animation-name:c-slidein;
-    opacity: 0;
-    animation-timing-function: ease-in;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-      @include xl {
-        font-size: 2.3rem;
-      }
-      @media screen and (max-width: 1120px) {
-        font-size: 2rem;
-      }
-      @include lg {
-        font-size: 1.8rem;
-      }
-      @include md {
-        font-size: 1.5rem;
-        font-weight: 500;
-        line-height: 1.7;
-      }
-      @include sm {
-        font-size: 1.2rem;
-      }
-      @include s {
-        font-size: 1rem;
-        padding-left: 1px;
-        padding-right: 1px;
-      }
-    }
-  }
 
-  @keyframes c-slidein {
-    0% {
-      transform: translateY(30px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
+  #taxonomy-text {
+    @include taxonomy-text;
   }
 
   //制作実績検索カテゴリー

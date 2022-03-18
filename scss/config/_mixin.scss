@@ -86,3 +86,52 @@
   }
 }
 
+@mixin taxonomy-text(
+  $name: c-slidein,
+  $timing-function: ease-in,
+  $duration: 1s,
+  $fill-mode: forwards
+  ) {
+  position: absolute;
+  bottom: 10%;
+  right: 6%;
+  display: inline-block;
+  background: $sub_color;
+  @include md {
+    bottom: 0;
+    right: 0;
+  }
+  > span {
+  color: $primary_color;
+  display: inline-block;
+  padding: 0 3px;
+  font-size: 2.6rem;
+  opacity: 0;
+  animation-name: $name;
+  animation-timing-function: $timing-function;
+  animation-duration: $duration;
+  animation-fill-mode: $fill-mode;
+    @include xl {
+      font-size: 2rem;
+    }
+    @include lg {
+      font-size: 1.8rem;
+    }
+    @include md {
+      font-size: 1.6rem;
+      font-weight: 500;
+      line-height: 1.7;
+    }
+    @media screen and (max-width: 698px) {
+      font-size: 1.2rem;
+    }
+    @include sm {
+      font-size: 1.2rem;
+    }
+    @include s {
+      font-size: .8rem;
+      padding-left: 1px;
+      padding-right: 1px;
+    }
+  }
+}

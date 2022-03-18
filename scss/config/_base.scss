@@ -46,6 +46,27 @@ body {
     opacity: 1;
   }
 }
+@keyframes c-slidein {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes popIn {
+  0% {
+    transform: translateY(50px);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
 //キービジュアルスタイル
 @include xl {
@@ -92,16 +113,12 @@ body {
   @include xl {
     line-height: 1.6;
   }
+  @include sm {
+    top: 60%;
+  }
   h1 {
     color: $main_color;
-    @include signalTitel(left,
-      orange,
-      yellow,
-      green,
-      cyan,
-      blue,
-      violet
-    );
+    @include signalTitel(left, (#fff,#fff));
     font-size: 4rem;
     @include xl {
       font-size: 3.4rem;
@@ -228,10 +245,6 @@ body {
     line-height: 1.6;
     letter-spacing: 2px;
     color: $text_color;
-    opacity: 0;
-    text-align: center;
-    transition: all 1.5s ease-out;
-    transform: translateY(-50px);
     @include lg {
       font-size: 1.6rem;
     }
@@ -302,16 +315,5 @@ body {
       line-height: 2;
       padding: 0 15px 0 15px;
     }
-    // &:last-of-type {
-    //   margin-bottom: 120px;
-    // }
-    // @include md {
-    //   br:first-of-type {
-    //     display: none;
-    //   }
-    //   &:last-of-type {
-    //     margin-bottom: 32px;
-    //   }
-    // }
   }
 }

@@ -9,7 +9,7 @@
     </div>
     <div class="main_item_text">
       <h1><?php the_title(); ?></h1>
-      <h3 class="subtitle"><?php the_excerpt();?></h3>
+      <?php the_excerpt();?>
     </div>
   </a><!-- item_page -->
 </div><!-- item_detail -->

@@ -12,7 +12,7 @@ Template Name: ブログ一覧ページ
       <source src="<?php echo get_stylesheet_directory_uri(); ?>/videos/Japan-23525.webm" type="video/mp4">
     </video>
 
-    <div id="taxonomy-text">日々の積み上げ</div>
+    <div id="taxonomy-text">日々学び</div>
     <div class="page-title">
       <h1 id="animation-text"><?php echo bloginfo('name');?></h1>
     </div><!-- welcome-text -->
@@ -28,7 +28,7 @@ Template Name: ブログ一覧ページ
   <?php endif; ?>
   <main class="main">
     <div class="active_head">
-      <h3 class="text-frame">記事一覧ページ</h3>
+      <h2 class="text-frame">記事一覧ページ</h2>
     </div>
 
 <!-- 記事の条件絞り込み検索 -->
