@@ -96,7 +96,7 @@ function oja_register_blog() { //add_actionの２つのパラメーターを定�
 		"description" => "おジャコの出世成功記録",
 		"public"      => true,//公開するかどうか
 		"show_in_rest" => true,//グーテンベルクを使用可能に,REST APIを取得
-		"rest_base"   => "",//REST APIの取得URLを指定
+		"rest_base"   => "blogs",//REST APIの取得URLを指定
 		"rest_controller_class" => "WP_REST_Posts_Controller",
 		"has_archive" => true,//一覧ページを持つかどうか
 		"delete_with_user" => false,
@@ -182,6 +182,7 @@ $args = array(
 'hierarchical' => true,
 'labels'       => $labels,
 "show_in_rest" => true,
+"rest_base"    => "oja_tags",
 'show_ui'      => true,
 'show_admin_column' => true,
 'update_count_callback' => '_update_post_term_count',
@@ -193,3 +194,12 @@ register_taxonomy( 'oja_tags', 'blogs', $args );
 }
 add_action( 'init', 'oja_register_blog' );
 
+
+//RESTAPIにエンドポイントを追加する
+function oja_rest_route_for_post( $route, $post ) {
+  if ( $post->post_type === 'blogs' ) {
+    $route = '/wp/v2/blogs/' . $post->ID;
+  }
+  return $route;
+}
+add_filter( 'rest_route_for_post', 'oja_rest_route_for_post', 10, 2 );

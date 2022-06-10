@@ -10,7 +10,7 @@ document.addEventListener("scroll", () => {
     serviceLink ? serviceLink.classList.add("show") : null ;
   } else {
     pageTopBtn.classList.remove("show");
-    serviceLink.classList.remove("show");
+    serviceLink ? serviceLink.classList.remove("show") : null;
   }
 })
 

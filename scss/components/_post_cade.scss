@@ -8,7 +8,9 @@
   overflow: hidden;
   position: relative;
   box-shadow: 0px 3px 4px #ccc, 0px 0px 1px 1px #fff inset;
+  pointer-events: none;
   @include showAnimation;
+  transition-duration: 0.5s;
   &:after {
     position: absolute;
     left: 0;
@@ -25,15 +27,17 @@
       transform: translateX(-156%) translateY(-38%) rotate(57deg);
     }
   }
-  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 1px 1px #ccc, 0px 0px 2px 3px #fff inset;
+  }
+
   a {
     display: block;
     text-decoration: none;
     width: 100%;
     transition: $anime;
-    &:hover .thumbnail img {
-      transform: scale(1.1);
-    }
+    pointer-events: auto;
   }
 }
 

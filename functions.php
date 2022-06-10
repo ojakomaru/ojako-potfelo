@@ -64,3 +64,28 @@ function ojako_excerpt_mblength ($length) {
 }
 add_filter('excerpt_mblength','ojako_excerpt_mblength',999);
 
+// 管理画面の投稿・固定ページ一覧にIDを表示
+function manage_posts_columns_id( $columns ) {
+	$columns['wps_post_id'] = 'ID';
+	return $columns;
+}
+
+function add_column_id( $column_name, $post_id ) {
+	if( $column_name == 'wps_post_id' ) {
+		echo $post_id;
+	}
+}
+// 投稿一覧
+add_filter( 'manage_posts_columns', 'manage_posts_columns_id', 5 );
+add_action( 'manage_posts_custom_column', 'add_column_id', 5, 2 );
+// 固定ページ一覧
+add_filter( 'manage_pages_columns', 'manage_posts_columns_id', 5 );
+add_action( 'manage_pages_custom_column', 'add_column_id', 5, 2 );
+
+// SVGをアップロード可能に
+function enable_svg($mimes)
+{
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'enable_svg');

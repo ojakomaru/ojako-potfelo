@@ -52,7 +52,7 @@ $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
       'field'    => 'slug',
       'operator' => 'IN'
     );
-  }
+  } else { $search_cat = [];}
   
   if(!empty($_GET['search_tags'])) {
     foreach ($_GET['search_tags'] as $value) {
@@ -64,7 +64,7 @@ $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
       'field'    => 'slug',
       'operator' => 'AND',
     );
-  }
+  } else { $search_tag = [];}
 
   if(!empty($search_cat) || !empty($search_tag)) {
     $args += Array('tax_query' => array($tax_args));
@@ -86,10 +86,10 @@ $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
     <form method="get" action="<?php echo esc_url($host.$url.$directori); ?>">
       <h2 class="condition-title">カテゴリーで絞り込む</h2>
       <div class="cat_condition">
-       <?php
+      <?php
         $cat_terms =  get_terms('oja_cat',array(
-         'hide_empty' => false,
-         'orderby' => 'slug',
+          'hide_empty' => false,
+          'orderby' => 'slug',
         ));
         foreach ($cat_terms as $cat ) :
         $checked = '';

@@ -9,18 +9,19 @@
     @include font_A("\f078");
     font-size: 19px;
     position: absolute;
-    right: 6%;
+    right: 10%;
     top: 4%;
     color: $text_color;
   }
     select[name="dropdown"] {
-    background-color: #dde2e4;
-    width: 100%;
+    background-color: #0b048f2b;
+    width: 85%;
     margin: 0px;
     padding: 10px;
     border-radius: 2px;
     font-size: 16px;
     color: $text_color;
+    cursor: pointer;
     border: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -62,7 +63,7 @@ ul.tag_list {
       font-weight: 300;
       display: block;
       transition:all 0.4s;
-      background-color: #dde2e4;
+      background-color: #0b048f2b;
       padding: 3px;
       padding-bottom: 1px;
       line-height: 1.8;
