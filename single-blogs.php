@@ -20,6 +20,11 @@
     </section>
   <?php endif; ?>
   <main class="main">
+
+    <!-- Reactレンダリングのテスト -->
+    <div id="timer-example"></div>
+    <!-- Reactレンダリングのテスト -->
+
     <?php
     if (have_posts()): while(have_posts()): the_post();
     get_template_part('/template-parts/loop', 'single_blogs');

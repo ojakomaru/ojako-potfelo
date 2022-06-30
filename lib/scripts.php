@@ -7,6 +7,9 @@ function add_scripts() {
 
   // Github Gist カスタマイズ用CDN読み込み
   wp_enqueue_script( 'github_gist_customize', 'https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.4/gist-embed.min.js', array(), '', true );
+
+  // React用JSファイルのエンキュー
+  wp_enqueue_script('my-script', get_theme_file_uri() . '/js/my-script.js?', ['wp-element'], '1.0.0', true);
 }
 add_action('wp_enqueue_scripts','add_scripts');
 
@@ -67,6 +70,25 @@ function add_enqueue_files(){
   }
 }
 add_action('wp_enqueue_scripts', 'add_enqueue_files',1);
+
+// カスタムブロック登録用スクリプト
+add_action( 'enqueue_block_editor_assets', function () {
+		wp_enqueue_script( 'custom_block_editor', get_theme_file_uri( 'js/editor.js'), [
+    'wp-blocks', 'wp-element', 'wp-rich-text', 'wp-i18n', 'wp-editor'
+  ]);
+	wp_localize_script( 'custom_block_editor', 'ojaEditorObj', [
+		[
+			'item' => 'editor01',
+			'title' => 'marker',
+			'class' => 'text-marker',
+		],
+		[
+			'item' => 'editor02',
+			'title' => 'pink',
+			'class' => 'color-pink',
+		]
+	]);
+});
 
 // 即時反映用の JavaScript をエンキュー
 function live_preview() {

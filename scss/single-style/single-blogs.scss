@@ -396,6 +396,14 @@
     mark {
       color: black;
     }
+    .text-marker {
+      background: linear-gradient(to top, #eaeb16 40%, transparent 40%);
+      font-weight: bold;
+    }
+    .color-pink {
+      color: #fa343d;
+      font-weight: bold;
+    }
     .wp-block-spacer {
       @include md {
         height: 30px!important;
