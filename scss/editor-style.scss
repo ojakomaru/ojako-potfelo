@@ -194,11 +194,11 @@ mark {
   color: black;
 }
 
+// カスタムマーカー
 .text-marker {
   background: linear-gradient(to top, #eaeb16 40%, transparent 40%);
   font-weight: bold;
 }
-.color-pink {
-  color: #fa343d;
-  font-weight: bold;
-}
+
+
+@import "components/heading";

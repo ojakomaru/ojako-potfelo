@@ -1,0 +1,25 @@
+// h1, h2, h3, h4, h5, h6{
+//   margin: 2em 0 0.5em;
+//   font-weight: bold;
+//   &.is-style-under-line{
+//     padding-bottom: 5px;
+//     border-bottom: 2px solid green;
+//   }
+
+//   &.is-style-left-line{
+//     padding-left: 5px;
+//     border-left: 5px solid #ddd;
+//   }
+// }
+// @each $tag, $size in (
+//   h1: 30px,
+//   h2: 24px,
+//   h3: 20px,
+//   h4: 18px,
+//   h5: 16px,
+//   h6: 14px
+// ) {
+//   #{$tag}{
+//     font-size: $size;
+//   }
+// }

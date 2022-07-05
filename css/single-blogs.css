@@ -2140,11 +2140,6 @@ footer {
   font-weight: bold;
 }
 
-.single-blogs .blog_article .color-pink {
-  color: #fa343d;
-  font-weight: bold;
-}
-
 @media screen and (max-width: 768px) {
   .single-blogs .blog_article .wp-block-spacer {
     height: 30px !important;

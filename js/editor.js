@@ -17,24 +17,23 @@
         isActive: isActive,
       });
     },
-  }),
-    richText.registerFormatType(`custom-editor/${ojaEditorObj[1].item}`, {
-      title: ojaEditorObj[1].title,
-      tagName: "span",
-      className: ojaEditorObj[1].class,
-      edit: function (args) {
-        return element.createElement(editor.RichTextToolbarButton, {
-          icon: "admin-customizer",
-          title: ojaEditorObj[1].title,
-          onClick: function () {
-            args.onChange(
-              richText.toggleFormat(args.value, {
-                type: `custom-editor/${ojaEditorObj[1].item}`,
-              })
-            );
-          },
-          isActive: args.isActive,
-        });
-      },
-    });
+  });
 })(window.wp.richText, window.wp.element, window.wp.editor);
+
+wp.blocks.registerBlockStyle("core/heading", {
+  name: "default",
+  label: "デフォルト",
+  isDefault: true,
+});
+
+wp.blocks.registerBlockStyle("core/heading", {
+  name: "under-line",
+  label: "下線",
+  isDefault: false,
+});
+
+wp.blocks.registerBlockStyle("core/heading", {
+  name: "left-line",
+  label: "左線",
+  isDefault: false,
+});
