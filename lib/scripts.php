@@ -70,25 +70,25 @@ add_action('wp_enqueue_scripts', 'add_enqueue_files',1);
 
 // カスタムブロック登録用スクリプト
 add_action( 'enqueue_block_editor_assets', function () {
-  // $asset_file = include __DIR__ . '/../blocks/build/exblock.asset.php';
-	// wp_enqueue_script(
-	// 	'custom-block-script',
-	// 	get_theme_file_uri( '/blocks/build/exblock.js' ),
-	// 	$asset_file['dependencies'], //依存スクリプトの配列
-  //   $asset_file['version'], //バージョン
-	// 	true
-	// );
+  $asset_file = include __DIR__ . '/../blocks/build/exbox.asset.php';
+	wp_enqueue_script(
+		'exbox-script',
+		get_theme_file_uri( '/blocks/build/exbox.js' ),
+		$asset_file['dependencies'], //依存スクリプトの配列
+    $asset_file['version'], //バージョン
+		true
+	);
 
-  // wp_enqueue_script( 'oja-block-editor', get_theme_file_uri( 'js/editor.js'), [
-  //   'wp-blocks', 'wp-element', 'wp-rich-text', 'wp-i18n', 'wp-editor'
-  // ]);
-	// wp_localize_script( 'oja-block-editor', 'ojaEditorObj', [
-	// 	[
-	// 		'item' => 'editor01',
-	// 		'title' => 'marker',
-	// 		'class' => 'text-marker',
-	// 	],
-	// ]);
+  wp_enqueue_script( 'oja-block-editor', get_theme_file_uri( 'js/editor.js'), [
+    'wp-blocks', 'wp-element', 'wp-rich-text', 'wp-i18n', 'wp-editor'
+  ]);
+	wp_localize_script( 'oja-block-editor', 'ojaEditorObj', [
+		[
+			'item' => 'editor01',
+			'title' => 'marker',
+			'class' => 'text-marker',
+		],
+	]);
 });
 
 // 即時反映用の JavaScript をエンキュー
