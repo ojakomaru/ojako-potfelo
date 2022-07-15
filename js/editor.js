@@ -28,12 +28,12 @@ wp.blocks.registerBlockStyle("core/heading", {
 
 wp.blocks.registerBlockStyle("core/heading", {
   name: "under-line",
-  label: "下線",
+  label: "下線デザイン",
   isDefault: false,
 });
 
 wp.blocks.registerBlockStyle("core/heading", {
   name: "left-line",
-  label: "左線",
+  label: "左線デザイン",
   isDefault: false,
 });
