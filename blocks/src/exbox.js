@@ -1,7 +1,6 @@
 import { registerBlockType, createBlock } from "@wordpress/blocks";
 import { InnerBlocks, RichText } from "@wordpress/block-editor";
 import ExEdit from "./modules/ExboxEdit";
-import { useBlockProps } from "@wordpress/block-editor";
 
 registerBlockType("oja/exbox-block", {
   title: "EXボックス",
