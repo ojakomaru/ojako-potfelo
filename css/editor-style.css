@@ -218,45 +218,6 @@ mark {
   font-weight: bold;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 2em 0 0.5em;
-  font-weight: bold;
-}
-
-h1.is-style-under-line, h2.is-style-under-line, h3.is-style-under-line, h4.is-style-under-line, h5.is-style-under-line, h6.is-style-under-line {
-  padding-bottom: 5px;
-  border-bottom: 2px solid green;
-}
-
-h1.is-style-left-line, h2.is-style-left-line, h3.is-style-left-line, h4.is-style-left-line, h5.is-style-left-line, h6.is-style-left-line {
-  padding-left: 5px;
-  border-left: 5px solid #ddd;
-}
-
-h1 {
-  font-size: 30px;
-}
-
-h2 {
-  font-size: 24px;
-}
-
-h3 {
-  font-size: 20px;
-}
-
-h4 {
-  font-size: 18px;
-}
-
-h5 {
-  font-size: 16px;
-}
-
-h6 {
-  font-size: 14px;
-}
-
 .wp-block-oja-exbox-block {
   border: 2px solid #4DA1D4;
   padding: 3%;
@@ -702,7 +663,7 @@ h6 {
 
 .wp-block-oja-exbox-block.outer-head .ex-head {
   position: absolute;
-  top: -16%;
+  top: -43px;
   left: -2px;
   padding: 4px 10px;
 }
@@ -852,5 +813,9 @@ h6 {
 .exbox-color-setting .components-base-control__field {
   display: flex;
   flex-wrap: wrap;
+}
+
+h2 {
+  color: #000 !important;
 }
 /*# sourceMappingURL=editor-style.css.map */

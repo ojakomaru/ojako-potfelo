@@ -70,12 +70,22 @@ add_action('wp_enqueue_scripts', 'add_enqueue_files',1);
 
 // カスタムブロック登録用スクリプト
 add_action( 'enqueue_block_editor_assets', function () {
-  $asset_file = include __DIR__ . '/../blocks/build/exbox.asset.php';
+  // ExBoxブロック登録
+  $exbox_asset_file = include __DIR__ . '/../blocks/build/exbox.asset.php';
 	wp_enqueue_script(
 		'exbox-script',
 		get_theme_file_uri( '/blocks/build/exbox.js' ),
-		$asset_file['dependencies'], //依存スクリプトの配列
-    $asset_file['version'], //バージョン
+		$exbox_asset_file['dependencies'], //依存スクリプトの配列
+    $exbox_asset_file['version'], //バージョン
+		true
+	);
+
+  $iconbox_asset_file = include __DIR__ . '/../blocks/build/iconbox.asset.php';
+	wp_enqueue_script(
+		'iconbox-script',
+		get_theme_file_uri( '/blocks/build/iconbox.js' ),
+		$iconbox_asset_file['dependencies'],
+    $iconbox_asset_file['version'],
 		true
 	);
 
