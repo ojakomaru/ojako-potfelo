@@ -3,7 +3,7 @@
 function add_scripts() {
   // FontAwesomeの読み込み
   wp_enqueue_script('fontawesome_js','https://kit.fontawesome.com/fb19e987ff.js');
-  wp_enqueue_style('fontawesome_css','https://use.fontawesome.com/releases/v5.2.0/css/all.css');
+  wp_enqueue_style('fontawesome_css','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
 
   // Github Gist カスタマイズ用CDN読み込み
   wp_enqueue_script( 'github_gist_customize', 'https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.4/gist-embed.min.js', array(), '', true );
@@ -80,6 +80,7 @@ add_action( 'enqueue_block_editor_assets', function () {
 		true
 	);
 
+  // アイコンブロック登録
   $iconbox_asset_file = include __DIR__ . '/../blocks/build/iconbox.asset.php';
 	wp_enqueue_script(
 		'iconbox-script',
@@ -88,6 +89,8 @@ add_action( 'enqueue_block_editor_assets', function () {
     $iconbox_asset_file['version'],
 		true
 	);
+  //Font Awesome読み込み
+  wp_enqueue_style('fontawesome_css','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
 
   wp_enqueue_script( 'oja-block-editor', get_theme_file_uri( 'js/editor.js'), [
     'wp-blocks', 'wp-element', 'wp-rich-text', 'wp-i18n', 'wp-editor'

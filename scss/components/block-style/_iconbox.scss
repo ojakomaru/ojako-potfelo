@@ -1,3 +1,108 @@
-h2 {
-  color: #000 !important;
+@charset "utf-8";
+.wp-block-oja-icon-block {
+  border: 1px solid rgb(228, 108, 97);
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+  &:before {
+    content: none;
+  }
+  span {
+    position: relative;
+    font-weight: 900;
+    padding-right: 2.5%;
+    &::before {
+      font-family: "Font Awesome 6 Free";
+      font-size: 22px;
+    }
+  }
+  .block-editor-inner-blocks {
+    border-left: 2px dashed #D5D9F2;
+    padding-left: 2%;
+    min-height: 32px;
+    ul {
+      border: none;
+    }
+  }
+
+  &.is-style-top-icon {
+    flex-direction: column;
+    align-items: flex-start;
+    span {
+      padding-left: 3.5%;
+      &:before {
+        font-size: 30px;
+      }
+    }
+    .block-editor-inner-blocks {
+      border: none !important;
+    }
+  }
+
+  // 注意
+  &.fa-triangle-exclamation {
+    background-color: #FFF0F2;
+    border: none;
+    span {
+      &::before {
+        color: #F13D54;
+      }
+    }
+    .block-editor-inner-blocks {
+      border-left: 2px dashed #FFD1D1;
+    }
+  }
+
+  // 星 、電球、カート
+  &.fa-star,
+  &.fa-lightbulb,
+  &.fa-cart-shopping {
+    background-color: #FFF9DF;
+    border: none;
+    span {
+      &::before {
+        color: #FFBF0E;
+      }
+    }
+    .block-editor-inner-blocks {
+      border-left: 2px dashed #FFE89B;
+    }
+  }
+
+  // 
+  &.fa-clipboard,
+  &.fa-gear,
+  &.fa-thumbs-down,
+  &.fa-thumbs-up {
+    background-color: #EEF0FA;
+    border: none;
+    span {
+      &::before {
+        color: #616dc9;
+      }
+    }
+    .block-editor-inner-blocks {
+      border-left: 2px dashed #D5D9F2;
+    }
+  }
+
+  // お知らせ、吹き出し、チェック、鉛筆、ノート
+  &.fa-bell,
+  &.fa-comment-dots,
+  &.fa-circle-check,
+  &.fa-pen,
+  &.fa-file-pen {
+    background-color: #e8f9e9;;
+    border: none;
+    span {
+      &::before {
+        color: #05B483;
+      }
+    }
+    .block-editor-inner-blocks {
+      border-left: 2px dashed #A5EDAF;;
+    }
+  }
 }
