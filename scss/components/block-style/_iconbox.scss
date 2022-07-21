@@ -1,4 +1,21 @@
 @charset "utf-8";
+
+@mixin iconColorSet($color) {
+  background-color: rgba($color, 0.1);
+  border: none;
+  span {
+    &::before {
+      color: $color;
+    }
+    h3 {
+      color: $color;
+    }
+  }
+  .block-editor-inner-blocks {
+    border-left: 2px dashed rgba($color, 0.6);
+  }
+}
+
 .wp-block-oja-icon-block {
   border: 1px solid rgb(228, 108, 97);
   min-height: 45px;
@@ -20,7 +37,6 @@
     }
     h3 {
       display: inline-block;
-      color: initial;
       margin: 20px;
       &:before {
         content: none;
@@ -39,8 +55,10 @@
   &.icon-headline {
     flex-direction: column;
     align-items: flex-start;
+    padding-top: 0;
     span {
       padding-left: 3.5%;
+      width: 100%;
       &:before {
         font-size: 30px;
       }
@@ -55,19 +73,7 @@
   &.fa-heart,
   &.fa-question,
   &.fa-circle-exclamation {
-    background-color: #FFF0F2;
-    border: none;
-    span {
-      &::before {
-        color: #F13D54;
-      }
-      h3 {
-        color: #F13D54;
-      }
-    }
-    .block-editor-inner-blocks {
-      border-left: 2px dashed #FFD1D1;
-    }
+    @include iconColorSet(#F13D54);
   }
 
   // 星 、電球、カート、旗
@@ -75,19 +81,7 @@
   &.fa-lightbulb,
   &.fa-cart-shopping,
   &.fa-flag {
-    background-color: #FFF9DF;
-    border: none;
-    span {
-      &::before {
-        color: #FFBF0E;
-      }
-      h3 {
-        color: #FFBF0E;
-      }
-    }
-    .block-editor-inner-blocks {
-      border-left: 2px dashed #FFE89B;
-    }
+    @include iconColorSet(#FFBF0E);
   }
 
   // クリップボード、歯車、いいね！、低評価
@@ -95,19 +89,7 @@
   &.fa-gear,
   &.fa-thumbs-down,
   &.fa-thumbs-up {
-    background-color: #EEF0FA;
-    border: none;
-    span {
-      &::before {
-        color: #616dc9;
-      }
-      h3 {
-        color: #616dc9;
-      }
-    }
-    .block-editor-inner-blocks {
-      border-left: 2px dashed #D5D9F2;
-    }
+    @include iconColorSet(#616dc9);
   }
 
   // お知らせ、吹き出し、チェック、鉛筆、ノート
@@ -116,18 +98,6 @@
   &.fa-circle-check,
   &.fa-pen,
   &.fa-file-pen {
-    background-color: #e8f9e9;;
-    border: none;
-    span {
-      &::before {
-        color: #05B483;
-      }
-      h3 {
-        color: #05B483;
-      }
-    }
-    .block-editor-inner-blocks {
-      border-left: 2px dashed #A5EDAF;;
-    }
+    @include iconColorSet(#05B483);
   }
 }
