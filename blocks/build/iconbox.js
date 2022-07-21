@@ -26,35 +26,38 @@ const boxType = [{
   label: "注意",
   value: "fa-triangle-exclamation"
 }, {
-  label: "星",
-  value: "fa-star"
-}, {
   label: "電球",
   value: "fa-lightbulb"
-}, {
-  label: "カート",
-  value: "fa-cart-shopping"
 }, {
   label: "お知らせ",
   value: "fa-bell"
 }, {
+  label: "カート",
+  value: "fa-cart-shopping"
+}, {
   label: "吹き出し",
   value: "fa-comment-dots"
+}, {
+  label: "星",
+  value: "fa-star"
+}, {
+  label: "はてなマーク",
+  value: "fa-question"
 }, {
   label: "チェック",
   value: "fa-circle-check"
 }, {
-  label: "鉛筆",
-  value: "fa-pen"
-}, {
   label: "ノート",
   value: "fa-file-pen"
 }, {
-  label: "歯車",
-  value: "fa-gear"
-}, {
   label: "クリップボード",
   value: "fa-clipboard"
+}, {
+  label: "鉛筆",
+  value: "fa-pen"
+}, {
+  label: "歯車",
+  value: "fa-gear"
 }, {
   label: "いいね！",
   value: "fa-thumbs-up"
@@ -63,26 +66,25 @@ const boxType = [{
   value: "fa-thumbs-down"
 }, {
   label: "ハート",
-  value: " fa-heart"
-}, {
-  label: "はてなマーク",
-  value: " fa-question"
+  value: "fa-heart"
 }, {
   label: "旗",
-  value: " fa-flag"
+  value: "fa-flag"
 }, {
   label: "ビックリマーク",
-  value: " fa-circle-exclamation"
+  value: "fa-circle-exclamation"
 }];
 function IconBoxEdit(_ref) {
   let {
     className,
     setAttributes,
     attributes: {
-      iconBoxType
+      iconBoxType,
+      isHeadLine,
+      iconHead
     }
   } = _ref;
-  className += ` ${iconBoxType}`;
+  isHeadLine ? className += ` icon-headline ${iconBoxType}` : className += ` ${iconBoxType}`;
   return [(0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     title: "\u30DC\u30C3\u30AF\u30B9\u306E\u7A2E\u985E",
     initialOpen: true
@@ -93,11 +95,27 @@ function IconBoxEdit(_ref) {
     onChange: val => setAttributes({
       iconBoxType: val
     })
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+    label: isHeadLine ? "見出しアイコン" : "サイドアイコン",
+    help: "",
+    checked: isHeadLine,
+    onChange: val => setAttributes({
+      isHeadLine: val
+    })
   })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: className
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: iconBoxType
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks, {
+  }, isHeadLine && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+    className: "icon-head",
+    value: iconHead,
+    onChange: val => setAttributes({
+      iconHead: val
+    }),
+    tagName: "h3",
+    placeholder: "\u898B\u51FA\u3057\u3092\u5165\u529B\u3067\u304D\u307E\u3059",
+    keepPlaceholderOnFocus: true
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks, {
     allowedBlocks: ALLOWED_BLOCKS
   }))];
 }
@@ -236,14 +254,6 @@ __webpack_require__.r(__webpack_exports__);
   category: "text",
   keywords: ["icon", "box", "oja"],
   icon: "block-default",
-  styles: [{
-    name: "side-icon",
-    label: "横向きアイコン",
-    isDefault: true
-  }, {
-    name: "top-icon",
-    label: "ワンポイント"
-  }],
   supports: {
     html: false,
     customClassName: false
@@ -252,6 +262,14 @@ __webpack_require__.r(__webpack_exports__);
     iconBoxType: {
       typp: "string",
       default: "fa-triangle-exclamation"
+    },
+    isHeadLine: {
+      type: 'boolean',
+      default: false
+    },
+    iconHead: {
+      type: "string",
+      default: ''
     }
   },
   edit: _modules_IconBoxEdit__WEBPACK_IMPORTED_MODULE_3__["default"],

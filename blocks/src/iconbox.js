@@ -8,17 +8,6 @@ registerBlockType("oja/icon-block", {
   category: "text",
   keywords: ["icon", "box", "oja"],
   icon: "block-default",
-  styles: [
-    {
-      name: "side-icon",
-      label: "横向きアイコン",
-      isDefault: true,
-    },
-    {
-      name: "top-icon",
-      label: "ワンポイント",
-    },
-  ],
   supports: {
     html: false,
     customClassName: false,
@@ -28,6 +17,14 @@ registerBlockType("oja/icon-block", {
       typp: "string",
       default: "fa-triangle-exclamation",
     },
+    isHeadLine: {
+      type: 'boolean',
+      default: false
+    },
+    iconHead: {
+      type: "string",
+      default: ''
+    }
   },
   edit: IconBoxEdit,
   save: ({ className }) => {

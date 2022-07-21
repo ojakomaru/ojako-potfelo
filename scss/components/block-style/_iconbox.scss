@@ -13,9 +13,18 @@
     position: relative;
     font-weight: 900;
     padding-right: 2.5%;
+    display: block;
     &::before {
       font-family: "Font Awesome 6 Free";
       font-size: 22px;
+    }
+    h3 {
+      display: inline-block;
+      color: initial;
+      margin: 20px;
+      &:before {
+        content: none;
+      }
     }
   }
   .block-editor-inner-blocks {
@@ -27,7 +36,7 @@
     }
   }
 
-  &.is-style-top-icon {
+  &.icon-headline {
     flex-direction: column;
     align-items: flex-start;
     span {
@@ -41,12 +50,18 @@
     }
   }
 
-  // 注意
-  &.fa-triangle-exclamation {
+  // 注意、ハート、？マーク、ビックリマーク
+  &.fa-triangle-exclamation,
+  &.fa-heart,
+  &.fa-question,
+  &.fa-circle-exclamation {
     background-color: #FFF0F2;
     border: none;
     span {
       &::before {
+        color: #F13D54;
+      }
+      h3 {
         color: #F13D54;
       }
     }
@@ -55,14 +70,18 @@
     }
   }
 
-  // 星 、電球、カート
+  // 星 、電球、カート、旗
   &.fa-star,
   &.fa-lightbulb,
-  &.fa-cart-shopping {
+  &.fa-cart-shopping,
+  &.fa-flag {
     background-color: #FFF9DF;
     border: none;
     span {
       &::before {
+        color: #FFBF0E;
+      }
+      h3 {
         color: #FFBF0E;
       }
     }
@@ -71,7 +90,7 @@
     }
   }
 
-  // 
+  // クリップボード、歯車、いいね！、低評価
   &.fa-clipboard,
   &.fa-gear,
   &.fa-thumbs-down,
@@ -80,6 +99,9 @@
     border: none;
     span {
       &::before {
+        color: #616dc9;
+      }
+      h3 {
         color: #616dc9;
       }
     }
@@ -98,6 +120,9 @@
     border: none;
     span {
       &::before {
+        color: #05B483;
+      }
+      h3 {
         color: #05B483;
       }
     }
