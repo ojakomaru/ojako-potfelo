@@ -97,6 +97,15 @@ $colorSet:(
     }
   }
 
+  // インナーブロックのスタイル
+  .block-editor-inner-blocks {
+    min-height: 32px;
+    ul {
+      border: none;
+    }
+  }
+
+
   // カラー設定
   @each $prop,$color in $colorSet {
     &.#{$prop} {
@@ -137,6 +146,11 @@ $colorSet:(
       font-size: 1.4rem;
       padding: 4px 6px;
       text-align: center;
+    }
+    .block-editor-inner-blocks {
+      h2,h3,h4,h5 {
+        width: 90%;
+      }
     }
   }
 
@@ -194,6 +208,11 @@ $colorSet:(
         height: 0;
       }
     }
+    .block-editor-inner-blocks {
+      h2,h3,h4,h5 {
+        width: 90%;
+      }
+    }
   }
 
   /**
@@ -201,14 +220,12 @@ $colorSet:(
   */
   //内側線スタイル
   &.inline-bd {
-    padding: 1em;
     border-radius: 5px;
   }
 
   // 角丸スタイル
   &.radius-bd {
     margin: 1em 0;
-    padding: 1em;
     border-radius: 10px;
     border: none;
   }
@@ -284,14 +301,6 @@ $colorSet:(
     }
   }
 
-
-  // インナーブロックのスタイル
-  .block-editor-inner-blocks {
-    min-height: 32px;
-    ul {
-      border: none;
-    }
-  }
 }
 
 // インスペクターのスタイル

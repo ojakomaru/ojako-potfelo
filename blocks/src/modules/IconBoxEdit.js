@@ -48,6 +48,7 @@ export default function IconBoxEdit({
   isHeadLine
     ? (className += ` icon-headline ${iconBoxType}`)
     : (className += ` ${iconBoxType}`);
+    iconBoxType += ` icon-element`;
   return [
     <InspectorControls>
       <PanelBody title="ボックスの種類" initialOpen={true}>
