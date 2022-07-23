@@ -84,7 +84,7 @@ $colorSet:(
   }
 
   // ボックス見出し
-  .ex-head {
+  h3.ex-head {
     color: #fff;
     margin: 0;
     padding: .3em;
@@ -93,8 +93,11 @@ $colorSet:(
     line-height: 1.8;
     font-size: 1.2rem;
     &::before {
-      content: none;
+      content: none !important;
     }
+  }
+  p {
+    margin-top: 16px;
   }
 
   // インナーブロックのスタイル

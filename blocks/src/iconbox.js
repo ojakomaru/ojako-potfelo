@@ -1,5 +1,5 @@
 import { registerBlockType } from "@wordpress/blocks";
-import { InnerBlocks } from "@wordpress/block-editor";
+import { InnerBlocks, RichText } from "@wordpress/block-editor";
 import IconBoxEdit from "./modules/IconBoxEdit";
 
 registerBlockType("oja/icon-block", {
@@ -15,22 +15,37 @@ registerBlockType("oja/icon-block", {
   attributes: {
     iconBoxType: {
       typp: "string",
-      default: "fa-triangle-exclamation",
+      default: "fa-pen",
     },
     isHeadLine: {
-      type: 'boolean',
-      default: false
+      type: "boolean",
+      default: false,
     },
     iconHead: {
       type: "string",
-      default: ''
-    }
+      default: "",
+      source: 'html'
+    },
   },
   edit: IconBoxEdit,
-  save: ({ className }) => {
+  save: ({ className, attributes: { iconBoxType, isHeadLine, iconHead } }) => {
+    isHeadLine
+      ? (className += ` icon-headline ${iconBoxType}`)
+      : (className += ` ${iconBoxType}`);
+    iconBoxType += ` icon-element`;
     return (
       <div className={className}>
-        <InnerBlocks.Content />
+        <span className={iconBoxType}>
+          {isHeadLine && (
+            <RichText.Content
+              className="icon-head"
+              value={iconHead}
+            />
+          )}
+        </span>
+        <div className="icon-block-inner">
+          <InnerBlocks.Content />
+        </div>
       </div>
     );
   },
