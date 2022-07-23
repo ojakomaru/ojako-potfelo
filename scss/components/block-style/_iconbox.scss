@@ -11,20 +11,20 @@
       color: $color;
     }
   }
-  .icon-block-inner,
-  .block-editor-inner-blocks {
+  .icon-block-inner {
     border-left: 2px dashed rgba($color, 0.6);
   }
 }
 
 .wp-block-oja-icon-block {
   border: 1px solid rgb(228, 108, 97);
-  width: 100%;
+  width: 95%;
   min-height: 45px;
   display: flex;
   align-items: center;
   padding: 20px;
   border-radius: 5px;
+  margin-bottom: 20px;
   &:before {
     content: none !important;
   }
@@ -45,8 +45,7 @@
       }
     }
   }
-  .icon-block-inner,
-  .block-editor-inner-blocks {
+  .icon-block-inner {
     border-left: 2px dashed #D5D9F2;
     padding-left: 2%;
     min-height: 32px;
@@ -67,8 +66,7 @@
         font-size: 30px;
       }
     }
-    .icon-block-inner,
-    .block-editor-inner-blocks {
+    .icon-block-inner {
       border: none !important;
     }
   }
