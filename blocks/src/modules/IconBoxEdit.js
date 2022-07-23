@@ -21,7 +21,6 @@ const ALLOWED_BLOCKS = [
   "ojako/custom-dlblock",
 ];
 const boxType = [
-  { label: "注意", value: "fa-triangle-exclamation" },
   { label: "電球", value: "fa-lightbulb" },
   { label: "お知らせ", value: "fa-bell" },
   { label: "カート", value: "fa-cart-shopping" },
@@ -33,6 +32,7 @@ const boxType = [
   { label: "クリップボード", value: "fa-clipboard" },
   { label: "鉛筆", value: "fa-pen" },
   { label: "歯車", value: "fa-gear" },
+  { label: "注意", value: "fa-triangle-exclamation" },
   { label: "いいね！", value: "fa-thumbs-up" },
   { label: "低評価", value: "fa-thumbs-down" },
   { label: "ハート", value: "fa-heart" },
@@ -83,7 +83,9 @@ export default function IconBoxEdit({
           />
         )}
       </span>
-      <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
+      <div className="icon-block-inner">
+        <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
+      </div>
     </div>,
   ];
 }

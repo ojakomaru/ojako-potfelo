@@ -19,12 +19,13 @@ registerBlockType("oja/icon-block", {
     },
     isHeadLine: {
       type: "boolean",
-      default: false,
+      default: true,
     },
     iconHead: {
       type: "string",
       default: "",
-      source: 'html'
+      source: 'html',
+      selector: "h3"
     },
   },
   edit: IconBoxEdit,
@@ -40,6 +41,7 @@ registerBlockType("oja/icon-block", {
             <RichText.Content
               className="icon-head"
               value={iconHead}
+              tagName="h3"
             />
           )}
         </span>
