@@ -2,6 +2,7 @@ import {
   InnerBlocks,
   InspectorControls,
   RichText,
+  useBlockProps,
 } from "@wordpress/block-editor";
 import {
   PanelBody,
@@ -48,7 +49,11 @@ export default function IconBoxEdit({
   isHeadLine
     ? (className += ` icon-headline ${iconBoxType}`)
     : (className += ` ${iconBoxType}`);
-  iconBoxType += ' icon-element';
+  const spanprops = useBlockProps({
+    className: `icon-element ${iconBoxType}`
+  });
+  const blockwraper = useBlockProps({className: className});
+
   return [
     <InspectorControls>
       <PanelBody title="ボックスのデザイン" initialOpen={true}>
@@ -70,8 +75,8 @@ export default function IconBoxEdit({
         </PanelRow>
       </PanelBody>
     </InspectorControls>,
-    <div className={className}>
-      <span className={iconBoxType}>
+    <div {...blockwraper}>
+      <span {...spanprops}>
         {isHeadLine && (
           <RichText
             className="icon-head"

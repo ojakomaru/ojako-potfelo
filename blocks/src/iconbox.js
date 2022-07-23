@@ -1,5 +1,5 @@
 import { registerBlockType } from "@wordpress/blocks";
-import { InnerBlocks, RichText } from "@wordpress/block-editor";
+import { InnerBlocks, RichText, useBlockProps } from "@wordpress/block-editor";
 import IconBoxEdit from "./modules/IconBoxEdit";
 
 registerBlockType("oja/icon-block", {
@@ -33,9 +33,10 @@ registerBlockType("oja/icon-block", {
     isHeadLine
       ? (className += ` icon-headline ${iconBoxType}`)
       : (className += ` ${iconBoxType}`);
+    const blockwraper = useBlockProps.save({className: className});
     iconBoxType += ` icon-element`;
     return (
-      <div className={className}>
+      <div {...blockwraper}>
         <span className={iconBoxType}>
           {isHeadLine && (
             <RichText.Content

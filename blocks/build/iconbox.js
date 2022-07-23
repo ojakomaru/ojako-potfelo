@@ -85,7 +85,12 @@ function IconBoxEdit(_ref) {
     }
   } = _ref;
   isHeadLine ? className += ` icon-headline ${iconBoxType}` : className += ` ${iconBoxType}`;
-  iconBoxType += ' icon-element';
+  const spanprops = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
+    className: `icon-element ${iconBoxType}`
+  });
+  const blockwraper = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
+    className: className
+  });
   return [(0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     title: "\u30DC\u30C3\u30AF\u30B9\u306E\u30C7\u30B6\u30A4\u30F3",
     initialOpen: true
@@ -103,11 +108,7 @@ function IconBoxEdit(_ref) {
     onChange: val => setAttributes({
       isHeadLine: val
     })
-  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: className
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: iconBoxType
-  }, isHeadLine && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockwraper, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", spanprops, isHeadLine && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
     className: "icon-head",
     value: iconHead,
     onChange: val => setAttributes({
@@ -288,10 +289,11 @@ __webpack_require__.r(__webpack_exports__);
       }
     } = _ref;
     isHeadLine ? className += ` icon-headline ${iconBoxType}` : className += ` ${iconBoxType}`;
-    iconBoxType += ` icon-element`;
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    const blockwraper = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
       className: className
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    });
+    iconBoxType += ` icon-element`;
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockwraper, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       className: iconBoxType
     }, isHeadLine && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
       className: "icon-head",
