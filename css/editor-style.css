@@ -262,6 +262,10 @@ mark {
   content: none !important;
 }
 
+.wp-block-oja-exbox-block ul {
+  border: none;
+}
+
 .wp-block-oja-exbox-block p {
   margin-top: 16px;
 }
