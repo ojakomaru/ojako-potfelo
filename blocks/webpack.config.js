@@ -6,6 +6,7 @@ module.exports = {
   entry: {
     exbox: "./src/exbox.js",
     iconbox: "./src/iconbox.js",
+    core_expantion: "./src/core_expantion.js",
     custom_button: "./src/custom-button.js",
   },
   output: {

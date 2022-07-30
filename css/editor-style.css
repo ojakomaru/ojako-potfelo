@@ -218,6 +218,97 @@ mark {
   font-weight: bold;
 }
 
+.oja-corewraper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 840px;
+  align-items: baseline;
+  justify-content: flex-start;
+}
+
+.oja-corewraper > *:not(i) {
+  flex: 1;
+}
+
+.oja-corewraper [data-fronticon] {
+  padding-left: 15px;
+}
+
+.oja-corewraper [data-endicon] {
+  padding-right: 15px;
+}
+
+.oja-corewraper.fa-triangle-exclamation, .oja-corewraper.fa-heart, .oja-corewraper.fa-question, .oja-corewraper.fa-circle-exclamation {
+  background-color: rgba(241, 61, 84, 0.1);
+  border: none;
+}
+
+.oja-corewraper.fa-triangle-exclamation .icon-element::before, .oja-corewraper.fa-heart .icon-element::before, .oja-corewraper.fa-question .icon-element::before, .oja-corewraper.fa-circle-exclamation .icon-element::before {
+  color: #F13D54;
+}
+
+.oja-corewraper.fa-triangle-exclamation .icon-element h3, .oja-corewraper.fa-heart .icon-element h3, .oja-corewraper.fa-question .icon-element h3, .oja-corewraper.fa-circle-exclamation .icon-element h3 {
+  color: #F13D54;
+}
+
+.oja-corewraper.fa-triangle-exclamation .icon-block-inner, .oja-corewraper.fa-heart .icon-block-inner, .oja-corewraper.fa-question .icon-block-inner, .oja-corewraper.fa-circle-exclamation .icon-block-inner {
+  border-left: 2px dashed rgba(241, 61, 84, 0.6);
+}
+
+.oja-corewraper.fa-star, .oja-corewraper.fa-lightbulb, .oja-corewraper.fa-cart-shopping, .oja-corewraper.fa-flag {
+  background-color: rgba(255, 191, 14, 0.1);
+  border: none;
+}
+
+.oja-corewraper.fa-star .icon-element::before, .oja-corewraper.fa-lightbulb .icon-element::before, .oja-corewraper.fa-cart-shopping .icon-element::before, .oja-corewraper.fa-flag .icon-element::before {
+  color: #FFBF0E;
+}
+
+.oja-corewraper.fa-star .icon-element h3, .oja-corewraper.fa-lightbulb .icon-element h3, .oja-corewraper.fa-cart-shopping .icon-element h3, .oja-corewraper.fa-flag .icon-element h3 {
+  color: #FFBF0E;
+}
+
+.oja-corewraper.fa-star .icon-block-inner, .oja-corewraper.fa-lightbulb .icon-block-inner, .oja-corewraper.fa-cart-shopping .icon-block-inner, .oja-corewraper.fa-flag .icon-block-inner {
+  border-left: 2px dashed rgba(255, 191, 14, 0.6);
+}
+
+.oja-corewraper.fa-clipboard, .oja-corewraper.fa-gear, .oja-corewraper.fa-thumbs-down, .oja-corewraper.fa-thumbs-up {
+  background-color: rgba(97, 109, 201, 0.1);
+  border: none;
+}
+
+.oja-corewraper.fa-clipboard .icon-element::before, .oja-corewraper.fa-gear .icon-element::before, .oja-corewraper.fa-thumbs-down .icon-element::before, .oja-corewraper.fa-thumbs-up .icon-element::before {
+  color: #616dc9;
+}
+
+.oja-corewraper.fa-clipboard .icon-element h3, .oja-corewraper.fa-gear .icon-element h3, .oja-corewraper.fa-thumbs-down .icon-element h3, .oja-corewraper.fa-thumbs-up .icon-element h3 {
+  color: #616dc9;
+}
+
+.oja-corewraper.fa-clipboard .icon-block-inner, .oja-corewraper.fa-gear .icon-block-inner, .oja-corewraper.fa-thumbs-down .icon-block-inner, .oja-corewraper.fa-thumbs-up .icon-block-inner {
+  border-left: 2px dashed rgba(97, 109, 201, 0.6);
+}
+
+.oja-corewraper.fa-bell, .oja-corewraper.fa-comment-dots, .oja-corewraper.fa-circle-check, .oja-corewraper.fa-pen, .oja-corewraper.fa-file-pen {
+  background-color: rgba(5, 180, 131, 0.1);
+  border: none;
+}
+
+.oja-corewraper.fa-bell .icon-element::before, .oja-corewraper.fa-comment-dots .icon-element::before, .oja-corewraper.fa-circle-check .icon-element::before, .oja-corewraper.fa-pen .icon-element::before, .oja-corewraper.fa-file-pen .icon-element::before {
+  color: #05B483;
+}
+
+.oja-corewraper.fa-bell .icon-element h3, .oja-corewraper.fa-comment-dots .icon-element h3, .oja-corewraper.fa-circle-check .icon-element h3, .oja-corewraper.fa-pen .icon-element h3, .oja-corewraper.fa-file-pen .icon-element h3 {
+  color: #05B483;
+}
+
+.oja-corewraper.fa-bell .icon-block-inner, .oja-corewraper.fa-comment-dots .icon-block-inner, .oja-corewraper.fa-circle-check .icon-block-inner, .oja-corewraper.fa-pen .icon-block-inner, .oja-corewraper.fa-file-pen .icon-block-inner {
+  border-left: 2px dashed rgba(5, 180, 131, 0.6);
+}
+
 .wp-block-oja-exbox-block {
   border: 2px solid #4DA1D4;
   padding: 3%;

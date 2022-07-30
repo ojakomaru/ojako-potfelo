@@ -92,6 +92,16 @@ add_action( 'enqueue_block_editor_assets', function () {
   //Font Awesome読み込み
   wp_enqueue_style('fontawesome_css','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
 
+  // コアブロック拡張スクリプト
+  $iconbox_asset_file = include __DIR__ . '/../blocks/build/core_expantion.asset.php';
+	wp_enqueue_script(
+		'core_expantion-script',
+		get_theme_file_uri( '/blocks/build/core_expantion.js' ),
+		$iconbox_asset_file['dependencies'],
+    $iconbox_asset_file['version'],
+		true
+	);
+
   wp_enqueue_script( 'oja-block-editor', get_theme_file_uri( 'js/editor.js'), [
     'wp-blocks', 'wp-element', 'wp-rich-text', 'wp-i18n', 'wp-editor'
   ]);

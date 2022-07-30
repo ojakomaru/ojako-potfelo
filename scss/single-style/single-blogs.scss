@@ -525,5 +525,10 @@
   }
   // @import "components/block-style/heading";
 } // .single-blogs
-@import "../components/block-style/exbox";
-@import "../components/block-style/iconbox";
+
+// coreExpantionBlock
+@import "components/block-style/core_expantion";
+// EXBOX
+@import "components/block-style/exbox";
+// IconBox
+@import "components/block-style/iconbox";

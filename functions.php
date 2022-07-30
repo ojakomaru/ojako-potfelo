@@ -82,10 +82,3 @@ add_action( 'manage_posts_custom_column', 'add_column_id', 5, 2 );
 add_filter( 'manage_pages_columns', 'manage_posts_columns_id', 5 );
 add_action( 'manage_pages_custom_column', 'add_column_id', 5, 2 );
 
-// SVGをアップロード可能に
-function enable_svg($mimes)
-{
-  $mimes['svg'] = 'image/svg+xml';
-  return $mimes;
-}
-add_filter('upload_mimes', 'enable_svg');
