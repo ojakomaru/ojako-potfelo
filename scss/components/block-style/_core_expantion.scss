@@ -2,17 +2,8 @@
 
 @mixin iconColorSet($color) {
   background-color: rgba($color, 0.1);
-  border: none;
-  .icon-element {
-    &::before {
-      color: $color;
-    }
-    h3 {
-      color: $color;
-    }
-  }
-  .icon-block-inner {
-    border-left: 2px dashed rgba($color, 0.6);
+  i {
+    color: $color;
   }
 }
 
@@ -25,48 +16,52 @@
   max-width: 840px;
   align-items: baseline;
   justify-content: flex-start;
+  padding: 12px;
+  i {
+    margin: 0 15px;
+  }
 
   & > *:not(i){
     flex: 1;
   }
 
-  [data-fronticon] {
-    padding-left: 15px;
+  p[data-fronticon] {
+    padding-left: 0px;
   }
-  [data-endicon] {
-    padding-right: 15px;
+  p[data-endicon] {
+    padding-right: 0px;
   }
-  
+
   // 注意、ハート、？マーク、ビックリマーク
-  &.fa-triangle-exclamation,
-  &.fa-heart,
-  &.fa-question,
-  &.fa-circle-exclamation {
+  &.triangle-exclamation,
+  &.heart,
+  &.question,
+  &.circle-exclamation {
     @include iconColorSet(#F13D54);
   }
 
   // 星 、電球、カート、旗
-  &.fa-star,
-  &.fa-lightbulb,
-  &.fa-cart-shopping,
-  &.fa-flag {
+  &.star,
+  &.lightbulb,
+  &.cart-shopping,
+  &.flag {
     @include iconColorSet(#FFBF0E);
   }
 
   // クリップボード、歯車、いいね！、低評価
-  &.fa-clipboard,
-  &.fa-gear,
-  &.fa-thumbs-down,
-  &.fa-thumbs-up {
+  &.clipboard,
+  &.gear,
+  &.thumbs-down,
+  &.thumbs-up {
     @include iconColorSet(#616dc9);
   }
 
   // お知らせ、吹き出し、チェック、鉛筆、ノート
-  &.fa-bell,
-  &.fa-comment-dots,
-  &.fa-circle-check,
-  &.fa-pen,
-  &.fa-file-pen {
+  &.bell,
+  &.comment-dots,
+  &.circle-check,
+  &.pen,
+  &.file-pen {
     @include iconColorSet(#05B483);
   }
   

@@ -214,7 +214,7 @@ mark {
 }
 
 .text-marker {
-  background: linear-gradient(to top, #eaeb16 40%, transparent 40%);
+  background: linear-gradient(to top, #f5f52de5 40%, transparent 40%);
   font-weight: bold;
 }
 
@@ -227,86 +227,55 @@ mark {
   max-width: 840px;
   align-items: baseline;
   justify-content: flex-start;
+  padding: 12px;
+}
+
+.oja-corewraper i {
+  margin: 0 15px;
 }
 
 .oja-corewraper > *:not(i) {
   flex: 1;
 }
 
-.oja-corewraper [data-fronticon] {
-  padding-left: 15px;
+.oja-corewraper p[data-fronticon] {
+  padding-left: 0px;
 }
 
-.oja-corewraper [data-endicon] {
-  padding-right: 15px;
+.oja-corewraper p[data-endicon] {
+  padding-right: 0px;
 }
 
-.oja-corewraper.fa-triangle-exclamation, .oja-corewraper.fa-heart, .oja-corewraper.fa-question, .oja-corewraper.fa-circle-exclamation {
+.oja-corewraper.triangle-exclamation, .oja-corewraper.heart, .oja-corewraper.question, .oja-corewraper.circle-exclamation {
   background-color: rgba(241, 61, 84, 0.1);
-  border: none;
 }
 
-.oja-corewraper.fa-triangle-exclamation .icon-element::before, .oja-corewraper.fa-heart .icon-element::before, .oja-corewraper.fa-question .icon-element::before, .oja-corewraper.fa-circle-exclamation .icon-element::before {
+.oja-corewraper.triangle-exclamation i, .oja-corewraper.heart i, .oja-corewraper.question i, .oja-corewraper.circle-exclamation i {
   color: #F13D54;
 }
 
-.oja-corewraper.fa-triangle-exclamation .icon-element h3, .oja-corewraper.fa-heart .icon-element h3, .oja-corewraper.fa-question .icon-element h3, .oja-corewraper.fa-circle-exclamation .icon-element h3 {
-  color: #F13D54;
-}
-
-.oja-corewraper.fa-triangle-exclamation .icon-block-inner, .oja-corewraper.fa-heart .icon-block-inner, .oja-corewraper.fa-question .icon-block-inner, .oja-corewraper.fa-circle-exclamation .icon-block-inner {
-  border-left: 2px dashed rgba(241, 61, 84, 0.6);
-}
-
-.oja-corewraper.fa-star, .oja-corewraper.fa-lightbulb, .oja-corewraper.fa-cart-shopping, .oja-corewraper.fa-flag {
+.oja-corewraper.star, .oja-corewraper.lightbulb, .oja-corewraper.cart-shopping, .oja-corewraper.flag {
   background-color: rgba(255, 191, 14, 0.1);
-  border: none;
 }
 
-.oja-corewraper.fa-star .icon-element::before, .oja-corewraper.fa-lightbulb .icon-element::before, .oja-corewraper.fa-cart-shopping .icon-element::before, .oja-corewraper.fa-flag .icon-element::before {
+.oja-corewraper.star i, .oja-corewraper.lightbulb i, .oja-corewraper.cart-shopping i, .oja-corewraper.flag i {
   color: #FFBF0E;
 }
 
-.oja-corewraper.fa-star .icon-element h3, .oja-corewraper.fa-lightbulb .icon-element h3, .oja-corewraper.fa-cart-shopping .icon-element h3, .oja-corewraper.fa-flag .icon-element h3 {
-  color: #FFBF0E;
-}
-
-.oja-corewraper.fa-star .icon-block-inner, .oja-corewraper.fa-lightbulb .icon-block-inner, .oja-corewraper.fa-cart-shopping .icon-block-inner, .oja-corewraper.fa-flag .icon-block-inner {
-  border-left: 2px dashed rgba(255, 191, 14, 0.6);
-}
-
-.oja-corewraper.fa-clipboard, .oja-corewraper.fa-gear, .oja-corewraper.fa-thumbs-down, .oja-corewraper.fa-thumbs-up {
+.oja-corewraper.clipboard, .oja-corewraper.gear, .oja-corewraper.thumbs-down, .oja-corewraper.thumbs-up {
   background-color: rgba(97, 109, 201, 0.1);
-  border: none;
 }
 
-.oja-corewraper.fa-clipboard .icon-element::before, .oja-corewraper.fa-gear .icon-element::before, .oja-corewraper.fa-thumbs-down .icon-element::before, .oja-corewraper.fa-thumbs-up .icon-element::before {
+.oja-corewraper.clipboard i, .oja-corewraper.gear i, .oja-corewraper.thumbs-down i, .oja-corewraper.thumbs-up i {
   color: #616dc9;
 }
 
-.oja-corewraper.fa-clipboard .icon-element h3, .oja-corewraper.fa-gear .icon-element h3, .oja-corewraper.fa-thumbs-down .icon-element h3, .oja-corewraper.fa-thumbs-up .icon-element h3 {
-  color: #616dc9;
-}
-
-.oja-corewraper.fa-clipboard .icon-block-inner, .oja-corewraper.fa-gear .icon-block-inner, .oja-corewraper.fa-thumbs-down .icon-block-inner, .oja-corewraper.fa-thumbs-up .icon-block-inner {
-  border-left: 2px dashed rgba(97, 109, 201, 0.6);
-}
-
-.oja-corewraper.fa-bell, .oja-corewraper.fa-comment-dots, .oja-corewraper.fa-circle-check, .oja-corewraper.fa-pen, .oja-corewraper.fa-file-pen {
+.oja-corewraper.bell, .oja-corewraper.comment-dots, .oja-corewraper.circle-check, .oja-corewraper.pen, .oja-corewraper.file-pen {
   background-color: rgba(5, 180, 131, 0.1);
-  border: none;
 }
 
-.oja-corewraper.fa-bell .icon-element::before, .oja-corewraper.fa-comment-dots .icon-element::before, .oja-corewraper.fa-circle-check .icon-element::before, .oja-corewraper.fa-pen .icon-element::before, .oja-corewraper.fa-file-pen .icon-element::before {
+.oja-corewraper.bell i, .oja-corewraper.comment-dots i, .oja-corewraper.circle-check i, .oja-corewraper.pen i, .oja-corewraper.file-pen i {
   color: #05B483;
-}
-
-.oja-corewraper.fa-bell .icon-element h3, .oja-corewraper.fa-comment-dots .icon-element h3, .oja-corewraper.fa-circle-check .icon-element h3, .oja-corewraper.fa-pen .icon-element h3, .oja-corewraper.fa-file-pen .icon-element h3 {
-  color: #05B483;
-}
-
-.oja-corewraper.fa-bell .icon-block-inner, .oja-corewraper.fa-comment-dots .icon-block-inner, .oja-corewraper.fa-circle-check .icon-block-inner, .oja-corewraper.fa-pen .icon-block-inner, .oja-corewraper.fa-file-pen .icon-block-inner {
-  border-left: 2px dashed rgba(5, 180, 131, 0.6);
 }
 
 .wp-block-oja-exbox-block {
@@ -909,15 +878,6 @@ mark {
   right: 30%;
   border: solid 3px #ffee58;
   width: 20px;
-}
-
-.exbox-color-setting {
-  display: block;
-}
-
-.exbox-color-setting .components-base-control__field {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .wp-block-oja-icon-block {

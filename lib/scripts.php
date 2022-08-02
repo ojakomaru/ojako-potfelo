@@ -1,27 +1,26 @@
 <?php
-// カスタムスクリプトを読み込む
-function add_scripts() {
-  // FontAwesomeの読み込み
-  wp_enqueue_script('fontawesome_js','https://kit.fontawesome.com/fb19e987ff.js');
-  wp_enqueue_style('fontawesome_css','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
+// 現在のテーマのテンプレートディレクトリの URI
+define("TEMPLATE_DIRE", get_template_directory_uri());
+// 現在のテーマのテンプレートディレクトリのパス
+define("TEMPLATE_PATH", get_template_directory());
 
-  // Github Gist カスタマイズ用CDN読み込み
-  wp_enqueue_script( 'github_gist_customize', 'https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.4/gist-embed.min.js', array(), '', true );
+function wp_css($css_name, $file_path){
+  wp_enqueue_style($css_name,TEMPLATE_DIRE.$file_path, array(), date('YmdGis', filemtime(TEMPLATE_PATH.$file_path)));
 }
-add_action('wp_enqueue_scripts','add_scripts');
+function wp_script($script_name, $file_path, $bool = true){
+  wp_enqueue_script($script_name,TEMPLATE_DIRE.$file_path, array(), date('YmdGis', filemtime(TEMPLATE_PATH.$file_path)), $bool);
+}
+
+// 管理画面用スクリプトを読み込む
+function add_admin_scripts($hook) {
+  // jsファイルを追加
+  // wp_script( 'oja_admin_script', '/js/oja-admin-script.js' );
+  // cssファイルを追加
+  wp_css('oja_admin_css', '/css/oja-admin.css');
+}
+add_action('admin_enqueue_scripts','add_admin_scripts');
 
 function add_enqueue_files(){
-  define("TEMPLATE_DIRE", get_template_directory_uri());
-  define("TEMPLATE_PATH", get_template_directory());
-
-  function wp_css($css_name, $file_path){
-    wp_enqueue_style($css_name,TEMPLATE_DIRE.$file_path, array(), date('YmdGis', filemtime(TEMPLATE_PATH.$file_path)));
-  }
-  function wp_script($script_name, $file_path, $bool = true){
-    wp_enqueue_script($script_name,TEMPLATE_DIRE.$file_path, array(), date('YmdGis', filemtime(TEMPLATE_PATH.$file_path)), $bool);
-  }
-
-
   //メインJavaScriptのエンキュー
   wp_script('main_script','/js/script.js');
 
@@ -65,6 +64,9 @@ function add_enqueue_files(){
   elseif(is_tax('production')) {
     wp_css('works_archive', '/css/works_tax.css');
   }
+  // FontAwesomeの読み込み
+  wp_enqueue_script('fontawesome_js', 'https://kit.fontawesome.com/fb19e987ff.js');
+  wp_enqueue_style('fontawesome_css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
 }
 add_action('wp_enqueue_scripts', 'add_enqueue_files',1);
 
@@ -93,12 +95,12 @@ add_action( 'enqueue_block_editor_assets', function () {
   wp_enqueue_style('fontawesome_css','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
 
   // コアブロック拡張スクリプト
-  $iconbox_asset_file = include __DIR__ . '/../blocks/build/core_expantion.asset.php';
+  $excore_asset_file = include __DIR__ . '/../blocks/build/core_expantion.asset.php';
 	wp_enqueue_script(
 		'core_expantion-script',
 		get_theme_file_uri( '/blocks/build/core_expantion.js' ),
-		$iconbox_asset_file['dependencies'],
-    $iconbox_asset_file['version'],
+		$excore_asset_file['dependencies'],
+    $excore_asset_file['version'],
 		true
 	);
 

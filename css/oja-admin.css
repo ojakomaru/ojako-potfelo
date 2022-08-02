@@ -1,0 +1,24 @@
+div.exbox-color-setting {
+  display: block;
+}
+
+div.exbox-color-setting .components-base-control__field {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.oja-coreblock-controle {
+  color: #000;
+}
+
+div.oja-coreblock-controle .components-radio-control .components-base-control__field {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.oja-coreblock-controle .components-radio-control .components-base-control__field label {
+  max-width: initial;
+  flex-basis: 100%;
+}
+/*# sourceMappingURL=oja-admin.css.map */

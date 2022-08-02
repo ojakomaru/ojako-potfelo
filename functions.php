@@ -7,6 +7,7 @@ require_once locate_template('lib/breadcrumbs.php'); // パンくずリストの
 require_once locate_template('lib/paginations.php'); // ページネーションの関数
 require_once locate_template('lib/widgets.php');     // サイドバー、ウィジェットの関数
 require_once locate_template('lib/customizer/customizer.php');  // カスタマイズ機能の関数
+require_once locate_template('lib/blocks_render/core_expantion.php'); //カスタムブロックレンダリング用
 
 //コメント欄のHTMLを設定
 function custom_comment_list($comment, $args, $depth) {
@@ -69,7 +70,6 @@ function manage_posts_columns_id( $columns ) {
 	$columns['wps_post_id'] = 'ID';
 	return $columns;
 }
-
 function add_column_id( $column_name, $post_id ) {
 	if( $column_name == 'wps_post_id' ) {
 		echo $post_id;

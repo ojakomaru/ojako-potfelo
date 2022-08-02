@@ -340,7 +340,6 @@
     }
     ul {
       list-style: disc;
-      border: 1px solid #3333;
     }
     li {
       padding: 0.4em;
@@ -527,8 +526,8 @@
 } // .single-blogs
 
 // coreExpantionBlock
-@import "components/block-style/core_expantion";
+@import "../components/block-style/core_expantion";
 // EXBOX
-@import "components/block-style/exbox";
+@import "../components/block-style/exbox";
 // IconBox
-@import "components/block-style/iconbox";
+@import "../components/block-style/iconbox";

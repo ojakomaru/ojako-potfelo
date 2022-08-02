@@ -1,0 +1,23 @@
+@charset 'utf-8';
+
+// インスペクターのスタイル
+div.exbox-color-setting {
+  display: block;
+  .components-base-control__field {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+div.oja-coreblock-controle {
+  color: #000;
+  .components-radio-control .components-base-control__field {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    label {
+      max-width: initial;
+      flex-basis: 100%;
+    }
+  }
+}

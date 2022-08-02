@@ -96,24 +96,6 @@ const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 }, "addBlockControl");
 addFilter("editor.BlockEdit", "oja/block-control", addBlockControl);
 
-// function wrapCoverBlockInContainer(element, blockType, attributes) {
-//   // skip if element is undefined
-//   // if (!element) {
-//   //   return;
-//   // }
-//   if (!isValidBlockType(blockType.name)) {
-//     console.log(element)
-//     return element;
-//   }
-//   // return the element wrapped in a div
-//   // return <div className="cover-block-wrapper">{element}</div>;
-// }
-// wp.hooks.addFilter(
-//   "blocks.getSaveElement",
-//   "oja/wrap-cover-block-in-container",
-//   wrapCoverBlockInContainer
-// );
-
 const withOjaWrapperProp = createHigherOrderComponent((BlockListBlock) => {
   return (props) => {
     const { attributes, className, name, isValid } = props;
@@ -127,7 +109,7 @@ const withOjaWrapperProp = createHigherOrderComponent((BlockListBlock) => {
         if(name === "core/heading") {
           return iconClass = `${icon} fa-5x`;
         } else {
-          return iconClass = `${icon} fa-2x`;
+          return iconClass = `${icon} fa-3x`;
         }
       }
 
@@ -143,11 +125,14 @@ const withOjaWrapperProp = createHigherOrderComponent((BlockListBlock) => {
       };
 
       return (
-        <div className="oja-corewraper" style={extraStyle}>
+        <div
+          className={classNames("oja-corewraper", extraClass)}
+          style={extraStyle}
+        >
           {frontIcon !== "" && <i className={iconElement(frontIcon)}></i>}
           <BlockListBlock
             {...props}
-            className={classNames(className, extraClass)}
+            className={className}
             wrapperProps={wrapperProps}
           />
           {endIcon !== "" && <i className={iconElement(endIcon)}></i>}
@@ -163,12 +148,60 @@ wp.hooks.addFilter(
   withOjaWrapperProp
 );
 
-function addSaveProps(extraProps, blockType, attributes) {
+function modifyGetSaveElement(element, blockType, attributes) {
+  if (!element) {
+    return;
+  }
+  let getBlocks = wp.data.select("core/editor").getBlocks();
+  // 現在のブロックが現在の記事/ページで使用されていることを確認
+  if (
+    isValidBlockType(blockType.name) &&
+    getBlocks.find((block) => isValidBlockType(block.name))
+  ) {
+    const { frontIcon, endIcon, bottomSpace } = attributes;
+    const extraStyle = {
+      marginBottom: bottomSpace ? bottomSpace : undefined,
+    };
+    const iconElement = (icon) => {
+      let iconClass;
+      if (blockType.name === "core/heading") {
+        return (iconClass = `${icon} fa-5x`);
+      } else {
+        return (iconClass = `${icon} fa-3x`);
+      }
+    };
+    const extraClass = [
+      frontIcon.replace(/fa-/g, "").split(" ")[1],
+      endIcon.replace(/fa-/g, "").split(" ")[1],
+    ];
+    return (
+      <div
+        className={classNames("oja-corewraper", extraClass)}
+        style={extraStyle}
+      >
+        {frontIcon !== "" && <i className={iconElement(frontIcon)}></i>}
+        {element}
+        {endIcon !== "" && <i className={iconElement(endIcon)}></i>}
+      </div>
+    );
+  }
+  return element;
+}
+// addFilter(
+//   "blocks.getSaveElement",
+//   "oja/modify-get-save-element",
+//   modifyGetSaveElement
+// );
+
+function addSaveProps(extraProps, blockType, attributes ) {
   if (isValidBlockType(blockType.name)) {
-    // なしを選択した場合はbottomSpace削除
-    if (attributes.bottomSpace === "") {
-      delete attributes.bottomSpace;
-    }
+    const {frontIcon, endIcon} = attributes;
+    const wrapperProps = {
+      ...extraProps.wrapperProps,
+      "data-fronticon": frontIcon.split(" ")[1],
+      "data-endicon": endIcon.split(" ")[1],
+    };
+    return Object.assign(extraProps,{ ...extraProps, ...wrapperProps });
   }
   return extraProps;
 }

@@ -412,24 +412,7 @@ const addBlockControl = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_3__.creat
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockEdit, props);
   };
 }, "addBlockControl");
-(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_2__.addFilter)("editor.BlockEdit", "oja/block-control", addBlockControl); // function wrapCoverBlockInContainer(element, blockType, attributes) {
-//   // skip if element is undefined
-//   // if (!element) {
-//   //   return;
-//   // }
-//   if (!isValidBlockType(blockType.name)) {
-//     console.log(element)
-//     return element;
-//   }
-//   // return the element wrapped in a div
-//   // return <div className="cover-block-wrapper">{element}</div>;
-// }
-// wp.hooks.addFilter(
-//   "blocks.getSaveElement",
-//   "oja/wrap-cover-block-in-container",
-//   wrapCoverBlockInContainer
-// );
-
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_2__.addFilter)("editor.BlockEdit", "oja/block-control", addBlockControl);
 const withOjaWrapperProp = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_3__.createHigherOrderComponent)(BlockListBlock => {
   return props => {
     const {
@@ -455,7 +438,7 @@ const withOjaWrapperProp = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_3__.cr
         if (name === "core/heading") {
           return iconClass = `${icon} fa-5x`;
         } else {
-          return iconClass = `${icon} fa-2x`;
+          return iconClass = `${icon} fa-3x`;
         }
       };
 
@@ -465,12 +448,12 @@ const withOjaWrapperProp = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_3__.cr
         "data-endicon": endIcon.split(' ')[1]
       };
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
-        className: "oja-corewraper",
+        className: classnames__WEBPACK_IMPORTED_MODULE_6___default()("oja-corewraper", extraClass),
         style: extraStyle
       }, frontIcon !== "" && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("i", {
         className: iconElement(frontIcon)
       }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockListBlock, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
-        className: classnames__WEBPACK_IMPORTED_MODULE_6___default()(className, extraClass),
+        className: className,
         wrapperProps: wrapperProps
       })), endIcon !== "" && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("i", {
         className: iconElement(endIcon)
@@ -482,12 +465,65 @@ const withOjaWrapperProp = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_3__.cr
 }, "withOjaWrapperProp");
 wp.hooks.addFilter("editor.BlockListBlock", "oja/with-oja-wrapper-prop", withOjaWrapperProp);
 
+function modifyGetSaveElement(element, blockType, attributes) {
+  if (!element) {
+    return;
+  }
+
+  let getBlocks = wp.data.select("core/editor").getBlocks(); // 現在のブロックが現在の記事/ページで使用されていることを確認
+
+  if (isValidBlockType(blockType.name) && getBlocks.find(block => isValidBlockType(block.name))) {
+    const {
+      frontIcon,
+      endIcon,
+      bottomSpace
+    } = attributes;
+    const extraStyle = {
+      marginBottom: bottomSpace ? bottomSpace : undefined
+    };
+
+    const iconElement = icon => {
+      let iconClass;
+
+      if (blockType.name === "core/heading") {
+        return iconClass = `${icon} fa-5x`;
+      } else {
+        return iconClass = `${icon} fa-3x`;
+      }
+    };
+
+    const extraClass = [frontIcon.replace(/fa-/g, "").split(" ")[1], endIcon.replace(/fa-/g, "").split(" ")[1]];
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
+      className: classnames__WEBPACK_IMPORTED_MODULE_6___default()("oja-corewraper", extraClass),
+      style: extraStyle
+    }, frontIcon !== "" && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("i", {
+      className: iconElement(frontIcon)
+    }), element, endIcon !== "" && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("i", {
+      className: iconElement(endIcon)
+    }));
+  }
+
+  return element;
+} // addFilter(
+//   "blocks.getSaveElement",
+//   "oja/modify-get-save-element",
+//   modifyGetSaveElement
+// );
+
+
 function addSaveProps(extraProps, blockType, attributes) {
   if (isValidBlockType(blockType.name)) {
-    // なしを選択した場合はbottomSpace削除
-    if (attributes.bottomSpace === "") {
-      delete attributes.bottomSpace;
-    }
+    const {
+      frontIcon,
+      endIcon
+    } = attributes;
+    const wrapperProps = { ...extraProps.wrapperProps,
+      "data-fronticon": frontIcon.split(" ")[1],
+      "data-endicon": endIcon.split(" ")[1]
+    };
+    return Object.assign(extraProps, { ...extraProps,
+      ...wrapperProps
+    });
   }
 
   return extraProps;
