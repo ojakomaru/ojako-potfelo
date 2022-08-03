@@ -148,51 +148,6 @@ wp.hooks.addFilter(
   withOjaWrapperProp
 );
 
-function modifyGetSaveElement(element, blockType, attributes) {
-  if (!element) {
-    return;
-  }
-  let getBlocks = wp.data.select("core/editor").getBlocks();
-  // 現在のブロックが現在の記事/ページで使用されていることを確認
-  if (
-    isValidBlockType(blockType.name) &&
-    getBlocks.find((block) => isValidBlockType(block.name))
-  ) {
-    const { frontIcon, endIcon, bottomSpace } = attributes;
-    const extraStyle = {
-      marginBottom: bottomSpace ? bottomSpace : undefined,
-    };
-    const iconElement = (icon) => {
-      let iconClass;
-      if (blockType.name === "core/heading") {
-        return (iconClass = `${icon} fa-5x`);
-      } else {
-        return (iconClass = `${icon} fa-3x`);
-      }
-    };
-    const extraClass = [
-      frontIcon.replace(/fa-/g, "").split(" ")[1],
-      endIcon.replace(/fa-/g, "").split(" ")[1],
-    ];
-    return (
-      <div
-        className={classNames("oja-corewraper", extraClass)}
-        style={extraStyle}
-      >
-        {frontIcon !== "" && <i className={iconElement(frontIcon)}></i>}
-        {element}
-        {endIcon !== "" && <i className={iconElement(endIcon)}></i>}
-      </div>
-    );
-  }
-  return element;
-}
-// addFilter(
-//   "blocks.getSaveElement",
-//   "oja/modify-get-save-element",
-//   modifyGetSaveElement
-// );
-
 function addSaveProps(extraProps, blockType, attributes ) {
   if (isValidBlockType(blockType.name)) {
     const {frontIcon, endIcon} = attributes;
