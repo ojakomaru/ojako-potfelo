@@ -8,6 +8,7 @@ require_once locate_template('lib/paginations.php'); // ページネーション
 require_once locate_template('lib/widgets.php');     // サイドバー、ウィジェットの関数
 require_once locate_template('lib/customizer/customizer.php');  // カスタマイズ機能の関数
 require_once locate_template('lib/blocks_render/core_expantion.php'); //カスタムブロックレンダリング用
+require_once locate_template('lib/mokuzi.php'); // 目次出力の関数
 
 //コメント欄のHTMLを設定
 function custom_comment_list($comment, $args, $depth) {

@@ -406,18 +406,6 @@
     }
   } //blog_article
 
-  .gist .gist-data {
-    max-width: 722px;
-    max-height: 350px !important;
-  }
-  .gist .blob-code span {
-    font-size: 12px !important;
-    padding: 0 !important;
-  }
-  .gist .blob-code-inner {
-    white-space: pre-wrap;
-  }
-
   .related_key_word {
     margin-bottom: 60px;
     margin-top: 140px;
@@ -522,6 +510,8 @@
       }
     }
   }
+  // 目次デザイン
+  @import "../components/mokuzi";
   // @import "components/block-style/heading";
 } // .single-blogs
 
