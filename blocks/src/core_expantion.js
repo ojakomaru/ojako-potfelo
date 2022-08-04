@@ -151,6 +151,10 @@ wp.hooks.addFilter(
 function addSaveProps(extraProps, blockType, attributes ) {
   if (isValidBlockType(blockType.name)) {
     const {frontIcon, endIcon} = attributes;
+    const extraClass = [
+        frontIcon.replace(/fa-/g, "").split(" ")[1],
+        endIcon.replace(/fa-/g, "").split(" ")[1],
+      ];
     const wrapperProps = {
       ...extraProps.wrapperProps,
       "data-fronticon": frontIcon.split(" ")[1],

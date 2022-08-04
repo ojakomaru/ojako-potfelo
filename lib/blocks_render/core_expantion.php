@@ -30,23 +30,25 @@ function icon_render($icon, $block_name) {
 }
 
 function core_expantion_render( $block_content, $block ) {
+  $front_icon   = @$block['attrs']['frontIcon'];
+  $end_icon     = @$block['attrs']['endIcon'];
+  $bottom_space = @$block['attrs']['bottomSpace'];
   //段落と見出しのみに追加する
-  if ( $block['blockName'] === 'core/paragraph' || $block['blockName'] === "core/heading" ) {
-    $front_icon   = @$block['attrs']['frontIcon'];
-    $end_icon     = @$block['attrs']['endIcon'];
-    $bottom_space = @$block['attrs']['bottomSpace'];
-    $content =
-            '<div class="' . wrap_classname($front_icon, $end_icon).
-              '"' . margin_style(@$bottom_space) .'>';
-    $content .= icon_render($front_icon, $block['blockName']);
-    $content .= $block_content .
-                icon_render($end_icon, $block['blockName']) .
-            '</div>';
-    return $content;
-  }
-
+  if ( $block['blockName'] === 'core/paragraph' || $block['blockName'] === "core/heading" ) :
+    // カスタム属性がなければreturn
+    if(!empty($fornt_icon) || !empty($end_icon) || !empty($bottom_space)) :
+      $content =
+        '<div class="' . wrap_classname($front_icon, $end_icon).
+        '"' . margin_style(@$bottom_space) .'>';
+        $content .= icon_render($front_icon, $block['blockName']);
+        $content .= $block_content .
+        icon_render($end_icon, $block['blockName']) .
+      '</div>';
+      return $content;
+    endif;
+  endif;
   return $block_content;
 }
 if(!is_admin()) {
-  add_filter( 'render_block', 'core_expantion_render', 10, 2 );
+  add_filter( 'render_block', 'core_expantion_render', 8, 2 );
 }

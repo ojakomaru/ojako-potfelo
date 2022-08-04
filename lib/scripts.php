@@ -16,7 +16,7 @@ function add_admin_scripts($hook) {
   // jsファイルを追加
   // wp_script( 'oja_admin_script', '/js/oja-admin-script.js' );
   // cssファイルを追加
-  wp_css('oja_admin_css', '/css/oja-admin.css');
+  wp_enqueue_style('oja_admin_css', '/css/oja-admin.css');
 }
 add_action('admin_enqueue_scripts','add_admin_scripts');
 

@@ -234,7 +234,7 @@ mark {
   margin: 0 15px;
 }
 
-.oja-corewraper > *:not(i) {
+.oja-corewraper > *:not(i), .oja-corewraper nav.postin-nav {
   flex: 1;
 }
 
@@ -899,6 +899,8 @@ mark {
   position: relative;
   font-weight: 900;
   padding-right: 2.5%;
+  margin-bottom: 0;
+  padding-bottom: 0;
   display: block;
 }
 
@@ -910,6 +912,7 @@ mark {
 .wp-block-oja-icon-block .icon-element h3 {
   display: inline-block;
   margin: 20px;
+  margin-bottom: 0;
 }
 
 .wp-block-oja-icon-block .icon-element h3:before {

@@ -209,7 +209,7 @@
       border-bottom: 3px solid $main_color;
       margin-bottom: 30px;
       transform: skew(-15deg, 0deg);
-      padding-left: 16px;
+      padding-left: 20px;
       line-height: 1.6;
       @include md {
         font-size: 18px;
@@ -347,20 +347,20 @@
     p {
       font-size: 16px;
       line-height: 2;
-      padding-left: 35px;
-      padding-right: 35px;
+      padding-left: 25px;
+      padding-right: 25px;
       font-weight: 300;
       margin-bottom: 17px;
       letter-spacing: 1.5;
       font-family: $notosans;
       @include md {
         font-size: 14px;
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
       }
       @include sm {
-        padding-left: 18px;
-        padding-right: 18px;
+        padding-left: 15px;
+        padding-right: 15px;
         line-height: 2;
         margin: 3% 0;
       }

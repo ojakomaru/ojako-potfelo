@@ -471,6 +471,7 @@ function addSaveProps(extraProps, blockType, attributes) {
       frontIcon,
       endIcon
     } = attributes;
+    const extraClass = [frontIcon.replace(/fa-/g, "").split(" ")[1], endIcon.replace(/fa-/g, "").split(" ")[1]];
     const wrapperProps = { ...extraProps.wrapperProps,
       "data-fronticon": frontIcon.split(" ")[1],
       "data-endicon": endIcon.split(" ")[1]

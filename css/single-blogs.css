@@ -1891,7 +1891,7 @@ footer {
   border-bottom: 3px solid #0B048F;
   margin-bottom: 30px;
   transform: skew(-15deg, 0deg);
-  padding-left: 16px;
+  padding-left: 20px;
   line-height: 1.6;
 }
 
@@ -2070,8 +2070,8 @@ footer {
 .single-blogs .blog_article p {
   font-size: 16px;
   line-height: 2;
-  padding-left: 35px;
-  padding-right: 35px;
+  padding-left: 25px;
+  padding-right: 25px;
   font-weight: 300;
   margin-bottom: 17px;
   letter-spacing: 1.5;
@@ -2081,15 +2081,15 @@ footer {
 @media screen and (max-width: 768px) {
   .single-blogs .blog_article p {
     font-size: 14px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
 @media screen and (max-width: 576px) {
   .single-blogs .blog_article p {
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 15px;
+    padding-right: 15px;
     line-height: 2;
     margin: 3% 0;
   }
@@ -2311,7 +2311,7 @@ footer {
   margin: 0 15px;
 }
 
-.oja-corewraper > *:not(i) {
+.oja-corewraper > *:not(i), .oja-corewraper nav.postin-nav {
   flex: 1;
 }
 
@@ -2976,6 +2976,8 @@ footer {
   position: relative;
   font-weight: 900;
   padding-right: 2.5%;
+  margin-bottom: 0;
+  padding-bottom: 0;
   display: block;
 }
 
@@ -2987,6 +2989,7 @@ footer {
 .wp-block-oja-icon-block .icon-element h3 {
   display: inline-block;
   margin: 20px;
+  margin-bottom: 0;
 }
 
 .wp-block-oja-icon-block .icon-element h3:before {

@@ -21,7 +21,7 @@
     margin: 0 15px;
   }
 
-  & > *:not(i){
+  & > *:not(i), nav.postin-nav {
     flex: 1;
   }
 

@@ -32,6 +32,8 @@
     position: relative;
     font-weight: 900;
     padding-right: 2.5%;
+    margin-bottom: 0;
+    padding-bottom: 0;
     display: block;
     &::before {
       font-family: "Font Awesome 5 Free";
@@ -40,6 +42,7 @@
     h3 {
       display: inline-block;
       margin: 20px;
+      margin-bottom: 0;
       &:before {
         content: none;
       }
