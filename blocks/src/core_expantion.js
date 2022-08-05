@@ -101,43 +101,45 @@ const withOjaWrapperProp = createHigherOrderComponent((BlockListBlock) => {
     const { attributes, className, name, isValid } = props;
     if (isValid && isValidBlockType(name)) {
       const { frontIcon, endIcon, bottomSpace } = attributes;
-      const extraStyle = {
-        marginBottom: bottomSpace ? bottomSpace : undefined,
-      };
-      const iconElement = (icon) => {
-        let iconClass;
-        if(name === "core/heading") {
-          return iconClass = `${icon} fa-5x`;
-        } else {
-          return iconClass = `${icon} fa-3x`;
+      if ( frontIcon !== "" || endIcon !== "" || bottomSpace !== "0") {
+        const extraStyle = {
+          marginBottom: bottomSpace ? bottomSpace : undefined,
+        };
+        const iconElement = (icon) => {
+          let iconClass;
+          if(name === "core/heading") {
+            return iconClass = `${icon} fa-5x`;
+          } else {
+            return iconClass = `${icon} fa-3x`;
+          }
         }
-      }
 
-      const extraClass = [
-        frontIcon.replace(/fa-/g, "").split(" ")[1],
-        endIcon.replace(/fa-/g, "").split(" ")[1],
-      ];
+        const extraClass = [
+          frontIcon.replace(/fa-/g, "").split(" ")[1],
+          endIcon.replace(/fa-/g, "").split(" ")[1],
+        ];
 
-      const wrapperProps = {
-        ...props.wrapperProps,
-        "data-fronticon": frontIcon.split(' ')[1],
-        "data-endicon": endIcon.split(' ')[1]
-      };
+        const wrapperProps = {
+          ...props.wrapperProps,
+          "data-fronticon": frontIcon.split(' ')[1],
+          "data-endicon": endIcon.split(' ')[1]
+        };
 
-      return (
-        <div
+        return (
+          <div
           className={classNames("oja-corewraper", extraClass)}
           style={extraStyle}
-        >
-          {frontIcon !== "" && <i className={iconElement(frontIcon)}></i>}
-          <BlockListBlock
-            {...props}
-            className={className}
-            wrapperProps={wrapperProps}
-          />
-          {endIcon !== "" && <i className={iconElement(endIcon)}></i>}
-        </div>
-      );
+          >
+            {frontIcon !== "" && <i className={iconElement(frontIcon)}></i>}
+            <BlockListBlock
+              {...props}
+              className={className}
+              wrapperProps={wrapperProps}
+              />
+            {endIcon !== "" && <i className={iconElement(endIcon)}></i>}
+          </div>
+        );
+      }
     }
     return <BlockListBlock {...props} />;
   };
@@ -151,10 +153,6 @@ wp.hooks.addFilter(
 function addSaveProps(extraProps, blockType, attributes ) {
   if (isValidBlockType(blockType.name)) {
     const {frontIcon, endIcon} = attributes;
-    const extraClass = [
-        frontIcon.replace(/fa-/g, "").split(" ")[1],
-        endIcon.replace(/fa-/g, "").split(" ")[1],
-      ];
     const wrapperProps = {
       ...extraProps.wrapperProps,
       "data-fronticon": frontIcon.split(" ")[1],

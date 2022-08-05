@@ -428,36 +428,39 @@ const withOjaWrapperProp = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_3__.cr
         endIcon,
         bottomSpace
       } = attributes;
-      const extraStyle = {
-        marginBottom: bottomSpace ? bottomSpace : undefined
-      };
 
-      const iconElement = icon => {
-        let iconClass;
+      if (frontIcon !== "" || endIcon !== "" || bottomSpace !== "0") {
+        const extraStyle = {
+          marginBottom: bottomSpace ? bottomSpace : undefined
+        };
 
-        if (name === "core/heading") {
-          return iconClass = `${icon} fa-5x`;
-        } else {
-          return iconClass = `${icon} fa-3x`;
-        }
-      };
+        const iconElement = icon => {
+          let iconClass;
 
-      const extraClass = [frontIcon.replace(/fa-/g, "").split(" ")[1], endIcon.replace(/fa-/g, "").split(" ")[1]];
-      const wrapperProps = { ...props.wrapperProps,
-        "data-fronticon": frontIcon.split(' ')[1],
-        "data-endicon": endIcon.split(' ')[1]
-      };
-      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
-        className: classnames__WEBPACK_IMPORTED_MODULE_6___default()("oja-corewraper", extraClass),
-        style: extraStyle
-      }, frontIcon !== "" && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("i", {
-        className: iconElement(frontIcon)
-      }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockListBlock, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
-        className: className,
-        wrapperProps: wrapperProps
-      })), endIcon !== "" && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("i", {
-        className: iconElement(endIcon)
-      }));
+          if (name === "core/heading") {
+            return iconClass = `${icon} fa-5x`;
+          } else {
+            return iconClass = `${icon} fa-3x`;
+          }
+        };
+
+        const extraClass = [frontIcon.replace(/fa-/g, "").split(" ")[1], endIcon.replace(/fa-/g, "").split(" ")[1]];
+        const wrapperProps = { ...props.wrapperProps,
+          "data-fronticon": frontIcon.split(' ')[1],
+          "data-endicon": endIcon.split(' ')[1]
+        };
+        return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
+          className: classnames__WEBPACK_IMPORTED_MODULE_6___default()("oja-corewraper", extraClass),
+          style: extraStyle
+        }, frontIcon !== "" && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("i", {
+          className: iconElement(frontIcon)
+        }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockListBlock, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
+          className: className,
+          wrapperProps: wrapperProps
+        })), endIcon !== "" && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("i", {
+          className: iconElement(endIcon)
+        }));
+      }
     }
 
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockListBlock, props);
@@ -471,7 +474,6 @@ function addSaveProps(extraProps, blockType, attributes) {
       frontIcon,
       endIcon
     } = attributes;
-    const extraClass = [frontIcon.replace(/fa-/g, "").split(" ")[1], endIcon.replace(/fa-/g, "").split(" ")[1]];
     const wrapperProps = { ...extraProps.wrapperProps,
       "data-fronticon": frontIcon.split(" ")[1],
       "data-endicon": endIcon.split(" ")[1]
