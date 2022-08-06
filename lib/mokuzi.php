@@ -1,4 +1,7 @@
 <?php
+// 管理画面settingの読み込み
+require_once locate_template('/lib/admin_setting/mokuzi_setting.php');
+
 // 見出しのidを付け替える
 function add_chapter_id($the_content) {
   if ( is_single() && in_the_loop() && is_main_query() ):
