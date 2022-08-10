@@ -9,9 +9,11 @@ if ( function_exists( custom_breadcrumb() ) ){
 }
 ?>
 <footer>
-  <?php if ( is_active_sidebar( 'footer-upper-widget' ) ) : ?>
-    <?php dynamic_sidebar( 'footer-upper-widget' ); ?>
-  <?php endif; ?>
+  <?php
+  if ( is_active_sidebar( 'footer-upper-widget' ) ) :
+    dynamic_sidebar( 'footer-upper-widget' );
+  endif;
+  ?>
   <div class="footerMenu">
     <?php
     $footer_widget_area_count = 3;
@@ -23,10 +25,8 @@ if ( function_exists( custom_breadcrumb() ) ){
     ?>
   </div>
   <p><small>Copyright© ojakomaru1012.</small></p>
-  <p>《Web Design:Word Press Portfolio Site》</p>
+  <p>《Web Design:WordPress Portfolio Site》</p>
 </footer>
-<!-- インラインフレームが表示できないサイト用 -->
-<script type="module" src="https://unpkg.com/x-frame-bypass"></script>
-<?php wp_footer();?><!-- 必ずこの記述をココに！！ -->
+<?php wp_footer();?>
 </body>
 </html>

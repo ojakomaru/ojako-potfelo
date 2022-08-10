@@ -217,3 +217,33 @@ const addShowAnimation = (elements, margin = 0.6,callback,timing) => {
 addShowAnimation(".introduction", 0.2, sequentialAnimation);
 addShowAnimation(".production_kind", 0.4, sequentialAnimation,200);
 addShowAnimation(".suggest_item", 0.4, sequentialAnimation);
+
+// 目次の開閉スイッチ
+const mokuziBotton = document.getElementById('mokuzi_show_toggle');
+const mokuziContent = document.querySelector('.toc_title').nextElementSibling;
+if(mokuziBotton) {
+  mokuziBotton.addEventListener('click', () => {
+    mokuziContent.classList.toggle('closed');
+    mokuziBotton.textContent = "Close";
+    if(mokuziContent.classList.contains("closed")) {
+      mokuziBotton.textContent = "Open";
+    }
+  })
+}
+// 目次へ戻るボタンの設定
+const mokuziBackButton = document.getElementById('back_to_mokuzi');
+if (mokuziContent && mokuziBackButton) {
+  document.addEventListener('scroll', ()=> {
+    contentDistans =
+      mokuziContent.getBoundingClientRect().bottom -
+      mokuziContent.clientHeight * 0.2;
+    if(contentDistans < 0) {
+      mokuziBackButton.classList.add('show');
+    } else {
+      mokuziBackButton.classList.remove('show');
+    }
+  })
+}
+  // if (mokuziBackButton) {
+  //   mokuziBackButton.addEventListener("click", () => {});
+  // }

@@ -1,111 +1,304 @@
+@mixin  tocThemeColor($color) {
+  background-color: rgba($color,0.2);
+  dt.toc_title {
+    border-color: rgba($color, 0.9);
+    &::before {
+      background-color: $color;
+    }
+  }
+  li::before {
+    background-color: $color;
+  }
+}
 
-.postin-nav {
-  width: 90%;
-  background-color: #fff;
+dl.oja_toc {
+  width: 85%;
+  margin: 3rem 5%;
   position: relative;
-  border-top: 4px solid #F8D76A;
-  border-bottom: 4px solid #F8D76A;
-  padding: 20px 15px 30px;
-  border-radius: 3px;
-  margin: 1rem 5%;
-  margin-bottom: 35px;
-  transition: all 0.4s ease-in-out;
-  font-family: 游明朝体, "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif !important;
-}
-.postin-nav::after,
-.postin-nav::before {
-  content: '';
-  position: absolute;
-  top: -16px;
-  width: 4px;
-  height: calc(100% + 3em);
-  background-color: #F8D76A;
-}
-.postin-nav::before {
-  left: 10px;
-}
-.postin-nav::after {
-  right: 10px;
-}
+  background: #def1f5;
+  padding: 2rem 0.5rem 2.5rem 3.5rem;
+  font-family: "ヒラギノ角ゴ Pro W3",
+    "Hiragino Kaku Gothic Pro",
+    "メイリオ",
+    "Meiryo",
+    sans-serif;
 
-.postin-nav  p {
-  font-size: 20px !important;
-  font-weight: 700 !important;
-  letter-spacing: 1.8px !important;
-  margin-bottom: 20px;
-  color: #0B048F !important;
-  text-align: center !important;
-  line-height: 32px !important;
-  transform: skew(-13deg, 0deg) !important;
-  margin-top: 0 !important;
-  font-family: 游明朝体, "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif !important;
-}
+  dt.toc_title {
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    margin-bottom: 20px;
+    color: #555;
+    font-weight: bold;
+    font-size: 1.6rem;
+    transform: translateX(-20px);
+    border-bottom: 5px dotted;
+    padding-bottom: 10px;
+    border-color: #3f9cff;
+    position:relative;
 
-.postin-nav ol {
-	list-style: none;
-  margin: 0 !important;
-  padding-left: 0% !important;
-}
-.postin-nav ol.postin-list {
-	border-radius: 0 0 1rem 1rem;
-  padding-left: 10% !important;
-}
-.postin-nav li {
-	line-height: 1.4;
-  padding: 0.5em 0 0 0.5em !important;
-  position: relative;
-  display: inline-block;
-  text-align: left;
-  width: 100%;
-  transition: all 0.4s ease-in-out;
-}
-.postin-list li::before {
-  content: "";
-  position: absolute;
-  left: 0%;
-  top: 0%;
-  width: 60%;
-  height: 0;
-  border-bottom: 0.8px solid #F8D76A;
-}
-.toc-h3 li a,
-.toc-h4 li a,
-.toc-h5 li a {
-  text-decoration: none;
-  color: #9C9C9C;
-  font-size: 0.9em;
-  font-weight: 300;
-  display: block;
-}
-.toc-h3 li a::before,
-.toc-h4 li a::before,
-.toc-h5 li a::before {
-  content: ' − ';
-}
-.toc-h3 li a:hover,
-.toc-h4 li a:hover,
-.toc-h5 li a:hover {
-  transform: translateX(10px);
-  color: #0B048F !important;
-}
-.postin-list > li {
-  min-width: 100px;
-  margin-top: 2%;
-  transition: all 0.4s ease-in-out;
-}
-.postin-list > li > a {
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 300;
-  color: #555555;
-  display: block;
-}
-.postin-list > li > a:hover {
-  transform: scale(1.1);
-  color: #0B048F !important;
-}
-.postin-list > li li {
-	border-top: 0;
-}
+    &::before {
+      display: inline-block;
+      font-weight: 900;
+      font-family: "Font Awesome 6 Free";
+      content: "\f03a";
+      margin-right: 10px;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      background: #3f9cff;
+      border-radius: 50%;
+      color: #fff;
+    }
 
+    // 目次開閉ボタン
+    #mokuzi_show_toggle {
+      font-weight: 400;
+      cursor: pointer;
+      font-family: Menlo,Monaco,Consolas,"CourierNew",monospace;
+      font-size: 1rem;
+      color: gray;
+      position:absolute;
+      right: 20px;
+      top: 10px;
+      display: block;
+    }
+  }
+  dd.mokuzi_content {
+    transition: $anime;
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+    &.closed {
+      height: 0;
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
 
+  // 目次に戻るボタン
+  span#back_to_mokuzi {
+    position: fixed;
+    bottom: 70px;
+    left: 16px;
+    width: 58px;
+    height: 58px;
+    padding-top: 33px;
+    box-sizing: border-box;
+    background-color: #ccc;
+    border-radius: 50%;
+    text-align: center;
+    transition: $anime;
+    opacity: 0;
+    visibility: hidden;
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    a {
+      color: #fff;
+      font-size: 0.6em;
+      text-decoration: none;
+      &::before {
+        position: absolute;
+        content: "\f0ae";
+        font-weight: 900;
+        font-family:"Font Awesome 6 Free";
+        top: 2px;
+        left: 16px;
+        width: 24px;
+        height: 22px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: li;
+    li {
+      position: relative;
+      padding-left: 3%;
+      a {
+        font-size: 1rem;
+        font-weight: 400;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        color: #707070;
+        text-decoration: none;
+        transition: all 0.3s;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  li:not(:first-child) {
+    margin-top: 0.5em;
+  }
+  li::before {
+    counter-increment: li;
+    content: counter(li);
+    position: absolute;
+    left: -5px;
+    top: 10px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #3f9cff ;
+    font-size: 12px;
+    color: #fff;
+    line-height: 20px;
+    text-align: center;
+  }
+  .toc_child {
+    li::before {
+      width: 10px;
+      height: 10px;
+      left: 3px;
+      top: 13px;
+      content: '';
+    }
+    a {
+      font-size: 0.8rem;
+    }
+  }
+
+  // 目次テーマ設定
+  &.sunny-blue {
+    @include tocThemeColor(#3f9cff);
+  }
+  &.citrus {
+    @include tocThemeColor(#FDC15D);
+  }
+  &.fanny {
+    @include tocThemeColor(#ff7fa1);
+  }
+  &.modan {
+    @include tocThemeColor(#405796);
+  }
+  &.cool {
+    @include tocThemeColor(#444444);
+  }
+
+  // 書式設定
+  &.gothick {
+    font-family:"ヒラギノ角ゴ Pro W3",
+    "Hiragino Kaku Gothic Pro",
+    "メイリオ",
+    "Meiryo",
+    sans-serif;
+  }
+  &.helvetica {
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  &.noto-sans-jp {
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  &.minchou {
+    font-family:  游明朝体, "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  }
+
+  // Design設定
+  &.sinple {
+    border: 1px solid #888;
+    background: #f7f7f3;
+    dt.toc_title {
+      border: none;
+    }
+    li::before {
+      background-color: transparent ;
+      color: #444444;
+      font-size: 16px;
+      content: counter(li)":";
+    }
+    .toc_child {
+      li::before {
+        content: none;
+      }
+    }
+  }
+  &.sharp {
+    dt.toc_title {
+      border: none;
+    }
+    ol {
+      counter-reset: section;
+      li {
+        padding-left: 6%;
+        &:before {
+          counter-increment: section;
+          content: counters(section, ".");
+          background: transparent;
+          color: #333;
+          font-size: 1.2rem;
+        }
+        &:after {
+          content: '|';
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          left: 20px;
+          top: -8px;
+          font-size: 30px;
+        }
+      }
+      .toc_child {
+        li {
+          padding-left: 8%;
+        }
+        li::before {
+          top: 6px;
+          font-size: 15px;
+        }
+        li::after {
+          left: 30px;
+          font-size: 25px;
+        }
+        .toc_child {
+          li {
+            padding-left: 5px;
+          }
+          li::before {
+            content: '';
+          }
+          li::after {
+            font-size: 15px;
+            transform: rotate(90deg);
+            left: -25px;
+            top: 15px;
+          }
+          a {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  &.coolish {
+    border-top: 10px solid #444444;
+    background: #F3F3F2;
+    dt.toc_title {
+      border: none;
+      &::before {
+        background-color: #444444;
+      }
+    }
+    li::before {
+      background-color: transparent ;
+      color: #444444;
+      font-size: 16px;
+      content: counter(li)".";
+    }
+    .toc_child {
+      li::before {
+        content: '-';
+        top: 6px;
+      }
+    }
+  }
+}

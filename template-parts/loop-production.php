@@ -1,7 +1,7 @@
 <div class="two_column">
   <div class="pc_frame">
     <div class="frame">
-      <iframe is="x-frame-bypass" src="<?php the_field('link'); ?>" width="1280" height="800" title="PC画面"></iframe>
+      <iframe src="<?php the_field('link'); ?>" width="1280" height="800" title="PC画面"></iframe>
     </div>
   </div><!-- pc_frame -->
   <div class="main_item_text">
@@ -22,7 +22,7 @@
 <div class="two_column column_reverse">
   <div class="sp_frame">
     <div class="frame">
-      <iframe is="x-frame-bypass" src="<?php the_field('link'); ?>  " width="385" height="667" title="スマホ画面"></iframe>
+      <iframe src="<?php the_field('link'); ?>  " width="385" height="667" title="スマホ画面"></iframe>
       </div>
     </div><!-- sp_frame -->
     <div class="main_item_text">
