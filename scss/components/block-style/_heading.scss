@@ -2,9 +2,20 @@ h1, h2, h3, h4, h5, h6 {
   margin: 2em 0 1em;
   font-weight: bold;
   line-height: 1.6;
-  &.is-style-under-line{
-    padding-bottom: 5px;
-    border-bottom: 2px solid green;
+  // シンプルライン
+  &.is-style-simple-line{
+    position: relative;
+    border-bottom: 2px solid $main_color;
+    padding: 10px 0;
+    &::before {
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 20%;
+      height: 2px;
+      content: '';
+      background: #27acd9;
+    }
   }
 
   &.is-style-left-line{

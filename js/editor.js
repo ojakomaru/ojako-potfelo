@@ -1,4 +1,3 @@
-import { registerBlockStyle } from "@wordpress/blocks";
 
 // ツールバーにボタンを追加する
 (function (richText, element, editor) {
@@ -24,42 +23,42 @@ import { registerBlockStyle } from "@wordpress/blocks";
 })(window.wp.richText, window.wp.element, window.wp.editor);
 
 // 見出しにスタイルを追加
-registerBlockStyle("core/heading", {
+wp.blocks.registerBlockStyle("core/heading", {
   name: "default",
   label: "一文字目拡大、斜体",
   isDefault: true,
 });
-registerBlockStyle("core/heading", {
+wp.blocks.registerBlockStyle("core/heading", {
   name: "simple-line",
   label: "シンプルライン",
   isDefault: false,
 });
-registerBlockStyle("core/heading", {
+wp.blocks.registerBlockStyle("core/heading", {
   name: "top-bottom-line",
   label: "上下ボーダー",
   isDefault: false,
 });
-registerBlockStyle("core/heading", {
+wp.blocks.registerBlockStyle("core/heading", {
   name: "left-border",
   label: "左垂直ライン",
   isDefault: false,
 });
-registerBlockStyle("core/heading", {
+wp.blocks.registerBlockStyle("core/heading", {
   name: "speech-bubble",
   label: "吹き出し",
   isDefault: false,
 });
-registerBlockStyle("core/heading", {
+wp.blocks.registerBlockStyle("core/heading", {
   name: "speech-line",
   label: "斜め線吹き出し",
   isDefault: false,
 });
-registerBlockStyle("core/heading", {
+wp.blocks.registerBlockStyle("core/heading", {
   name: "two-tone",
   label: "ツートーンカラー",
   isDefault: false,
 });
-registerBlockStyle("core/heading", {
+wp.blocks.registerBlockStyle("core/heading", {
   name: "two-tone-circle",
   label: "ツートーンサークル",
   isDefault: false,
