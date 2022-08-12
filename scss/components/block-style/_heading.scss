@@ -1,6 +1,7 @@
 h1, h2, h3, h4, h5, h6 {
-  margin: 2em 0 0.5em;
+  margin: 2em 0 1em;
   font-weight: bold;
+  line-height: 1.6;
   &.is-style-under-line{
     padding-bottom: 5px;
     border-bottom: 2px solid green;
@@ -11,15 +12,108 @@ h1, h2, h3, h4, h5, h6 {
     border-left: 5px solid #ddd;
   }
 }
-@each $tag, $size in (
-  h1: 30px,
-  h2: 24px,
-  h3: 20px,
-  h4: 18px,
-  h5: 16px,
-  h6: 14px
-) {
-  #{$tag}{
-    font-size: $size;
+
+h1.text-frame,
+.editor-post-title .editor-post-title__input {
+  font-size: 1.7rem;
+  line-height: 1.5;
+  color: $main_color;
+  text-align: left;
+  letter-spacing: 2.2px;
+  margin-bottom: 50px;
+  padding-left: 20px;
+  background-color: $accent_color;
+  &::after,
+  &::before {
+    display: none;
   }
+  @include lg {
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 1.8rem;
+  }
+  @include md {
+    font-size: 1.5rem;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @include sm {
+    font-size: 1.3rem;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @include s {
+    font-size: 1rem;
+  }
+}
+h2 {
+  font-size: 22px;
+  color: $main_color;
+  border-bottom: 3px solid $main_color;
+  transform: skew(-15deg, 0deg);
+  padding-left: 20px;
+  line-height: 1.6;
+  @include md {
+    font-size: 18px;
+  }
+  &:first-letter {
+    font-size: 34px;
+    color: $main_color;
+    @include md {
+      font-size: 25px;
+    }
+  }
+}
+h3 {
+  font-size: 20px;
+  color: $main_color;
+  letter-spacing: 3.5px;
+  position: relative;
+  &::before {
+    content: " ";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: $main_color;
+    transform: rotate(45deg);
+    margin-right: 0.5em;
+  }
+  @include md {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  @include sm {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+}
+h4 {
+  font-size: 20px;
+  color: $text_color;
+  background: linear-gradient(transparent 70%, #fef5e0 70%);
+  padding-left: 20px;
+  font-weight: 800;
+  border: none;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  @include md {
+    font-size: 16px;
+  }
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  padding-left: 20px;
+  color: $sub_color;
+  @include md {
+    font-size: 15px;
+  }
+}
+
+h6 {
+  font-size: 15px;
+  font-weight: 400;
+  padding-left: 20px;
 }

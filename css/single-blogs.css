@@ -1772,8 +1772,31 @@ footer {
   width: auto;
 }
 
-.single-blogs .text-frame,
-.single-blogs .editor-post-title .editor-post-title__input {
+.single-blogs .blog_article {
+  background-color: #F8F9F7;
+  color: #393542;
+  padding: 6%;
+  margin-bottom: 15%;
+}
+
+.single-blogs .blog_article h1, .single-blogs .blog_article h2, .single-blogs .blog_article h3, .single-blogs .blog_article h4, .single-blogs .blog_article h5, .single-blogs .blog_article h6 {
+  margin: 2em 0 1em;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+.single-blogs .blog_article h1.is-style-under-line, .single-blogs .blog_article h2.is-style-under-line, .single-blogs .blog_article h3.is-style-under-line, .single-blogs .blog_article h4.is-style-under-line, .single-blogs .blog_article h5.is-style-under-line, .single-blogs .blog_article h6.is-style-under-line {
+  padding-bottom: 5px;
+  border-bottom: 2px solid green;
+}
+
+.single-blogs .blog_article h1.is-style-left-line, .single-blogs .blog_article h2.is-style-left-line, .single-blogs .blog_article h3.is-style-left-line, .single-blogs .blog_article h4.is-style-left-line, .single-blogs .blog_article h5.is-style-left-line, .single-blogs .blog_article h6.is-style-left-line {
+  padding-left: 5px;
+  border-left: 5px solid #ddd;
+}
+
+.single-blogs .blog_article h1.text-frame,
+.single-blogs .blog_article .editor-post-title .editor-post-title__input {
   font-size: 1.7rem;
   line-height: 1.5;
   color: #0B048F;
@@ -1784,15 +1807,15 @@ footer {
   background-color: #e7f3b6;
 }
 
-.single-blogs .text-frame::after, .single-blogs .text-frame::before,
-.single-blogs .editor-post-title .editor-post-title__input::after,
-.single-blogs .editor-post-title .editor-post-title__input::before {
+.single-blogs .blog_article h1.text-frame::after, .single-blogs .blog_article h1.text-frame::before,
+.single-blogs .blog_article .editor-post-title .editor-post-title__input::after,
+.single-blogs .blog_article .editor-post-title .editor-post-title__input::before {
   display: none;
 }
 
 @media screen and (max-width: 992px) {
-  .single-blogs .text-frame,
-  .single-blogs .editor-post-title .editor-post-title__input {
+  .single-blogs .blog_article h1.text-frame,
+  .single-blogs .blog_article .editor-post-title .editor-post-title__input {
     padding-left: 40px;
     padding-right: 40px;
     font-size: 1.8rem;
@@ -1800,8 +1823,8 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-  .single-blogs .text-frame,
-  .single-blogs .editor-post-title .editor-post-title__input {
+  .single-blogs .blog_article h1.text-frame,
+  .single-blogs .blog_article .editor-post-title .editor-post-title__input {
     font-size: 1.5rem;
     padding-left: 30px;
     padding-right: 30px;
@@ -1809,8 +1832,8 @@ footer {
 }
 
 @media screen and (max-width: 576px) {
-  .single-blogs .text-frame,
-  .single-blogs .editor-post-title .editor-post-title__input {
+  .single-blogs .blog_article h1.text-frame,
+  .single-blogs .blog_article .editor-post-title .editor-post-title__input {
     font-size: 1.3rem;
     padding-left: 20px;
     padding-right: 20px;
@@ -1818,35 +1841,35 @@ footer {
 }
 
 @media screen and (max-width: 469px) {
-  .single-blogs .text-frame,
-  .single-blogs .editor-post-title .editor-post-title__input {
+  .single-blogs .blog_article h1.text-frame,
+  .single-blogs .blog_article .editor-post-title .editor-post-title__input {
     font-size: 1rem;
   }
 }
 
-.single-blogs .blog_article {
-  background-color: #F8F9F7;
-  color: #393542;
-  padding: 6%;
-  margin-bottom: 15%;
-}
-
-.single-blogs .blog_article .post_date time {
-  display: inline-block;
-  text-align: right;
-  font-size: 1rem;
-  padding: 20px 20px 10px 0;
+.single-blogs .blog_article h2 {
+  font-size: 22px;
+  color: #0B048F;
+  border-bottom: 3px solid #0B048F;
+  transform: skew(-15deg, 0deg);
+  padding-left: 20px;
+  line-height: 1.6;
 }
 
 @media screen and (max-width: 768px) {
-  .single-blogs .blog_article .post_date time {
-    font-size: 0.8rem;
+  .single-blogs .blog_article h2 {
+    font-size: 18px;
   }
 }
 
-@media screen and (max-width: 576px) {
-  .single-blogs .blog_article .post_date time {
-    padding: 0 10px 3px 0;
+.single-blogs .blog_article h2:first-letter {
+  font-size: 34px;
+  color: #0B048F;
+}
+
+@media screen and (max-width: 768px) {
+  .single-blogs .blog_article h2:first-letter {
+    font-size: 25px;
   }
 }
 
@@ -1854,8 +1877,6 @@ footer {
   font-size: 20px;
   color: #0B048F;
   letter-spacing: 3.5px;
-  line-height: 1.8;
-  margin: 20px 10px;
   position: relative;
 }
 
@@ -1883,39 +1904,8 @@ footer {
   }
 }
 
-.single-blogs .blog_article h2 {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-  color: #0B048F;
-  border-bottom: 3px solid #0B048F;
-  margin-bottom: 30px;
-  transform: skew(-15deg, 0deg);
-  padding-left: 20px;
-  line-height: 1.6;
-}
-
-@media screen and (max-width: 768px) {
-  .single-blogs .blog_article h2 {
-    font-size: 18px;
-  }
-}
-
-.single-blogs .blog_article h2:first-letter {
-  font-size: 34px;
-  color: #0B048F;
-}
-
-@media screen and (max-width: 768px) {
-  .single-blogs .blog_article h2:first-letter {
-    font-size: 25px;
-  }
-}
-
 .single-blogs .blog_article h4 {
   font-size: 20px;
-  margin: 20px 0px;
-  margin-bottom: 35px;
   color: #393542;
   background: linear-gradient(transparent 70%, #fef5e0 70%);
   padding-left: 20px;
@@ -1949,6 +1939,25 @@ footer {
   font-size: 15px;
   font-weight: 400;
   padding-left: 20px;
+}
+
+.single-blogs .blog_article .post_date time {
+  display: inline-block;
+  text-align: right;
+  font-size: 1rem;
+  padding: 20px 20px 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .single-blogs .blog_article .post_date time {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .single-blogs .blog_article .post_date time {
+    padding: 0 10px 3px 0;
+  }
 }
 
 .single-blogs .blog_article span {
@@ -3672,7 +3681,8 @@ footer {
 
 @media screen and (max-width: 576px) {
   .wp-block-oja-icon-block {
-    width: 85%;
+    width: 90%;
+    padding: 10px;
   }
 }
 
@@ -3734,6 +3744,12 @@ footer {
 
 .wp-block-oja-icon-block.icon-headline .icon-element:before {
   font-size: 30px;
+}
+
+@media screen and (max-width: 576px) {
+  .wp-block-oja-icon-block.icon-headline .icon-element:before {
+    font-size: 20px;
+  }
 }
 
 .wp-block-oja-icon-block.icon-headline .icon-block-inner {

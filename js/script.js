@@ -244,6 +244,3 @@ if (mokuziContent && mokuziBackButton) {
     }
   })
 }
-  // if (mokuziBackButton) {
-  //   mokuziBackButton.addEventListener("click", () => {});
-  // }

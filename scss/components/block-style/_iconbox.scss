@@ -26,7 +26,8 @@
   border-radius: 5px;
   margin-bottom: 20px;
   @include sm {
-    width: 85%;
+    width: 90%;
+    padding: 10px;
   }
   &:before {
     content: none !important;
@@ -73,6 +74,9 @@
       width: 100%;
       &:before {
         font-size: 30px;
+        @include sm {
+          font-size: 20px;
+        }
       }
     }
     .icon-block-inner {

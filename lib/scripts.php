@@ -72,7 +72,9 @@ add_action('wp_enqueue_scripts', 'add_enqueue_files',1);
 
 // カスタムブロック登録用スクリプト
 add_action( 'enqueue_block_editor_assets', function () {
-  // ExBoxブロック登録
+  /**
+   * ExBoxブロック登録
+   */
   $exbox_asset_file = include __DIR__ . '/../blocks/build/exbox.asset.php';
 	wp_enqueue_script(
 		'exbox-script',
@@ -82,7 +84,9 @@ add_action( 'enqueue_block_editor_assets', function () {
 		true
 	);
 
-  // アイコンブロック登録
+  /**
+   * アイコンブロック登録
+   */
   $iconbox_asset_file = include __DIR__ . '/../blocks/build/iconbox.asset.php';
 	wp_enqueue_script(
 		'iconbox-script',
@@ -94,7 +98,9 @@ add_action( 'enqueue_block_editor_assets', function () {
   //Font Awesome読み込み
   wp_enqueue_style('fontawesome_css','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
 
-  // コアブロック拡張スクリプト
+  /**
+   * コアブロック拡張スクリプト
+   */
   $excore_asset_file = include __DIR__ . '/../blocks/build/core_expantion.asset.php';
 	wp_enqueue_script(
 		'core_expantion-script',
@@ -104,6 +110,9 @@ add_action( 'enqueue_block_editor_assets', function () {
 		true
 	);
 
+  /**
+   * コアブロックの追加スタイル登録
+   */
   wp_enqueue_script( 'oja-block-editor', get_theme_file_uri( 'js/editor.js'), [
     'wp-blocks', 'wp-element', 'wp-rich-text', 'wp-i18n', 'wp-editor'
   ]);
