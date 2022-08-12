@@ -55,8 +55,8 @@ function oja_add_mokuzi( $the_content ) {
   if(count($toc_headings) >= $headings_count) :
     // 目次の設定に応じてクラス名を付与
     $toc_class = '';
-    if(get_option('mokuzi_radio')) {
-      $toc_class .= ' '.get_option('mokuzi_radio');
+    if(get_option('mokuzi_color')) {
+      $toc_class .= ' '.get_option('mokuzi_color');
     }
     if(get_option('mokuzi_select')) {
       $toc_class .= ' '.get_option('mokuzi_select');
@@ -66,7 +66,7 @@ function oja_add_mokuzi( $the_content ) {
     }
     $level = '';
     $hierarchy = 0;
-    $toc = '<dl class="oja_toc '.$toc_class.'" id="oja_toc">';
+    $toc = '<nav class="mokuzi_wraper '.$toc_class.'"><dl class="oja_toc" id="oja_toc">';
     $toc .= '<dt class="toc_title">'.$heading_title;
     $toc .=   '<span id="mokuzi_show_toggle">Close</span>';
     $toc .= '</dt><dd class="mokuzi_content"><ol>';
@@ -101,7 +101,7 @@ function oja_add_mokuzi( $the_content ) {
     if(get_option('mokuzi_showcheck')) {
       $toc .= '<span id="back_to_mokuzi"><a href="#oja_toc">目次へ</a></span>';
     }
-    $toc .= '</dl>';
+    $toc .= '</dl></nav>';
     //最初のh2の前に$tocをつけた本文に置換する
     $the_content = str_replace($toc_headings[0][0], $toc . $toc_headings[0][0], $the_content);
   endif; //if ( count( $toc_headings ) > 3 )

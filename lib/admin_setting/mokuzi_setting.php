@@ -28,13 +28,13 @@ $selected_mokuzicolor = [
   ['value' => 'citrus', 'color' => 'シトラス'],
   ['value' => 'fanny', 'color' => 'ファニー'],
   ['value' => 'modan', 'color' => 'モダン'],
-  ['value' => 'cool', 'color' => 'クール'],
+  ['value' => 'cool', 'color' => 'シック'],
 ];
 $selected_mokuzidesign = [
   ['value' => 'circle', 'design' => 'かわいい (デフォルト)'],
   ['value' => 'sinple', 'design' => 'シンプル'],
   ['value' => 'sharp', 'design' => 'シャープ'],
-  ['value' => 'coolish', 'design' => 'クール(カラー設定変更不可)'],
+  ['value' => 'coolish', 'design' => 'クール'],
 ];
 function oja_mokuzi_setup_page() {
   // 権限チェック.
@@ -79,7 +79,7 @@ function oja_mokuzi_setup_page() {
             <?php
             global $selected_mokuzicolor;
             foreach($selected_mokuzicolor as $color) {
-              echo '<li><label><input name="mokuzi_radio" type="radio" value="'.$color['value'].'"'.checked($color['value'], get_option('mokuzi_radio'), false).'/>'.$color['color'].'</label></li>';
+              echo '<li><label><input name="mokuzi_color" type="radio" value="'.$color['value'].'"'.checked($color['value'], get_option('mokuzi_color'), false).'/>'.$color['color'].'</label></li>';
             } ?>
           </ul>
           <h3>目次のデザイン</h3>
@@ -114,7 +114,14 @@ function register_custom_setting() {
   register_setting('oja_mokuzi_group', 'mokuzi_text');
   register_setting('oja_mokuzi_group', 'mokuzi_number');
   register_setting('oja_mokuzi_group', 'mokuzi_select');
-  register_setting('oja_mokuzi_group', 'mokuzi_radio');
+  register_setting('oja_mokuzi_group', 'mokuzi_color');
   register_setting('oja_mokuzi_group', 'mokuzi_design');
   register_setting('oja_mokuzi_group', 'mokuzi_showcheck');
+  // 初期値の設定
+  add_option('mokuzi_text', 'Content');
+  add_option('mokuzi_number', '2');
+  add_option('mokuzi_select', 'gothick');
+  add_option('mokuzi_color', 'sunny-blue');
+  add_option('mokuzi_design', 'circle');
+  add_option('mokuzi_showckeck', false);
 }
