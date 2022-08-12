@@ -3670,6 +3670,12 @@ footer {
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 576px) {
+  .wp-block-oja-icon-block {
+    width: 85%;
+  }
+}
+
 .wp-block-oja-icon-block:before {
   content: none !important;
 }
@@ -3692,6 +3698,12 @@ footer {
   display: inline-block;
   margin: 20px;
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 576px) {
+  .wp-block-oja-icon-block .icon-element h3 {
+    margin-right: 0;
+  }
 }
 
 .wp-block-oja-icon-block .icon-element h3:before {
