@@ -24,14 +24,14 @@
 
 // 見出しにスタイルを追加
 wp.blocks.registerBlockStyle("core/heading", {
-  name: "default",
+  name: "drop-itaric",
   label: "一文字目拡大、斜体",
-  isDefault: true,
+  isDefault: false,
 });
 wp.blocks.registerBlockStyle("core/heading", {
   name: "simple-line",
   label: "シンプルライン",
-  isDefault: false,
+  isDefault: true,
 });
 wp.blocks.registerBlockStyle("core/heading", {
   name: "top-bottom-line",

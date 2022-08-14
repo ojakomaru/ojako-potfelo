@@ -98,7 +98,7 @@ Template Name: 製作者紹介ページ
       <h2 class="text-frame c_head">WEB制作における<br>学習遍歴</h2>
     </div>
     <div class="acco_tav html">
-      <h4><span>HTML</span></h4>
+      <h4 class="bd-head"><span>HTML</span></h4>
       <div class="inside_text">
         <p id="html_record_customizer">
          <?php echo nl2br(esc_html($html_record)); ?>
@@ -106,7 +106,7 @@ Template Name: 製作者紹介ページ
       </div><!-- inside_text -->
     </div><!-- acco_tav -->
     <div class="acco_tav css">
-      <h4><span>CSS</span></h4>
+      <h4 class="bd-head"><span>CSS</span></h4>
       <div class="inside_text">
         <p id="css_record_customizer" >
           <?php echo nl2br(esc_html($css_record)); ?>
@@ -114,7 +114,7 @@ Template Name: 製作者紹介ページ
       </div><!-- inside_text -->
     </div><!-- acco_tav -->
     <div class="acco_tav js">
-      <h4><span>Javascirpt</span></h4>
+      <h4 class="bd-head"><span>Javascirpt</span></h4>
       <div class="inside_text">
         <p id="javascript_record_customizer" >
           <?php echo nl2br(esc_html($javascript_record)); ?>
@@ -122,7 +122,7 @@ Template Name: 製作者紹介ページ
       </div><!-- inside_text -->
     </div><!-- acco_tav -->
     <div class="acco_tav wordpress">
-      <h4><span>WordPress</span></h4>
+      <h4 class="bd-head"><span>WordPress</span></h4>
       <div class="inside_text">
         <p id="wordpress_record_customizer" >
           <?php echo nl2br(esc_html($wordpress_record)); ?>
@@ -130,7 +130,7 @@ Template Name: 製作者紹介ページ
       </div><!-- inside_text -->
     </div><!-- acco_tav -->
     <div class="acco_tav php">
-      <h4><span>PHP</span></h4>
+      <h4 class="bd-head"><span>PHP</span></h4>
       <div class="inside_text">
         <p id="php_record_customizer" >
           <?php echo nl2br(esc_html($php_record)); ?>
@@ -139,7 +139,7 @@ Template Name: 製作者紹介ページ
     </div><!-- acco_tav -->
 
     <div class="acco_tav scss">
-      <h4><span>Bootstrap & SCSSなどのフレームワークについて</span></h4>
+      <h4 class="bd-head"><span>Bootstrap & SCSSなどのフレームワークについて</span></h4>
       <div class="inside_text">
         <p id="frame_work_record_customizer" >
           <?php echo nl2br(esc_html($frame_work_record)); ?>
@@ -150,7 +150,7 @@ Template Name: 製作者紹介ページ
     <div class="active_head" id="wp_recommend">
       <h2 class="text-frame c_head">WordPress<br>カスタマイズ承ります</h2>
     </div>
-    <h3 class="active_greeting">
+    <h3 class="active_greeting diceheading">
       そもそもWordPress（ワードプレス）とは？
     </h3>
     <p>
@@ -160,7 +160,7 @@ Template Name: 製作者紹介ページ
       Web関連技術が無い人でもサイト管理や記事投稿ができるため、世界中のサイトのおよそ4分の1はWordPressで構築されていると言われています。
     </p>
 
-    <h3 class="active_greeting">
+    <h3 class="active_greeting diceheading">
       WordPressで出来ること、メリット
     </h3>
     <section class="wp_exp">

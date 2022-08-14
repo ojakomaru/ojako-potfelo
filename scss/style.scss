@@ -98,21 +98,21 @@ Author: おジャコ
 
 //メインテキストbace
 .main {
-  h3:before {
+  .diceheading:before {
     content: none;
   }
-  h3.show strong {
+  .diceheading.show strong {
     opacity: 1;
     transform: translateY(0);
   }
-  h3 {
+  .diceheading {
     padding: 0 5%;
     opacity: 0;
     text-align: center;
     transition: all 1.5s ease-out;
     transform: translateY(-50px);
   }
-  strong {
+  .diceheading {
     display: block;
     opacity: 0;
     transition: all 1.5s ease-out;

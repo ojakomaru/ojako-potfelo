@@ -35,15 +35,13 @@
       <h2 class="text-frame">はじめのご挨拶</h2>
     </div>
 
-    <h3 class="active_greeting" id="greeting_text">
-      <strong id="greeting_text_customizer" class="greeting_text">
-        <?php
-        $greeting_text = get_theme_mod('greeting_text');
-        if (!empty($greeting_text)) {
-          echo esc_html($greeting_text);
-        }
-        ?>
-      </strong>
+    <h3 class="active_greeting diceheading" id="greeting_text">
+      <?php
+      $greeting_text = get_theme_mod('greeting_text');
+      if (!empty($greeting_text)) {
+        echo esc_html($greeting_text);
+      }
+      ?>
     </h3>
     <div class="greeting_img">
       <div class="scroll_text">
@@ -63,7 +61,7 @@
     </div>
 
     <div class="acco_tav">
-      <h4 id="belief_title_1_customizer">
+      <h4 class="bd-head" id="belief_title_1_customizer">
         <?php
         $belief_title_1 = get_theme_mod('belief_title_1');
         if (!empty($belief_title_1)) {
@@ -84,7 +82,7 @@
     </div><!-- acco_tav -->
 
     <div class="acco_tav">
-      <h4 id="belief_title_2_customizer">
+      <h4 class="bd-head" id="belief_title_2_customizer">
         <?php
         $belief_title_2 = get_theme_mod('belief_title_2');
         if (!empty($belief_title_2)) {

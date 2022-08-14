@@ -381,12 +381,12 @@ body::before {
   background: #F8D76A;
 }
 
-.main h3.show {
+.main .diceheading.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-.main h3 {
+.main .diceheading {
   font-size: 2.6em;
   margin: 10% auto 5%;
   display: block;
@@ -396,25 +396,25 @@ body::before {
 }
 
 @media screen and (max-width: 992px) {
-  .main h3 {
+  .main .diceheading {
     font-size: 1.6rem;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .main h3 {
+  .main .diceheading {
     margin-top: 5%;
     font-size: 1.2rem;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .main h3 {
+  .main .diceheading {
     font-size: 1rem;
   }
 }
 
-.main h3:before {
+.main .diceheading:before {
   content: " ";
   display: inline-block;
   width: 22px;
@@ -425,20 +425,20 @@ body::before {
 }
 
 @media screen and (max-width: 768px) {
-  .main h3:before {
+  .main .diceheading:before {
     width: 16px;
     height: 16px;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .main h3:before {
+  .main .diceheading:before {
     width: 14px;
     height: 14px;
   }
 }
 
-.main h4 {
+.main .bd-head {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 30px;
@@ -448,13 +448,13 @@ body::before {
 }
 
 @media screen and (max-width: 768px) {
-  .main h4 {
+  .main .bd-head {
     font-size: 1.2rem;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .main h4 {
+  .main .bd-head {
     line-height: 1.5;
     padding-right: 45px;
     font-size: 1rem;
@@ -462,7 +462,7 @@ body::before {
   }
 }
 
-.main h4 br {
+.main .bd-head br {
   display: none;
 }
 
@@ -1639,16 +1639,16 @@ ul.tag_list li a::before {
   animation-duration: 3s;
 }
 
-.main h3:before {
+.main .diceheading:before {
   content: none;
 }
 
-.main h3.show strong {
+.main .diceheading.show strong {
   opacity: 1;
   transform: translateY(0);
 }
 
-.main h3 {
+.main .diceheading {
   padding: 0 5%;
   opacity: 0;
   text-align: center;
@@ -1656,31 +1656,31 @@ ul.tag_list li a::before {
   transform: translateY(-50px);
 }
 
-.main strong {
+.main .diceheading {
   display: block;
   opacity: 0;
   transition: all 1.5s ease-out;
   transform: translateY(-50px);
 }
 
-.main strong:first-of-type {
+.main .diceheading:first-of-type {
   margin-top: 170px;
 }
 
 @media screen and (max-width: 992px) {
-  .main strong:first-of-type {
+  .main .diceheading:first-of-type {
     margin-top: 110px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .main strong:first-of-type {
+  .main .diceheading:first-of-type {
     margin-top: 80px;
   }
 }
 
 @media screen and (max-width: 992px) {
-  .main strong {
+  .main .diceheading {
     margin-top: 60px;
     margin-bottom: 70px;
     font-size: 2rem;
@@ -1688,7 +1688,7 @@ ul.tag_list li a::before {
 }
 
 @media screen and (max-width: 768px) {
-  .main strong {
+  .main .diceheading {
     margin-top: 20px;
     margin-bottom: 50px;
     font-size: 1.2rem;
@@ -1696,12 +1696,12 @@ ul.tag_list li a::before {
 }
 
 @media screen and (max-width: 576px) {
-  .main strong {
+  .main .diceheading {
     font-size: 1rem;
   }
 }
 
-.main strong:before {
+.main .diceheading:before {
   content: " ";
   display: inline-block;
   width: 22px;
@@ -1712,14 +1712,14 @@ ul.tag_list li a::before {
 }
 
 @media screen and (max-width: 768px) {
-  .main strong:before {
+  .main .diceheading:before {
     width: 16px;
     height: 16px;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .main strong:before {
+  .main .diceheading:before {
     width: 14px;
     height: 14px;
   }

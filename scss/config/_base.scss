@@ -234,11 +234,11 @@ body {
 //メインテキストbace
 .main {
   //左辺菱形装飾見出し
-  h3.show {
+  .diceheading.show {
     opacity: 1;
     transform: translateY(0);
   }
-  h3 {
+  .diceheading {
     font-size: 2.6em;
     margin: 10% auto 5%;
     display: block;
@@ -274,7 +274,7 @@ body {
     }
   }
 
-  h4 {
+  .bd-head {
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 30px;

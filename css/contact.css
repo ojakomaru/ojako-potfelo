@@ -377,12 +377,12 @@ body::before {
   background: #F8D76A;
 }
 
-.main h3.show {
+.main .diceheading.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-.main h3 {
+.main .diceheading {
   font-size: 2.6em;
   margin: 10% auto 5%;
   display: block;
@@ -392,25 +392,25 @@ body::before {
 }
 
 @media screen and (max-width: 992px) {
-  .main h3 {
+  .main .diceheading {
     font-size: 1.6rem;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .main h3 {
+  .main .diceheading {
     margin-top: 5%;
     font-size: 1.2rem;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .main h3 {
+  .main .diceheading {
     font-size: 1rem;
   }
 }
 
-.main h3:before {
+.main .diceheading:before {
   content: " ";
   display: inline-block;
   width: 22px;
@@ -421,20 +421,20 @@ body::before {
 }
 
 @media screen and (max-width: 768px) {
-  .main h3:before {
+  .main .diceheading:before {
     width: 16px;
     height: 16px;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .main h3:before {
+  .main .diceheading:before {
     width: 14px;
     height: 14px;
   }
 }
 
-.main h4 {
+.main .bd-head {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 30px;
@@ -444,13 +444,13 @@ body::before {
 }
 
 @media screen and (max-width: 768px) {
-  .main h4 {
+  .main .bd-head {
     font-size: 1.2rem;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .main h4 {
+  .main .bd-head {
     line-height: 1.5;
     padding-right: 45px;
     font-size: 1rem;
@@ -458,7 +458,7 @@ body::before {
   }
 }
 
-.main h4 br {
+.main .bd-head br {
   display: none;
 }
 

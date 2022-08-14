@@ -25,7 +25,7 @@
   padding: 20px;
   border-radius: 5px;
   margin-bottom: 20px;
-  @include sm {
+  @media screen and (max-width: 543px) {
     width: 90%;
     padding: 10px;
   }
@@ -47,7 +47,7 @@
       display: inline-block;
       margin: 20px;
       margin-bottom: 0;
-      @include sm {
+      @media screen and (max-width: 543px) {
         margin-right: 0;
       }
       &:before {
@@ -74,7 +74,7 @@
       width: 100%;
       &:before {
         font-size: 30px;
-        @include sm {
+        @media screen and (max-width: 543px) {
           font-size: 20px;
         }
       }

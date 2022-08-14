@@ -892,6 +892,13 @@ mark {
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 543px) {
+  .wp-block-oja-icon-block {
+    width: 90%;
+    padding: 10px;
+  }
+}
+
 .wp-block-oja-icon-block:before {
   content: none !important;
 }
@@ -914,6 +921,12 @@ mark {
   display: inline-block;
   margin: 20px;
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 543px) {
+  .wp-block-oja-icon-block .icon-element h3 {
+    margin-right: 0;
+  }
 }
 
 .wp-block-oja-icon-block .icon-element h3:before {
@@ -944,6 +957,12 @@ mark {
 
 .wp-block-oja-icon-block.icon-headline .icon-element:before {
   font-size: 30px;
+}
+
+@media screen and (max-width: 543px) {
+  .wp-block-oja-icon-block.icon-headline .icon-element:before {
+    font-size: 20px;
+  }
 }
 
 .wp-block-oja-icon-block.icon-headline .icon-block-inner {

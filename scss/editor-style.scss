@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 //全体
 body {
   font-family: 游明朝体, "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
@@ -201,8 +202,8 @@ mark {
 }
 
 
-
-@import "components/block-style/heading";
+// 見出しスタイル追加
+// @import "components/block-style/heading";
 // coreExpantionBlock
 @import "components/block-style/core_expantion";
 // EXBOX
