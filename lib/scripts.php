@@ -13,10 +13,9 @@ function wp_script($script_name, $file_path, $bool = true){
 
 // 管理画面用スクリプトを読み込む
 function add_admin_scripts($hook) {
-  // jsファイルを追加
-  // wp_script( 'oja_admin_script', '/js/oja-admin-script.js' );
   // cssファイルを追加
-  wp_enqueue_style('oja_admin_css', '/css/oja-admin.css');
+  wp_register_style( 'oja_admin_css', get_template_directory_uri() . '/css/oja-admin.css', false, '1.0.0' );
+  wp_enqueue_style( 'oja_admin_css' );
 }
 add_action('admin_enqueue_scripts','add_admin_scripts');
 

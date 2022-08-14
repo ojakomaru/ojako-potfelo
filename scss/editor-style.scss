@@ -16,78 +16,10 @@ body {
     padding: 0% 15% 5%;
   }
 }
-//投稿タイトル
-h1,.editor-post-title .editor-post-title__input {
-  font-size: 2rem;
-  color: #0B048F;
-  text-align: left;
-  letter-spacing: 2.2px;
-  margin-bottom: 50px;
-  padding-left: 20px;
-  background-color: #e7f3b6;
-  margin-top: 25px;
-}
 
-h3 {
-  font-size: 20px;
-  color: #0B048F;
-  letter-spacing: 3.5px;
-  line-height: 1.8;
-  margin: 20px 10px;
-  position: relative;
-  &::before {
-    content: ' ';
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    background-color: #0B048F;
-    transform: rotate(45deg)translateY(10px);
-    margin-right: 0.5em;
-  }
-}
+// 見出しスタイル追加
+@import "components/block-style/heading";
 
-h2 {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-  margin-bottom: 30px;
-  color: #0B048F;
-  transform: skew(-15deg,0deg);
-  border-bottom: 3px solid #0B048F;
-  padding-left: 15px;
-  line-height: 1.6;
-  &:first-letter {
-    font-size: 34px;
-    color: #0B048F;
-  }
-}
-
-h4 {
-  font-size: 20px;
-  margin: 20px 0px;
-  margin-bottom: 35px;
-  color: #393542;
-  background: linear-gradient(transparent 70%, #fef5e0 70%);
-  padding-left: 20px;
-  font-weight: 800;
-  border: none;
-  line-height: 1.2;
-  letter-spacing: 2px;
-}
-
-h5 {
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  padding-left: 20px;
-  color: #F8D76A;
-}
-
-h6 {
-  font-size: 15px;
-  font-weight: 400;
-  padding-left: 20px;
-}
 strong {
   color: #080808;
   font-size: 18px;
@@ -202,8 +134,7 @@ mark {
 }
 
 
-// 見出しスタイル追加
-// @import "components/block-style/heading";
+
 // coreExpantionBlock
 @import "components/block-style/core_expantion";
 // EXBOX

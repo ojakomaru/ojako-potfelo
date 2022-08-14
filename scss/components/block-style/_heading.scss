@@ -1,5 +1,5 @@
-// @import "config/config";
-// @import "config/mixin";
+@import "../../config/config";
+@import "../../config/mixin";
 h1, h2, h3, h4, h5, h6 {
   margin: 2em 0 1em;
   font-weight: bold;
@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5, h6 {
       z-index: 0;
       bottom: 0;
       left: 0;
+      top: initial !important;
     }
     &::before {
       width: 100%;
@@ -51,12 +52,106 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
+  // 上下ボーダー
+  &.is-style-top-bottom-line{
+    border-top: 2px solid $text_color;
+    border-bottom: 2px solid $text_color;
+    &::before, &::after {
+      content: none;
+    }
+  }
+
   // 左垂直ライン
   &.is-style-left-border{
-    padding-left: 5px;
-    border-left: 5px solid #ddd;
+    border-left: 6px solid rgba($main_color, 0.8);
+    padding: 12px 15px 12px 10px;
+    &::after {
+      content: none;
+    }
   }
-}
+
+  // 吹き出し
+  &.is-style-speech-bubble {
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    background: rgba($main_color, 0.4);
+    color: #fff;
+    &::before {
+      content: none;
+    }
+    &::after {
+      width: 0;
+      height: 0;
+      bottom: -10px;
+      left: 1.5em;
+      border-width: 10px 10px 0 10px;
+      border-style: solid;
+      border-color: rgba($main_color, 0.4) transparent transparent transparent;
+      background: none;
+    }
+  }
+
+  // 斜め線吹き出し
+  &.is-style-speech-line {
+    display: inline-block;
+    padding: 3px 60px;
+    margin-top: 3%;
+    margin-left: 17%;
+    &::before, &::after {
+      top: 50% !important;
+      display: inline-block;
+      width: 45px;
+      bottom: initial;
+      background: $main_color;
+      height: 2px;
+    }
+    &::before {
+      left:0;
+      transform: rotate(60deg);
+      opacity: 1;
+    }
+    &::after {
+      left: initial;
+      right: 0;
+      transform: rotate(-60deg);
+    }
+  }
+
+  // ツートーン
+  &.is-style-two-tone {
+    color: #fff;
+    padding: 12px 10px 12px 17px;
+    background: linear-gradient(rgba($main_color, 0.4), 0%, rgba($main_color,.8)  50%, rgba($main_color,1)  50%) ;
+    border-radius: 50em 50em 50em 50em;
+    &::before, &::after {
+      content: none;
+    }
+  }
+
+  // ツートーンサークル
+  &.is-style-two-tone-circle {
+    &::before {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #F8D76A;
+      opacity: .4;
+      bottom: initial;
+      top: 10px !important;
+      left: -7px;
+    }
+    &::after {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: $main_color;
+      opacity: 0.1;
+      bottom: 15px;
+      left: 16px;
+    }
+  }
+  
+} //h1, h2, h3, h4, h5, h6
 
 // ベーススタイリング
 h1 {

@@ -1798,6 +1798,7 @@ footer {
   z-index: 0;
   bottom: 0;
   left: 0;
+  top: initial !important;
 }
 
 .single-blogs .blog_article h1:not(h1)::before, .single-blogs .blog_article h2:not(h1)::before, .single-blogs .blog_article h3:not(h1)::before, .single-blogs .blog_article h4:not(h1)::before, .single-blogs .blog_article h5:not(h1)::before, .single-blogs .blog_article h6:not(h1)::before {
@@ -1837,9 +1838,104 @@ footer {
   content: none;
 }
 
+.single-blogs .blog_article h1.is-style-top-bottom-line, .single-blogs .blog_article h2.is-style-top-bottom-line, .single-blogs .blog_article h3.is-style-top-bottom-line, .single-blogs .blog_article h4.is-style-top-bottom-line, .single-blogs .blog_article h5.is-style-top-bottom-line, .single-blogs .blog_article h6.is-style-top-bottom-line {
+  border-top: 2px solid #393542;
+  border-bottom: 2px solid #393542;
+}
+
+.single-blogs .blog_article h1.is-style-top-bottom-line::before, .single-blogs .blog_article h1.is-style-top-bottom-line::after, .single-blogs .blog_article h2.is-style-top-bottom-line::before, .single-blogs .blog_article h2.is-style-top-bottom-line::after, .single-blogs .blog_article h3.is-style-top-bottom-line::before, .single-blogs .blog_article h3.is-style-top-bottom-line::after, .single-blogs .blog_article h4.is-style-top-bottom-line::before, .single-blogs .blog_article h4.is-style-top-bottom-line::after, .single-blogs .blog_article h5.is-style-top-bottom-line::before, .single-blogs .blog_article h5.is-style-top-bottom-line::after, .single-blogs .blog_article h6.is-style-top-bottom-line::before, .single-blogs .blog_article h6.is-style-top-bottom-line::after {
+  content: none;
+}
+
 .single-blogs .blog_article h1.is-style-left-border, .single-blogs .blog_article h2.is-style-left-border, .single-blogs .blog_article h3.is-style-left-border, .single-blogs .blog_article h4.is-style-left-border, .single-blogs .blog_article h5.is-style-left-border, .single-blogs .blog_article h6.is-style-left-border {
-  padding-left: 5px;
-  border-left: 5px solid #ddd;
+  border-left: 6px solid rgba(11, 4, 143, 0.8);
+  padding: 12px 15px 12px 10px;
+}
+
+.single-blogs .blog_article h1.is-style-left-border::after, .single-blogs .blog_article h2.is-style-left-border::after, .single-blogs .blog_article h3.is-style-left-border::after, .single-blogs .blog_article h4.is-style-left-border::after, .single-blogs .blog_article h5.is-style-left-border::after, .single-blogs .blog_article h6.is-style-left-border::after {
+  content: none;
+}
+
+.single-blogs .blog_article h1.is-style-speech-bubble, .single-blogs .blog_article h2.is-style-speech-bubble, .single-blogs .blog_article h3.is-style-speech-bubble, .single-blogs .blog_article h4.is-style-speech-bubble, .single-blogs .blog_article h5.is-style-speech-bubble, .single-blogs .blog_article h6.is-style-speech-bubble {
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  background: rgba(11, 4, 143, 0.4);
+  color: #fff;
+}
+
+.single-blogs .blog_article h1.is-style-speech-bubble::before, .single-blogs .blog_article h2.is-style-speech-bubble::before, .single-blogs .blog_article h3.is-style-speech-bubble::before, .single-blogs .blog_article h4.is-style-speech-bubble::before, .single-blogs .blog_article h5.is-style-speech-bubble::before, .single-blogs .blog_article h6.is-style-speech-bubble::before {
+  content: none;
+}
+
+.single-blogs .blog_article h1.is-style-speech-bubble::after, .single-blogs .blog_article h2.is-style-speech-bubble::after, .single-blogs .blog_article h3.is-style-speech-bubble::after, .single-blogs .blog_article h4.is-style-speech-bubble::after, .single-blogs .blog_article h5.is-style-speech-bubble::after, .single-blogs .blog_article h6.is-style-speech-bubble::after {
+  width: 0;
+  height: 0;
+  bottom: -10px;
+  left: 1.5em;
+  border-width: 10px 10px 0 10px;
+  border-style: solid;
+  border-color: rgba(11, 4, 143, 0.4) transparent transparent transparent;
+  background: none;
+}
+
+.single-blogs .blog_article h1.is-style-speech-line, .single-blogs .blog_article h2.is-style-speech-line, .single-blogs .blog_article h3.is-style-speech-line, .single-blogs .blog_article h4.is-style-speech-line, .single-blogs .blog_article h5.is-style-speech-line, .single-blogs .blog_article h6.is-style-speech-line {
+  display: inline-block;
+  padding: 3px 60px;
+  margin-top: 3%;
+  margin-left: 17%;
+}
+
+.single-blogs .blog_article h1.is-style-speech-line::before, .single-blogs .blog_article h1.is-style-speech-line::after, .single-blogs .blog_article h2.is-style-speech-line::before, .single-blogs .blog_article h2.is-style-speech-line::after, .single-blogs .blog_article h3.is-style-speech-line::before, .single-blogs .blog_article h3.is-style-speech-line::after, .single-blogs .blog_article h4.is-style-speech-line::before, .single-blogs .blog_article h4.is-style-speech-line::after, .single-blogs .blog_article h5.is-style-speech-line::before, .single-blogs .blog_article h5.is-style-speech-line::after, .single-blogs .blog_article h6.is-style-speech-line::before, .single-blogs .blog_article h6.is-style-speech-line::after {
+  top: 50% !important;
+  display: inline-block;
+  width: 45px;
+  bottom: initial;
+  background: #0B048F;
+  height: 2px;
+}
+
+.single-blogs .blog_article h1.is-style-speech-line::before, .single-blogs .blog_article h2.is-style-speech-line::before, .single-blogs .blog_article h3.is-style-speech-line::before, .single-blogs .blog_article h4.is-style-speech-line::before, .single-blogs .blog_article h5.is-style-speech-line::before, .single-blogs .blog_article h6.is-style-speech-line::before {
+  left: 0;
+  transform: rotate(60deg);
+  opacity: 1;
+}
+
+.single-blogs .blog_article h1.is-style-speech-line::after, .single-blogs .blog_article h2.is-style-speech-line::after, .single-blogs .blog_article h3.is-style-speech-line::after, .single-blogs .blog_article h4.is-style-speech-line::after, .single-blogs .blog_article h5.is-style-speech-line::after, .single-blogs .blog_article h6.is-style-speech-line::after {
+  left: initial;
+  right: 0;
+  transform: rotate(-60deg);
+}
+
+.single-blogs .blog_article h1.is-style-two-tone, .single-blogs .blog_article h2.is-style-two-tone, .single-blogs .blog_article h3.is-style-two-tone, .single-blogs .blog_article h4.is-style-two-tone, .single-blogs .blog_article h5.is-style-two-tone, .single-blogs .blog_article h6.is-style-two-tone {
+  color: #fff;
+  padding: 12px 10px 12px 17px;
+  background: linear-gradient(rgba(11, 4, 143, 0.4), 0%, rgba(11, 4, 143, 0.8) 50%, #0b048f 50%);
+  border-radius: 50em 50em 50em 50em;
+}
+
+.single-blogs .blog_article h1.is-style-two-tone::before, .single-blogs .blog_article h1.is-style-two-tone::after, .single-blogs .blog_article h2.is-style-two-tone::before, .single-blogs .blog_article h2.is-style-two-tone::after, .single-blogs .blog_article h3.is-style-two-tone::before, .single-blogs .blog_article h3.is-style-two-tone::after, .single-blogs .blog_article h4.is-style-two-tone::before, .single-blogs .blog_article h4.is-style-two-tone::after, .single-blogs .blog_article h5.is-style-two-tone::before, .single-blogs .blog_article h5.is-style-two-tone::after, .single-blogs .blog_article h6.is-style-two-tone::before, .single-blogs .blog_article h6.is-style-two-tone::after {
+  content: none;
+}
+
+.single-blogs .blog_article h1.is-style-two-tone-circle::before, .single-blogs .blog_article h2.is-style-two-tone-circle::before, .single-blogs .blog_article h3.is-style-two-tone-circle::before, .single-blogs .blog_article h4.is-style-two-tone-circle::before, .single-blogs .blog_article h5.is-style-two-tone-circle::before, .single-blogs .blog_article h6.is-style-two-tone-circle::before {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #F8D76A;
+  opacity: .4;
+  bottom: initial;
+  top: 10px !important;
+  left: -7px;
+}
+
+.single-blogs .blog_article h1.is-style-two-tone-circle::after, .single-blogs .blog_article h2.is-style-two-tone-circle::after, .single-blogs .blog_article h3.is-style-two-tone-circle::after, .single-blogs .blog_article h4.is-style-two-tone-circle::after, .single-blogs .blog_article h5.is-style-two-tone-circle::after, .single-blogs .blog_article h6.is-style-two-tone-circle::after {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #0B048F;
+  opacity: 0.1;
+  bottom: 15px;
+  left: 16px;
 }
 
 .single-blogs .blog_article h1 {

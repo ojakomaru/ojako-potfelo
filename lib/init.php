@@ -8,7 +8,7 @@ function ojakomaru_theme_support() {
   add_theme_support('post-thumbnails');
   add_theme_support('html5', ['comment-list', 'comment-form', 'search-form', 'gallery', 'caption']);
   add_theme_support('editor-styles');
-  add_editor_style('/css/editor-style.css');
+  add_editor_style('css/editor-style.css');
 
   $bg_defaults = array(
     'default-color'          => '#F8F9F7',
