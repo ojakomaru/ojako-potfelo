@@ -20,6 +20,9 @@ body {
 // 見出しスタイル追加
 @import "components/block-style/heading";
 
+// リストスタイル追加
+@import "components/block-style/list-style";
+
 strong {
   color: #080808;
   font-size: 18px;
@@ -73,25 +76,9 @@ table td, table th {
 table th {
   font-weight: bold
 }
-ol, ul {
-  width: 100%;
-  font-size: 17px;
-  position: relative;
-  margin: 0 auto 30px;
-  padding-left: 30px;
-}
-ul {
-  list-style: disc;
-  border: 1px solid #3333;
-}
+
 ol {
   list-style: decimal;
-  padding-left: 4em;
-  padding-top:3em;
-  margin-right: 40%;
-  width: 50%;
-  background-color: #fef5e0;
-  border: 2px solid #F8D76A;
 }
 li {
   padding: 0.4em;

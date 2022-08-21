@@ -70,7 +70,7 @@ function add_enqueue_files(){
 add_action('wp_enqueue_scripts', 'add_enqueue_files',1);
 
 // カスタムブロック登録用スクリプト
-add_action( 'enqueue_block_editor_assets', function () {
+function add_block_script() {
   /**
    * ExBoxブロック登録
    */
@@ -98,12 +98,24 @@ add_action( 'enqueue_block_editor_assets', function () {
   wp_enqueue_style('fontawesome_css','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
 
   /**
-   * コアブロック拡張スクリプト
+   * 見出し、段落ブロック拡張スクリプト
    */
   $excore_asset_file = include __DIR__ . '/../blocks/build/core_expantion.asset.php';
 	wp_enqueue_script(
 		'core_expantion-script',
 		get_theme_file_uri( '/blocks/build/core_expantion.js' ),
+		$excore_asset_file['dependencies'],
+    $excore_asset_file['version'],
+		true
+	);
+
+  /**
+   * リストブロック拡張スクリプト
+   */
+  $excore_asset_file = include __DIR__ . '/../blocks/build/list_expantion.asset.php';
+	wp_enqueue_script(
+		'list_expantion-script',
+		get_theme_file_uri( '/blocks/build/list_expantion.js' ),
 		$excore_asset_file['dependencies'],
     $excore_asset_file['version'],
 		true
@@ -122,7 +134,8 @@ add_action( 'enqueue_block_editor_assets', function () {
 			'class' => 'text-marker',
 		],
 	]);
-});
+};
+add_action( 'enqueue_block_editor_assets', 'add_block_script');
 
 // 即時反映用の JavaScript をエンキュー
 function live_preview() {

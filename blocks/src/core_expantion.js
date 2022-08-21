@@ -45,7 +45,6 @@ const addBlockControl = createHigherOrderComponent((BlockEdit) => {
   return (props) => {
     const { setAttributes, isSelected, attributes,name } = props;
     const { bottomSpace, frontIcon, endIcon } = attributes;
-
     // isValidBlockType で指定したブロックが選択されたら表示
     if (isValidBlockType(name)) {
       return (

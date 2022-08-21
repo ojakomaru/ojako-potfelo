@@ -7,6 +7,11 @@ div.exbox-color-setting .components-base-control__field {
   flex-wrap: wrap;
 }
 
+.block-editor-block-styles__variants .block-editor-block-styles__item {
+  white-space: pre-wrap;
+  height: auto;
+}
+
 div.oja-coreblock-controle {
   color: #000;
 }

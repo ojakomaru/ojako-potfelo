@@ -130,6 +130,9 @@
     // 見出しスタイル
     @import "../components/block-style/heading";
 
+    // リストスタイル追加
+    @import "../components/block-style/list-style";
+
     .post_date {
       time {
         display: inline-block;
@@ -223,12 +226,10 @@
       position: relative;
       margin: 0 auto 30px;
       padding-left: 30px;
+      list-style: disc;
       @include md {
         font-size: 15px;
       }
-    }
-    ul {
-      list-style: disc;
     }
     li {
       padding: 0.4em;

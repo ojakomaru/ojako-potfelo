@@ -1,0 +1,304 @@
+@charset 'utf-8';
+@mixin ListThemeColor($color) {
+  background-color: rgba($color, 0.1);
+  border-color: $color;
+  &.is-style-shadow {
+    border: none;
+    box-shadow :0px 0px 5px $color;
+  }
+
+  &[data-listicon="large-disc"],
+  &[data-listicon="disc-numbers"],
+  &[data-listicon="dice-numbers"] {
+    li {
+      &::before {
+        background-color: $color;
+      }
+    }
+  }
+
+  li {
+    &::before{
+      color: $color;
+    }
+  }
+}
+
+ul {
+  list-style: disc;
+  border: 2px solid #3333;
+  font-size: 16px;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  margin: 3em;
+  padding: 0.6em 0.5em 0.6em 2.2em ;
+  @include md {
+    font-size: 15px;
+  }
+  &.is-style-shadow {
+    border-radius :8px;
+    box-shadow :0px 0px 5px silver;
+  }
+  &.is-style-dashed {
+    border-style: dashed;
+  }
+  &.is-style-note-dashed {
+    li:not(:last-child) {
+      border-bottom: 1px dashed #777;
+      border-width: 1px;
+    }
+  }
+  &.is-style-border-none {
+    border: none;
+  }
+  &.is-style-underline-only {
+    border: none;
+    li:not(:last-child) {
+      border-bottom-width: 1px;
+      border-bottom-style: dashed;
+      border-width: 1px;
+    }
+  }
+
+  li {
+    margin: 7px 0px;
+    font-weight: bold;
+    line-height: 30px;
+  }
+  &[data-listicon] {
+    list-style: none;
+    padding-left: 0.5em;
+    li {
+      padding-left: 2.4em;
+      position: relative;
+      &::before {
+        content: '';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 1%;
+        top: 5px;
+      }
+    }
+  }
+
+  &[data-listicon="numbers"] {
+    counter-reset: number;
+    li {
+      &::before {
+        font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+        counter-increment: number;
+        content: counter(number)'.';
+      }
+    }
+  }
+  &[data-listicon="disc-numbers"] {
+    counter-reset: number;
+    li {
+      padding-left: 3em;
+      &::before {
+        font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+        counter-increment: number;
+        content: counter(number);
+        text-align: center;
+        color: #fff !important;
+        line-height:30px;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+  &[data-listicon="dice-numbers"] {
+    counter-reset: number;
+    li {
+      padding-left: 3em;
+      &::before {
+        font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+        counter-increment: number;
+        content: counter(number);
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        color: #fff !important;
+      }
+    }
+  }
+  &[data-listicon="large-disc"] {
+    li {
+      &::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        top: 15px;
+      }
+    }
+  }
+  &[data-listicon="angle-double-right"] {
+    li {
+      &::before {
+        content: '\f101';
+      }
+    }
+  }
+  &[data-listicon="angle-right"] {
+    li {
+      &::before {
+        content: '\f105';
+      }
+    }
+  }
+  &[data-listicon="caret-right"] {
+    li {
+      &::before {
+        content: '\f0da';
+      }
+    }
+  }
+  &[data-listicon="check"] {
+    li {
+      &::before {
+        content: '\f00c';
+      }
+    }
+  }
+  &[data-listicon="check-double"] {
+    li {
+      &::before {
+        content: '\f560';
+      }
+    }
+  }
+  &[data-listicon="circle-check"] {
+    li {
+      &::before {
+        content: '\f058';
+      }
+    }
+  }
+  &[data-listicon="circle-chevron-right"] {
+    li {
+      &::before {
+        content: '\f138';
+      }
+    }
+  }
+  &[data-listicon="circle-right"] {
+    li {
+      &::before {
+        content: '\f35a';
+      }
+    }
+  }
+  &[data-listicon="circle-xmark"] {
+    li {
+      &::before {
+        content: '\f057';
+      }
+    }
+  }
+  &[data-listicon="clipboard-check"] {
+    li {
+      &::before {
+        content: '\f46c';
+      }
+    }
+  }
+  &[data-listicon="crown"] {
+    li {
+      &::before {
+        content: '\f521';
+      }
+    }
+  }
+  &[data-listicon="hand-point-right"] {
+    li {
+      &::before {
+        content: '\f0a4';
+      }
+    }
+  }
+  &[data-listicon="hand-point-up"] {
+    li {
+      &::before {
+        content: '\f0a6';
+      }
+    }
+  }
+  &[data-listicon="pencil"] {
+    li {
+      &::before {
+        content: '\f303';
+      }
+    }
+  }
+  &[data-listicon="skull"] {
+    li {
+      &::before {
+        content: '\f54c';
+      }
+    }
+  }
+  &[data-listicon="splotch"] {
+    li {
+      &::before {
+        content: '\f5bc';
+      }
+    }
+  }
+  &[data-listicon="square-check"] {
+    li {
+      &::before {
+        content: '\f14a';
+      }
+    }
+  }
+  &[data-listicon="tag"] {
+    li {
+      &::before {
+        content: '\f02b';
+      }
+    }
+  }
+  &[data-listicon="triangle-exclamation"] {
+    li {
+      &::before {
+        content: '\f071';
+      }
+    }
+  }
+  &[data-listicon="dog-hand"] {
+    li {
+      &::before {
+        content: '\f1b0';
+      }
+    }
+  }
+  &.list-themecolor-blue {
+    @include ListThemeColor(#1bb4d3);
+  }
+  &.list-themecolor-red {
+    @include ListThemeColor(#ee5656);
+  }
+  &.list-themecolor-green {
+    @include ListThemeColor(#39cd75);
+  }
+  &.list-themecolor-yellow {
+    @include ListThemeColor(#f7cf2e);
+  }
+  &.list-themecolor-pink {
+    @include ListThemeColor(#f7b2b2);
+  }
+  &.list-themecolor-gray {
+    @include ListThemeColor(#9c9c9c);
+  }
+  &.list-themecolor-black {
+    @include ListThemeColor(#313131);
+    li {
+      color: #fff;
+      &::before {
+        color: #fff;
+      }
+    }
+  }
+}

@@ -96,6 +96,9 @@ $colorSet:(
     &::before {
       content: none !important;
     }
+    &::after {
+      content: none !important;
+    }
   }
   ul {
     border: none;
@@ -205,10 +208,13 @@ $colorSet:(
       text-align: center;
       margin: 0;
       position: relative;
+      color: #fff;
+      font-weight: bold;
       &::after {
         position: absolute;
-        content: '';
-        top: 100%;
+        content: '' !important;
+        top: 100% !important;
+        background: none;
         left: calc( 50% - 14px );
         border: 14px solid transparent;
         width: 0;

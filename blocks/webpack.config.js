@@ -7,6 +7,7 @@ module.exports = {
     exbox: "./src/exbox.js",
     iconbox: "./src/iconbox.js",
     core_expantion: "./src/core_expantion.js",
+    list_expantion: "./src/list_expantion.js",
   },
   output: {
     path: path.join(__dirname, "/build"),

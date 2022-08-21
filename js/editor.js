@@ -22,6 +22,7 @@
   });
 })(window.wp.richText, window.wp.element, window.wp.editor);
 
+
 // 見出しにスタイルを追加
 wp.blocks.registerBlockStyle("core/heading", {
   name: "drop-itaric",
@@ -61,5 +62,37 @@ wp.blocks.registerBlockStyle("core/heading", {
 wp.blocks.registerBlockStyle("core/heading", {
   name: "two-tone-circle",
   label: "ツートーンサークル",
+  isDefault: false,
+});
+
+// リストブロックスタイル登録
+wp.blocks.registerBlockStyle("core/list", {
+  name: "border-solid",
+  label: "シンプルボーダー",
+  isDefault: true,
+});
+wp.blocks.registerBlockStyle("core/list", {
+  name: "dashed",
+  label: "破線枠",
+  isDefault: false,
+});
+wp.blocks.registerBlockStyle("core/list", {
+  name: "shadow",
+  label: "シャドウ枠",
+  isDefault: false,
+});
+wp.blocks.registerBlockStyle("core/list", {
+  name: "note-dashed",
+  label: "ノート風破線",
+  isDefault: false,
+});
+wp.blocks.registerBlockStyle("core/list", {
+  name: "border-none",
+  label: "枠線なし",
+  isDefault: false,
+});
+wp.blocks.registerBlockStyle("core/list", {
+  name: "underline-only",
+  label: "枠線なし下線のみ",
   isDefault: false,
 });
