@@ -220,6 +220,7 @@ h1 {
   font-size: 1.8rem;
   line-height: 2.3rem;
   font-weight: 400;
+  margin: 0.3em 0 1em;
 }
 
 @media screen and (max-width: 992px) {
@@ -874,7 +875,8 @@ mark {
 }
 
 .wp-block-oja-exbox-block ul {
-  border: none;
+  border: none !important;
+  background-color: initial;
 }
 
 .wp-block-oja-exbox-block p {
@@ -1318,6 +1320,8 @@ mark {
 .wp-block-oja-exbox-block.radius-head .ex-head {
   border-radius: 8px;
   position: absolute;
+  color: #fff;
+  font-weight: bold;
   top: -1em;
   left: 4%;
   padding: 0.2em 0.6em;

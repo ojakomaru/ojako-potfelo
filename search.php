@@ -18,14 +18,14 @@
   </div>
     <!--  ループ開始  -->
     <section class="oja_cat">
-    <?php if (have_posts()) :
-      while (have_posts()) : the_post();
+    <?php if (have_posts()) : while (have_posts()) : the_post();
       get_template_part('template-parts/loop','post_cade');
-      endwhile;
-      else: ?>
+      wp_link_pages();
+    endwhile;
+    else: ?>
       <p>検索されたキーワードに該当する記事はありませんでした。</p>
-      <?php endif; ?>
-      <!--  /ループ終わり -->
+    <?php endif; ?>
+    <!--  /ループ終わり -->
     </section>
     <div class="page_naite">
       <?php

@@ -118,79 +118,79 @@ function oja_register_blog() { //add_actionの２つのパラメーターを定�
 	];
 	register_post_type( "blogs", $args );
 
-// 「blogs」にカテゴリーを追加
-$labels = [
-  "singular_name" => "oja_cat",
-];
-$labels = array(
-  'name'           => "Category",
-  'singular_name'  => 'oja_cat',
-  'search_items'   => 'カテゴリー',
-  'popular_items'  => 'カテゴリー',
-  'all_items'      => 'すべてのカテゴリー',
+  // 「blogs」にカテゴリーを追加
+  $labels = [
+    "singular_name" => "oja_cat",
+  ];
+  $labels = array(
+    'name'           => "Category",
+    'singular_name'  => 'oja_cat',
+    'search_items'   => 'カテゴリー',
+    'popular_items'  => 'カテゴリー',
+    'all_items'      => 'すべてのカテゴリー',
+    'parent_item'    => null,
+    'parent_item_colon' => null,
+    'edit_item'      => 'カテゴリーを編集',
+    'update_item'    => 'カテゴリーを更新',
+    'add_new_item'   => '新しいカテゴリーを追加',
+    'new_item_name'  => '新しいカテゴリーネーム',
+    'search_items'   => 'カテゴリーを検索',
+    'popular_items'  => '人気のカテゴリー',
+    'separate_items_with_commas' => 'カテゴリー',
+    'add_or_remove_items' => 'カテゴリー',
+    'choose_from_most_used' => 'カテゴリー',
+    'not_found'      => 'カテゴリーはありませんでした',
+    'menu_name'      => 'カテゴリー',
+  );
+  $args = [
+    "labels"             => $labels,
+    "publicly_queryable" => true,
+    "hierarchical"       => true, // 親を持つページかどうか
+    "show_in_menu"       => true,
+    "query_var"          => true,
+    "rewrite" => [ 'slug' => 'oja_cat', 'with_front' => true, ], //カテゴリーのスラッグ
+    "show_admin_column"  => false,
+    "show_in_rest"       => true,
+    "rest_base"          => "oja_cat",
+    "rest_controller_class" => "WP_REST_Terms_Controller",
+    "show_in_quick_edit" => false,
+  ];
+  register_taxonomy( 'oja_cat', 'blogs', $args ); //「blogs」というカスタム投稿タイプにカテゴリーを追加
+
+
+  // 「blogs」というカスタム投稿タイプに「タグ」を追加
+  $labels = array(
+  'name'           => 'Tag',
+  'singular_name'  => 'oja_tags',
+  'search_items'   => 'タグを検索',
+  'popular_items'  => '人気のタグ',
+  'all_items'      => 'すべてのタグ',
   'parent_item'    => null,
   'parent_item_colon' => null,
-  'edit_item'      => 'カテゴリーを編集',
-  'update_item'    => 'カテゴリーを更新',
-  'add_new_item'   => '新しいカテゴリーを追加',
-  'new_item_name'  => '新しいカテゴリーネーム',
-  'search_items'   => 'カテゴリーを検索',
-  'popular_items'  => '人気のカテゴリー',
-  'separate_items_with_commas' => 'カテゴリー',
-  'add_or_remove_items' => 'カテゴリー',
-  'choose_from_most_used' => 'カテゴリー',
-  'not_found'      => 'カテゴリーはありませんでした',
-  'menu_name'      => 'カテゴリー',
-);
-$args = [
-  "labels"             => $labels,
-  "publicly_queryable" => true,
-  "hierarchical"       => true, // 親を持つページかどうか
-  "show_in_menu"       => true,
-  "query_var"          => true,
-  "rewrite" => [ 'slug' => 'oja_cat', 'with_front' => true, ], //カテゴリーのスラッグ
-  "show_admin_column"  => false,
-  "show_in_rest"       => true,
-  "rest_base"          => "oja_cat",
-  "rest_controller_class" => "WP_REST_Terms_Controller",
-  "show_in_quick_edit" => false,
-];
-register_taxonomy( 'oja_cat', 'blogs', $args ); //「blogs」というカスタム投稿タイプにカテゴリーを追加
+  'edit_item'      => 'タグを編集',
+  'update_item'    => 'タグを更新',
+  'add_new_item'   => '新しいタグを追加',
+  'new_item_name'  => '新しいタグネーム',
+  'separate_items_with_commas' => 'タグ',
+  'add_or_remove_items' => 'タグ',
+  'choose_from_most_used' => 'タグ',
+  'not_found'      => 'タグはありませんでした',
+  'menu_name'      => 'タグ',
+  );
 
+  $args = array(
+  'hierarchical' => true,
+  'labels'       => $labels,
+  "show_in_rest" => true,
+  "rest_base"    => "oja_tags",
+  'show_ui'      => true,
+  'show_admin_column' => true,
+  'update_count_callback' => '_update_post_term_count',
+  'query_var'    => true,
+  'rewrite'      => array( 'slug' => 'oja_tags' ),
+  );
 
-// 「blogs」というカスタム投稿タイプに「タグ」を追加
-$labels = array(
-'name'           => 'Tag',
-'singular_name'  => 'oja_tags',
-'search_items'   => 'タグを検索',
-'popular_items'  => '人気のタグ',
-'all_items'      => 'すべてのタグ',
-'parent_item'    => null,
-'parent_item_colon' => null,
-'edit_item'      => 'タグを編集',
-'update_item'    => 'タグを更新',
-'add_new_item'   => '新しいタグを追加',
-'new_item_name'  => '新しいタグネーム',
-'separate_items_with_commas' => 'タグ',
-'add_or_remove_items' => 'タグ',
-'choose_from_most_used' => 'タグ',
-'not_found'      => 'タグはありませんでした',
-'menu_name'      => 'タグ',
-);
-
-$args = array(
-'hierarchical' => true,
-'labels'       => $labels,
-"show_in_rest" => true,
-"rest_base"    => "oja_tags",
-'show_ui'      => true,
-'show_admin_column' => true,
-'update_count_callback' => '_update_post_term_count',
-'query_var'    => true,
-'rewrite'      => array( 'slug' => 'oja_tags' ),
-);
-
-register_taxonomy( 'oja_tags', 'blogs', $args );
+  register_taxonomy( 'oja_tags', 'blogs', $args );
 }
 add_action( 'init', 'oja_register_blog' );
 

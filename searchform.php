@@ -1,5 +1,5 @@
 <!-- 記事内検索フォーム -->
-<form action="<?php echo home_url('/'); ?>" method="GET">
+<form action="<?php echo esc_url(home_url('/')); ?>" method="GET">
   <div class="search">
     <input type="text" name="s" value="<?php the_search_query();?>" placeholder="キーワードを入力">
   </div>

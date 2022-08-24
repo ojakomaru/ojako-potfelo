@@ -1775,7 +1775,7 @@ footer {
 .single-blogs .blog_article {
   background-color: #F8F9F7;
   color: #393542;
-  padding: 6%;
+  padding: 0 6% 5%;
   margin-bottom: 15%;
 }
 
@@ -1984,6 +1984,7 @@ footer {
   font-size: 1.8rem;
   line-height: 2.3rem;
   font-weight: 400;
+  margin: 0.3em 0 1em;
 }
 
 @media screen and (max-width: 992px) {
@@ -3589,7 +3590,8 @@ footer {
 }
 
 .wp-block-oja-exbox-block ul {
-  border: none;
+  border: none !important;
+  background-color: initial;
 }
 
 .wp-block-oja-exbox-block p {
@@ -4033,6 +4035,8 @@ footer {
 .wp-block-oja-exbox-block.radius-head .ex-head {
   border-radius: 8px;
   position: absolute;
+  color: #fff;
+  font-weight: bold;
   top: -1em;
   left: 4%;
   padding: 0.2em 0.6em;

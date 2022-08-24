@@ -115,7 +115,7 @@ if ( isset($_POST['back']) && $_POST['back'] ) {
     echo '</div>';
   }
   ?>
-    <form action="<?php bloginfo("url");?>/contact" method="post" novalidate>
+    <form action="<?php echo esc_url(home_url());?>/contact" method="post" novalidate>
       <div class="form_group">
         <label for="select">ご用件の種別</label>
         <select name="mkind" id="select">
@@ -162,7 +162,7 @@ if ( isset($_POST['back']) && $_POST['back'] ) {
   <?php } else if ( $mode == 'confirm'){ ?>
     <!-- 確認画面 -->
   <section class="confirm">
-    <form action="<?php bloginfo("url");?>/contact" method="post" novalidate>
+    <form action="<?php echo esc_url(home_url());?>/contact" method="post" novalidate>
     <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>"/>
       <div class="form_group">
         <label for="select">要件の種別</label>

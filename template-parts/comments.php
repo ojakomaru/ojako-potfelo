@@ -18,10 +18,12 @@
   // ここからコメントフォーム
   $comments_args = array(
     'fields' => array(
-        'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'ハンドルネーム' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245" /></p>',
-        'email'  => '',
-        'url'    => '',
-        'cookies' => '',
+      'author' => '<p class="comment-form-author">
+                    <label for="author">ハンドルネーム' . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245" />
+                  </p>',
+      'email'  => '',
+      'url'    => '',
+      'cookies' => '',
     ),
     'comment_field'        => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p>',
     'comment_notes_before' => '',

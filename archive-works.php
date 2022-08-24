@@ -45,9 +45,9 @@ Template Name: 制作実績一覧ページ
       <div class="item_detail check">
         <a href="<?php the_permalink(); ?>" class="item_page">
         <?php get_template_part('template-parts/loop','production'); ?>
-        </a><!-- item_page -->
+        </a>
       </div><!-- item_detail -->
-        <?php endwhile; endif; ?><!--  /ループ終わり -->
+      <?php wp_link_pages(); endwhile; endif; ?><!--  /ループ終わり -->
     </article><!--#content-->
     <div class="page_naite">
       <?php

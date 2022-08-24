@@ -20,11 +20,11 @@
     </div>
 
     <!--  ループ開始  -->
-    <article id="content">
-        <div class="item_detail">
-            <?php get_template_part('template-parts/loop','production'); ?>
-        </div><!-- item_detail -->
-        <?php endwhile; endif; ?><!--  /ループ終わり -->
+    <article id="content" <?php post_class(); ?>>
+      <div class="item_detail">
+          <?php get_template_part('template-parts/loop','production'); ?>
+      </div><!-- item_detail -->
+      <?php wp_link_pages(); endwhile; endif; ?><!--  /ループ終わり -->
     </article><!--#content-->
   </main><!--main-->
 

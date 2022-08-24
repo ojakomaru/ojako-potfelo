@@ -58,7 +58,7 @@ const addListBlockControl = createHigherOrderComponent((BlockEdit) => {
                   className=" list-color-setting"
                   selected={listThemeColor}
                   options={[
-                    { label: "ホワイト", value: "" },
+                    { label: "指定なし", value: "" },
                     { label: "ブルー", value: "blue" },
                     { label: "レッド", value: "red" },
                     { label: "グリーン", value: "green" },

@@ -63,9 +63,6 @@ function add_enqueue_files(){
   elseif(is_tax('production')) {
     wp_css('works_archive', '/css/works_tax.css');
   }
-  // FontAwesomeの読み込み
-  wp_enqueue_script('fontawesome_js', 'https://kit.fontawesome.com/fb19e987ff.js');
-  wp_enqueue_style('fontawesome_css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
 }
 add_action('wp_enqueue_scripts', 'add_enqueue_files',1);
 
@@ -94,8 +91,6 @@ function add_block_script() {
     $iconbox_asset_file['version'],
 		true
 	);
-  //Font Awesome読み込み
-  wp_enqueue_style('fontawesome_css','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
 
   /**
    * 見出し、段落ブロック拡張スクリプト

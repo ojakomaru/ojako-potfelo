@@ -135,15 +135,17 @@ $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
     <a href="" id="modal_close">閉じる</a>
   </section>
   <div class="mask" id="mask"></div>
-      <?php
-      $the_query = new WP_Query($args);
-      if($the_query->have_posts()) :
-      while($the_query->have_posts()) :
-      $the_query->the_post();
+    <?php
+    $the_query = new WP_Query($args);
+    if($the_query->have_posts()) :
+    while($the_query->have_posts()) :
+    $the_query->the_post();
       get_template_part('template-parts/loop','post_cade');
-      endwhile; wp_reset_postdata(); //ループ終わり
-      else : ?>
-      <p>該当する記事は見つかりませんでした。</p>
+      wp_link_pages();
+    endwhile;
+    wp_reset_postdata(); //ループ終わり
+    else : ?>
+    <p>該当する記事は見つかりませんでした。</p>
 <?php endif; ?>
 </article><!--#content-->
 

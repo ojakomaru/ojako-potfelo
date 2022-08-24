@@ -31,15 +31,16 @@ $taxonomy_var    = get_taxonomy($slug);
       <h2 class="text-frame">「<?php echo $production->name; ?>」の一覧</h2>
     </div>
 
-    <!--  ループ開始  -->
     <article id="content">
+    <!--  ループ開始  -->
       <?php if (have_posts()) : while (have_posts()) : the_post();?>
       <div class="item_detail">
         <a href="<?php the_permalink(); ?>" class="item_page">
         <?php get_template_part('template-parts/loop','production'); ?>
-        </a><!-- item_page -->
+        </a>
       </div><!-- item_detail -->
-        <?php endwhile; endif; ?><!--  /ループ終わり -->
+      <?php wp_link_pages(); endwhile; endif; ?>
+    <!--  /ループ終わり -->
     </article><!--#content-->
     <div class="page_naite">
       <?php

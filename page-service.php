@@ -44,7 +44,7 @@ Template Name: サービスページ
       
       <ul class="wp_column">
         <li class="suggest_item">
-          <div class="img_wrap sequential"><img src="<?php echo get_template_directory_uri(); ?>/img/custom_field.jpg" alt="カスタムフィールドイメージ画像"></div>
+          <div class="img_wrap sequential"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/custom_field.jpg" alt="カスタムフィールドイメージ画像"></div>
           <div class="suggest_text">
             <h2 class="sequential">カスタムフィールド無制限追加</h2>
             <p class="sequential">
@@ -58,7 +58,7 @@ Template Name: サービスページ
         </li>
 
         <li class="suggest_item">
-          <div class="img_wrap sequential"><img src="<?php echo get_template_directory_uri(); ?>/img/plug_in.jpg" alt="プラグイン画像"></div>
+          <div class="img_wrap sequential"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/plug_in.jpg" alt="プラグイン画像"></div>
           <div class="suggest_text">
             <h2 class="sequential">プラグインいくら追加しても無料</h2>
             <p class="sequential">
@@ -72,7 +72,7 @@ Template Name: サービスページ
         </li>
 
         <li class="suggest_item">
-          <div class="img_wrap sequential"><img src="<?php echo get_template_directory_uri(); ?>/img/admin.jpg" alt=""></div>
+          <div class="img_wrap sequential"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/admin.jpg" alt=""></div>
           <div class="suggest_text">
             <h2 class="sequential">管理画面のカスタムOK</h2>
             <p class="sequential">
@@ -84,7 +84,7 @@ Template Name: サービスページ
     </section>
 
     <div class="worry_img">
-      <img src="<?php echo get_template_directory_uri(); ?>/img/nayami.jpg" alt="心配する様子の画像">
+      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/nayami.jpg" alt="心配する様子の画像">
       <div class="worry">実装後のメンテナンスは？</div>
       <div class="worry">私にもできるかしら？</div>
     </div>
@@ -100,7 +100,7 @@ Template Name: サービスページ
     <h3><strong>ご安心下さい</strong></h3>
     <section class="after_follow" id="after_follow">
       <div class="after_item">
-        <div class="img_wrap"><img src="<?php echo get_template_directory_uri(); ?>/img/movi_resson.jpg" alt="初心者に優しい画像"></div>
+        <div class="img_wrap"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/movi_resson.jpg" alt="初心者に優しい画像"></div>
         <div class="after_text">
           <h2>CMSの使い方動画・サーバー契約の手順動画贈呈</h2>
           <p>
@@ -112,7 +112,7 @@ Template Name: サービスページ
       </div>
 
       <div class="after_item">
-        <div class="img_wrap"><img src="<?php echo get_template_directory_uri(); ?>/img/wakaba.jpg" alt="初心者に優しい画像"></div>
+        <div class="img_wrap"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/wakaba.jpg" alt="初心者に優しい画像"></div>
         <div class="after_text">
           <h2>わからないことへの電話対応、ズーム対応にも親切に</h2>
           <p>
@@ -125,7 +125,7 @@ Template Name: サービスページ
       </div>
 
       <div class="after_item">
-        <div class="img_wrap"><img src="<?php echo get_template_directory_uri(); ?>/img/update.jpg" alt="初心者に優しい画像"></div>
+        <div class="img_wrap"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/update.jpg" alt="初心者に優しい画像"></div>
         <div class="after_text">
           <h2>WEBサイトの定期更新お声がけします</h2>
           <p>

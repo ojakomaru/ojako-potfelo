@@ -101,7 +101,8 @@ $colorSet:(
     }
   }
   ul {
-    border: none;
+    border: none !important;
+    background-color: initial;
   }
   p {
     margin-top: 16px;
@@ -194,6 +195,8 @@ $colorSet:(
     .ex-head {
       border-radius: 8px;
       position: absolute;
+      color: #fff;
+      font-weight: bold;
       top: -1em;
       left: 4%;
       padding: 0.2em 0.6em;

@@ -1,4 +1,4 @@
-<section class="blog_article">
+<section <?php post_class("blog_article"); ?>>
   <div class="post_date">
     <time datetime="<?php the_time('Y/m/d');?>">
       <i class="fa fa-calendar"></i>

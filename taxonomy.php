@@ -22,6 +22,7 @@ $oja_tax      = get_term_by('slug',$oja_slug,$slug);
     <section class="oja_cat">
     <?php if (have_posts()) : while (have_posts()) : the_post();
       get_template_part('template-parts/loop','post_cade');
+      wp_link_pages();
       endwhile; endif; ?><!--  /ループ終わり -->
     </section>
     <div class="page_naite">

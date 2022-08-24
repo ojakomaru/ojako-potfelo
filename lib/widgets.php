@@ -58,7 +58,7 @@ if ( ! function_exists( 'oja_widgets_init' ) ) {
 		// sidebar widget area
 		register_sidebar(
 			array(
-				'name'          => __('サイドバー（トップ）'),
+				'name'          => 'サイドバー（トップ）',
 				'id'            => 'sidebar-maintop-widget-area',
         'description'   => 'メインのサイドバー最上部にウィジェットエリアを追加します。',
 				'before_widget' => '<aside class="widget %2$s" id="%1$s">',
@@ -69,7 +69,7 @@ if ( ! function_exists( 'oja_widgets_init' ) ) {
 		);
     register_sidebar(
       array(
-        'name'          => __( 'サイドバー（下部 )' ),
+        'name'          => 'サイドバー（下部 )',
         'id'            => 'side-bottom-widget-area',
         'description'   => 'メインのサイドバー下部にウィジェットエリアを追加します。',
         'before_widget' => '<aside class="widget %2$s" id="%1$s">',
@@ -80,7 +80,7 @@ if ( ! function_exists( 'oja_widgets_init' ) ) {
     );
     register_sidebar(
       array(
-        'name'          => __( 'サイドバー（お知らせ)' ),
+        'name'          => 'サイドバー（お知らせ)',
         'id'            => 'news-side-widget-area',
         'description'   => 'サイドバー上のお知らせエリアにウィジェットエリアを追加します。',
         'before_widget' => '<aside class="widget %2$s" id="%1$s">',
@@ -108,7 +108,7 @@ if ( ! function_exists( 'oja_widgets_init' ) ) {
 
 				register_sidebar(
 					array(
-						'name'          => sprintf( __( '%sサイドバー(%s)' ),$postType_name , $taxonomy_name),
+						'name'          => sprintf('%sサイドバー(%s)',$postType_name , $taxonomy_name),
 						'id'            => $taxonomy_slug . '-side-widget-area',
 						'description'   => $sidebar_description,
 						'before_widget' => '<aside class="widget %2$s" id="%1$s">',
@@ -124,7 +124,7 @@ if ( ! function_exists( 'oja_widgets_init' ) ) {
 		// メインコンテンツTOPエリア
     register_sidebar(
       array(
-        'name'          => __( 'メインコンテンツTOP'),
+        'name'          => 'メインコンテンツTOP',
         'id'            => 'main-content-top-widget-area',
         'description'   => 'メインのコンテンツの最上部にウィジェットエリアを追加します。',
         'before_widget' => '<div class="widget %2$s" id="%1$s">',
@@ -137,7 +137,7 @@ if ( ! function_exists( 'oja_widgets_init' ) ) {
 		// フッター上部エリア
     register_sidebar(
       array(
-        'name'          => __( 'フッター上部エリア' ),
+        'name'          => 'フッター上部エリア',
         'id'            => 'footer-upper-widget',
         'description'   => 'フッターエリアの最上部にウィジェットエリアを追加します。',
         'before_widget' => '<aside class="widget %2$s" id="%1$s">',
@@ -152,7 +152,7 @@ if ( ! function_exists( 'oja_widgets_init' ) ) {
 		for ( $i = 1; $i <= $widget_area_count; ) {
 			register_sidebar(
 				array(
-					'name'          => __( 'フッターウィジェットエリア') . ' ' . $i,
+					'name'          => 'フッターウィジェットエリア' . ' ' . $i,
 					'id'            => 'footer-widget-' . $i,
           'description'   => 'フッターエリア'.$i.'にウィジェットエリアを追加します。',
 					'before_widget' => '<aside class="widget %2$s" id="%1$s">',
@@ -165,4 +165,4 @@ if ( ! function_exists( 'oja_widgets_init' ) ) {
 		}
 	}
 } // if ( ! function_exists( 'oja_widgets_init' ) ) {
-add_action( 'init', 'oja_widgets_init' );
+add_action( 'widgets_init', 'oja_widgets_init' );
