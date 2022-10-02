@@ -1635,12 +1635,12 @@ footer {
 
 .page-id-49 .js_bar::after {
   background-color: #CDB22E;
-  max-width: 21%;
+  max-width: 35%;
 }
 
 .page-id-49 .wordpress_bar::after {
   background-color: #541B8B;
-  max-width: 63%;
+  max-width: 80%;
 }
 
 .page-id-49 .php_bar::after {
@@ -1650,7 +1650,7 @@ footer {
 
 .page-id-49 .scss_bar::after {
   background-color: #d81a1a;
-  max-width: 41%;
+  max-width: 70%;
 }
 
 @keyframes bar-before {
