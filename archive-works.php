@@ -14,7 +14,7 @@ Template Name: 制作実績一覧ページ
     <div id="taxonomy-text">成果物</div>
     <div class="page-title">
       <h1 id="animation-text">納品事例</h1>
-    </div><!-- welcome-text -->
+    </div>
 
   </div><!-- key_movi -->
 </section><!--key_visual-->
