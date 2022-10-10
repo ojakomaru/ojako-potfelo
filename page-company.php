@@ -103,7 +103,7 @@ Template Name: 製作者紹介ページ
         <p id="html_record_customizer">
          <?php echo nl2br(esc_html($html_record)); ?>
         </p>
-      </div><!-- inside_text -->
+      </div>
     </div><!-- acco_tav -->
     <div class="acco_tav css">
       <h4 class="bd-head"><span>CSS</span></h4>
@@ -111,7 +111,7 @@ Template Name: 製作者紹介ページ
         <p id="css_record_customizer" >
           <?php echo nl2br(esc_html($css_record)); ?>
         </p>
-      </div><!-- inside_text -->
+      </div>
     </div><!-- acco_tav -->
     <div class="acco_tav js">
       <h4 class="bd-head"><span>Javascirpt</span></h4>
