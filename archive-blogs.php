@@ -15,7 +15,7 @@ Template Name: ブログ一覧ページ
     <div id="taxonomy-text">日々学び</div>
     <div class="page-title">
       <h1 id="animation-text"><?php echo bloginfo('name');?></h1>
-    </div><!-- welcome-text -->
+    </div>
 
   </div><!-- key_movi -->
 </section><!--key_visual-->
