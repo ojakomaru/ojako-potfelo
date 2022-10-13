@@ -4,7 +4,7 @@
 <div id="taxonomy-text">サイト内検索結果</div>
   <div class="page-title">
     <h1 id="animation-text"><?php bloginfo('name'); ?></h1>
-  </div><!-- welcome-text -->
+  </div>
 
 </div><!-- key_visual -->
 <div class="container"><!-- フッターまでつづく -->

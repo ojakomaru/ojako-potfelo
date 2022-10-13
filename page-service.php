@@ -10,7 +10,7 @@ Template Name: サービスページ
   <div id="taxonomy-text">サービスの特徴</div>
   <div class="page-title">
     <h1 id="animation-text">WordPressサイト制作オプション一切なし1万円から!</h1>
-  </div><!-- welcome-text -->
+  </div>
 </section><!-- key_visual -->
 
 <div class="container <?php echo layout_classname($page->post_name); ?>">
