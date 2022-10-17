@@ -92,7 +92,7 @@ if ( isset($_POST['back']) && $_POST['back'] ) {
     <div id="taxonomy-text"><?php the_title(); ?></div>
     <div class="page-title">
       <h1 id="animation-text"><?php echo strtoupper($post->post_name); ?></h1>
-    </div><!-- welcome-text -->
+    </div>
 
   </div><!--key_movi-->
 </section><!-- key_visual -->

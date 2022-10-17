@@ -35,7 +35,7 @@
   //keyビジュアルスタイル
   @include xl {
     .key_visual {
-      @include bg_img('../img/hasu.jpg');
+      @include bg_img("../img/hasu.jpg");
       position: relative;
     }
   }
@@ -56,21 +56,22 @@
       padding: 20px 15px;
       border-radius: 3px;
       margin-bottom: 55px;
-      &:before,&:after {
-        content: '';
+      &:before,
+      &:after {
+        content: "";
         position: absolute;
         top: -25px;
         width: 5px;
         height: calc(100% + 5em);
-        background-color: #F8D76A;
-        }
+        background-color: #f8d76a;
+      }
       &:after {
         right: 20px;
       }
       &:before {
         left: 20px;
       }
-      
+
       .original {
         position: absolute;
         right: 6%;
@@ -85,26 +86,26 @@
           font-size: 10px;
         }
         &:before {
-          content: '別タブでオリジナルサイトへ';
+          content: "別タブでオリジナルサイトへ";
           position: absolute;
-          right:1%;
+          right: 1%;
           bottom: -62%;
         }
       }
     }
 
     .pc_frame {
-      background: url('../img/PC.webp') no-repeat;
+      background: url("../img/PC.webp") no-repeat;
       background-position: 32% 10px;
       background-size: 79%;
       flex: 0 0 45%;
       overflow: hidden;
       position: relative;
-      @include showAnimation(1s,1s);
+      @include showAnimation(1s, 1s);
       &:after {
-        content: 'スクロールして見れます';
+        content: "スクロールして見れます";
         writing-mode: vertical-lr;
-        background: url('../img/arrowdouble.png') no-repeat;
+        background: url("../img/arrowdouble.png") no-repeat;
         background-position: 0% 92%;
         background-size: 90%;
         position: absolute;
@@ -151,7 +152,7 @@
     }
 
     .column_reverse {
-      flex-direction:row-reverse;
+      flex-direction: row-reverse;
       .main_item_text {
         @include md {
           margin: 0 auto;
@@ -181,7 +182,7 @@
       }
     }
     .sp_frame {
-      background: url('../img/smartphone.png') no-repeat;
+      background: url("../img/smartphone.png") no-repeat;
       background-size: 42.5%;
       background-position: 46.5% 2%;
       flex: 0 0 45%;
@@ -190,9 +191,9 @@
       position: relative;
       @include showAnimation;
       &:after {
-        content: 'スクロールして見れます';
+        content: "スクロールして見れます";
         writing-mode: vertical-lr;
-        background: url('../img/arrowdouble.png') no-repeat;
+        background: url("../img/arrowdouble.png") no-repeat;
         background-position: -220% 85%;
         background-size: 90%;
         position: absolute;
@@ -223,19 +224,19 @@
       @include sm {
         max-height: 430px;
       }
-      @media screen and (max-width:500px) {
+      @media screen and (max-width: 500px) {
         max-height: 370px;
       }
       @include s {
         max-height: 340px;
       }
-      @media screen and (max-width:395px) {
+      @media screen and (max-width: 395px) {
         max-height: 295px;
       }
       .frame {
         height: 0;
         overflow: hidden;
-        padding: calc(667 / 385 * 100%) 0 0 ;
+        padding: calc(667 / 385 * 100%) 0 0;
         position: relative;
         width: 100%;
         iframe {
@@ -267,7 +268,7 @@
       letter-spacing: 1.8px;
       margin-bottom: 30px;
       color: $main_color;
-      transform: skew(-13deg,0deg);
+      transform: skew(-13deg, 0deg);
       border-bottom: 3px solid $main_color;
       padding-left: 10%;
       text-align: left;
@@ -305,7 +306,7 @@
       display: inline-block;
       margin-bottom: 10%;
       margin-left: 30%;
-      transform: skew(-13deg,0deg);
+      transform: skew(-13deg, 0deg);
       @include xl {
         font-size: 21px;
       }
@@ -372,7 +373,7 @@
       background-color: $accent_color;
       border-radius: 50%;
       margin-bottom: 50px;
-      @include showAnimation(0,.3s);
+      @include showAnimation(0, 0.3s);
       @include xl {
         display: inline-block;
       }
@@ -385,7 +386,8 @@
         width: 70%;
         margin-right: 25%;
       }
-      dt,dd {
+      dt,
+      dd {
         display: inline-block;
         width: 35%;
         padding: 20px 0 20px 30px;
@@ -419,6 +421,5 @@
         }
       }
     }
-  }//#content
-
-}//..single-works
+  } //#content
+} //..single-works

@@ -21,14 +21,15 @@
 @import "../components/footer";
 .page-id-42 {
   .key_visual {
-    @include keyVisual('../img/iitenki.jpg', center, 50%);
+    @include keyVisual("../img/iitenki.jpg", center, 50%);
     &:before {
-      content: '';
+      content: "";
       display: block;
     }
     .page-title {
       h1#animation-text {
-        @include signalTitel(right top,
+        @include signalTitel(
+          right top,
           orange,
           yellow,
           green,
@@ -44,11 +45,7 @@
     }
   }
   #taxonomy-text {
-    @include taxonomy-text(
-      popIn,
-      cubic-bezier(0, 1.23, 1, 0.99),
-      1.5s,
-    );
+    @include taxonomy-text(popIn, cubic-bezier(0, 1.23, 1, 0.99), 1.5s);
     > span {
       opacity: 1;
     }
@@ -61,22 +58,22 @@
   }
   #product_link {
     @include md {
-      padding: 1% ;
+      padding: 1%;
       bottom: 70%;
       font-size: 0.8rem;
-      white-space:pre;
+      white-space: pre;
     }
   }
   .intro {
-    @include bg_img('../img/intro.jpg',center 75%);
-    position:relative;
+    @include bg_img("../img/intro.jpg", center 75%);
+    position: relative;
     margin-top: 5%;
     @include md {
       margin-top: 10%;
     }
     &:before {
       padding-top: 50%;
-      content: '';
+      content: "";
       display: block;
       @include md {
         padding-top: 60%;
@@ -153,7 +150,7 @@
       transform: none;
       position: static;
       &::before {
-        content: ' ';
+        content: " ";
         display: inline-block;
         width: 22px;
         height: 22px;
@@ -198,7 +195,7 @@
         transition: all 0.5s linear 0s;
         opacity: 0;
         &.active {
-          transform: translate(0,0);
+          transform: translate(0, 0);
           opacity: 1;
         }
       }
@@ -208,8 +205,8 @@
       &:nth-child(odd) {
         flex-direction: row-reverse;
         @include md {
-        flex-direction: column;
-      }
+          flex-direction: column;
+        }
       }
       > .img_wrap {
         width: 80%;
@@ -251,7 +248,7 @@
           padding-top: 5%;
         }
         &::before {
-          content: ' ';
+          content: " ";
           display: inline-block;
           width: 13px;
           height: 13px;
@@ -279,7 +276,7 @@
   }
   //アフターサービス
   .worry_img {
-    position:relative;
+    position: relative;
     padding: 0 5%;
     background-color: $accent_color;
     padding-top: 5%;
@@ -339,7 +336,7 @@
     text-align: center;
     padding: 1% 20% 5%;
     background-color: $accent_color;
-    position:relative;
+    position: relative;
     @include md {
       line-height: 1.8;
     }
@@ -378,7 +375,7 @@
       margin-top: 24%;
     }
     &::before {
-      content: ' ';
+      content: " ";
       display: inline-block;
       width: 22px;
       height: 22px;
@@ -451,5 +448,4 @@
       }
     }
   }
-  
-}// .page-id-42
+} // .page-id-42

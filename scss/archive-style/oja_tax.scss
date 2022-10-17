@@ -26,16 +26,17 @@
 
 .search .main {
   @include lg {
-    margin: 0 ;
+    margin: 0;
   }
 }
-.tax-oja_cat,.tax-oja_tags,.search {
-
+.tax-oja_cat,
+.tax-oja_tags,
+.search {
   //キービジュアル
   .key_visual {
-    @include keyVisual('../img/wagasa.jpg');
+    @include keyVisual("../img/wagasa.jpg");
     &:before {
-      content: '';
+      content: "";
       display: block;
     }
   }
@@ -48,7 +49,6 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    @import '../components/post_cade';
+    @import "../components/post_cade";
   }
-
-}//.tax-oja_cat
+} //.tax-oja_cat

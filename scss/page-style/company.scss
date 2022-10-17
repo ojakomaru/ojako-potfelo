@@ -24,12 +24,12 @@
   //keyビジュアルスタイル
   @include xl {
     .key_visual {
-      @include keyVisual('../img/yoruwagasa.jpg', 0 75%);
+      @include keyVisual("../img/yoruwagasa.jpg", 0 75%);
     }
   }
 
   #taxonomy-text {
-   @include taxonomy-text;
+    @include taxonomy-text;
   }
 
   //見出し用
@@ -43,13 +43,13 @@
   }
 
   //  能力グラフ
-  .skill_graph{
+  .skill_graph {
     width: calc(100% - 40px);
     width: 100%;
     max-width: 800px;
     margin: 30px auto 230px;
     opacity: 0;
-    transition: all 1.5s  ease-out;
+    transition: all 1.5s ease-out;
     transform: translateY(-50px);
     @include lg {
       margin-bottom: 130px;
@@ -70,11 +70,11 @@
     }
 
     .kakko_wrap {
-      text-align:center;
+      text-align: center;
       padding: 0 8px;
       background-color: $main_color;
       margin-bottom: 60px;
-      position:relative;
+      position: relative;
       line-height: 1.8;
       margin-top: 15%;
 
@@ -82,7 +82,7 @@
         padding: 1rem;
         background-color: #fff;
         border-radius: 15px;
-        margin-bottom:0;
+        margin-bottom: 0;
         font-size: 26px;
         letter-spacing: 1.8px;
         @include md {
@@ -97,9 +97,8 @@
       }
     }
   }
-  
-  
-  .bar{
+
+  .bar {
     height: 35px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -115,7 +114,7 @@
       right: 5%;
       top: 2%;
       margin-left: 20px;
-      color:$text_color;
+      color: $text_color;
       font-weight: 700;
       transition: $anime;
       transition-delay: 3s;
@@ -123,9 +122,9 @@
       transform: translateX(50%);
     }
   }
-  .bar::before{
-    content: '';
-    color:$text_color;
+  .bar::before {
+    content: "";
+    color: $text_color;
     font-weight: 700;
     width: 100%;
     border-top-right-radius: 5px;
@@ -137,8 +136,8 @@
     z-index: -2;
     background: #ecf0f1;
   }
-  
-  .bar::after{
+
+  .bar::after {
     // content: '';
     height: 35px;
     text-align: right;
@@ -156,18 +155,18 @@
     left: 0;
     z-index: -1;
   }
-  @each $brand,$property in $script_date {
+  @each $brand, $property in $script_date {
     .#{$brand}_bar::after {
-      background-color: map-get($property, bg-color );
-      max-width: map-get($property, m-width );
+      background-color: map-get($property, bg-color);
+      max-width: map-get($property, m-width);
     }
   }
-  
-  @keyframes bar-before{
-    0%{
+
+  @keyframes bar-before {
+    0% {
       width: 0px;
     }
-    100%{
+    100% {
       width: 100%;
     }
   }
@@ -179,7 +178,7 @@
       text-align: left;
       padding-left: 10%;
     }
-    h2 strong:last-of-type  {
+    h2 strong:last-of-type {
       margin-bottom: 50px;
     }
 
@@ -203,11 +202,11 @@
         margin: 0;
       }
     }
-    @each $brand,$property in $script_date {
+    @each $brand, $property in $script_date {
       .#{$brand} span::before {
         position: absolute;
-        color: map-get($property,bg-color);
-        @include font_A_B(map-get($property,icon));
+        color: map-get($property, bg-color);
+        @include font_A_B(map-get($property, icon));
       }
     }
     .html span::before {
@@ -219,7 +218,7 @@
         font-size: 37px;
       }
     }
-    
+
     .css span::before {
       left: 1%;
       top: 16%;
@@ -229,7 +228,7 @@
         font-size: 30px;
       }
     }
-    
+
     .js span::before {
       left: 1%;
       top: 16%;
@@ -239,7 +238,7 @@
         font-size: 32px;
       }
     }
-    
+
     .wordpress span::before {
       left: 1%;
       top: 16%;
@@ -249,7 +248,7 @@
         font-size: 30px;
       }
     }
-    
+
     .php span::before {
       left: 1%;
       top: 16%;
@@ -279,10 +278,12 @@
     margin-bottom: 5px;
     padding: 10px;
     cursor: pointer;
-    &:hover h4:before,&:hover h4:after {
+    &:hover h4:before,
+    &:hover h4:after {
       transform: translateY(7px);
     }
-    &.open h4:before,&.open h4:after {
+    &.open h4:before,
+    &.open h4:after {
       transform: rotate(-180deg) translate(2px, 9px);
     }
 
@@ -353,190 +354,190 @@
     }
   }
 
-//プロフィール
-.introduction .profile {
-  position: relative;
-  min-height: 280px;
-  width: 100%;
-  @include bg_img('../img/teien1.jpg');
-  background-origin: content-box;
-  margin-bottom: 45px;
-  @include md {
-    margin-bottom: 30px;
-  }
-  @include sm {
-    margin-bottom: 20px;
-  }
-  &::before {
-    content: '';
+  //プロフィール
+  .introduction .profile {
+    position: relative;
+    min-height: 280px;
     width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0%;
-    top: 0%;
-    background: rgba(255, 255, 255, 0.5);
-  }
-  .sequential {
-    transition: all 0.5s linear 0s;
-    opacity: 0;
-    &:nth-of-type(1) {
-      transform: translate(30px, 0);
-    }
-    &:nth-of-type(2) {
-      transform: translate(-30px, 0);
-    }
-    &:nth-of-type(3) {
-      transform: translate(0px, 30px);
-    }
-    &:nth-of-type(4) {
-      transform: translate(0px, -30px);
-    }
-    &.active {
-     transform: translate(0,0);
-     opacity: 1;
-    }
-  }
-  h1 {
-    color: #000;
-    font-size: 4.2em;
-    font-weight: 700;
-    position: absolute;
-    top: 0%;
-    left: 25%;
+    @include bg_img("../img/teien1.jpg");
+    background-origin: content-box;
+    margin-bottom: 45px;
     @include md {
-      font-size: 3.2em;
-      font-weight: 600;
+      margin-bottom: 30px;
     }
     @include sm {
-      font-size: 2.6em;
-      font-weight: 600;
-      left: 22%;
+      margin-bottom: 20px;
     }
-    @include s {
-      font-size: 2.3em;
-    }
-  }
-
-  dl {
-    dt, dd {
-      font-size: 2em;
-      font-weight: 600;
-      letter-spacing: 1.8px;
-      color: #333333;
-    }
-    
-    dt:first-of-type {
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
       position: absolute;
-      left: 7%;
-      top: 17%;
-      @include sm {
-        left: 3%;
-        font-size: 1.7em;
+      left: 0%;
+      top: 0%;
+      background: rgba(255, 255, 255, 0.5);
+    }
+    .sequential {
+      transition: all 0.5s linear 0s;
+      opacity: 0;
+      &:nth-of-type(1) {
+        transform: translate(30px, 0);
+      }
+      &:nth-of-type(2) {
+        transform: translate(-30px, 0);
+      }
+      &:nth-of-type(3) {
+        transform: translate(0px, 30px);
+      }
+      &:nth-of-type(4) {
+        transform: translate(0px, -30px);
+      }
+      &.active {
+        transform: translate(0, 0);
+        opacity: 1;
       }
     }
-    
-    dd:first-of-type {
+    h1 {
+      color: #000;
+      font-size: 4.2em;
+      font-weight: 700;
       position: absolute;
-      left: 14%;
-      top: 26%;
-      @include sm {
-        left: 9%;
-        font-size: 1.7em;
-      }
-    }
-    
-    dt:nth-of-type(2) {
-      position: absolute;
-      left: 11%;
-      top: 53%;
-      font-size: 3em;
-      @include sm {
-        font-size: 2em;
-        left: 4%;
-      }
-    }
-    
-    dd:nth-of-type(2) {
-      position: absolute;
-      left: 13%;
-      top: 65%;
-      font-size: 3em;
-      @include sm {
-        font-size: 2em;
-        left: 4%;
-      }
-    }
-    
-    dt:nth-of-type(3) {
-      position: absolute;
-      right: 45%;
-      bottom: 40%;
-      font-size: 3.5em;
+      top: 0%;
+      left: 25%;
       @include md {
-        font-size: 3em;
-        font-weight: 500;
+        font-size: 3.2em;
+        font-weight: 600;
       }
       @include sm {
-        font-size: 2.8em;
-      }
-    }
-    
-    dd:nth-of-type(3) {
-      position: absolute;
-      right: 17%;
-      bottom: 40%;
-      font-size: 3.3em;
-      @include lg {
-        bottom: 28%;
-        font-size: 3em;
-      }
-      @include sm {
-        font-size: 2.8em;
+        font-size: 2.6em;
+        font-weight: 600;
+        left: 22%;
       }
       @include s {
-        font-size: 2.4em;
+        font-size: 2.3em;
       }
     }
-    
-    dt:nth-of-type(4) {
-      position: absolute;
-      right: 30%;
-      bottom: 8%;
-      font-size: 2em;
-      @include sm {
+
+    dl {
+      dt,
+      dd {
+        font-size: 2em;
+        font-weight: 600;
+        letter-spacing: 1.8px;
+        color: #333333;
+      }
+
+      dt:first-of-type {
+        position: absolute;
+        left: 7%;
+        top: 17%;
+        @include sm {
+          left: 3%;
+          font-size: 1.7em;
+        }
+      }
+
+      dd:first-of-type {
+        position: absolute;
+        left: 14%;
+        top: 26%;
+        @include sm {
+          left: 9%;
+          font-size: 1.7em;
+        }
+      }
+
+      dt:nth-of-type(2) {
+        position: absolute;
+        left: 11%;
+        top: 53%;
+        font-size: 3em;
+        @include sm {
+          font-size: 2em;
+          left: 4%;
+        }
+      }
+
+      dd:nth-of-type(2) {
+        position: absolute;
+        left: 13%;
+        top: 65%;
+        font-size: 3em;
+        @include sm {
+          font-size: 2em;
+          left: 4%;
+        }
+      }
+
+      dt:nth-of-type(3) {
+        position: absolute;
+        right: 45%;
+        bottom: 40%;
+        font-size: 3.5em;
+        @include md {
+          font-size: 3em;
+          font-weight: 500;
+        }
+        @include sm {
+          font-size: 2.8em;
+        }
+      }
+
+      dd:nth-of-type(3) {
+        position: absolute;
+        right: 17%;
+        bottom: 40%;
+        font-size: 3.3em;
+        @include lg {
+          bottom: 28%;
+          font-size: 3em;
+        }
+        @include sm {
+          font-size: 2.8em;
+        }
+        @include s {
+          font-size: 2.4em;
+        }
+      }
+
+      dt:nth-of-type(4) {
+        position: absolute;
         right: 30%;
-        bottom: 7%;
-        font-size: 1.4em;
+        bottom: 8%;
+        font-size: 2em;
+        @include sm {
+          right: 30%;
+          bottom: 7%;
+          font-size: 1.4em;
+        }
+        @include s {
+          right: 5%;
+          font-size: 1.1em;
+        }
       }
-      @include s {
-        right: 5%;
-        font-size: 1.1em;
-      }
-    }
-    
-    dd:nth-of-type(4) {
-      position: absolute;
-      right: -3%;
-      bottom: -2%;
-      font-size: 2.5em;
-      @include md {
-        right: 8%;
-        font-size: 2.1em;
-      }
-      @include sm {
-        right: 5%;
-        font-size: 1.9em;
-      }
-      @include s {
-        font-size: 1.4em;
-        bottom: 0;
-      }
-    }
-  } //dl
-} //.introduction .profile
 
+      dd:nth-of-type(4) {
+        position: absolute;
+        right: -3%;
+        bottom: -2%;
+        font-size: 2.5em;
+        @include md {
+          right: 8%;
+          font-size: 2.1em;
+        }
+        @include sm {
+          right: 5%;
+          font-size: 1.9em;
+        }
+        @include s {
+          font-size: 1.4em;
+          bottom: 0;
+        }
+      }
+    } //dl
+  } //.introduction .profile
 
-//WordPress解説スタイル
+  //WordPress解説スタイル
 
   .active_greeting {
     & + p + p {
@@ -570,10 +571,9 @@
         border-top-left-radius: 5px;
         box-sizing: content-box;
         border-bottom: 3px solid $sub_color;
-        transition: all .2s ease-in;
+        transition: all 0.2s ease-in;
         &:hover {
           opacity: 0.8;
-          
         }
         @include md {
           font-size: 0.8rem;
@@ -589,11 +589,11 @@
           border-left: 3px solid $sub_color;
           border-right: 3px solid $sub_color;
           &:before {
-            content: ' ';
+            content: " ";
             display: inline-block;
             width: 13px;
             height: 13px;
-            background-color: #0B048F;
+            background-color: #0b048f;
             transform: rotate(45deg);
             margin-right: 0.5em;
             @include md {
@@ -616,7 +616,7 @@
       padding-top: 0px;
       margin-bottom: 20px;
       box-shadow: 0px 3px 4px #ccc, 0px 0px 1px 1px #fff inset;
-      background: linear-gradient(#FFF, #ebebeb);
+      background: linear-gradient(#fff, #ebebeb);
       display: none;
       &.active {
         display: block;
@@ -631,7 +631,7 @@
         overflow: hidden;
         border-bottom: 2px solid $sub_color;
         text-align: center;
-        padding-top: .8rem;
+        padding-top: 0.8rem;
       }
 
       p {
@@ -643,7 +643,7 @@
       }
     }
   }
-  
+
   @media screen and (max-width: 768px) {
     .wp_contents .merit h5 {
       font-size: 1.8em;
@@ -651,25 +651,24 @@
       letter-spacing: 1.8px;
     }
   }
-  
+
   @media screen and (max-width: 543px) {
     .wp_contents .merit h5 {
       font-size: 1.6em;
     }
   }
-  
+
   @media screen and (max-width: 768px) {
     .wp_contents .merit p {
       font-size: 1.3em;
       font-weight: 300;
     }
   }
-  
+
   @media screen and (max-width: 543px) {
     .wp_contents .merit p {
       font-size: 1.1em;
       font-weight: 400;
     }
   }
-
-}// .page-id-49
+} // .page-id-49

@@ -34,7 +34,7 @@
   //keyビジュアルスタイル
   @include xl {
     .key_visual {
-      @include keyVisual('../img/nanamewagasa.jpg');
+      @include keyVisual("../img/nanamewagasa.jpg");
     }
   }
 
@@ -74,7 +74,7 @@
       font-size: 1rem;
       font-weight: 500;
       list-style: none;
-      padding: 5px 3px ;
+      padding: 5px 3px;
       margin-left: 13%;
       cursor: pointer;
       opacity: 0;
@@ -102,7 +102,7 @@
       }
       & span {
         transition: $anime;
-        padding: 5px 8px ;
+        padding: 5px 8px;
         border-radius: 3px;
         @include sm {
           padding: 0;
@@ -110,326 +110,326 @@
       }
     }
   }
-#content {
-  .item_detail.check {
-    opacity: 1;
-    visibility: visible;
-    height: auto;
-    margin-bottom: 200px;
-  }
-  .item_detail {
-    border: 1px solid #ccc;
-    background-color: $base_color;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0px 3px 4px #ccc, 0px 0px 1px 1px $base_color inset;
-    opacity: 0;
-    visibility: hidden;
-    height: 0;
-    transition: $anime;
-    @include xl {
-      margin-bottom: 150px !important;
+  #content {
+    .item_detail.check {
+      opacity: 1;
+      visibility: visible;
+      height: auto;
+      margin-bottom: 200px;
     }
-    @include md {
-      margin-bottom: 100px !important;
-    }
-    &:after {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 190px;
-      height: 600px;
-      content: "";
-      transform: translateX(-147%) translateY(-32%) rotate(52deg);
-      background: $accent_color;
-      @include s {
-        transform: translateX(-164%) translateY(-32%) rotate(52deg);
-      }
-    }
-    a {
-      display: block;
-      text-decoration: none;
-      width: 100%;
+    .item_detail {
+      border: 1px solid #ccc;
+      background-color: $base_color;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0px 3px 4px #ccc, 0px 0px 1px 1px $base_color inset;
+      opacity: 0;
+      visibility: hidden;
+      height: 0;
       transition: $anime;
-    }
-  }
-
-  .pc_frame {
-    background: url('../img/PC.webp') no-repeat;
-    background-position: 32% 10px;
-    background-size: 79%;
-    flex: 0 0 45%;
-    overflow: hidden;
-    @include showAnimation(1s,1s);
-    @include lg {
-      background-position: 32% 55%;
-      background-size: 50%;
-    }
-    @include md {
-      display: none;
-    }
-    .frame {
-      height: 0;
-      overflow: hidden;
-      padding: calc(800 / 1280 * 100%) 0 0;
-      width: 100%;
-      position: relative;
-      iframe {
-        transform-origin: 0 0;
-        position: absolute;
-        left: 10.1%;
-        top: 7%;
-        -webkit-transform: scale(0.28);
-        transform: scale(0.289);
-        width: 250%;
-        height: 246%;
-        @include lg {
-          left: 17.7%;
-          top: 20%;
-          width: 161%;
-          height: 155%;
-        }
+      @include xl {
+        margin-bottom: 150px !important;
       }
-    }
-  }
-
-  .column_reverse {
-    flex-direction:row-reverse;
-    .main_item_text {
       @include md {
-        margin: 0 auto;
+        margin-bottom: 100px !important;
       }
-    }
-  }
-  @include md {
-    flex-direction: row;
-  }
-  .two_column {
-    display: flex;
-    justify-content: center;
-    padding-top: 70px;
-    @include lg {
-      flex-direction: column;
-      padding-top: 60px;
-      padding-bottom: 0px;
-    }
-    @include md {
-      padding-top: 50px;
-    }
-    @include sm {
-      padding-top: 20px;
-    }
-    &:not(:first-child) {
-      padding-bottom: 30px;
-    }
-  }
-  .sp_frame {
-    background: url('../img/smartphone.png') no-repeat;
-    background-size: 42.5%;
-    background-position: 46.5% 2%;
-    flex: 0 0 45%;
-    max-height: 420px;
-    overflow: hidden;
-    @include showAnimation;
-    @include lg {
-      display: none;
-    }
-    @include md {
-      display: block;
-      max-height: 530px;
-    }
-    @include sm {
-      max-height: 430px;
-    }
-    @media screen and (max-width:500px) {
-      max-height: 370px;
-    }
-    @include s {
-      max-height: 340px;
-    }
-    @media screen and (max-width:395px) {
-      max-height: 295px;
-    }
-    .frame {
-      height: 0;
-      overflow: hidden;
-      padding: calc(667 / 385 * 100%) 0 0 ;
-      position: relative;
-      width: 100%;
-      iframe {
-        transform-origin: 0 0;
+      &:after {
         position: absolute;
-        left: 29.3%;
-        top: 5%;
-        -webkit-transform: scale(0.42);
-        transform: scale(0.45);
-        height: 79%;
-        width: 82%;
-        @include md {
-          top: 4.9%;
-          left: 29.36%;
+        left: 0;
+        top: 0;
+        width: 190px;
+        height: 600px;
+        content: "";
+        transform: translateX(-147%) translateY(-32%) rotate(52deg);
+        background: $accent_color;
+        @include s {
+          transform: translateX(-164%) translateY(-32%) rotate(52deg);
         }
       }
+      a {
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        transition: $anime;
+      }
     }
-  }
-  .main_item_text {
-    max-width: 50%;
-    flex: 0 0 50%;
-    @include showAnimation(.6s,1s);
-    @include lg {
-      max-width: 90%;
-    }
-  }
-  h1 {
-    font-size: 25px;
-    font-weight: 700;
-    letter-spacing: 1.8px;
-    margin-bottom: 30px;
-    color: $main_color;
-    transform: skew(-13deg,0deg);
-    border-bottom: 3px solid $main_color;
-    padding-left: 42px;
-    @include lg {
-      font-size: 22px;
-    }
-    @include md {
-      font-size: 18px;
-    }
-    @include s {
-      padding-left: 17px;
-      font-size: 16px;
-    }
-    &:first-letter {
-      font-size: 40px;
-      color: $main_color;
+
+    .pc_frame {
+      background: url("../img/PC.webp") no-repeat;
+      background-position: 32% 10px;
+      background-size: 79%;
+      flex: 0 0 45%;
+      overflow: hidden;
+      @include showAnimation(1s, 1s);
       @include lg {
-        font-size: 34px;
+        background-position: 32% 55%;
+        background-size: 50%;
       }
       @include md {
-        font-size: 27px;
+        display: none;
+      }
+      .frame {
+        height: 0;
+        overflow: hidden;
+        padding: calc(800 / 1280 * 100%) 0 0;
+        width: 100%;
+        position: relative;
+        iframe {
+          transform-origin: 0 0;
+          position: absolute;
+          left: 10.1%;
+          top: 7%;
+          -webkit-transform: scale(0.28);
+          transform: scale(0.289);
+          width: 250%;
+          height: 246%;
+          @include lg {
+            left: 17.7%;
+            top: 20%;
+            width: 161%;
+            height: 155%;
+          }
+        }
+      }
+    }
+
+    .column_reverse {
+      flex-direction: row-reverse;
+      .main_item_text {
+        @include md {
+          margin: 0 auto;
+        }
+      }
+    }
+    @include md {
+      flex-direction: row;
+    }
+    .two_column {
+      display: flex;
+      justify-content: center;
+      padding-top: 70px;
+      @include lg {
+        flex-direction: column;
+        padding-top: 60px;
+        padding-bottom: 0px;
+      }
+      @include md {
+        padding-top: 50px;
+      }
+      @include sm {
+        padding-top: 20px;
+      }
+      &:not(:first-child) {
+        padding-bottom: 30px;
+      }
+    }
+    .sp_frame {
+      background: url("../img/smartphone.png") no-repeat;
+      background-size: 42.5%;
+      background-position: 46.5% 2%;
+      flex: 0 0 45%;
+      max-height: 420px;
+      overflow: hidden;
+      @include showAnimation;
+      @include lg {
+        display: none;
+      }
+      @include md {
+        display: block;
+        max-height: 530px;
+      }
+      @include sm {
+        max-height: 430px;
+      }
+      @media screen and (max-width: 500px) {
+        max-height: 370px;
       }
       @include s {
+        max-height: 340px;
+      }
+      @media screen and (max-width: 395px) {
+        max-height: 295px;
+      }
+      .frame {
+        height: 0;
+        overflow: hidden;
+        padding: calc(667 / 385 * 100%) 0 0;
+        position: relative;
+        width: 100%;
+        iframe {
+          transform-origin: 0 0;
+          position: absolute;
+          left: 29.3%;
+          top: 5%;
+          -webkit-transform: scale(0.42);
+          transform: scale(0.45);
+          height: 79%;
+          width: 82%;
+          @include md {
+            top: 4.9%;
+            left: 29.36%;
+          }
+        }
+      }
+    }
+    .main_item_text {
+      max-width: 50%;
+      flex: 0 0 50%;
+      @include showAnimation(0.6s, 1s);
+      @include lg {
+        max-width: 90%;
+      }
+    }
+    h1 {
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      margin-bottom: 30px;
+      color: $main_color;
+      transform: skew(-13deg, 0deg);
+      border-bottom: 3px solid $main_color;
+      padding-left: 42px;
+      @include lg {
+        font-size: 22px;
+      }
+      @include md {
+        font-size: 18px;
+      }
+      @include s {
+        padding-left: 17px;
+        font-size: 16px;
+      }
+      &:first-letter {
+        font-size: 40px;
+        color: $main_color;
+        @include lg {
+          font-size: 34px;
+        }
+        @include md {
+          font-size: 27px;
+        }
+        @include s {
+          font-size: 24px;
+        }
+      }
+    }
+    h2 {
+      font-size: 26px;
+      color: $primary_color;
+      background-color: $sub_color;
+      padding-left: 30px;
+      padding-right: 30px;
+      letter-spacing: 1.8px;
+      display: inline-block;
+      margin-bottom: 10%;
+      margin-left: 40%;
+      transform: skew(-13deg, 0deg);
+      @include xl {
+        font-size: 21px;
+      }
+      @include lg {
+        position: absolute;
+        top: 2%;
+        right: 7%;
+      }
+      @include md {
+        font-size: 16px;
+      }
+      @include sm {
+        font-size: 12px;
+        top: 18%;
+        right: 0%;
+        margin-left: 7%;
+      }
+    }
+    h3 {
+      font-size: 21px;
+      margin: 20px 0px;
+      margin-bottom: 40px;
+      color: $text_color;
+      background: linear-gradient(transparent 70%, #fef5e0 70%);
+      padding-left: 20px;
+      font-weight: 800;
+      border: none;
+      line-height: 1.2;
+      @include lg {
+        padding-left: 60px;
+        font-size: 26px;
+      }
+      @include md {
+        margin-top: 10%;
+        padding-left: 100px;
         font-size: 24px;
       }
-    }
-  }
-  h2 {
-    font-size: 26px;
-    color: $primary_color;
-    background-color: $sub_color;
-    padding-left: 30px;
-    padding-right: 30px;
-    letter-spacing: 1.8px;
-    display: inline-block;
-    margin-bottom: 10%;
-    margin-left: 40%;
-    transform: skew(-13deg,0deg);
-    @include xl {
-      font-size: 21px;
-    }
-    @include lg {
-      position: absolute;
-      top: 2%;
-      right: 7%;
-    }
-    @include md {
-      font-size: 16px;
-    }
-    @include sm {
-      font-size: 12px;
-      top: 18%;
-      right: 0%;
-      margin-left: 7%;
-    }
-  }
-  h3 {
-    font-size: 21px;
-    margin: 20px 0px;
-    margin-bottom: 40px;
-    color: $text_color;
-    background: linear-gradient(transparent 70%, #fef5e0 70%);
-    padding-left: 20px;
-    font-weight: 800;
-    border: none;
-    line-height: 1.2;
-    @include lg {
-      padding-left: 60px;
-      font-size: 26px;
-    }
-    @include md {
-      margin-top: 10%;
-      padding-left: 100px;
-      font-size: 24px;
-    }
-    @include sm {
-      margin-top: 13px;
-      font-size: 18px;
-    }
-    @include s {
-      padding-left: 60px;
-    }
-  }
-  p {
-    color: $text_color;
-    font-size: 16px;
-    @include sm {
-      font-size: 14px;
-    }
-  }
-  .item_about {
-    font-family: $g_serif;
-    display: block;
-    width: 55%;
-    background-color: $accent_color;
-    border-radius: 50%;
-    margin-bottom: 50px;
-    @include showAnimation(0,.3s);
-    @include xl {
-      display: inline-block;
-    }
-    @include lg {
-      display: block;
-      margin: 0 auto;
-      margin-bottom: 40px;
-    }
-    @include sm {
-      width: 70%;
-      margin-right: 25%;
-    }
-    dt,dd {
-      display: inline-block;
-      width: 35%;
-      padding: 20px 0 20px 50px;
-      @include xl {
-        width: 100%;
-      }
-    }
-    dt {
-      font-size: 1.3rem;
-      color: #195240;
-      @include lg {
-        padding-left: 30%;
-        padding-bottom: 0;
-      }
       @include sm {
-        font-size: 1rem;
-        padding-top: 0;
+        margin-top: 13px;
+        font-size: 18px;
+      }
+      @include s {
+        padding-left: 60px;
       }
     }
-    dd {
-      font-size: 1rem;
-      padding-left: 0;
+    p {
       color: $text_color;
-      @include xl {
-        padding-left: 45%;
-        padding-top: 0;
-      }
+      font-size: 16px;
       @include sm {
-        font-size: 0.7rem;
-        padding-bottom: 0;
+        font-size: 14px;
       }
     }
-  }
-}//#content
-
-}//.post-type-archive-works
+    .item_about {
+      font-family: $g_serif;
+      display: block;
+      width: 55%;
+      background-color: $accent_color;
+      border-radius: 50%;
+      margin-bottom: 50px;
+      @include showAnimation(0, 0.3s);
+      @include xl {
+        display: inline-block;
+      }
+      @include lg {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 40px;
+      }
+      @include sm {
+        width: 70%;
+        margin-right: 25%;
+      }
+      dt,
+      dd {
+        display: inline-block;
+        width: 35%;
+        padding: 20px 0 20px 50px;
+        @include xl {
+          width: 100%;
+        }
+      }
+      dt {
+        font-size: 1.3rem;
+        color: #195240;
+        @include lg {
+          padding-left: 30%;
+          padding-bottom: 0;
+        }
+        @include sm {
+          font-size: 1rem;
+          padding-top: 0;
+        }
+      }
+      dd {
+        font-size: 1rem;
+        padding-left: 0;
+        color: $text_color;
+        @include xl {
+          padding-left: 45%;
+          padding-top: 0;
+        }
+        @include sm {
+          font-size: 0.7rem;
+          padding-bottom: 0;
+        }
+      }
+    }
+  } //#content
+} //.post-type-archive-works

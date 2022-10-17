@@ -1,8 +1,9 @@
 @charset "UTF-8";
-@import "../config/config";
-@import "../config/mixin";
-@import "../config/reset";
-@import "../config/base";
+
+@use "../config/config" as * ;
+@use "../config/mixin" as * ;
+@use "../config/reset" as * ;
+@use "../config/base" as * ;
 
 @import "../components/layout";
 
@@ -36,16 +37,12 @@
   //keyビジュアルスタイル
   @include xl {
     .key_visual {
-      @include keyVisual('../img/sakasa_kouyou.jpg');
+      @include keyVisual("../img/sakasa_kouyou.jpg");
     }
   }
 
   #taxonomy-text {
-    @include taxonomy-text(
-      popIn,
-      cubic-bezier(0, 1.23, 1, 0.99),
-      1.5s,
-    );
+    @include taxonomy-text(popIn, cubic-bezier(0, 1.23, 1, 0.99), 1.5s);
     > span {
       opacity: 1;
     }
@@ -55,7 +52,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    @import '../components/post_cade';
+    @import "../components/post_cade";
   }
 
   //モーダルウィンドウ
@@ -65,7 +62,8 @@
     color: #000;
     display: block;
   }
-  #modal_open,input.submit-button {
+  #modal_open,
+  input.submit-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,7 +79,7 @@
     transition: $anime;
     position: relative;
     &::before {
-      @include font_A('\f00e');
+      @include font_A("\f00e");
       padding-right: 3%;
     }
     &:hover {
@@ -135,18 +133,18 @@
     display: block;
   }
   #modal {
-    position:fixed;
+    position: fixed;
     top: 50%;
     left: 50%;
     padding: 20px;
     border-radius: 5px;
-    transform: translate(-50%,-50%) scale(.95);
+    transform: translate(-50%, -50%) scale(0.95);
     background-color: #fff;
     min-width: 50vw;
     z-index: 2;
     opacity: 0;
     visibility: hidden;
-    transition: .3s;
+    transition: 0.3s;
     max-height: 80vh;
     overflow: auto;
     @include md {
@@ -154,7 +152,7 @@
     }
     &.active {
       opacity: 1;
-      transform: translate(-50%,-50%) scale(1);
+      transform: translate(-50%, -50%) scale(1);
       visibility: visible;
     }
   }
@@ -169,7 +167,7 @@
     z-index: 1;
     opacity: 0;
     visibility: hidden;
-    transition: .3s;
+    transition: 0.3s;
     &.active {
       opacity: 0.7;
       visibility: visible;
@@ -193,7 +191,8 @@
       }
     }
 
-    .tag_condition,.cat_condition {
+    .tag_condition,
+    .cat_condition {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
@@ -210,10 +209,10 @@
           margin: 0;
           width: 0;
           opacity: 0;
-          &:hover > .dummy_input{
-            background: #CCCCCC;
+          &:hover > .dummy_input {
+            background: #cccccc;
           }
-          &:checked + .dummy_input{
+          &:checked + .dummy_input {
             background: $main_color;
           }
           &:checked + .dummy_input::before {
@@ -250,8 +249,8 @@
         display: block;
         width: 12px;
         height: 12px;
-        background: #F5F5F5;
-        box-shadow: 0 1px 4px rgba(0,0,0, .4)inset;
+        background: #f5f5f5;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4) inset;
       }
       .check_text {
         font-size: 13px;
@@ -260,5 +259,4 @@
       }
     }
   }
-  
-}//post-type-archive-blogs
+} //post-type-archive-blogs

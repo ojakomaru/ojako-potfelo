@@ -49,13 +49,13 @@
   //keyビジュアルスタイル
   .key_visual {
     @include xl {
-      @include keyVisual('../img/sakasa_kouyou.jpg');
+      @include keyVisual("../img/sakasa_kouyou.jpg");
     }
   }
 
   .page-title {
     h1#animation-text {
-     @include signalTitel(left, (#fff,#fff));
+      @include signalTitel(left, (#fff, #fff));
       font-size: 3rem;
       padding: 0 10% 0 7%;
       @include xl {
@@ -110,7 +110,7 @@
         font-size: 1rem;
       }
       @include s {
-        font-size: .8rem;
+        font-size: 0.8rem;
         padding-left: 1px;
         padding-right: 1px;
       }
@@ -291,7 +291,7 @@
     }
     .wp-block-spacer {
       @include md {
-        height: 30px!important;
+        height: 30px !important;
       }
     }
   } //blog_article

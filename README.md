@@ -1,2 +1,2 @@
 #OJAKOのWordPress開発site
-WEBProgrammer OJAKO の開発用、アウトプット用、作品集です
+WEB Programmer OJAKO の開発用、アウトプット用、作品集です

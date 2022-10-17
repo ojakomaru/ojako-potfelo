@@ -23,7 +23,7 @@
   //キービジュアル
   .key_visual {
     @include xl {
-      @include keyVisual('../img/teien3.jpg', 0 100%);
+      @include keyVisual("../img/teien3.jpg", 0 100%);
     }
     .key_movi {
       height: 30vh;
@@ -31,239 +31,239 @@
         height: 0;
       }
     }
-    
+
     #taxonomy-text {
       @include taxonomy-text;
     }
   }
 
-//ここからコンタクトページ用シート
-//入力画面
-.contact {
-  form {
-    display: block;
-    margin: 0 auto;
-  }
-  .form_group {
-    margin-bottom: 30px;
-    padding: 1rem;
-    @include sm {
-      margin-bottom: 15px;
+  //ここからコンタクトページ用シート
+  //入力画面
+  .contact {
+    form {
+      display: block;
+      margin: 0 auto;
     }
-  }
-  label {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-left: 20%;
-    margin-right: 10px;
-    @include lg {
-      font-size: 1.3rem;
-    }
-    @include md {
-      font-size: 1.1rem;
-    }
-    + p {
-      margin-bottom: 0;
-      color: $base_color;
-      display: inline;
-      background-color: red;
-      padding-left: 10px;
-      padding-right: 10px;
-      border-radius: 10px;
-      font-size: 0.8rem;
-      @include md {
-        font-size: 0.6rem;
+    .form_group {
+      margin-bottom: 30px;
+      padding: 1rem;
+      @include sm {
+        margin-bottom: 15px;
       }
     }
-    + .any {
-      border-radius: 0px;
-      background: none;
-      position:relative;
-      z-index: 1;
-      color: $primary_color;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      font-size: 0.8rem;
-      @include md {
-        font-size: 0.6rem;
+    label {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-left: 20%;
+      margin-right: 10px;
+      @include lg {
+        font-size: 1.3rem;
       }
-      &:before {
-        content: '';
-        width: 40px;
-        height: 100%;
-        background-color: #F8D76A;
-        transform: rotate(45deg);
-        position: absolute;
-        left: 17%;
-        top: 0%;
-        z-index: -1;
+      @include md {
+        font-size: 1.1rem;
+      }
+      + p {
+        margin-bottom: 0;
+        color: $base_color;
+        display: inline;
+        background-color: red;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 10px;
+        font-size: 0.8rem;
         @include md {
-          left: 19%;
-          height: 90%;
-          width: 58%;
+          font-size: 0.6rem;
+        }
+      }
+      + .any {
+        border-radius: 0px;
+        background: none;
+        position: relative;
+        z-index: 1;
+        color: $primary_color;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 0.8rem;
+        @include md {
+          font-size: 0.6rem;
+        }
+        &:before {
+          content: "";
+          width: 40px;
+          height: 100%;
+          background-color: #f8d76a;
+          transform: rotate(45deg);
+          position: absolute;
+          left: 17%;
+          top: 0%;
+          z-index: -1;
+          @include md {
+            left: 19%;
+            height: 90%;
+            width: 58%;
+          }
         }
       }
     }
-  }
-  select {
-    border: 1px solid $primary_color;
-    background-color: $sub_color;
-    min-width: 198px;
-    font-size: 1rem;
-    height: 30px;
-    border-radius: 2px;
-    color: $primary_color;
-    @include md {
-      font-size: 0.7rem;
+    select {
+      border: 1px solid $primary_color;
+      background-color: $sub_color;
+      min-width: 198px;
+      font-size: 1rem;
+      height: 30px;
+      border-radius: 2px;
+      color: $primary_color;
+      @include md {
+        font-size: 0.7rem;
+      }
+      @include sm {
+        display: block;
+        margin-left: 20%;
+      }
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 5px 1px $sub_color;
+      }
     }
-    @include sm {
-      display: block;
+    input[type="text"] {
+      height: 40px;
+      width: 33%;
+      color: $text_color;
       margin-left: 20%;
-    }
-    &:focus {
-      outline: none;
-      box-shadow: 0 0 5px 1px $sub_color;
-    }
-  }
-  input[type=text] {
-    height: 40px;
-    width: 33%;
-    color: $text_color;
-    margin-left: 20%;
-    font-size: 1rem;
-    transition: $anime;
-    margin-top: 20px;
-    background-color: $base_color;
-    @include md {
-      margin-top: 1%;
-      font-size: 0.8rem;
-    }
-    &:focus {
-      outline: none;
-      box-shadow: 0 0 5px 1px transparentize($main_color,0.8);
-    }
-  }
-  input[type=email] {
-    height: 40px;
-    transition: $anime;
-    color: $text_color;
-    font-size: 1rem;
-    margin-left: 20%;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    margin-top: 20px;
-    width: 50%;
-    padding: 0 10px;
-    padding-right: 40px;
-    border-radius: 17px;
-    @include md {
-      margin-top: 1%;
-      font-size: 0.8rem;
-      padding-right: 10px;
-      width: 70%;
-    }
-    &:focus {
-      outline: none;
-      box-shadow: 0 0 5px 1px $sub_color;
-    }
-  }
-  textarea[name="message"] {
-    border: 1px solid #ddd;
-    width: 70%;
-    margin-left: 20%;
-    margin-top: 20px;
-    height: auto;
-    font-size: 0.8rem;
-    &:focus {
-      outline: none;
-      box-shadow: 0 0 5px 1px $sub_color;
-    }
-  }
-  input[type="submit"] {
-    margin: 0 auto;
-    position: relative;
-    display: block;
-    padding: 1.25em 4.5em;
-    color: #FFF;
-    background: $main_color;
-    border: solid 1px #036ea0;/*線色*/
-    border-radius: 4px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
-    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
-    &:active {
-      border: solid 1px #03A9F4;
-      box-shadow: none;
-      text-shadow: none;
-    }
-  }
-  .err_msg {
-    color: red;
-    font-size: 1.1rem;
-    padding: 1%;
-    padding-left: 21%;
-  }
-}//入力画面
-
-//確認画面
-.confirm {
-  form {
-    display: block;
-    margin: 0 auto;
-  }
-  .form_group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0px;
-    padding: 1rem;
-  }
-  label {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-left: 15%;
-    margin-right: 10px;
-    flex: 1 0 5%;
-    @include lg {
       font-size: 1rem;
+      transition: $anime;
+      margin-top: 20px;
+      background-color: $base_color;
+      @include md {
+        margin-top: 1%;
+        font-size: 0.8rem;
+      }
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 5px 1px transparentize($main_color, 0.8);
+      }
     }
-    @include md {
-      font-size: 0.8rem;
-    }
-    + p {
+    input[type="email"] {
+      height: 40px;
+      transition: $anime;
+      color: $text_color;
       font-size: 1rem;
-      background-color: #F8D76A;
-      flex: 1 0 35%;
-      border-radius: 5px;
-      margin-bottom: 0;
-      margin-left: 15%;
+      margin-left: 20%;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      margin-top: 20px;
       width: 50%;
+      padding: 0 10px;
+      padding-right: 40px;
+      border-radius: 17px;
+      @include md {
+        margin-top: 1%;
+        font-size: 0.8rem;
+        padding-right: 10px;
+        width: 70%;
+      }
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 5px 1px $sub_color;
+      }
+    }
+    textarea[name="message"] {
+      border: 1px solid #ddd;
+      width: 70%;
+      margin-left: 20%;
+      margin-top: 20px;
+      height: auto;
+      font-size: 0.8rem;
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 5px 1px $sub_color;
+      }
+    }
+    input[type="submit"] {
+      margin: 0 auto;
+      position: relative;
+      display: block;
+      padding: 1.25em 4.5em;
+      color: #fff;
+      background: $main_color;
+      border: solid 1px #036ea0; /*線色*/
+      border-radius: 4px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+      &:active {
+        border: solid 1px #03a9f4;
+        box-shadow: none;
+        text-shadow: none;
+      }
+    }
+    .err_msg {
+      color: red;
+      font-size: 1.1rem;
+      padding: 1%;
+      padding-left: 21%;
+    }
+  } //入力画面
+
+  //確認画面
+  .confirm {
+    form {
+      display: block;
+      margin: 0 auto;
+    }
+    .form_group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0px;
+      padding: 1rem;
+    }
+    label {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-left: 15%;
+      margin-right: 10px;
+      flex: 1 0 5%;
+      @include lg {
+        font-size: 1rem;
+      }
       @include md {
         font-size: 0.8rem;
       }
+      + p {
+        font-size: 1rem;
+        background-color: #f8d76a;
+        flex: 1 0 35%;
+        border-radius: 5px;
+        margin-bottom: 0;
+        margin-left: 15%;
+        width: 50%;
+        @include md {
+          font-size: 0.8rem;
+        }
+      }
     }
-  }
-  .form_text p {
-    width: 76%;
-    min-height: 60px;
-  }
-  input[type="submit"] {
-    font-size: 0.8rem;
-    margin: 50px 0 0 3%;
-    position: relative;
-    display: block;
-    padding: 1.25em 4.5em;
-    color: #FFF;
-    background: $main_color;
-    border: solid 1px #ddd;
-    border-radius: 4px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
-    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
-    &:first-of-type {
-      margin-left: 20%;
-      background: $accent_color;
-      color: $text_color;
+    .form_text p {
+      width: 76%;
+      min-height: 60px;
     }
-  }
-}//確認画面
+    input[type="submit"] {
+      font-size: 0.8rem;
+      margin: 50px 0 0 3%;
+      position: relative;
+      display: block;
+      padding: 1.25em 4.5em;
+      color: #fff;
+      background: $main_color;
+      border: solid 1px #ddd;
+      border-radius: 4px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+      &:first-of-type {
+        margin-left: 20%;
+        background: $accent_color;
+        color: $text_color;
+      }
+    }
+  } //確認画面
   //完了画面
   .active_head {
     .text-frame {
@@ -273,5 +273,4 @@
       padding-left: 13%;
     }
   }
-
-}//.page-id-52
+} //.page-id-52

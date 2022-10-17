@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@use 'config' ;
 
 //Font Awesome Brands
 @mixin font_A_B($content) {
@@ -96,7 +96,7 @@
   bottom: 10%;
   right: 6%;
   display: inline-block;
-  background: $sub_color;
+  background: config.$sub_color;
   @include md {
     bottom: 0;
     right: 0;
