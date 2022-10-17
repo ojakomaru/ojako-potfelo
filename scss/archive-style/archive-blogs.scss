@@ -2,8 +2,8 @@
 
 @use "../config/config" as * ;
 @use "../config/mixin" as * ;
-@use "../config/reset" as * ;
-@use "../config/base" as * ;
+@use "../config/reset" ;
+@use "../config/base" ;
 
 @use "../components/layout";
 
