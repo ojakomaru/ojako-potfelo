@@ -1,6 +1,7 @@
-@charset "UTF-8";
-//トップへ戻るボタン
+@use '../config/config' as * ;
+@use '../config/mixin' as * ;
 
+//トップへ戻るボタン
 #scroll_top.show,
 #product_link.show {
   opacity: 1;

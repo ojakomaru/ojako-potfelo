@@ -1,7 +1,7 @@
-@charset 'utf-8';
+@use '../config/config' as * ;
+@use '../config/mixin' as * ;
 
 //ドロップダウンメニュー
-
 .category_list {
   position: relative;
   margin-bottom: 40px;

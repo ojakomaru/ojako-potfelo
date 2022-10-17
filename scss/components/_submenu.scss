@@ -1,6 +1,6 @@
-@charset "UTF-8";
+@use '../config/config' as * ;
+@use '../config/mixin' as * ;
 //サイドバー用スタイル
-
 @include lg(972px) {
   #pc_nav {
     display: none;
