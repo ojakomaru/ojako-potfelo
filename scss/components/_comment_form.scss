@@ -1,5 +1,6 @@
+@use '../config/config' as *;
+@use '../config/mixin' as *;
 //コメントフォームスタイル
-
 .comments {
   padding: 5%;
   margin-bottom: 10%;
