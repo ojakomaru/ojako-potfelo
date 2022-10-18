@@ -1,26 +1,26 @@
-@charset 'UTF-8';
-@import "../config/config";
-@import "../config/mixin";
-@import "../config/reset";
-@import "../config/base";
+@charset "UTF-8";
+@use "../config/config" as * ;
+@use "../config/mixin" as * ;
+@use "../config/reset" ;
+@use "../config/base" ;
 
-@import "../components/layout";
+@use "../components/layout";
 
-@import "../components/header";
+@use "../components/header";
 
-@import "../components/scroll_btn";
+@use "../components/scroll_btn";
 
-@import "../components/pagenation";
+@use "../components/pagenation";
 
-@import "../components/submenu";
+@use "../components/submenu";
 
-@import "../components/search";
+@use "../components/search";
 
-@import "../components/archive-list";
+@use "../components/archive-list";
 
-@import "../components/breadcrumb";
+@use "../components/breadcrumb";
 
-@import "../components/footer";
+@use "../components/footer";
 .tax-production {
   //videokeyビジュアルスタイル
 

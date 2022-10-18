@@ -1,27 +1,27 @@
 /*
-Theme Name: import用scssファイル
+Theme Name: TopPage用scssファイル
 Author: おジャコ
 */
-@import "config/config";
-@import "config/mixin";
-@import "config/reset";
-@import "config/base";
+@use "config/config" as * ;
+@use "config/mixin" as * ;
+@use "config/reset";
+@use "config/base";
 
-@import "components/layout";
+@use "components/layout";
 
-@import "components/header";
+@use "components/header";
 
-@import "components/scroll_btn";
+@use "components/scroll_btn";
 
-@import "components/production";
+@use "components/production";
 
-@import "components/footer";
+@use "components/footer";
 
-@import "components/submenu";
+@use "components/submenu";
 
-@import "components/search";
+@use "components/search";
 
-@import "components/archive-list";
+@use "components/archive-list";
 
 
 //ヒーローvideoスタイル
