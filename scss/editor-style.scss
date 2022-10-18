@@ -1,4 +1,17 @@
 @charset "UTF-8";
+// coreExpantionBlock
+@use "components/block-style/core_expantion";
+// EXBOX
+@use "components/block-style/exbox";
+// IconBox
+@use "components/block-style/iconbox";
+
+// 見出しスタイル追加
+@use "components/block-style/heading";
+
+// リストスタイル追加
+@use "components/block-style/list-style";
+
 
 //全体
 body {
@@ -16,12 +29,6 @@ body {
     padding: 0% 15% 5%;
   }
 }
-
-// 見出しスタイル追加
-@import "components/block-style/heading";
-
-// リストスタイル追加
-@import "components/block-style/list-style";
 
 strong {
   color: #080808;
@@ -119,13 +126,3 @@ mark {
   background: linear-gradient(to top, #f5f52de5 40%, transparent 40%);
   font-weight: bold;
 }
-
-
-
-// coreExpantionBlock
-@import "components/block-style/core_expantion";
-// EXBOX
-@import "components/block-style/exbox";
-// IconBox
-@import "components/block-style/iconbox";
-

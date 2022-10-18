@@ -1,4 +1,5 @@
-@charset "UTF-8";
+@use '../config/config' as * ;
+@use '../config/mixin' as * ;
 //制作実績スタイル用
 
  .production {

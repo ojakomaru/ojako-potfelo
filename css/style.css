@@ -1,8 +1,4 @@
 @charset "UTF-8";
-/*
-Theme Name: import用scssファイル
-Author: おジャコ
-*/
 @import url("https://fonts.googleapis.com/css?family=Noto+Serif+JP");
 @import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
@@ -952,9 +948,6 @@ header .bottom_nav {
   }
 }
 
-/*================================
-フッターメニュー
-===================================*/
 .reverce {
   height: 50px;
   width: 50px;
@@ -1405,6 +1398,10 @@ ul.tag_list li a::before {
   padding-right: 4px;
 }
 
+/*
+Theme Name: TopPage用scssファイル
+Author: おジャコ
+*/
 .key_movi video#bgvid {
   max-height: 100vh;
 }

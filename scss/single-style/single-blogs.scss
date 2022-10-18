@@ -1,28 +1,39 @@
 @charset "UTF-8";
-@import "../config/config";
-@import "../config/mixin";
-@import "../config/reset";
-@import "../config/base";
+@use "../config/config" as * ;
+@use "../config/mixin" as * ;
+@use "../config/reset" ;
+@use "../config/base" ;
 
-@import "../components/layout";
+@use "../components/layout";
 
-@import "../components/header";
+@use "../components/header";
 
-@import "../components/scroll_btn";
+@use "../components/scroll_btn";
 
-@import "../components/comment_form";
+@use "../components/pagenation";
 
-@import "../components/pagenation";
+@use "../components/submenu";
 
-@import "../components/submenu";
+@use "../components/search";
 
-@import "../components/search";
+@use "../components/archive-list";
 
-@import "../components/archive-list";
+@use "../components/breadcrumb";
 
-@import "../components/breadcrumb";
+@use "../components/footer";
 
-@import "../components/footer";
+// 見出しスタイル
+@use "../components/block-style/heading";
+// リストスタイル追加
+@use "../components/block-style/list-style";
+// 目次デザイン
+@use "../components/mokuzi";
+// coreExpantionBlock
+@use "../components/block-style/core_expantion";
+// EXBOX
+@use "../components/block-style/exbox";
+// IconBox
+@use "../components/block-style/iconbox";
 
 .single-blogs {
   .container .main {
@@ -126,12 +137,6 @@
     color: $text_color;
     padding: 0 6% 5%;
     margin-bottom: 15%;
-
-    // 見出しスタイル
-    @import "../components/block-style/heading";
-
-    // リストスタイル追加
-    @import "../components/block-style/list-style";
 
     .post_date {
       time {
@@ -400,13 +405,5 @@
       }
     }
   }
-  // 目次デザイン
-  @import "../components/mokuzi";
 } // .single-blogs
 
-// coreExpantionBlock
-@import "../components/block-style/core_expantion";
-// EXBOX
-@import "../components/block-style/exbox";
-// IconBox
-@import "../components/block-style/iconbox";

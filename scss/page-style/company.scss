@@ -1,25 +1,24 @@
 @charset "UTF-8";
+@use "../config/config" as * ;
+@use "../config/mixin" as * ;
+@use "../config/reset" ;
+@use "../config/base" ;
 
-@import "../config/config";
-@import "../config/mixin";
-@import "../config/reset";
-@import "../config/base";
+@use "../components/layout";
 
-@import "../components/layout";
+@use "../components/header";
 
-@import "../components/header";
+@use "../components/scroll_btn";
 
-@import "../components/scroll_btn";
+@use "../components/submenu";
 
-@import "../components/submenu";
+@use "../components/search";
 
-@import "../components/search";
+@use "../components/archive-list";
 
-@import "../components/archive-list";
+@use "../components/breadcrumb";
 
-@import "../components/breadcrumb";
-
-@import "../components/footer";
+@use "../components/footer";
 .page-id-49 {
   //keyビジュアルスタイル
   @include xl {

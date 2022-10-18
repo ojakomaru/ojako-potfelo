@@ -52,7 +52,138 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    @import "../components/post_cade";
+    //ブログ記事アーカイブスタイル
+    .post_cade {
+      font-family: $g_serif;
+      flex: 0 0 45%;
+      border: 1px solid #ccc;
+      background: #fff;
+      margin-bottom: 70px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0px 3px 4px #ccc, 0px 0px 1px 1px #fff inset;
+      pointer-events: none;
+      @include showAnimation;
+      transition-duration: 0.5s;
+      &:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 190px;
+        height: 600px;
+        content: "";
+        transform: translateX(-147%) translateY(-32%) rotate(52deg);
+        background: $accent_color;
+        @include md {
+          transform: translateX(-158%) translateY(-32%) rotate(52deg);
+        }
+        @include sm {
+          transform: translateX(-156%) translateY(-38%) rotate(57deg);
+        }
+      }
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 1px 1px #ccc, 0px 0px 2px 3px #fff inset;
+      }
+
+      a {
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        transition: $anime;
+        pointer-events: auto;
+      }
+    }
+
+    //サムネイルスタイル
+    .pickup-image,
+    .new-entry-item .eyecatch,
+    .post-list-thumb {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+    .pickup-image:before,
+    .new-entry-item .eyecatch:before,
+    .post-list-thumb:before {
+        content:"";
+        display: block;
+        padding-top: 56.25%; /* 16:9 */
+    }
+    .pickup-image img,
+    .new-entry-item .eyecatch img,
+    .post-list-thumb img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      -webkit-transform: translate(-50%, -50%) !important;
+      transform: translate(-50%, -50%) !important;
+    }
+    .thumbnail{
+      //サムネイルのサイズを揃える
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      &:before {
+        content:"";
+        display: block;
+        padding-top: 56.25%; /* 16:9 */
+      }
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%) !important;
+        transform: translate(-50%, -50%) !important;
+        object-fit: cover;
+        width: 100%;
+        transition: $anime;
+      }
+    }
+
+    .post_cade .post_date {
+      padding: 1rem;
+      @include md {
+        padding: 0;
+        padding-top: 0.8rem;
+        padding-left: 0.6rem;
+        padding-right: 0.3rem;
+        padding-bottom: 0.8rem;
+      }
+      h1 {
+        font-size: 19px;
+        font-weight: 200;
+        line-height: 1.5;
+        color: #042104;
+        @include lg(1092px) {
+          font-size: 17px;
+          font-weight: 300;
+        }
+        @include md(741px) {
+          font-size: 16px;
+          font-weight: 400;
+        }
+        @include sm(560px) {
+          font-size: 14px;
+          line-height: 1.4;
+        }
+      }
+      
+      time {
+        position: absolute;
+        left: 3%;
+        top: 1%;
+        z-index: 1;
+        font-size: 12px;
+        color: $main_color;
+        font-family: "Noto Sans Japanese", sans-serif;
+        @include md {
+          font-size: 10px;
+          font-weight: 300;
+        }
+      }
+    }
+
   }
 
   //モーダルウィンドウ
