@@ -1,4 +1,6 @@
-@charset 'utf-8';
+@use '../../config/config' as * ;
+@use '../../config/mixin' as * ;
+
 @mixin ListThemeColor($color) {
   background-color: rgba($color, 0.1);
   border-color: $color;
