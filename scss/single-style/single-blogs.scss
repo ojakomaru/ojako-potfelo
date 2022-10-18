@@ -24,6 +24,13 @@
 
 @use "../components/footer";
 
+// coreExpantionBlock
+@use "../components/block-style/core_expantion";
+// EXBOX
+@use "../components/block-style/exbox";
+// IconBox
+@use "../components/block-style/iconbox";
+
 
 
 .single-blogs {
@@ -130,11 +137,563 @@
     margin-bottom: 15%;
 
     // 見出しスタイル
-    @import "../components/block-style/heading";
+    h1, h2, h3, h4, h5, h6 {
+      margin: 2em 0 1em;
+      font-weight: bold;
+      line-height: 1.6;
+      color: #847d76;
+
+      // シンプルライン
+      &:not(h1) {
+        position: relative;
+        font-weight: 400;
+        color: $text_color;
+        &::before, &::after {
+          position: absolute;
+          content: "";
+          z-index: 0;
+          bottom: 0;
+          left: 0;
+          top: initial !important;
+        }
+        &::before {
+          width: 100%;
+          height: 2px;
+          border-radius: 1px;
+          background: $sub_color;
+          opacity: .5;
+        }
+        &::after {
+          width: 20%;
+          height: 2px;
+          border-bottom-left-radius: 1px;
+          border-top-left-radius: 1px;
+          background: $main_color;
+        }
+      }
+
+      // ドロップキャップ、イタリック
+      &.is-style-drop-itaric {
+        color: $main_color;
+        border-bottom: 3px solid $main_color;
+        transform: skew(-15deg, 0deg);
+        &:first-letter {
+          font-size: 2.2rem;
+          color: $main_color;
+          @include md {
+            font-size: 1.85rem;
+          }
+        }
+        &::before, &::after {
+          content: none;
+        }
+      }
+
+      // 上下ボーダー
+      &.is-style-top-bottom-line{
+        border-top: 2px solid $text_color;
+        border-bottom: 2px solid $text_color;
+        &::before, &::after {
+          content: none;
+        }
+      }
+
+      // 左垂直ライン
+      &.is-style-left-border{
+        border-left: 6px solid rgba($main_color, 0.8);
+        padding: 12px 15px 12px 10px;
+        @include sm {
+          border-left: 4px solid rgba($main_color, 0.8);
+          padding: 8px 10px 8px 10px;
+        }
+        &::after {
+          content: none;
+        }
+      }
+
+      // 吹き出し
+      &.is-style-speech-bubble {
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        background: rgba($main_color, 0.4);
+        color: #fff;
+        @include sm {
+          padding: 0.8rem 1.6rem;
+        }
+        &::before {
+          content: none;
+        }
+        &::after {
+          width: 0;
+          height: 0;
+          bottom: -10px;
+          left: 1.5em;
+          border-width: 10px 10px 0 10px;
+          border-style: solid;
+          border-color: rgba($main_color, 0.4) transparent transparent transparent;
+          background: none;
+        }
+      }
+
+      // 斜め線吹き出し
+      &.is-style-speech-line {
+        display: inline-block;
+        padding: 3px 60px;
+        margin-top: 3%;
+        margin-left: 16%;
+        margin-right: 16%;
+        @include sm {
+          padding: 3px 45px;
+          margin-left: 10%;
+          margin-right: 10%;
+        }
+        &::before, &::after {
+          top: 50% !important;
+          display: inline-block;
+          width: 45px;
+          bottom: initial;
+          background: $main_color;
+          height: 2px;
+          @include sm {
+            width: 40px;
+          }
+        }
+        &::before {
+          left:0;
+          transform: rotate(60deg);
+          opacity: 1;
+        }
+        &::after {
+          left: initial;
+          right: 0;
+          transform: rotate(-60deg);
+        }
+      }
+
+      // ツートーン
+      &.is-style-two-tone {
+        color: #fff;
+        padding: 12px 10px 12px 17px;
+        background: linear-gradient(rgba($main_color, 0.4), 0%, rgba($main_color,.8)  50%, rgba($main_color,1)  50%) ;
+        border-radius: 50em 50em 50em 50em;
+        &::before, &::after {
+          content: none;
+        }
+      }
+
+      // ツートーンサークル
+      &.is-style-two-tone-circle {
+        &::before {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background: #F8D76A;
+          opacity: .4;
+          bottom: initial;
+          top: 10px !important;
+          left: -7px;
+          @include sm {
+            width: 40px;
+            height: 40px;
+          }
+        }
+        &::after {
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          background: $main_color;
+          opacity: 0.1;
+          bottom: 15px;
+          left: 16px;
+          @include sm {
+            width: 32px;
+            height: 32px;
+          }
+        }
+      }
+      
+    } //h1, h2, h3, h4, h5, h6
+
+    // ベーススタイリング
+    h1 {
+      font-size: 1.8rem;
+      line-height: 2.3rem;
+      font-weight: 400;
+      margin: 0.3em 0 1em;
+      @include lg {
+        font-size: 1.6rem;
+      }
+      @include md {
+        font-size: 1.5rem;
+      }
+    }
+    h2 {
+      font-size: 1.65rem;
+      line-height: 2rem;
+      padding: 15px 15px 10px 8px;
+      margin-top: 2.6rem;
+      margin-bottom: 1.6rem;
+      @include md {
+        font-size: 1.45rem;
+        line-height: 1.8rem;
+        padding: 13px 13px 8px 6px;
+        margin-top: 1.4rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+      @include sm {
+        font-size: 1.2rem;
+      }
+    }
+    h3 {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      padding: 12px 20px;
+      margin-top: 2.3rem;
+      margin-bottom: 1.6rem;
+      font-weight: 400;
+      @include md {
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+        padding: 10px 15px;
+        margin-top: 1.4rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+    }
+    h4 {
+      font-size: 1.3rem;
+      line-height: 1.8rem;
+      padding: 8px 15px;
+      margin-top: 1rem;
+      margin-bottom: 0.8rem;
+      @include md {
+        font-size: 1.1rem;
+        line-height: 1.6rem;
+        padding: 6px 8px;
+        margin-top: 1rem;
+        margin-bottom: 0.8rem;
+        font-weight: 700;
+      }
+    }
+    h5 {
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      padding-left: 20px;
+      color: $sub_color;
+      @include md {
+        font-size: 15px;
+      }
+    }
+    h6 {
+      font-size: 12px;
+      padding-left: 20px;
+    }
 
     // リストスタイル追加
-    @import "../components/block-style/list-style";
+    @mixin ListThemeColor($color) {
+      background-color: rgba($color, 0.1);
+      border-color: $color;
+      &.is-style-shadow {
+        border: none;
+        box-shadow :0px 0px 5px $color;
+      }
 
+      &[data-listicon="large-disc"],
+      &[data-listicon="disc-numbers"],
+      &[data-listicon="dice-numbers"] {
+        li {
+          &::before {
+            background-color: $color;
+          }
+        }
+      }
+
+      li {
+        &::before{
+          color: $color;
+        }
+      }
+    }
+
+    ul {
+      list-style: disc;
+      border: 2px solid #3333;
+      font-size: 16px;
+      font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      margin: 3em;
+      padding: 0.6em 0.5em 0.6em 2.2em ;
+      @include md {
+        font-size: 15px;
+      }
+      &.is-style-shadow {
+        border-radius :8px;
+        box-shadow :0px 0px 5px silver;
+      }
+      &.is-style-dashed {
+        border-style: dashed;
+      }
+      &.is-style-note-dashed {
+        li:not(:last-child) {
+          border-bottom: 1px dashed #777;
+          border-width: 1px;
+        }
+      }
+      &.is-style-border-none {
+        border: none;
+      }
+      &.is-style-underline-only {
+        border: none;
+        li:not(:last-child) {
+          border-bottom-width: 1px;
+          border-bottom-style: dashed;
+          border-width: 1px;
+        }
+      }
+
+      li {
+        margin: 7px 0px;
+        font-weight: bold;
+        line-height: 30px;
+      }
+      &[data-listicon] {
+        list-style: none;
+        padding-left: 0.5em;
+        li {
+          padding-left: 2.4em;
+          position: relative;
+          &::before {
+            content: '';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 1%;
+            top: 5px;
+          }
+        }
+      }
+
+      &[data-listicon="numbers"] {
+        counter-reset: number;
+        li {
+          &::before {
+            font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+            counter-increment: number;
+            content: counter(number)'.';
+          }
+        }
+      }
+      &[data-listicon="disc-numbers"] {
+        counter-reset: number;
+        li {
+          padding-left: 3em;
+          &::before {
+            font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+            counter-increment: number;
+            content: counter(number);
+            text-align: center;
+            color: #fff !important;
+            line-height:30px;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+      &[data-listicon="dice-numbers"] {
+        counter-reset: number;
+        li {
+          padding-left: 3em;
+          &::before {
+            font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+            counter-increment: number;
+            content: counter(number);
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            color: #fff !important;
+          }
+        }
+      }
+      &[data-listicon="large-disc"] {
+        li {
+          &::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            top: 15px;
+          }
+        }
+      }
+      &[data-listicon="angle-double-right"] {
+        li {
+          &::before {
+            content: '\f101';
+          }
+        }
+      }
+      &[data-listicon="angle-right"] {
+        li {
+          &::before {
+            content: '\f105';
+          }
+        }
+      }
+      &[data-listicon="caret-right"] {
+        li {
+          &::before {
+            content: '\f0da';
+          }
+        }
+      }
+      &[data-listicon="check"] {
+        li {
+          &::before {
+            content: '\f00c';
+          }
+        }
+      }
+      &[data-listicon="check-double"] {
+        li {
+          &::before {
+            content: '\f560';
+          }
+        }
+      }
+      &[data-listicon="circle-check"] {
+        li {
+          &::before {
+            content: '\f058';
+          }
+        }
+      }
+      &[data-listicon="circle-chevron-right"] {
+        li {
+          &::before {
+            content: '\f138';
+          }
+        }
+      }
+      &[data-listicon="circle-right"] {
+        li {
+          &::before {
+            content: '\f35a';
+          }
+        }
+      }
+      &[data-listicon="circle-xmark"] {
+        li {
+          &::before {
+            content: '\f057';
+          }
+        }
+      }
+      &[data-listicon="clipboard-check"] {
+        li {
+          &::before {
+            content: '\f46c';
+          }
+        }
+      }
+      &[data-listicon="crown"] {
+        li {
+          &::before {
+            content: '\f521';
+          }
+        }
+      }
+      &[data-listicon="hand-point-right"] {
+        li {
+          &::before {
+            content: '\f0a4';
+          }
+        }
+      }
+      &[data-listicon="hand-point-up"] {
+        li {
+          &::before {
+            content: '\f0a6';
+          }
+        }
+      }
+      &[data-listicon="pencil"] {
+        li {
+          &::before {
+            content: '\f303';
+          }
+        }
+      }
+      &[data-listicon="skull"] {
+        li {
+          &::before {
+            content: '\f54c';
+          }
+        }
+      }
+      &[data-listicon="splotch"] {
+        li {
+          &::before {
+            content: '\f5bc';
+          }
+        }
+      }
+      &[data-listicon="square-check"] {
+        li {
+          &::before {
+            content: '\f14a';
+          }
+        }
+      }
+      &[data-listicon="tag"] {
+        li {
+          &::before {
+            content: '\f02b';
+          }
+        }
+      }
+      &[data-listicon="triangle-exclamation"] {
+        li {
+          &::before {
+            content: '\f071';
+          }
+        }
+      }
+      &[data-listicon="dog-hand"] {
+        li {
+          &::before {
+            content: '\f1b0';
+          }
+        }
+      }
+      &.list-themecolor-blue {
+        @include ListThemeColor(#1bb4d3);
+      }
+      &.list-themecolor-red {
+        @include ListThemeColor(#ee5656);
+      }
+      &.list-themecolor-green {
+        @include ListThemeColor(#39cd75);
+      }
+      &.list-themecolor-yellow {
+        @include ListThemeColor(#f7cf2e);
+      }
+      &.list-themecolor-pink {
+        @include ListThemeColor(#f7b2b2);
+      }
+      &.list-themecolor-gray {
+        @include ListThemeColor(#9c9c9c);
+      }
+      &.list-themecolor-black {
+        @include ListThemeColor(#313131);
+        li {
+          color: #fff;
+          &::before {
+            color: #fff;
+          }
+        }
+      }
+    }
     .post_date {
       time {
         display: inline-block;
@@ -405,10 +964,3 @@
   // 目次デザイン
   @import "../components/mokuzi";
 } // .single-blogs
-
-// coreExpantionBlock
-@import "../components/block-style/core_expantion";
-// EXBOX
-@import "../components/block-style/exbox";
-// IconBox
-@import "../components/block-style/iconbox";
