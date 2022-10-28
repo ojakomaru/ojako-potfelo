@@ -1519,10 +1519,10 @@ footer {
 
 .wp-block-oja-exbox-block {
   border: 2px solid #4DA1D4;
-  padding: 3%;
+  padding: 2.4%;
   position: relative;
-  margin-top: 5%;
-  margin-bottom: 3%;
+  margin-top: 7%;
+  margin-bottom: 6%;
   color: #465d65;
   /**
   * タイトル付きスタイル
@@ -1560,7 +1560,8 @@ footer {
 }
 .wp-block-oja-exbox-block ul {
   border: none !important;
-  background-color: initial;
+  background-color: initial !important;
+  margin: 0 !important;
 }
 .wp-block-oja-exbox-block p {
   margin-top: 16px;
@@ -1570,6 +1571,8 @@ footer {
 }
 .wp-block-oja-exbox-block .block-editor-inner-blocks ul {
   border: none;
+  background-color: initial;
+  margin: 0;
 }
 .wp-block-oja-exbox-block.blue {
   border-color: #82c8e2;
@@ -1865,8 +1868,10 @@ footer {
   position: absolute;
   top: -1em;
   left: 4%;
-  background: #fff;
   padding: 0 0.5em;
+  margin: 0;
+  font-size: 1.1rem;
+  background-color: #F8F9F7;
 }
 .wp-block-oja-exbox-block.nomal-head .ex-head {
   position: absolute;
@@ -1874,6 +1879,9 @@ footer {
   left: 4%;
   font-size: 1.1rem;
   padding: 0 0.5em;
+  margin: 0;
+  color: #fff;
+  font-weight: 600;
 }
 .wp-block-oja-exbox-block.top-head {
   padding: 0;
@@ -1916,6 +1924,8 @@ footer {
   font-weight: bold;
   top: -1em;
   left: 4%;
+  margin: 0;
+  font-size: 1.2rem;
   padding: 0.2em 0.6em;
 }
 .wp-block-oja-exbox-block.speech-head {
@@ -1988,7 +1998,6 @@ footer {
 }
 .wp-block-oja-exbox-block.blackboard {
   background: #104300;
-  margin: 1em 0;
   padding: 1em 1em 0 1em;
   border: 8px solid #a60;
   box-shadow: 2px 2px 4px #999, 2px 2px 2px #020 inset;
